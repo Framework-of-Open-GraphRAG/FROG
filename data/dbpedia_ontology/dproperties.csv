@@ -1,0 +1,1830 @@
+propertyLabel,short,shortDomain,shortRange,description
+total time person has spent in space (m),dbo:timeInSpace,dbo:Astronaut,dbd:minute,total time person has spent in space of astronaut in minute
+fuel capacity (l),dbo:fuelCapacity,dbo:Automobile,dbd:litre,fuel capacity of automobile in litre
+wheelbase (mm),dbo:wheelbase,dbo:Automobile,dbd:millimetre,wheelbase of automobile in millimetre
+floor area (m2),dbo:floorArea,dbo:Building,dbd:squareMetre,floor area of building in square metre
+maximum boat beam (μ),dbo:maximumBoatBeam,dbo:Canal,dbd:metre,maximum boat beam of canal in metre
+maximum boat length (μ),dbo:maximumBoatLength,dbo:Canal,dbd:metre,maximum boat length of canal in metre
+original maximum boat beam (μ),dbo:originalMaximumBoatBeam,dbo:Canal,dbd:metre,original maximum boat beam of canal in metre
+original maximum boat length (μ),dbo:originalMaximumBoatLength,dbo:Canal,dbd:metre,original maximum boat length of canal in metre
+boiling point (K),dbo:boilingPoint,dbo:ChemicalSubstance,dbd:kelvin,boiling point of chemical substance in kelvin
+density (μ3),dbo:density,dbo:ChemicalSubstance,dbd:kilogramPerCubicMetre,density of chemical substance in kilogram per cubic metre
+melting point (K),dbo:meltingPoint,dbo:ChemicalSubstance,dbd:kelvin,melting point of chemical substance in kelvin
+diameter (μ),dbo:diameter,dbo:ConveyorSystem,dbd:metre,diameter of conveyor system in metre
+height (mm),dbo:height,dbo:ConveyorSystem,dbd:millimetre,height of conveyor system in millimetre
+length (mm),dbo:length,dbo:ConveyorSystem,dbd:millimetre,length of conveyor system in millimetre
+mass (kg),dbo:mass,dbo:ConveyorSystem,dbd:kilogram,mass of conveyor system in kilogram
+weight (kg),dbo:weight,dbo:ConveyorSystem,dbd:kilogram,weight of conveyor system in kilogram
+width (mm),dbo:width,dbo:ConveyorSystem,dbd:millimetre,width of conveyor system in millimetre
+boiling point (K),dbo:boilingPoint,dbo:Drug,dbd:kelvin,boiling point of drug in kelvin
+melting point (K),dbo:meltingPoint,dbo:Drug,dbd:kelvin,melting point of drug in kelvin
+acceleration (s),dbo:acceleration,dbo:Engine,dbd:second,acceleration of engine in second
+CO2 emission (g/km),dbo:co2Emission,dbo:Engine,dbd:gramPerKilometre,co2 emission of engine in gram per kilometre
+cylinder bore (mm),dbo:cylinderBore,dbo:Engine,dbd:millimetre,cylinder bore of engine in millimetre
+diameter (mm),dbo:diameter,dbo:Engine,dbd:millimetre,diameter of engine in millimetre
+displacement (cc),dbo:displacement,dbo:Engine,dbd:cubicCentimetre,displacement of engine in cubic centimetre
+height (mm),dbo:height,dbo:Engine,dbd:millimetre,height of engine in millimetre
+length (mm),dbo:length,dbo:Engine,dbd:millimetre,length of engine in millimetre
+power output (kW),dbo:powerOutput,dbo:Engine,dbd:kilowatt,power output of engine in kilowatt
+top speed (kmh),dbo:topSpeed,dbo:Engine,dbd:kilometrePerHour,top speed of engine in kilometre per hour
+torque output (Nm),dbo:torqueOutput,dbo:Engine,dbd:newtonMetre,torque output of engine in newton metre
+weight (kg),dbo:weight,dbo:Engine,dbd:kilogram,weight of engine in kilogram
+width (mm),dbo:width,dbo:Engine,dbd:millimetre,width of engine in millimetre
+diameter (μ),dbo:diameter,dbo:Escalator,dbd:metre,diameter of escalator in metre
+height (mm),dbo:height,dbo:Escalator,dbd:millimetre,height of escalator in millimetre
+length (mm),dbo:length,dbo:Escalator,dbd:millimetre,length of escalator in millimetre
+mass (kg),dbo:mass,dbo:Escalator,dbd:kilogram,mass of escalator in kilogram
+weight (kg),dbo:weight,dbo:Escalator,dbd:kilogram,weight of escalator in kilogram
+width (mm),dbo:width,dbo:Escalator,dbd:millimetre,width of escalator in millimetre
+apoapsis (km),dbo:apoapsis,dbo:Galaxy,dbd:kilometre,apoapsis of galaxy in kilometre
+average speed (km/s),dbo:averageSpeed,dbo:Galaxy,dbd:kilometrePerSecond,average speed of galaxy in kilometre per second
+mass (kg),dbo:mass,dbo:Galaxy,dbd:kilogram,mass of galaxy in kilogram
+maximum temperature (K),dbo:maximumTemperature,dbo:Galaxy,dbd:kelvin,maximum temperature of galaxy in kelvin
+mean radius (km),dbo:meanRadius,dbo:Galaxy,dbd:kilometre,mean radius of galaxy in kilometre
+mean temperature (K),dbo:meanTemperature,dbo:Galaxy,dbd:kelvin,mean temperature of galaxy in kelvin
+minimum temperature (K),dbo:minimumTemperature,dbo:Galaxy,dbd:kelvin,minimum temperature of galaxy in kelvin
+orbital period (μ),dbo:orbitalPeriod,dbo:Galaxy,dbd:day,orbital period of galaxy in day
+periapsis (km),dbo:periapsis,dbo:Galaxy,dbd:kilometre,periapsis of galaxy in kilometre
+surface area (km2),dbo:surfaceArea,dbo:Galaxy,dbd:squareKilometre,surface area of galaxy in square kilometre
+temperature (K),dbo:temperature,dbo:Galaxy,dbd:kelvin,temperature of galaxy in kelvin
+volume (km3),dbo:volume,dbo:Galaxy,dbd:cubicKilometre,volume of galaxy in cubic kilometre
+area metro (km2),dbo:areaMetro,dbo:GeopoliticalOrganisation,dbd:squareKilometre,area metro of geopolitical organisation in square kilometre
+population density (/sqkm),dbo:populationDensity,dbo:GeopoliticalOrganisation,dbd:inhabitantsPerSquareKilometre,population density of geopolitical organisation in inhabitants per square kilometre
+course (km),dbo:course,dbo:GrandPrix,dbd:kilometre,course of grand prix in kilometre
+distance (km),dbo:distance,dbo:GrandPrix,dbd:kilometre,distance of grand prix in kilometre
+length (km),dbo:length,dbo:Infrastructure,dbd:kilometre,length of infrastructure in kilometre
+area of catchment (km2),dbo:areaOfCatchment,dbo:Lake,dbd:squareKilometre,area of catchment of lake in square kilometre
+shore length (km),dbo:shoreLength,dbo:Lake,dbd:kilometre,shore length of lake in kilometre
+volume (μ³),dbo:volume,dbo:Lake,dbd:cubicMetre,volume of lake in cubic metre
+diameter (km),dbo:diameter,dbo:LunarCrater,dbd:kilometre,diameter of lunar crater in kilometre
+diameter (μ),dbo:diameter,dbo:MeanOfTransportation,dbd:metre,diameter of mean of transportation in metre
+height (mm),dbo:height,dbo:MeanOfTransportation,dbd:millimetre,height of mean of transportation in millimetre
+length (mm),dbo:length,dbo:MeanOfTransportation,dbd:millimetre,length of mean of transportation in millimetre
+mass (kg),dbo:mass,dbo:MeanOfTransportation,dbd:kilogram,mass of mean of transportation in kilogram
+weight (kg),dbo:weight,dbo:MeanOfTransportation,dbd:kilogram,weight of mean of transportation in kilogram
+width (mm),dbo:width,dbo:MeanOfTransportation,dbd:millimetre,width of mean of transportation in millimetre
+diameter (μ),dbo:diameter,dbo:MovingWalkway,dbd:metre,diameter of moving walkway in metre
+height (mm),dbo:height,dbo:MovingWalkway,dbd:millimetre,height of moving walkway in millimetre
+length (mm),dbo:length,dbo:MovingWalkway,dbd:millimetre,length of moving walkway in millimetre
+mass (kg),dbo:mass,dbo:MovingWalkway,dbd:kilogram,mass of moving walkway in kilogram
+width (mm),dbo:width,dbo:MovingWalkway,dbd:millimetre,width of moving walkway in millimetre
+diameter (μ),dbo:diameter,dbo:On-SiteTransportation,dbd:metre,diameter of on- site transportation in metre
+height (mm),dbo:height,dbo:On-SiteTransportation,dbd:millimetre,height of on- site transportation in millimetre
+length (mm),dbo:length,dbo:On-SiteTransportation,dbd:millimetre,length of on- site transportation in millimetre
+mass (kg),dbo:mass,dbo:On-SiteTransportation,dbd:kilogram,mass of on- site transportation in kilogram
+weight (kg),dbo:weight,dbo:On-SiteTransportation,dbd:kilogram,weight of on- site transportation in kilogram
+width (mm),dbo:width,dbo:On-SiteTransportation,dbd:millimetre,width of on- site transportation in millimetre
+height (cm),dbo:height,dbo:Person,dbd:centimetre,height of person in centimetre
+weight (kg),dbo:weight,dbo:Person,dbd:kilogram,weight of person in kilogram
+apoapsis (km),dbo:apoapsis,dbo:Planet,dbd:kilometre,apoapsis of planet in kilometre
+average speed (km/s),dbo:averageSpeed,dbo:Planet,dbd:kilometrePerSecond,average speed of planet in kilometre per second
+density (μ3),dbo:density,dbo:Planet,dbd:kilogramPerCubicMetre,density of planet in kilogram per cubic metre
+mass (kg),dbo:mass,dbo:Planet,dbd:kilogram,mass of planet in kilogram
+maximum temperature (K),dbo:maximumTemperature,dbo:Planet,dbd:kelvin,maximum temperature of planet in kelvin
+mean radius (km),dbo:meanRadius,dbo:Planet,dbd:kilometre,mean radius of planet in kilometre
+mean temperature (K),dbo:meanTemperature,dbo:Planet,dbd:kelvin,mean temperature of planet in kelvin
+minimum temperature (K),dbo:minimumTemperature,dbo:Planet,dbd:kelvin,minimum temperature of planet in kelvin
+orbital period (μ),dbo:orbitalPeriod,dbo:Planet,dbd:day,orbital period of planet in day
+periapsis (km),dbo:periapsis,dbo:Planet,dbd:kilometre,periapsis of planet in kilometre
+surface area (km2),dbo:surfaceArea,dbo:Planet,dbd:squareKilometre,surface area of planet in square kilometre
+temperature (K),dbo:temperature,dbo:Planet,dbd:kelvin,temperature of planet in kelvin
+volume (km3),dbo:volume,dbo:Planet,dbd:cubicKilometre,volume of planet in cubic kilometre
+area (km2),dbo:area,dbo:PopulatedPlace,dbd:squareKilometre,area of populated place in square kilometre
+area metro (km2),dbo:areaMetro,dbo:PopulatedPlace,dbd:squareKilometre,area metro of populated place in square kilometre
+area total (km2),dbo:areaTotal,dbo:PopulatedPlace,dbd:squareKilometre,area total of populated place in square kilometre
+area urban (km2),dbo:areaUrban,dbo:PopulatedPlace,dbd:squareKilometre,area urban of populated place in square kilometre
+population density (/sqkm),dbo:populationDensity,dbo:PopulatedPlace,dbd:inhabitantsPerSquareKilometre,population density of populated place in inhabitants per square kilometre
+population metro density (/sqkm),dbo:populationMetroDensity,dbo:PopulatedPlace,dbd:inhabitantsPerSquareKilometre,population metro density of populated place in inhabitants per square kilometre
+population urban density (/sqkm),dbo:populationUrbanDensity,dbo:PopulatedPlace,dbd:inhabitantsPerSquareKilometre,population urban density of populated place in inhabitants per square kilometre
+lower earth orbit payload (kg),dbo:lowerEarthOrbitPayload,dbo:Rocket,dbd:kilogram,lower earth orbit payload of rocket in kilogram
+mass (kg),dbo:mass,dbo:Rocket,dbd:kilogram,mass of rocket in kilogram
+campus size (km2),dbo:campusSize,dbo:School,dbd:squareKilometre,campus size of school in square kilometre
+size (MB),dbo:fileSize,dbo:Software,dbd:megabyte,size of software in megabyte
+CMP EVA duration (ω),dbo:cmpEvaDuration,dbo:SpaceMission,dbd:hour,cmp eva duration of space mission in hour
+distance traveled (km),dbo:distanceTraveled,dbo:SpaceMission,dbd:kilometre,distance traveled of space mission in kilometre
+lunar EVA time (ω),dbo:lunarEvaTime,dbo:SpaceMission,dbd:hour,lunar eva time of space mission in hour
+lunar orbit time (ω),dbo:lunarOrbitTime,dbo:SpaceMission,dbd:hour,lunar orbit time of space mission in hour
+lunar sample mass (kg),dbo:lunarSampleMass,dbo:SpaceMission,dbd:kilogram,lunar sample mass of space mission in kilogram
+lunar surface time (ω),dbo:lunarSurfaceTime,dbo:SpaceMission,dbd:hour,lunar surface time of space mission in hour
+mass (kg),dbo:mass,dbo:SpaceMission,dbd:kilogram,mass of space mission in kilogram
+mission duration (μ),dbo:missionDuration,dbo:SpaceMission,dbd:day,mission duration of space mission in day
+station EVA duration (ω),dbo:stationEvaDuration,dbo:SpaceMission,dbd:hour,station eva duration of space mission in hour
+station visit duration (ω),dbo:stationVisitDuration,dbo:SpaceMission,dbd:hour,station visit duration of space mission in hour
+distance (km),dbo:distance,dbo:SpaceShuttle,dbd:kilometre,distance of space shuttle in kilometre
+total time person has spent in space (μ),dbo:timeInSpace,dbo:SpaceShuttle,dbd:day,total time person has spent in space of space shuttle in day
+volume (μ³),dbo:volume,dbo:SpaceStation,dbd:cubicMetre,volume of space station in cubic metre
+apoapsis (km),dbo:apoapsis,dbo:Spacecraft,dbd:kilometre,apoapsis of spacecraft in kilometre
+cargo fuel (kg),dbo:cargoFuel,dbo:Spacecraft,dbd:kilogram,cargo fuel of spacecraft in kilogram
+cargo gas (kg),dbo:cargoGas,dbo:Spacecraft,dbd:kilogram,cargo gas of spacecraft in kilogram
+cargo water (kg),dbo:cargoWater,dbo:Spacecraft,dbd:kilogram,cargo water of spacecraft in kilogram
+docked time (μ),dbo:dockedTime,dbo:Spacecraft,dbd:day,docked time of spacecraft in day
+dry cargo (kg),dbo:dryCargo,dbo:Spacecraft,dbd:kilogram,dry cargo of spacecraft in kilogram
+free flight time (μ),dbo:freeFlightTime,dbo:Spacecraft,dbd:day,free flight time of spacecraft in day
+periapsis (km),dbo:periapsis,dbo:Spacecraft,dbd:kilometre,periapsis of spacecraft in kilometre
+total cargo (kg),dbo:totalCargo,dbo:Spacecraft,dbd:kilogram,total cargo of spacecraft in kilogram
+total mass (kg),dbo:totalMass,dbo:Spacecraft,dbd:kilogram,total mass of spacecraft in kilogram
+discharge (m³/s),dbo:discharge,dbo:Stream,dbd:cubicMetrePerSecond,discharge of stream in cubic metre per second
+discharge average (m³/s),dbo:dischargeAverage,dbo:Stream,dbd:cubicMetrePerSecond,discharge average of stream in cubic metre per second
+maximum discharge (m³/s),dbo:maximumDischarge,dbo:Stream,dbd:cubicMetrePerSecond,maximum discharge of stream in cubic metre per second
+minimum discharge (m³/s),dbo:minimumDischarge,dbo:Stream,dbd:cubicMetrePerSecond,minimum discharge of stream in cubic metre per second
+watershed (km2),dbo:watershed,dbo:Stream,dbd:squareKilometre,watershed of stream in square kilometre
+diameter (mm),dbo:diameter,dbo:Weapon,dbd:millimetre,diameter of weapon in millimetre
+height (mm),dbo:height,dbo:Weapon,dbd:millimetre,height of weapon in millimetre
+length (mm),dbo:length,dbo:Weapon,dbd:millimetre,length of weapon in millimetre
+weight (kg),dbo:weight,dbo:Weapon,dbd:kilogram,weight of weapon in kilogram
+width (mm),dbo:width,dbo:Weapon,dbd:millimetre,width of weapon in millimetre
+runtime (m),dbo:runtime,dbo:Work,dbd:minute,runtime of work in minute
+a side,dbo:aSide,dbo:Single,xsd:string,a side of single
+abbey church blessing,dbo:abbeychurchBlessing,dbo:Cleric,xsd:string,abbey church blessing of cleric
+abbey church blessing charge,dbo:abbeychurchBlessingCharge,dbo:Cleric,xsd:string,abbey church blessing charge of cleric
+abbreviation,dbo:abbreviation,,xsd:string,abbreviation
+able to grind,dbo:ableToGrind,dbo:Mill,xsd:string,able to grind of mill
+absolute magnitude,dbo:absoluteMagnitude,dbo:CelestialBody,xsd:double,absolute magnitude of celestial body
+abstentions,dbo:abstentions,dbo:StatedResolution,xsd:nonNegativeInteger,abstentions of stated resolution
+has abstract,dbo:abstract,,rdf:langString,has abstract
+acceleration (s),dbo:acceleration,dbo:AutomobileEngine,xsd:double,acceleration of automobile engine
+access,dbo:access,,xsd:string,access
+access date,dbo:accessDate,,xsd:date,access date
+date of acquirement,dbo:acquirementDate,dbo:Ship,xsd:date,date of acquirement of ship
+Active Cases,dbo:activeCases,dbo:Outbreak,xsd:integer,active cases of outbreak
+active years,dbo:activeYears,dbo:Person,xsd:string,active years of person
+active years end date manager,dbo:activeYearsEndDateMgr,dbo:Person,xsd:string,active years end date manager of person
+active years end year,dbo:activeYearsEndYear,,xsd:gYear,active years end year
+active years end year manager,dbo:activeYearsEndYearMgr,dbo:Person,xsd:gYear,active years end year manager of person
+active years start date,dbo:activeYearsStartDate,,xsd:date,active years start date
+active years start date manager,dbo:activeYearsStartDateMgr,dbo:Person,xsd:date,active years start date manager of person
+active years start year,dbo:activeYearsStartYear,,xsd:gYear,active years start year
+active years start year manager,dbo:activeYearsStartYearMgr,dbo:Person,xsd:gYear,active years start year manager of person
+address,dbo:address,dbo:Place,rdf:langString,address of place
+administrative status,dbo:administrativeStatus,,xsd:string,administrative status
+afdb id,dbo:afdbId,dbo:Film,xsd:string,afdb id of film
+affair,dbo:affair,dbo:Person,xsd:string,affair of person
+affiliate,dbo:affiliate,dbo:FictionalCharacter,xsd:string,affiliate of fictional character
+age,dbo:age,dbo:Agent,xsd:integer,age of agent
+age range,dbo:ageRange,,xsd:nonNegativeInteger,age range
+agency station code,dbo:agencyStationCode,dbo:Station,xsd:string,agency station code of station
+agglomeration population total,dbo:agglomerationPopulationTotal,,xsd:nonNegativeInteger,agglomeration population total
+agglomerationPopulationYear,dbo:agglomerationPopulationYear,dbo:Settlement,xsd:string,agglomerationpopulationyear of settlement
+Aggregation,dbo:aggregation,dbo:ChemicalSubstance,xsd:string,aggregation of chemical substance
+airdate,dbo:airDate,dbo:RadioStation,xsd:date,airdate of radio station
+aircraft type,dbo:aircraftType,dbo:Aircraft,xsd:string,aircraft type of aircraft
+Different usage of an airport,dbo:airportUsing,dbo:Airport,xsd:string,different usage of an airport of airport
+aita code,dbo:aitaCode,,xsd:string,aita code
+albedo,dbo:albedo,dbo:Planet,xsd:double,albedo of planet
+album duration (s),dbo:albumRuntime,dbo:Album,xsd:double,album duration of album
+alias,dbo:alias,,rdf:langString,alias
+allcinema id,dbo:allcinemaId,dbo:Film,xsd:string,allcinema id of film
+allegiance,dbo:allegiance,dbo:Person,xsd:string,allegiance of person
+Alps SOIUSA code,dbo:alpsSoiusaCode,dbo:Mountain,xsd:string,alps soiusa code of mountain
+alternative name,dbo:alternativeName,,rdf:langString,alternative name
+alternative text,dbo:alternativeText,,xsd:string,alternative text
+alternative title,dbo:alternativeTitle,dbo:Work,rdf:langString,alternative title of work
+amateur defeat,dbo:amateurDefeat,dbo:Boxer,xsd:nonNegativeInteger,amateur defeat of boxer
+amateur fight,dbo:amateurFight,dbo:Boxer,xsd:nonNegativeInteger,amateur fight of boxer
+amateur ko,dbo:amateurKo,dbo:Boxer,xsd:nonNegativeInteger,amateur ko of boxer
+amateur no contest,dbo:amateurNoContest,dbo:Boxer,xsd:nonNegativeInteger,amateur no contest of boxer
+amateur tie,dbo:amateurTie,dbo:Boxer,xsd:nonNegativeInteger,amateur tie of boxer
+amateur title,dbo:amateurTitle,dbo:Boxer,xsd:string,amateur title of boxer
+amateur victory,dbo:amateurVictory,dbo:Boxer,xsd:nonNegativeInteger,amateur victory of boxer
+amateur year,dbo:amateurYear,"dbo:Athlete,_CareerStation",xsd:string,"amateur year of athlete,_ career station"
+amgId,dbo:amgid,dbo:Film,xsd:string,amgid of film
+Amsterdam Code,dbo:amsterdamCode,dbo:Municipality,xsd:string,amsterdam code of municipality
+analog channel,dbo:analogChannel,dbo:Broadcaster,xsd:string,analog channel of broadcaster
+anniversary,dbo:anniversary,dbo:MilitaryUnit,xsd:date,anniversary of military unit
+annual temperature (K),dbo:annualTemperature,dbo:Place,xsd:double,annual temperature of place
+AO,dbo:aoCloassification,dbo:Disease,xsd:string,ao of disease
+apoapsis (μ),dbo:apoapsis,dbo:CelestialBody,xsd:double,apoapsis of celestial body
+apofocus,dbo:apofocus,dbo:CelestialBody,xsd:string,apofocus of celestial body
+apparent magnitude,dbo:apparentMagnitude,dbo:Planet,xsd:double,apparent magnitude of planet
+appearance,dbo:appearance,,xsd:string,appearance
+appearances in national team,dbo:appearancesInNationalTeam,dbo:SoccerPlayer,xsd:nonNegativeInteger,appearances in national team of soccer player
+apprehended,dbo:apprehended,dbo:Criminal,xsd:date,apprehended of criminal
+date of approval by lower parliament,dbo:approvedByLowerParliament,dbo:Law,xsd:date,date of approval by lower parliament of law
+date of approval by upper parliament,dbo:approvedByUpperParliament,dbo:Law,xsd:date,date of approval by upper parliament of law
+approximate calories (J),dbo:approximateCalories,dbo:Food,xsd:double,approximate calories of food
+apskritis,dbo:apskritis,dbo:PopulatedPlace,xsd:string,apskritis of populated place
+architectural movement,dbo:architecturalMovement,dbo:Architect,xsd:string,architectural movement of architect
+area (m2),dbo:area,,xsd:double,area
+area code,dbo:areaCode,dbo:Place,xsd:string,area code of place
+area date,dbo:areaDate,dbo:Place,xsd:date,area date of place
+area land (m2),dbo:areaLand,dbo:Place,xsd:double,area land of place
+area metro (m2),dbo:areaMetro,,xsd:double,area metro
+area of catchment (m2),dbo:areaOfCatchment,dbo:Lake,xsd:double,area of catchment of lake
+area of catchment quote,dbo:areaOfCatchmentQuote,dbo:Place,xsd:string,area of catchment quote of place
+area quote,dbo:areaQuote,dbo:Place,xsd:string,area quote of place
+area rank,dbo:areaRank,dbo:Place,xsd:string,area rank of place
+area rural (m2),dbo:areaRural,dbo:PopulatedPlace,xsd:double,area rural of populated place
+area total (m2),dbo:areaTotal,dbo:Place,xsd:double,area total of place
+total area ranking,dbo:areaTotalRanking,dbo:PopulatedPlace,xsd:positiveInteger,total area ranking of populated place
+area urban (m2),dbo:areaUrban,dbo:PopulatedPlace,xsd:double,area urban of populated place
+area water (m2),dbo:areaWater,dbo:Place,xsd:double,area water of place
+argue date,dbo:argueDate,dbo:SupremeCourtOfTheUnitedStatesCase,xsd:date,argue date of supreme court of the united states case
+arm,dbo:arm,dbo:Protein,xsd:string,arm of protein
+army,dbo:army,dbo:MilitaryPerson,xsd:string,army of military person
+arrest date,dbo:arrestDate,dbo:Person,xsd:date,arrest date of person
+artificial snow area,dbo:artificialSnowArea,dbo:Place,xsd:float,artificial snow area of place
+artist function,dbo:artistFunction,dbo:Artist,xsd:string,artist function of artist
+artistic function,dbo:artisticFunction,dbo:Person,xsd:string,artistic function of person
+Contains a WikiText representation of this thing,dbo:asWikiText,,xsd:string,contains a wikitext representation of this thing
+ascent,dbo:ascent,,xsd:string,ascent
+asia championship,dbo:asiaChampionship,dbo:Athlete,xsd:string,asia championship of athlete
+asset under management ($),dbo:assetUnderManagement,dbo:Company,xsd:double,asset under management of company
+assets ($),dbo:assets,dbo:Company,xsd:double,assets of company
+Astrazenca,dbo:astrazenca,,xsd:string,astrazenca
+AstrazencaCumulativeDoses,dbo:astrazencaCumul,,xsd:integer,astrazencacumulativedoses
+page number,dbo:atPage,dbo:Reference,xsd:string,page number of reference
+row number,dbo:atRowNumber,dbo:Reference,xsd:string,row number of reference
+ATC code,dbo:atcCode,,xsd:string,atc code
+ATC prefix,dbo:atcPrefix,,xsd:string,atc prefix
+ATC suffix,dbo:atcSuffix,,xsd:string,atc suffix
+atomic number,dbo:atomicNumber,dbo:ChemicalElement,xsd:nonNegativeInteger,atomic number of chemical element
+australia open double,dbo:australiaOpenDouble,dbo:TennisPlayer,xsd:string,australia open double of tennis player
+australia open mixed,dbo:australiaOpenMixed,dbo:TennisPlayer,xsd:string,australia open mixed of tennis player
+australia open single,dbo:australiaOpenSingle,dbo:TennisPlayer,xsd:string,australia open single of tennis player
+authority mandate,dbo:authorityMandate,dbo:Place,xsd:string,authority mandate of place
+authority title of a romanian settlement,dbo:authorityTitle,dbo:RomaniaSettlement,xsd:string,authority title of a romanian settlement of romania settlement
+automobile model,dbo:automobileModel,dbo:AutomobileEngine,xsd:string,automobile model of automobile engine
+average,dbo:average,,xsd:double,average
+average annual gross power generation (J),dbo:averageAnnualGeneration,dbo:PowerStation,xsd:double,average annual gross power generation of power station
+average class size,dbo:averageClassSize,dbo:School,xsd:float,average class size of school
+average depth (μ),dbo:averageDepth,dbo:Place,xsd:double,average depth of place
+average depth quote,dbo:averageDepthQuote,dbo:Place,xsd:string,average depth quote of place
+average speed (kmh),dbo:averageSpeed,,xsd:double,average speed
+Average size of the revision per month,dbo:avgRevSizePerMonth,prov:Entity,xsd:anyURI,average size of the revision per month of entity
+Average size of the revision per year,dbo:avgRevSizePerYear,prov:Entity,xsd:anyURI,average size of the revision per year of entity
+avifauna population,dbo:avifaunaPopulation,dbo:Place,xsd:string,avifauna population of place
+awardName,dbo:awardName,dbo:Person,xsd:string,awardname of person
+colour hex code of away jersey or its parts,dbo:awayColourHexCode,,xsd:string,colour hex code of away jersey or its parts
+b side,dbo:bSide,dbo:Single,xsd:string,b side of single
+background,dbo:background,,xsd:string,background
+backhand,dbo:backhand,dbo:Athlete,xsd:string,backhand of athlete
+bad guy,dbo:badGuy,dbo:Person,xsd:string,bad guy of person
+band,dbo:band,dbo:Protein,xsd:string,band of protein
+bar pass rate,dbo:barPassRate,dbo:School,xsd:float,bar pass rate of school
+barangays,dbo:barangays,dbo:PopulatedPlace,xsd:string,barangays of populated place
+batting side,dbo:battingSide,dbo:Athlete,xsd:string,batting side of athlete
+battle honours,dbo:battleHonours,dbo:MilitaryUnit,xsd:string,battle honours of military unit
+BBR,dbo:bbr,dbo:GridironFootballPlayer,xsd:string,bbr of gridiron football player
+beatified date,dbo:beatifiedDate,dbo:Saint,xsd:date,beatified date of saint
+bed count,dbo:bedCount,dbo:Hospital,xsd:nonNegativeInteger,bed count of hospital
+Believers,dbo:believers,dbo:ChristianDoctrine,xsd:string,believers of christian doctrine
+best ranking finish,dbo:bestFinish,dbo:SnookerPlayer,xsd:string,best ranking finish of snooker player
+best lap,dbo:bestLap,dbo:Person,xsd:string,best lap of person
+best rank double,dbo:bestRankDouble,dbo:TennisPlayer,xsd:string,best rank double of tennis player
+best rank single,dbo:bestRankSingle,dbo:TennisPlayer,xsd:string,best rank single of tennis player
+best wsop rank,dbo:bestWsopRank,dbo:PokerPlayer,xsd:nonNegativeInteger,best wsop rank of poker player
+best year wsop,dbo:bestYearWsop,dbo:PokerPlayer,xsd:gYear,best year wsop of poker player
+bgafd id,dbo:bgafdId,dbo:Film,xsd:string,bgafd id of film
+BIBSYS Id,dbo:bibsysId,,xsd:string,bibsys id
+bicycle information,dbo:bicycleInformation,dbo:Station,xsd:string,bicycle information of station
+big pool record,dbo:bigPoolRecord,dbo:Person,xsd:string,big pool record of person
+Bioavailability,dbo:bioavailability,dbo:Drug,xsd:float,bioavailability of drug
+bioclimate,dbo:bioclimate,dbo:Place,xsd:string,bioclimate of place
+birth date,dbo:birthDate,dbo:Animal,xsd:date,birth date of animal
+birth name,dbo:birthName,dbo:Person,rdf:langString,birth name of person
+birth year,dbo:birthYear,dbo:Person,xsd:gYear,birth year of person
+long distance piste number,dbo:blackLongDistancePisteNumber,dbo:Place,xsd:nonNegativeInteger,long distance piste number of place
+black ski piste number,dbo:blackSkiPisteNumber,dbo:Place,xsd:nonNegativeInteger,black ski piste number of place
+blazon,dbo:blazon,,xsd:string,blazon
+Blazon caption,dbo:blazonCaption,dbo:Blazon,xsd:string,blazon caption of blazon
+blazon link,dbo:blazonLink,,xsd:string,blazon link
+blazon ratio,dbo:blazonRatio,,xsd:double,blazon ratio
+block,dbo:block,dbo:VolleyballPlayer,xsd:string,block of volleyball player
+blood group,dbo:bloodGroup,dbo:Person,xsd:string,blood group of person
+blue long distance piste number,dbo:blueLongDistancePisteNumber,dbo:Place,xsd:nonNegativeInteger,blue long distance piste number of place
+blue ski piste number,dbo:blueSkiPisteNumber,dbo:Place,xsd:nonNegativeInteger,blue ski piste number of place
+BNF Id,dbo:bnfId,,xsd:string,bnf id
+boiling point (K),dbo:boilingPoint,dbo:ChemicalSubstance,xsd:double,boiling point of chemical substance
+name,dbo:book,,xsd:string,name
+bowl record,dbo:bowlRecord,dbo:CollegeCoach,xsd:string,bowl record of college coach
+bowling side,dbo:bowlingSide,dbo:Athlete,xsd:string,bowling side of athlete
+BPN Id,dbo:bpnId,,xsd:string,bpn id
+brain info number,dbo:brainInfoNumber,dbo:Brain,xsd:string,brain info number of brain
+brain info type,dbo:brainInfoType,dbo:Brain,xsd:string,brain info type of brain
+bridge carries,dbo:bridgeCarries,dbo:Bridge,xsd:string,bridge carries of bridge
+britishOpen,dbo:britishOpen,dbo:Athlete,xsd:string,britishopen of athlete
+broadcast station class,dbo:broadcastStationClass,dbo:Broadcaster,xsd:string,broadcast station class of broadcaster
+broadcast translator,dbo:broadcastTranslator,dbo:Broadcaster,xsd:string,broadcast translator of broadcaster
+bronze medal double,dbo:bronzeMedalDouble,dbo:TennisPlayer,xsd:string,bronze medal double of tennis player
+bronze medal mixed,dbo:bronzeMedalMixed,dbo:TennisPlayer,xsd:string,bronze medal mixed of tennis player
+bronze medal single,dbo:bronzeMedalSingle,dbo:TennisPlayer,xsd:string,bronze medal single of tennis player
+budget ($),dbo:budget,,xsd:double,budget
+budget year,dbo:budgetYear,dbo:Place,xsd:string,budget year of place
+building end date,dbo:buildingEndDate,,xsd:string,building end date
+building end year,dbo:buildingEndYear,dbo:ArchitecturalStructure,xsd:gYear,building end year of architectural structure
+building start date,dbo:buildingStartDate,,xsd:string,building start date
+building start year,dbo:buildingStartYear,dbo:ArchitecturalStructure,xsd:gYear,building start year of architectural structure
+bust size (μ),dbo:bustSize,dbo:Person,xsd:double,bust size of person
+bust-waist-hip Size,dbo:bustWaistHipSize,dbo:Person,xsd:string,bust-waist-hip size of person
+cable car,dbo:cableCar,dbo:Place,xsd:nonNegativeInteger,cable car of place
+call sign,dbo:callSign,,xsd:string,call sign
+call sign meaning,dbo:callsignMeaning,dbo:Broadcaster,xsd:string,call sign meaning of broadcaster
+campus size (m2),dbo:campusSize,dbo:School,xsd:double,campus size of school
+campus type,dbo:campusType,dbo:EducationalInstitution,rdf:langString,campus type of educational institution
+can baggage checked,dbo:canBaggageChecked,dbo:Station,xsd:boolean,can baggage checked of station
+cannon number,dbo:cannonNumber,dbo:Place,xsd:nonNegativeInteger,cannon number of place
+canonized date,dbo:canonizedDate,dbo:Saint,xsd:date,canonized date of saint
+capacity,dbo:capacity,,xsd:nonNegativeInteger,capacity
+capacity factor,dbo:capacityFactor,dbo:PowerStation,xsd:float,capacity factor of power station
+capital coordinates,dbo:capitalCoordinates,dbo:Place,xsd:string,capital coordinates of place
+capital elevation (μ),dbo:capitalElevation,dbo:Island,xsd:double,capital elevation of island
+capture date,dbo:captureDate,dbo:Ship,xsd:date,capture date of ship
+car number,dbo:carNumber,dbo:FormulaOneRacer,xsd:integer,car number of formula one racer
+carbohydrate (g),dbo:carbohydrate,dbo:Food,xsd:double,carbohydrate of food
+carcinogen,dbo:carcinogen,dbo:ChemicalSubstance,xsd:string,carcinogen of chemical substance
+career points,dbo:careerPoints,dbo:FormulaOneRacer,xsd:integer,career points of formula one racer
+career prize money ($),dbo:careerPrizeMoney,dbo:TennisPlayer,xsd:double,career prize money of tennis player
+cargo fuel (g),dbo:cargoFuel,dbo:Spacecraft,xsd:double,cargo fuel of spacecraft
+cargo gas (g),dbo:cargoGas,dbo:Spacecraft,xsd:double,cargo gas of spacecraft
+cargo water (g),dbo:cargoWater,dbo:Spacecraft,xsd:double,cargo water of spacecraft
+CAS number,dbo:casNumber,,xsd:string,cas number
+CAS supplemental,dbo:casSupplemental,,xsd:string,cas supplemental
+case,dbo:case,dbo:Person,xsd:string,case of person
+casualties,dbo:casualties,"dbo:MilitaryConflict_,_NaturalEvent_,_Attack",xsd:integer,"casualties of military conflict_,_ natural event_,_ attack"
+catch,dbo:catch,dbo:Person,xsd:string,catch of person
+catholic percentage,dbo:catholicPercentage,dbo:PopulatedPlace,xsd:string,catholic percentage of populated place
+causalties,dbo:causalties,dbo:MilitaryConflict,xsd:string,causalties of military conflict
+cause of death,dbo:causeOfDeath,dbo:Person,xsd:string,cause of death of person
+cca state,dbo:ccaState,dbo:PopulatedPlace,xsd:string,cca state of populated place
+ceeb,dbo:ceeb,dbo:School,xsd:string,ceeb of school
+ceiling,dbo:ceiling,dbo:Aircraft,xsd:positiveInteger,ceiling of aircraft
+census year,dbo:censusYear,dbo:PopulatedPlace,xsd:gYear,census year of populated place
+norwegian center,dbo:center,dbo:NorwaySettlement,xsd:string,norwegian center of norway settlement
+century breaks,dbo:centuryBreaks,dbo:SnookerPlayer,xsd:integer,century breaks of snooker player
+certification,dbo:certification,dbo:Single,xsd:string,certification of single
+certification date,dbo:certificationDate,dbo:Single,xsd:date,certification date of single
+ChEBI,dbo:chEBI,dbo:Drug,xsd:string,chebi of drug
+ChEMBL,dbo:chEMBL,dbo:ChemicalSubstance,xsd:string,chembl of chemical substance
+chairman title,dbo:chairmanTitle,dbo:SoccerClub,rdf:langString,chairman title of soccer club
+championships,dbo:championships,dbo:Agent,xsd:nonNegativeInteger,championships of agent
+character in play,dbo:characterInPlay,dbo:Play,xsd:string,character in play of play
+ChemSpider Id,dbo:chemSpiderId,dbo:ChemicalSubstance,xsd:string,chemspider id of chemical substance
+chemical formula,dbo:chemicalFormula,dbo:ChemicalSubstance,xsd:string,chemical formula of chemical substance
+chorus character in play,dbo:chorusCharacterInPlay,dbo:Play,xsd:string,chorus character in play of play
+date of christening,dbo:christeningDate,dbo:Ship,xsd:date,date of christening of ship
+chromosome,dbo:chromosome,dbo:Protein,xsd:string,chromosome of protein
+region,dbo:circle,dbo:PopulatedPlace,xsd:string,region of populated place
+circuit length (μ),dbo:circuitLength,dbo:FormulaOneRacing,xsd:double,circuit length of formula one racing
+circuit name,dbo:circuitName,dbo:FormulaOneRacing,rdf:langString,circuit name of formula one racing
+circulation,dbo:circulation,dbo:WrittenWork,xsd:nonNegativeInteger,circulation of written work
+circumcised,dbo:circumcised,dbo:Person,xsd:string,circumcised of person
+cites,dbo:cites,dbo:Work,xsd:string,cites of work
+city link,dbo:cityLink,dbo:Place,xsd:string,city link of place
+city rank,dbo:cityRank,dbo:Skyscraper,xsd:nonNegativeInteger,city rank of skyscraper
+city since,dbo:citySince,dbo:PopulatedPlace,xsd:string,city since of populated place
+city type,dbo:cityType,dbo:PopulatedPlace,xsd:string,city type of populated place
+classes,dbo:classes,dbo:School,xsd:nonNegativeInteger,classes of school
+classification,dbo:classification,,xsd:string,classification
+clip up number,dbo:climbUpNumber,dbo:Place,xsd:nonNegativeInteger,clip up number of place
+closed,dbo:closed,dbo:EducationalInstitution,xsd:date,closed of educational institution
+closing date,dbo:closingDate,,xsd:date,closing date
+closing year,dbo:closingYear,,xsd:gYear,closing year
+cloth size,dbo:clothSize,dbo:Person,xsd:string,cloth size of person
+clothing size,dbo:clothingSize,dbo:Person,xsd:string,clothing size of person
+CMP EVA duration (s),dbo:cmpEvaDuration,dbo:SpaceMission,xsd:double,cmp eva duration of space mission
+black coordinate in the CMYK space,dbo:cmykCoordinateBlack,dbo:Colour,xsd:integer,black coordinate in the cmyk space of colour
+cyanic coordinate in the CMYK space,dbo:cmykCoordinateCyanic,dbo:Colour,xsd:integer,cyanic coordinate in the cmyk space of colour
+magenta coordinate in the CMYK space,dbo:cmykCoordinateMagenta,dbo:Colour,xsd:integer,magenta coordinate in the cmyk space of colour
+yellow coordinate in the CMYK space,dbo:cmykCoordinateYellow,dbo:Colour,xsd:integer,yellow coordinate in the cmyk space of colour
+CO2 emission (g/km),dbo:co2Emission,dbo:AutomobileEngine,xsd:double,co2 emission of automobile engine
+coach season,dbo:coachSeason,dbo:Athlete,xsd:string,coach season of athlete
+coaching record,dbo:coachingRecord,dbo:CollegeCoach,xsd:string,coaching record of college coach
+coalition,dbo:coalition,dbo:Person,xsd:string,coalition of person
+length of a coast,dbo:coastLength,dbo:Place,xsd:float,length of a coast of place
+coast line (μ),dbo:coastLine,dbo:Settlement,xsd:double,coast line of settlement
+code,dbo:code,,xsd:string,code
+code book,dbo:codeBook,dbo:LegalCase,xsd:string,code book of legal case
+City district code,dbo:codeDistrict,dbo:CityDistrict,xsd:string,city district code of city district
+code on index,dbo:codeIndex,dbo:MemberResistanceMovement,xsd:string,code on index of member resistance movement
+code on List of Honour,dbo:codeListOfHonour,dbo:MemberResistanceMovement,xsd:string,code on list of honour of member resistance movement
+memorial ID number,dbo:codeMemorial,dbo:Memorial,xsd:string,memorial id number of memorial
+monument code (municipal),dbo:codeMunicipalMonument,dbo:Place,xsd:string,monument code of place
+monument code (national),dbo:codeNationalMonument,dbo:Place,xsd:string,monument code of place
+monument code (provinciall),dbo:codeProvincialMonument,dbo:Place,xsd:string,monument code of place
+settlement code,dbo:codeSettlement,dbo:Settlement,xsd:string,settlement code of settlement
+code Stock Exchange,dbo:codeStockExchange,dbo:Company,xsd:string,code stock exchange of company
+CODEN,dbo:coden,dbo:WrittenWork,xsd:string,coden of written work
+collection,dbo:collection,dbo:Museum,xsd:string,collection of museum
+college hof,dbo:collegeHof,dbo:Athlete,xsd:string,college hof of athlete
+colonial name,dbo:colonialName,dbo:PopulatedPlace,xsd:string,colonial name of populated place
+colorChart,dbo:colorChart,dbo:FictionalCharacter,xsd:string,colorchart of fictional character
+colour hex code,dbo:colourHexCode,,xsd:string,colour hex code
+colour name,dbo:colourName,,rdf:langString,colour name
+combatant,dbo:combatant,dbo:MilitaryConflict,xsd:string,combatant of military conflict
+comitat of a settlement,dbo:comitat,dbo:HungarySettlement,xsd:string,comitat of a settlement of hungary settlement
+command,dbo:command,dbo:MilitaryPerson,xsd:string,command of military person
+command module,dbo:commandModule,dbo:SpaceMission,xsd:string,command module of space mission
+comment,dbo:comment,,xsd:string,comment
+commissioner date,dbo:commissionerDate,dbo:PopulatedPlace,xsd:string,commissioner date of populated place
+commissioning date,dbo:commissioningDate,dbo:Ship,xsd:date,commissioning date of ship
+committee,dbo:committee,,xsd:string,committee
+common name,dbo:commonName,,rdf:langString,common name
+iso code of a community,dbo:communityIsoCode,dbo:PopulatedPlace,xsd:string,iso code of a community of populated place
+completion date,dbo:completionDate,dbo:Work,xsd:date,completion date of work
+complexity,dbo:complexity,dbo:Food,xsd:string,complexity of food
+complications,dbo:complications,dbo:Disease,xsd:string,complications of disease
+compression ratio,dbo:compressionRatio,dbo:AutomobileEngine,xsd:string,compression ratio of automobile engine
+configuration,dbo:configuration,dbo:AutomobileEngine,dbd:engineConfiguration,configuration of automobile engine in engine configuration
+Confirmed Cases,dbo:confirmedCases,dbo:Outbreak,xsd:integer,confirmed cases of outbreak
+consecration,dbo:consecration,dbo:Cleric,xsd:string,consecration of cleric
+conservation status,dbo:conservationStatus,dbo:Species,xsd:string,conservation status of species
+conservation status system,dbo:conservationStatusSystem,dbo:Species,xsd:string,conservation status system of species
+continent rank,dbo:continentRank,dbo:Skyscraper,xsd:nonNegativeInteger,continent rank of skyscraper
+continental tournament bronze,dbo:continentalTournamentBronze,dbo:Person,xsd:nonNegativeInteger,continental tournament bronze of person
+continental tournament gold,dbo:continentalTournamentGold,dbo:Person,xsd:nonNegativeInteger,continental tournament gold of person
+continental tournament silver,dbo:continentalTournamentSilver,dbo:Person,xsd:nonNegativeInteger,continental tournament silver of person
+contract award,dbo:contractAward,dbo:SpaceShuttle,xsd:date,contract award of space shuttle
+conviction date,dbo:convictionDate,dbo:Person,xsd:date,conviction date of person
+coronation date,dbo:coronationDate,dbo:Royalty,xsd:date,coronation date of royalty
+COSPAR id,dbo:cosparId,,xsd:string,cospar id
+cost ($),dbo:cost,,xsd:double,cost
+council of a liechtenstein settlement,dbo:council,dbo:LiechtensteinSettlement,xsd:string,council of a liechtenstein settlement of liechtenstein settlement
+country code,dbo:countryCode,dbo:Place,xsd:string,country code of place
+country rank,dbo:countryRank,dbo:Skyscraper,xsd:nonNegativeInteger,country rank of skyscraper
+course (μ),dbo:course,dbo:GrandPrix,xsd:double,course of grand prix
+course area (m2),dbo:courseArea,,xsd:double,course area
+creation christian bishop,dbo:creationChristianBishop,dbo:Bishop,xsd:string,creation christian bishop of bishop
+year of creation,dbo:creationYear,,xsd:gYear,year of creation
+credit,dbo:credit,dbo:Openswarm,xsd:string,credit of openswarm
+crew size,dbo:crewSize,dbo:SpaceMission,xsd:nonNegativeInteger,crew size of space mission
+crews,dbo:crews,dbo:SpaceShuttle,xsd:nonNegativeInteger,crews of space shuttle
+criminal charge,dbo:criminalCharge,dbo:Criminal,xsd:string,criminal charge of criminal
+criteria,dbo:criteria,,xsd:string,criteria
+crown dependency,dbo:crownDependency,dbo:City,xsd:string,crown dependency of city
+cuisine,dbo:cuisine,,xsd:string,cuisine
+currency code,dbo:currencyCode,dbo:Place,xsd:string,currency code of place
+current rank,dbo:currentRank,dbo:SnookerPlayer,xsd:integer,current rank of snooker player
+current record,dbo:currentRecord,dbo:CollegeCoach,xsd:string,current record of college coach
+current status,dbo:currentStatus,,xsd:string,current status
+currently used for,dbo:currentlyUsedFor,dbo:ArchitecturalStructure,xsd:string,currently used for of architectural structure
+cylinder bore (μ),dbo:cylinderBore,dbo:AutomobileEngine,xsd:double,cylinder bore of automobile engine
+cylinder count,dbo:cylinderCount,dbo:Locomotive,xsd:nonNegativeInteger,cylinder count of locomotive
+danse competition,dbo:danseCompetition,dbo:Person,xsd:string,danse competition of person
+danse score,dbo:danseScore,dbo:Person,xsd:string,danse score of person
+date,dbo:date,,xsd:date,date
+date act,dbo:dateAct,dbo:Canal,xsd:date,date act of canal
+date of an agreement,dbo:dateAgreement,dbo:Place,xsd:date,date of an agreement of place
+date budget,dbo:dateBudget,,xsd:date,date budget
+date closed,dbo:dateClosed,dbo:Canal,xsd:date,date closed of canal
+date completed,dbo:dateCompleted,dbo:Canal,xsd:date,date completed of canal
+date construction,dbo:dateConstruction,dbo:Canal,xsd:date,date construction of canal
+date extended,dbo:dateExtended,dbo:Canal,xsd:date,date extended of canal
+Date Last Updated,dbo:dateLastUpdated,dbo:Document,xsd:date,date last updated of document
+date of abandonment,dbo:dateOfAbandonment,,xsd:date,date of abandonment
+date of burial,dbo:dateOfBurial,dbo:Person,xsd:date,date of burial of person
+date unveiled,dbo:dateUnveiled,dbo:Monument,xsd:date,date unveiled of monument
+date use,dbo:dateUse,dbo:Canal,xsd:date,date use of canal
+day,dbo:day,dbo:Settlement,xsd:date,day of settlement
+Digital Library code NL,dbo:dbnlCodeDutch,dbo:Writer,xsd:string,digital library code nl of writer
+Dewey Decimal Classification,dbo:dcc,dbo:Work,xsd:string,dewey decimal classification of work
+dead in fight date,dbo:deadInFightDate,dbo:Person,xsd:string,dead in fight date of person
+dead in fight place,dbo:deadInFightPlace,dbo:Person,xsd:string,dead in fight place of person
+death age,dbo:deathAge,dbo:Person,xsd:nonNegativeInteger,death age of person
+death date,dbo:deathDate,dbo:Animal,xsd:date,death date of animal
+death year,dbo:deathYear,dbo:Person,xsd:gYear,death year of person
+debut,dbo:debut,dbo:Wrestler,xsd:date,debut of wrestler
+dec,dbo:dec,dbo:Openswarm,xsd:string,dec of openswarm
+decay,dbo:decay,dbo:Spacecraft,xsd:date,decay of spacecraft
+decide date,dbo:decideDate,dbo:SupremeCourtOfTheUnitedStatesCase,xsd:date,decide date of supreme court of the united states case
+declination,dbo:declination,dbo:Constellation,xsd:nonNegativeInteger,declination of constellation
+decommissioning date,dbo:decommissioningDate,dbo:Ship,xsd:date,decommissioning date of ship
+defeat,dbo:defeat,dbo:Boxer,xsd:nonNegativeInteger,defeat of boxer
+defeat as team manager,dbo:defeatAsMgr,dbo:Coach,xsd:nonNegativeInteger,defeat as team manager of coach
+definition,dbo:definition,dbo:Galaxy,xsd:string,definition of galaxy
+Defunct,dbo:defunct,dbo:company,xsd:boolean,defunct of company
+delegation,dbo:delegation,dbo:PopulatedPlace,xsd:string,delegation of populated place
+delivery date,dbo:deliveryDate,,xsd:date,delivery date
+deme,dbo:deme,dbo:PopulatedPlace,xsd:string,deme of populated place
+demographics as of,dbo:demographicsAsOf,dbo:PopulatedPlace,xsd:date,demographics as of of populated place
+demolition date,dbo:demolitionDate,dbo:ArchitecturalStructure,xsd:date,demolition date of architectural structure
+demolition year,dbo:demolitionYear,dbo:ArchitecturalStructure,xsd:gYear,demolition year of architectural structure
+demonym,dbo:demonym,,rdf:langString,demonym
+density (μ3),dbo:density,,xsd:double,density
+geolocDepartment,dbo:departmentPosition,dbo:PopulatedPlace,xsd:string,geolocdepartment of populated place
+depiction description (caption),dbo:depictionDescription,,rdf:langString,depiction description
+depth (μ),dbo:depth,dbo:Place,xsd:double,depth of place
+depth quote,dbo:depthQuote,dbo:Place,xsd:string,depth quote of place
+derived word,dbo:derivedWord,dbo:Person,xsd:string,derived word of person
+description,dbo:description,,rdf:langString,description
+destruction date,dbo:destructionDate,,xsd:date,destruction date
+Method of discovery,dbo:detectionMethod,dbo:Planet,xsd:string,method of discovery of planet
+diameter (μ),dbo:diameter,,xsd:double,diameter
+digital channel,dbo:digitalChannel,dbo:Broadcaster,xsd:string,digital channel of broadcaster
+digital sub channel,dbo:digitalSubChannel,dbo:Broadcaster,xsd:string,digital sub channel of broadcaster
+date disappearance of a populated place,dbo:disappearanceDate,dbo:PopulatedPlace,xsd:date,date disappearance of a populated place of populated place
+disbanded,dbo:disbanded,dbo:MilitaryUnit,xsd:date,disbanded of military unit
+discharge (m³/s),dbo:discharge,dbo:Stream,xsd:double,discharge of stream
+discharge average (m³/s),dbo:dischargeAverage,dbo:MeanOfTransportation,xsd:double,discharge average of mean of transportation
+discontinued,dbo:discontinued,dbo:Beverage,xsd:date,discontinued of beverage
+discovery date,dbo:discovered,dbo:CelestialBody,xsd:date,discovery date of celestial body
+date when the island has been discovered,dbo:discovery,dbo:Island,xsd:string,date when the island has been discovered of island
+DiseasesDB,dbo:diseasesDB,dbo:Disease,xsd:string,diseasesdb of disease
+diseasesDb,dbo:diseasesDb,dbo:Disease,xsd:string,diseasesdb of disease
+displacement (μ³),dbo:displacement,dbo:AutomobileEngine,xsd:double,displacement of automobile engine
+dissolution date,dbo:dissolutionDate,"dbo:Organisation,_PopulatedPlace",xsd:date,"dissolution date of organisation,_ populated place"
+dissolution year,dbo:dissolutionYear,"dbo:Organisation,_PopulatedPlace",xsd:gYear,"dissolution year of organisation,_ populated place"
+dissolved,dbo:dissolved,dbo:SoccerClub,xsd:date,dissolved of soccer club
+dist_ly,dbo:dist_ly,dbo:Openswarm,xsd:string,dist_ly of openswarm
+dist_pc,dbo:dist_pc,dbo:Openswarm,xsd:integer,dist_pc of openswarm
+distance (μ),dbo:distance,,xsd:double,distance
+distance laps,dbo:distanceLaps,dbo:GrandPrix,xsd:nonNegativeInteger,distance laps of grand prix
+distance to Belfast (μ),dbo:distanceToBelfast,dbo:Settlement,xsd:double,distance to belfast of settlement
+distance to capital (μ),dbo:distanceToCapital,dbo:Settlement,xsd:double,distance to capital of settlement
+distance to Cardiff (μ),dbo:distanceToCardiff,dbo:Settlement,xsd:double,distance to cardiff of settlement
+distance to Charing Cross (μ),dbo:distanceToCharingCross,dbo:Settlement,xsd:double,distance to charing cross of settlement
+distance to Douglas (μ),dbo:distanceToDouglas,dbo:Settlement,xsd:double,distance to douglas of settlement
+distance to Dublin (μ),dbo:distanceToDublin,dbo:Settlement,xsd:double,distance to dublin of settlement
+distance to Edinburgh (μ),dbo:distanceToEdinburgh,dbo:Settlement,xsd:double,distance to edinburgh of settlement
+distance to London (μ),dbo:distanceToLondon,dbo:Settlement,xsd:double,distance to london of settlement
+distance to nearest city (μ),dbo:distanceToNearestCity,dbo:Settlement,xsd:double,distance to nearest city of settlement
+distance traveled (μ),dbo:distanceTraveled,dbo:SpaceMission,xsd:double,distance traveled of space mission
+docked time (s),dbo:dockedTime,dbo:Spacecraft,xsd:double,docked time of spacecraft
+String designation of the WrittenWork describing the resource,dbo:documentDesignation,,xsd:string,string designation of the writtenwork describing the resource
+document number,dbo:documentNumber,dbo:Document,xsd:string,document number of document
+DorlandsID,dbo:dorlandsId,dbo:AnatomicalStructure,xsd:string,dorlandsid of anatomical structure
+Dorlands prefix,dbo:dorlandsPrefix,dbo:AnatomicalStructure,xsd:string,dorlands prefix of anatomical structure
+Dorlands suffix,dbo:dorlandsSuffix,dbo:AnatomicalStructure,xsd:string,dorlands suffix of anatomical structure
+Dose,dbo:dose,,xsd:integer,dose
+DosesFirst,dbo:dosesFirst,,xsd:integer,dosesfirst
+DosesSecond,dbo:dosesSecond,,xsd:integer,dosessecond
+draft,dbo:draft,,xsd:string,draft
+draft league,dbo:draftLeague,dbo:Athlete,xsd:string,draft league of athlete
+draft pick,dbo:draftPick,dbo:GridironFootballPlayer,xsd:string,draft pick of gridiron football player
+draft position,dbo:draftPosition,dbo:Athlete,xsd:nonNegativeInteger,draft position of athlete
+draft round,dbo:draftRound,dbo:GridironFootballPlayer,xsd:string,draft round of gridiron football player
+draft year,dbo:draftYear,,xsd:gYear,draft year
+dress code,dbo:dressCode,dbo:Restaurant,xsd:string,dress code of restaurant
+Drug,dbo:drug,,rdf:langString,drug
+DrugBank,dbo:drugbank,,xsd:string,drugbank
+dry cargo (g),dbo:dryCargo,dbo:Spacecraft,xsd:double,dry cargo of spacecraft
+duration (s),dbo:duration,,xsd:double,duration
+Dutch artwork code,dbo:dutchArtworkCode,dbo:Artwork,xsd:string,dutch artwork code of artwork
+Dutch COROP code,dbo:dutchCOROPCode,dbo:Region,xsd:string,dutch corop code of region
+monument code for the Monuments Inventory Project,dbo:dutchMIPCode,"dbo:ArchitecturalStructure,_Monument",xsd:string,"monument code for the monuments inventory project of architectural structure,_ monument"
+Identifier for Duch National Archive,dbo:dutchNAIdentifier,dbo:MemberResistanceMovement,xsd:string,identifier for duch national archive of member resistance movement
+Dutch PPN code,dbo:dutchPPNCode,dbo:WrittenWork,xsd:string,dutch ppn code of written work
+Dutch RKD code,dbo:dutchRKDCode,dbo:Artist,xsd:string,dutch rkd code of artist
+Dutch PPN code,dbo:dutchWinkelID,dbo:UndergroundJournal,xsd:string,dutch ppn code of underground journal
+eMedicine subject,dbo:eMedicineSubject,dbo:Disease,rdf:langString,emedicine subject of disease
+eMedicine topic,dbo:eMedicineTopic,dbo:Disease,rdf:langString,emedicine topic of disease
+e-teatr.pl id,dbo:eTeatrId,dbo:Film,xsd:string,e-teatr.pl id of film
+EC number,dbo:ecNumber,dbo:Biomolecule,xsd:string,ec number of biomolecule
+editor title,dbo:editorTitle,dbo:Magazine,rdf:langString,editor title of magazine
+effectiveRadiatedPower (W),dbo:effectiveRadiatedPower,dbo:Broadcaster,xsd:double,effectiveradiatedpower of broadcaster
+egafd id,dbo:egafdId,dbo:Film,xsd:string,egafd id of film
+EINECS number,dbo:einecsNumber,,xsd:string,einecs number
+EKATTE code,dbo:ekatteCode,dbo:PopulatedPlace,xsd:string,ekatte code of populated place
+election date,dbo:electionDate,dbo:Person,xsd:date,election date of person
+election date leader,dbo:electionDateLeader,dbo:Legislature,xsd:date,election date leader of legislature
+election majority,dbo:electionMajority,,xsd:nonNegativeInteger,election majority
+element block,dbo:elementBlock,dbo:ChemicalElement,xsd:string,element block of chemical element
+element group,dbo:elementGroup,dbo:ChemicalElement,xsd:nonNegativeInteger,element group of chemical element
+element period,dbo:elementPeriod,dbo:ChemicalElement,xsd:nonNegativeInteger,element period of chemical element
+elevation (μ),dbo:elevation,dbo:Place,xsd:double,elevation of place
+elevation quote,dbo:elevationQuote,dbo:Place,xsd:string,elevation quote of place
+elevator count,dbo:elevatorCount,dbo:Building,xsd:nonNegativeInteger,elevator count of building
+ELO rating,dbo:elo,dbo:ChessPlayer,xsd:nonNegativeInteger,elo rating of chess player
+maximum ELO rating,dbo:eloRecord,dbo:ChessPlayer,xsd:nonNegativeInteger,maximum elo rating of chess player
+emblem,dbo:emblem,dbo:PopulatedPlace,xsd:string,emblem of populated place
+employer's celebration,dbo:employersCelebration,dbo:Settlement,xsd:string,employer's celebration of settlement
+end,dbo:end,dbo:TimePeriod,xsd:date,end of time period
+end career,dbo:endCareer,dbo:Person,xsd:string,end career of person
+end date,dbo:endDate,dbo:Event,xsd:date,end date of event
+end date and time,dbo:endDateTime,dbo:Event,xsd:dateTime,end date and time of event
+end occupation,dbo:endOccupation,,xsd:string,end occupation
+end year,dbo:endYear,,xsd:gYear,end year
+end year of insertion,dbo:endYearOfInsertion,dbo:AutomobileEngine,xsd:gYear,end year of insertion of automobile engine
+end year of sales,dbo:endYearOfSales,dbo:Sales,xsd:gYear,end year of sales of sales
+endangered since,dbo:endangeredSince,dbo:Place,xsd:date,endangered since of place
+endowment ($),dbo:endowment,dbo:Organisation,xsd:double,endowment of organisation
+engine power,dbo:enginePower,dbo:MeanOfTransportation,xsd:positiveInteger,engine power of mean of transportation
+ensemble,dbo:ensembl,dbo:Biomolecule,xsd:string,ensemble of biomolecule
+EntrezGene,dbo:entrezgene,dbo:Biomolecule,xsd:string,entrezgene of biomolecule
+episode,dbo:episode,dbo:FictionalCharacter,xsd:string,episode of fictional character
+episode number,dbo:episodeNumber,dbo:TelevisionEpisode,xsd:nonNegativeInteger,episode number of television episode
+epoch,dbo:epoch,dbo:Planet,xsd:string,epoch of planet
+ept final table,dbo:eptFinalTable,dbo:PokerPlayer,xsd:nonNegativeInteger,ept final table of poker player
+ept itm,dbo:eptItm,dbo:PokerPlayer,xsd:nonNegativeInteger,ept itm of poker player
+ept title,dbo:eptTitle,dbo:PokerPlayer,xsd:string,ept title of poker player
+equity ($),dbo:equity,dbo:Company,xsd:double,equity of company
+eruption,dbo:eruption,dbo:Island,xsd:string,eruption of island
+eruption date,dbo:eruptionYear,dbo:Volcano,xsd:gYear,eruption date of volcano
+escalafon,dbo:escalafon,dbo:Person,xsd:string,escalafon of person
+escape velocity (kmh),dbo:escapeVelocity,dbo:Planet,xsd:double,escape velocity of planet
+ESPN id,dbo:espnId,dbo:Athlete,xsd:integer,espn id of athlete
+Established,dbo:established,dbo:ChristianDoctrine,xsd:string,established of christian doctrine
+Establishment,dbo:establishment,dbo:ChristianDoctrine,xsd:integer,establishment of christian doctrine
+ethnic groups in year,dbo:ethnicGroupsInYear,,xsd:gYear,ethnic groups in year
+eurobabe index id,dbo:eurobabeIndexId,dbo:Film,xsd:string,eurobabe index id of film
+european championship,dbo:europeanChampionship,dbo:Athlete,xsd:string,european championship of athlete
+european union entrance date,dbo:europeanUnionEntranceDate,dbo:Country,xsd:date,european union entrance date of country
+event date,dbo:eventDate,dbo:Place,xsd:date,event date of place
+event description,dbo:eventDescription,dbo:HistoricPlace,xsd:string,event description of historic place
+exhibition,dbo:exhibition,,xsd:string,exhibition
+expedition,dbo:expedition,dbo:Person,xsd:string,expedition of person
+external ornament,dbo:externalOrnament,dbo:Person,xsd:string,external ornament of person
+extinction date,dbo:extinctionDate,,xsd:date,extinction date
+extinction year,dbo:extinctionYear,dbo:Species,xsd:gYear,extinction year of species
+eye color,dbo:eyeColor,dbo:Person,xsd:string,eye color of person
+eye colour,dbo:eyeColour,dbo:Person,xsd:string,eye colour of person
+eyes,dbo:eyes,dbo:FictionalCharacter,xsd:string,eyes of fictional character
+FAA Location Identifier,dbo:faaLocationIdentifier,dbo:Airport,xsd:string,faa location identifier of airport
+facility id,dbo:facilityId,dbo:RadioStation,xsd:integer,facility id of radio station
+faculty size,dbo:facultySize,dbo:EducationalInstitution,xsd:nonNegativeInteger,faculty size of educational institution
+failed launches,dbo:failedLaunches,,xsd:nonNegativeInteger,failed launches
+fansgroup,dbo:fansgroup,dbo:SoccerClub,xsd:string,fansgroup of soccer club
+fastest lap,dbo:fastestLap,dbo:FormulaOneRacer,xsd:nonNegativeInteger,fastest lap of formula one racer
+fat (g),dbo:fat,dbo:Food,xsd:double,fat of food
+Fatality Rate,dbo:fatalityRate,dbo:Outbreak,xsd:integer,fatality rate of outbreak
+fate,dbo:fate,dbo:Company,rdf:langString,fate of company
+fauna,dbo:fauna,dbo:Place,xsd:string,fauna of place
+FC,dbo:fc,dbo:Cricketer,xsd:nonNegativeInteger,fc of cricketer
+FC runs,dbo:fcRuns,dbo:Cricketer,xsd:nonNegativeInteger,fc runs of cricketer
+FDA UNII code,dbo:fdaUniiCode,,xsd:string,fda unii code
+"feast day, holiday",dbo:feastDay,,xsd:date,"feast day, holiday"
+feat,dbo:feat,dbo:Person,xsd:string,feat of person
+feature,dbo:feature,dbo:FictionalCharacter,xsd:string,feature of fictional character
+fed cup,dbo:fedCup,dbo:Athlete,xsd:string,fed cup of athlete
+fees ($),dbo:fees,dbo:School,xsd:double,fees of school
+fibahof,dbo:fibahof,dbo:Athlete,xsd:string,fibahof of athlete
+fight,dbo:fight,dbo:Boxer,xsd:nonNegativeInteger,fight of boxer
+fighter,dbo:fighter,,xsd:string,fighter
+The extension of this file,dbo:fileExtension,dbo:File,xsd:string,the extension of this file of file
+size (B),dbo:fileSize,dbo:Work,xsd:double,size of work
+filename,dbo:filename,dbo:Work,xsd:string,filename of work
+film audio type,dbo:filmAudioType,dbo:Film,xsd:string,film audio type of film
+film colour type,dbo:filmColourType,dbo:Film,xsd:string,film colour type of film
+film number,dbo:filmNumber,dbo:Person,xsd:nonNegativeInteger,film number of person
+FilmPolski.pl id,dbo:filmPolskiId,,xsd:string,filmpolski.pl id
+film runtime (s),dbo:filmRuntime,dbo:Film,xsd:double,film runtime of film
+final flight,dbo:finalFlight,dbo:Rocket,xsd:date,final flight of rocket
+final lost,dbo:finalLost,dbo:TennisPlayer,xsd:nonNegativeInteger,final lost of tennis player
+final lost double,dbo:finalLostDouble,dbo:TennisPlayer,xsd:string,final lost double of tennis player
+final lost single,dbo:finalLostSingle,dbo:TennisPlayer,xsd:string,final lost single of tennis player
+final lost team,dbo:finalLostTeam,dbo:Athlete,xsd:string,final lost team of athlete
+final publication date,dbo:finalPublicationDate,dbo:PeriodicalLiterature,xsd:date,final publication date of periodical literature
+final publication year,dbo:finalPublicationYear,dbo:PeriodicalLiterature,xsd:gYear,final publication year of periodical literature
+fips code,dbo:fipsCode,dbo:PopulatedPlace,xsd:string,fips code of populated place
+first air date,dbo:firstAirDate,dbo:Broadcaster,xsd:date,first air date of broadcaster
+first appearance,dbo:firstAppearance,dbo:FictionalCharacter,xsd:string,first appearance of fictional character
+first ascent,dbo:firstAscent,"dbo:Mountain,Volcano",xsd:string,"first ascent of mountain, volcano"
+year of first ascent,dbo:firstAscentYear,dbo:Mountain,xsd:gYear,year of first ascent of mountain
+first broadcast,dbo:firstBroadcast,dbo:Film,xsd:string,first broadcast of film
+first flight end date,dbo:firstFlightEndDate,dbo:SpaceShuttle,xsd:date,first flight end date of space shuttle
+first flight start date,dbo:firstFlightStartDate,dbo:SpaceShuttle,xsd:date,first flight start date of space shuttle
+first game,dbo:firstGame,dbo:SoccerClub,xsd:string,first game of soccer club
+first launch,dbo:firstLaunch,dbo:YearInSpaceflight,xsd:date,first launch of year in spaceflight
+first launch date,dbo:firstLaunchDate,dbo:LaunchPad,xsd:date,first launch date of launch pad
+first mention,dbo:firstMention,dbo:PopulatedPlace,xsd:string,first mention of populated place
+first place,dbo:firstPlace,,xsd:string,first place
+first pro match,dbo:firstProMatch,dbo:Athlete,xsd:string,first pro match of athlete
+first publication date,dbo:firstPublicationDate,dbo:WrittenWork,xsd:date,first publication date of written work
+first publication year,dbo:firstPublicationYear,dbo:PeriodicalLiterature,xsd:gYear,first publication year of periodical literature
+flag (image),dbo:flag,,xsd:string,flag
+flag border,dbo:flagBorder,,xsd:string,flag border
+flag caption,dbo:flagCaption,dbo:Flag,xsd:string,flag caption of flag
+flag Link,dbo:flagLink,,xsd:string,flag link
+flagSize,dbo:flagSize,dbo:Flag,xsd:integer,flagsize of flag
+flash point,dbo:flashPoint,dbo:ChemicalSubstance,xsd:integer,flash point of chemical substance
+flooding date,dbo:floodingDate,,xsd:date,flooding date
+floor area (m2),dbo:floorArea,dbo:Building,xsd:double,floor area of building
+floor count,dbo:floorCount,dbo:Building,xsd:positiveInteger,floor count of building
+flora,dbo:flora,dbo:Place,xsd:string,flora of place
+flying hours (s),dbo:flyingHours,dbo:MilitaryUnit,xsd:double,flying hours of military unit
+foal date,dbo:foalDate,dbo:Animal,xsd:date,foal date of animal
+foot,dbo:foot,dbo:Person,xsd:string,foot of person
+forces,dbo:forces,,xsd:string,forces
+formation date,dbo:formationDate,dbo:Organisation,xsd:date,formation date of organisation
+formation year,dbo:formationYear,dbo:Organisation,xsd:gYear,formation year of organisation
+former call sign,dbo:formerCallsign,dbo:Broadcaster,xsd:string,former call sign of broadcaster
+former channel,dbo:formerChannel,dbo:Broadcaster,xsd:string,former channel of broadcaster
+former name,dbo:formerName,,rdf:langString,former name
+formula,dbo:formula,dbo:ChemicalSubstance,xsd:string,formula of chemical substance
+foundation,dbo:foundation,dbo:PopulatedPlace,xsd:string,foundation of populated place
+founding date,dbo:foundingDate,,xsd:date,founding date
+founding year,dbo:foundingYear,,xsd:gYear,founding year
+free,dbo:free,dbo:FictionalCharacter,xsd:string,free of fictional character
+free danse score,dbo:freeDanseScore,dbo:Person,xsd:string,free danse score of person
+free flight time (s),dbo:freeFlightTime,dbo:Spacecraft,xsd:double,free flight time of spacecraft
+freeLabel,dbo:freeLabel,dbo:FictionalCharacter,xsd:string,freelabel of fictional character
+free prog competition,dbo:freeProgCompetition,dbo:Person,xsd:string,free prog competition of person
+free prog score,dbo:freeProgScore,dbo:Person,xsd:string,free prog score of person
+free score competition,dbo:freeScoreCompetition,dbo:Person,xsd:string,free score competition of person
+frequency (Hz),dbo:frequency,,xsd:double,frequency
+frequency of publication,dbo:frequencyOfPublication,dbo:PeriodicalLiterature,xsd:string,frequency of publication of periodical literature
+frequently updated,dbo:frequentlyUpdated,dbo:Software,xsd:string,frequently updated of software
+length of a frontier,dbo:frontierLength,dbo:Place,xsd:float,length of a frontier of place
+frozen,dbo:frozen,dbo:BodyOfWater,xsd:string,frozen of body of water
+fuel capacity (μ³),dbo:fuelCapacity,dbo:Automobile,xsd:double,fuel capacity of automobile
+fuel consumption,dbo:fuelConsumption,dbo:AutomobileEngine,xsd:string,fuel consumption of automobile engine
+fuel type,dbo:fuelTypeName,dbo:PowerStation,rdf:langString,fuel type of power station
+full competition,dbo:fullCompetition,dbo:Person,xsd:string,full competition of person
+full score,dbo:fullScore,dbo:Person,xsd:string,full score of person
+function end date,dbo:functionEndDate,dbo:PersonFunction,xsd:date,function end date of person function
+function end year,dbo:functionEndYear,dbo:PersonFunction,xsd:gYear,function end year of person function
+function start date,dbo:functionStartDate,dbo:PersonFunction,xsd:date,function start date of person function
+function start year,dbo:functionStartYear,dbo:PersonFunction,xsd:gYear,function start year of person function
+galicianSpeakersDate,dbo:galicianSpeakersDate,dbo:Language,xsd:gYear,galicianspeakersdate of language
+galicianSpeakersPercentage,dbo:galicianSpeakersPercentage,dbo:Language,xsd:string,galicianspeakerspercentage of language
+Modus the game can be played in,dbo:gameModus,,xsd:string,modus the game can be played in
+games,dbo:games,dbo:OlympicResult,xsd:string,games of olympic result
+gas chambers,dbo:gasChambers,dbo:ConcentrationCamp,xsd:string,gas chambers of concentration camp
+gross domestic product (GDP) per capita,dbo:gdpPerCapita,dbo:PopulatedPlace,xsd:float,gross domestic product per capita of populated place
+gene location end,dbo:geneLocationEnd,dbo:GeneLocation,xsd:integer,gene location end of gene location
+gene location start,dbo:geneLocationStart,dbo:GeneLocation,xsd:integer,gene location start of gene location
+geneReviewsId,dbo:geneReviewsId,dbo:Disease,xsd:string,genereviewsid of disease
+geneReviewsName,dbo:geneReviewsName,dbo:Disease,rdf:langString,genereviewsname of disease
+generation units,dbo:generationUnits,dbo:PowerStation,rdf:langString,generation units of power station
+Genome DB,dbo:genomeDB,dbo:GeneLocation,xsd:string,genome db of gene location
+geolocdual,dbo:geolocDual,dbo:Place,xsd:string,geolocdual of place
+geologic period,dbo:geologicPeriod,dbo:Place,xsd:string,geologic period of place
+geology,dbo:geology,,xsd:string,geology
+gini coefficient,dbo:giniCoefficient,dbo:PopulatedPlace,xsd:float,gini coefficient of populated place
+gini coefficient as of,dbo:giniCoefficientAsOf,dbo:PopulatedPlace,xsd:date,gini coefficient as of of populated place
+gini coefficient ranking,dbo:giniCoefficientRanking,dbo:PopulatedPlace,xsd:positiveInteger,gini coefficient ranking of populated place
+glycemic index,dbo:glycemicIndex,dbo:Food,xsd:integer,glycemic index of food
+gnis code,dbo:gnisCode,dbo:PopulatedPlace,xsd:string,gnis code of populated place
+gnl,dbo:gnl,dbo:PopulatedPlace,xsd:string,gnl of populated place
+goals in league,dbo:goalsInLeague,dbo:SoccerPlayer,xsd:nonNegativeInteger,goals in league of soccer player
+goals in national team,dbo:goalsInNationalTeam,dbo:SoccerPlayer,xsd:nonNegativeInteger,goals in national team of soccer player
+gold medal double,dbo:goldMedalDouble,dbo:TennisPlayer,xsd:string,gold medal double of tennis player
+gold medal mixed,dbo:goldMedalMixed,dbo:TennisPlayer,xsd:string,gold medal mixed of tennis player
+gold medal single,dbo:goldMedalSingle,dbo:TennisPlayer,xsd:string,gold medal single of tennis player
+government elevation (μ),dbo:governmentElevation,dbo:Island,xsd:double,government elevation of island
+governorate,dbo:governorate,dbo:PopulatedPlace,xsd:string,governorate of populated place
+GARDName,dbo:gradName,dbo:Disease,xsd:string,gardname of disease
+GARDNum,dbo:gradNum,dbo:Disease,xsd:string,gardnum of disease
+grave,dbo:grave,dbo:Person,xsd:string,grave of person
+Gray page,dbo:grayPage,dbo:AnatomicalStructure,xsd:positiveInteger,gray page of anatomical structure
+Gray subject,dbo:graySubject,dbo:AnatomicalStructure,xsd:positiveInteger,gray subject of anatomical structure
+name in ancient Greek,dbo:greekName,,xsd:string,name in ancient greek
+green long distance piste number,dbo:greenLongDistancePisteNumber,dbo:Place,xsd:nonNegativeInteger,green long distance piste number of place
+green ski piste number,dbo:greenSkiPisteNumber,dbo:Place,xsd:nonNegativeInteger,green ski piste number of place
+grid reference,dbo:gridReference,dbo:Place,xsd:string,grid reference of place
+grinding capability,dbo:grindingCapability,dbo:Mill,xsd:string,grinding capability of mill
+gross ($),dbo:gross,dbo:Film,xsd:double,gross of film
+gross domestic product (GDP),dbo:grossDomesticProduct,dbo:PopulatedPlace,xsd:float,gross domestic product of populated place
+gross domestic product as of,dbo:grossDomesticProductAsOf,dbo:PopulatedPlace,xsd:date,gross domestic product as of of populated place
+gross domestic product per people,dbo:grossDomesticProductPerPeople,dbo:Place,xsd:string,gross domestic product per people of place
+gross domestic product rank,dbo:grossDomesticProductRank,dbo:Place,xsd:string,gross domestic product rank of place
+grounds for termination of activities,dbo:groundsForLiquidation,dbo:Company,rdf:langString,grounds for termination of activities of company
+group commemorated,dbo:groupCommemorated,dbo:Monument,xsd:string,group commemorated of monument
+aircraft gun,dbo:gun,dbo:Aircraft,xsd:string,aircraft gun of aircraft
+hair color,dbo:hairColor,dbo:Person,xsd:string,hair color of person
+hair colour,dbo:hairColour,dbo:Person,xsd:string,hair colour of person
+hairs,dbo:hairs,dbo:FictionalCharacter,xsd:string,hairs of fictional character
+hall of fame,dbo:hallOfFame,dbo:IceHockeyPlayer,xsd:string,hall of fame of ice hockey player
+handisport,dbo:handisport,dbo:Person,xsd:string,handisport of person
+Has KML data associated with it (usually because of KML overlays),dbo:hasKMLData,dbo:File,xsd:string,has kml data associated with it of file
+has natural bust,dbo:hasNaturalBust,dbo:Person,xsd:string,has natural bust of person
+head label,dbo:headLabel,dbo:School,rdf:langString,head label of school
+height (μ),dbo:height,,xsd:double,height
+height above average terrain (μ),dbo:heightAboveAverageTerrain,dbo:Broadcaster,xsd:double,height above average terrain of broadcaster
+height against,dbo:heightAgainst,dbo:Athlete,xsd:string,height against of athlete
+height attack,dbo:heightAttack,dbo:Athlete,xsd:string,height attack of athlete
+heisman,dbo:heisman,dbo:Athlete,xsd:string,heisman of athlete
+highest break,dbo:highestBreak,dbo:SnookerPlayer,xsd:integer,highest break of snooker player
+highest building in year,dbo:highestBuildingInYear,dbo:Skyscraper,xsd:date,highest building in year of skyscraper
+highest point of the island,dbo:highestPointIsland,dbo:Island,xsd:string,highest point of the island of island
+highest rank,dbo:highestRank,dbo:SnookerPlayer,xsd:integer,highest rank of snooker player
+hip size (μ),dbo:hipSize,dbo:Person,xsd:double,hip size of person
+historical map,dbo:historicalMap,dbo:Place,xsd:string,historical map of place
+historical name,dbo:historicalName,dbo:Place,rdf:langString,historical name of place
+historical region,dbo:historicalRegion,dbo:PopulatedPlace,xsd:string,historical region of populated place
+hof,dbo:hof,dbo:Athlete,xsd:string,hof of athlete
+homage,dbo:homage,dbo:Person,xsd:string,homage of person
+colour hex code of home jersey or its parts,dbo:homeColourHexCode,,xsd:string,colour hex code of home jersey or its parts
+hopman cup,dbo:hopmanCup,dbo:Athlete,xsd:string,hopman cup of athlete
+hra state,dbo:hraState,dbo:PopulatedPlace,xsd:string,hra state of populated place
+hue coordinate in the HSV colour space,dbo:hsvCoordinateHue,dbo:Colour,xsd:integer,hue coordinate in the hsv colour space of colour
+saturation coordinate in the HSV colour space,dbo:hsvCoordinateSaturation,dbo:Colour,xsd:integer,saturation coordinate in the hsv colour space of colour
+value coordinate in the HSV colour space,dbo:hsvCoordinateValue,dbo:Colour,xsd:integer,value coordinate in the hsv colour space of colour
+Human Development Index (HDI),dbo:humanDevelopmentIndex,dbo:PopulatedPlace,xsd:float,human development index of populated place
+human development index as of,dbo:humanDevelopmentIndexAsOf,dbo:PopulatedPlace,xsd:date,human development index as of of populated place
+human development index rank,dbo:humanDevelopmentIndexRank,dbo:Place,xsd:string,human development index rank of place
+iafd id,dbo:iafdId,dbo:Film,xsd:string,iafd id of film
+IATA code,dbo:iataAirlineCode,dbo:Airline,xsd:string,iata code of airline
+IATA Location Identifier,dbo:iataLocationIdentifier,dbo:Infrastructure,xsd:string,iata location identifier of infrastructure
+IBDB ID,dbo:ibdbId,dbo:Play,xsd:string,ibdb id of play
+ICAO code,dbo:icaoAirlineCode,dbo:Airline,xsd:string,icao code of airline
+ICAO Location Identifier,dbo:icaoLocationIdentifier,dbo:Airport,xsd:string,icao location identifier of airport
+ICD1,dbo:icd1,dbo:Disease,xsd:string,icd1 of disease
+ICD10,dbo:icd10,dbo:Disease,xsd:string,icd10 of disease
+ICD9,dbo:icd9,dbo:Disease,xsd:string,icd9 of disease
+ICDO,dbo:icdo,dbo:Disease,xsd:string,icdo of disease
+iconographic attributes,dbo:iconographicAttributes,dbo:Saint,rdf:langString,iconographic attributes of saint
+id,dbo:id,dbo:WorldHeritageSite,xsd:string,id of world heritage site
+Allocine ID,dbo:idAllocine,dbo:Film,xsd:string,allocine id of film
+id number,dbo:idNumber,dbo:Person,xsd:nonNegativeInteger,id number of person
+identification symbol,dbo:identificationSymbol,dbo:MilitaryUnit,xsd:string,identification symbol of military unit
+lihf hof,dbo:iihfHof,dbo:Person,xsd:string,lihf hof of person
+illiteracy,dbo:illiteracy,dbo:PopulatedPlace,xsd:float,illiteracy of populated place
+image size (px),dbo:imageSize,,xsd:integer,image size
+IMDB id,dbo:imdbId,,xsd:string,imdb id
+impact factor,dbo:impactFactor,dbo:AcademicJournal,xsd:double,impact factor of academic journal
+impact factor as of,dbo:impactFactorAsOf,dbo:AcademicJournal,xsd:gYear,impact factor as of of academic journal
+imposed danse competition,dbo:imposedDanseCompetition,dbo:Person,xsd:string,imposed danse competition of person
+imposed danse score,dbo:imposedDanseScore,dbo:Person,xsd:string,imposed danse score of person
+The IUPAC International Chemical Identifier,dbo:inchi,dbo:ChemicalCompound,xsd:string,the iupac international chemical identifier of chemical compound
+inclination,dbo:inclination,dbo:Spacecraft,xsd:float,inclination of spacecraft
+income,dbo:income,dbo:PopulatedPlace,xsd:string,income of populated place
+individualised GND number,dbo:individualisedGnd,,xsd:string,individualised gnd number
+individualised PND number,dbo:individualisedPnd,dbo:Person,xsd:nonNegativeInteger,individualised pnd number of person
+infant mortality,dbo:infantMortality,dbo:PopulatedPlace,xsd:float,infant mortality of populated place
+information,dbo:information,dbo:Place,xsd:string,information of place
+information name,dbo:informationName,dbo:Place,xsd:string,information name of place
+ingredient name (literal),dbo:ingredientName,dbo:Food,xsd:string,ingredient name of food
+initally used for,dbo:initiallyUsedFor,dbo:ArchitecturalStructure,xsd:string,initally used for of architectural structure
+INN,dbo:inn,dbo:ChemicalCompound,xsd:string,inn of chemical compound
+inscription,dbo:inscription,,xsd:string,inscription
+INSEE code,dbo:inseeCode,dbo:Settlement,xsd:string,insee code of settlement
+installed capacity (W),dbo:installedCapacity,dbo:PowerStation,xsd:double,installed capacity of power station
+interest,dbo:interest,dbo:SiteOfSpecialScientificInterest,xsd:string,interest of site of special scientific interest
+international phone prefix,dbo:internationalPhonePrefix,dbo:PopulatedPlace,xsd:string,international phone prefix of populated place
+international phone prefix label,dbo:internationalPhonePrefixLabel,dbo:PopulatedPlace,xsd:string,international phone prefix label of populated place
+internationally,dbo:internationally,dbo:Company,xsd:boolean,internationally of company
+introduced,dbo:introduced,,xsd:date,introduced
+introduction date,dbo:introductionDate,dbo:MeanOfTransportation,xsd:date,introduction date of mean of transportation
+IOBDB ID,dbo:iobdbId,dbo:Play,xsd:string,iobdb id of play
+is a city state,dbo:isCityState,dbo:Settlement,xsd:string,is a city state of settlement
+is handicapped accessible,dbo:isHandicappedAccessible,dbo:Station,xsd:boolean,is handicapped accessible of station
+is part of (literal),dbo:isPartOfName,,xsd:string,is part of
+is peer reviewed,dbo:isPeerReviewed,dbo:AcademicJournal,xsd:boolean,is peer reviewed of academic journal
+ISBN,dbo:isbn,dbo:WrittenWork,xsd:string,isbn of written work
+International Standard Identifier for Libraries and Related Organizations (ISIL),dbo:isil,dbo:Library,xsd:string,international standard identifier for libraries and related organizations of library
+ISNI Id,dbo:isniId,,xsd:string,isni id
+ISO 3166-1 code,dbo:iso31661Code,dbo:Place,xsd:string,iso 3166-1 code of place
+ISO 639-1 code,dbo:iso6391Code,dbo:Language,xsd:string,iso 639-1 code of language
+ISO 639-2 code,dbo:iso6392Code,dbo:Language,xsd:string,iso 639-2 code of language
+ISO 639-3 code,dbo:iso6393Code,dbo:Language,xsd:string,iso 639-3 code of language
+iso code of a place,dbo:isoCode,dbo:Place,xsd:string,iso code of a place of place
+ISO region code,dbo:isoCodeRegion,dbo:Settlement,xsd:string,iso region code of settlement
+iss dockings,dbo:issDockings,dbo:SpaceShuttle,xsd:nonNegativeInteger,iss dockings of space shuttle
+issn,dbo:issn,dbo:PeriodicalLiterature,xsd:string,issn of periodical literature
+ist,dbo:ist,dbo:PopulatedPlace,xsd:string,ist of populated place
+code istat,dbo:istat,dbo:PopulatedPlace,xsd:string,code istat of populated place
+italic title,dbo:italicTitle,dbo:MusicalWork,xsd:string,italic title of musical work
+ithf date,dbo:ithfDate,dbo:Athlete,xsd:string,ithf date of athlete
+iucn category,dbo:iucnCategory,dbo:ProtectedArea,xsd:string,iucn category of protected area
+IUPAC name,dbo:iupacName,dbo:Drug,rdf:langString,iupac name of drug
+JSTOR,dbo:jstor,dbo:AcademicJournal,xsd:string,jstor of academic journal
+junior years end year,dbo:juniorYearsEndYear,dbo:Person,xsd:gYear,junior years end year of person
+junior years start year,dbo:juniorYearsStartYear,dbo:Person,xsd:gYear,junior years start year of person
+jutsu,dbo:jutsu,dbo:Person,xsd:string,jutsu of person
+KEGG,dbo:kegg,dbo:ChemicalSubstance,xsd:string,kegg of chemical substance
+khl draft year,dbo:khlDraft,dbo:IceHockeyPlayer,xsd:string,khl draft year of ice hockey player
+khl draft year,dbo:khlDraftYear,dbo:IceHockeyPlayer,xsd:string,khl draft year of ice hockey player
+killed by,dbo:killedBy,dbo:Person,xsd:string,killed by of person
+kindOfLanguage,dbo:kinOfLanguage,,xsd:string,kindoflanguage
+kind of coordinate,dbo:kindOfCoordinate,dbo:Place,xsd:string,kind of coordinate of place
+kind of criminal,dbo:kindOfCriminal,dbo:Criminal,xsd:string,kind of criminal of criminal
+kind of criminal action,dbo:kindOfCriminalAction,dbo:Criminal,xsd:string,kind of criminal action of criminal
+kind of rock,dbo:kindOfRock,dbo:Place,xsd:string,kind of rock of place
+ko,dbo:ko,dbo:Boxer,xsd:nonNegativeInteger,ko of boxer
+lah hof,dbo:lahHof,dbo:Person,xsd:string,lah hof of person
+area of a land (m2),dbo:landArea,dbo:Place,xsd:double,area of a land of place
+land percentage of a place,dbo:landPercentage,dbo:Place,xsd:float,land percentage of a place of place
+land registry code,dbo:landRegistryCode,dbo:Settlement,xsd:string,land registry code of settlement
+landing date,dbo:landingDate,dbo:SpaceMission,xsd:date,landing date of space mission
+landing site,dbo:landingSite,dbo:SpaceMission,xsd:string,landing site of space mission
+norwegian landskap,dbo:landskap,dbo:NorwaySettlement,xsd:string,norwegian landskap of norway settlement
+austrian land tag,dbo:landtag,dbo:AdministrativeRegion,xsd:string,austrian land tag of administrative region
+austrian land tag mandate,dbo:landtagMandate,dbo:AdministrativeRegion,xsd:string,austrian land tag mandate of administrative region
+language code,dbo:languageCode,dbo:Language,xsd:string,language code of language
+largest win,dbo:largestWin,dbo:SoccerClub,xsd:string,largest win of soccer club
+last air date,dbo:lastAirDate,dbo:Broadcaster,xsd:date,last air date of broadcaster
+last election date,dbo:lastElectionDate,dbo:Legislature,xsd:date,last election date of legislature
+last flight end date,dbo:lastFlightEndDate,dbo:SpaceShuttle,xsd:date,last flight end date of space shuttle
+last flight start date,dbo:lastFlightStartDate,dbo:SpaceShuttle,xsd:date,last flight start date of space shuttle
+last launch,dbo:lastLaunch,dbo:YearInSpaceflight,xsd:date,last launch of year in spaceflight
+last launch date,dbo:lastLaunchDate,dbo:LaunchPad,xsd:date,last launch date of launch pad
+last position,dbo:lastPosition,dbo:FormulaOneRacer,xsd:positiveInteger,last position of formula one racer
+last pro match,dbo:lastProMatch,dbo:Athlete,xsd:string,last pro match of athlete
+last publication date,dbo:lastPublicationDate,dbo:WrittenWork,xsd:date,last publication date of written work
+last season,dbo:lastSeason,dbo:FormulaOneRacer,xsd:date,last season of formula one racer
+laterality,dbo:laterality,dbo:Athlete,xsd:string,laterality of athlete
+date of latest election,dbo:latestElection,dbo:PopulatedPlace,xsd:date,date of latest election of populated place
+latest preview date,dbo:latestPreviewDate,dbo:Software,xsd:date,latest preview date of software
+latest preview version,dbo:latestPreviewVersion,dbo:Software,xsd:string,latest preview version of software
+latest release date,dbo:latestReleaseDate,dbo:Software,xsd:date,latest release date of software
+latest release version,dbo:latestReleaseVersion,dbo:Software,xsd:string,latest release version of software
+name in latin,dbo:latinName,,xsd:string,name in latin
+launch,dbo:launch,dbo:Spacecraft,xsd:date,launch of spacecraft
+launch date,dbo:launchDate,dbo:SpaceMission,xsd:date,launch date of space mission
+launches,dbo:launches,dbo:LaunchPad,xsd:nonNegativeInteger,launches of launch pad
+law country,dbo:lawCountry,dbo:Place,xsd:string,law country of place
+laying down,dbo:layingDown,dbo:Ship,xsd:date,laying down of ship
+LCC,dbo:lcc,dbo:WrittenWork,xsd:string,lcc of written work
+LCCN,dbo:lccn,dbo:WrittenWork,xsd:string,lccn of written work
+LCCN Id,dbo:lccnId,,xsd:string,lccn id
+lchf draft year,dbo:lchfDraft,dbo:IceHockeyPlayer,xsd:string,lchf draft year of ice hockey player
+lchf draft year,dbo:lchfDraftYear,dbo:IceHockeyPlayer,xsd:string,lchf draft year of ice hockey player
+lead year,dbo:leadYear,"dbo:Athlete,_CareerStation",xsd:string,"lead year of athlete,_ career station"
+leader title,dbo:leaderTitle,dbo:PopulatedPlace,rdf:langString,leader title of populated place
+leadership,dbo:leadership,dbo:Person,xsd:string,leadership of person
+legal arrondissement,dbo:legalArrondissement,dbo:BelgiumSettlement,xsd:string,legal arrondissement of belgium settlement
+legal article,dbo:legalArticle,dbo:LegalCase,xsd:string,legal article of legal case
+legislative period name,dbo:legislativePeriodName,dbo:Legislature,xsd:string,legislative period name of legislature
+length (μ),dbo:length,,xsd:double,length
+length quote,dbo:lengthQuote,dbo:Place,xsd:string,length quote of place
+length reference,dbo:lengthReference,dbo:RouteOfTransportation,xsd:string,length reference of route of transportation
+lethal when given to chickens,dbo:lethalOnChickens,dbo:ChemicalSubstance,xsd:string,lethal when given to chickens of chemical substance
+lethal when given to mice,dbo:lethalOnMice,dbo:ChemicalSubstance,xsd:string,lethal when given to mice of chemical substance
+lethal when given to rabbits,dbo:lethalOnRabbits,dbo:ChemicalSubstance,xsd:string,lethal when given to rabbits of chemical substance
+lethal when given to rats,dbo:lethalOnRats,dbo:ChemicalSubstance,xsd:string,lethal when given to rats of chemical substance
+date of liberation,dbo:liberationDate,dbo:ConcentrationCamp,xsd:string,date of liberation of concentration camp
+libretto,dbo:libretto,dbo:Opera,xsd:string,libretto of opera
+licence letter of a german settlement,dbo:licenceLetter,dbo:GermanSettlement,xsd:string,licence letter of a german settlement of german settlement
+licence number,dbo:licenceNumber,dbo:PopulatedPlace,xsd:string,licence number of populated place
+licence number label,dbo:licenceNumberLabel,dbo:PopulatedPlace,xsd:string,licence number label of populated place
+licensee,dbo:licensee,,xsd:string,licensee
+lieutenancy,dbo:lieutenancy,dbo:PopulatedPlace,xsd:string,lieutenancy of populated place
+life expectancy,dbo:lifeExpectancy,dbo:PopulatedPlace,xsd:string,life expectancy of populated place
+limit,dbo:limit,dbo:Place,xsd:string,limit of place
+line length (μ),dbo:lineLength,dbo:RouteOfTransportation,xsd:double,line length of route of transportation
+linked space,dbo:linkedSpace,dbo:Place,xsd:string,linked space of place
+little pool record,dbo:littlePoolRecord,dbo:Person,xsd:string,little pool record of person
+load limit (g),dbo:loadLimit,dbo:Bridge,xsd:double,load limit of bridge
+local phone prefix,dbo:localPhonePrefix,dbo:PopulatedPlace,xsd:nonNegativeInteger,local phone prefix of populated place
+locality of a switzerland settlement,dbo:locality,dbo:Settlement,xsd:string,locality of a switzerland settlement of settlement
+localization of the island,dbo:localization,dbo:Island,xsd:string,localization of the island of island
+legend thumbnail localization,dbo:localizationThumbnailCaption,dbo:PopulatedPlace,xsd:string,legend thumbnail localization of populated place
+Location Identifier,dbo:locationIdentifier,dbo:Airport,xsd:string,location identifier of airport
+locationName,dbo:locationName,,xsd:string,locationname
+locus supplementary data,dbo:locusSupplementaryData,dbo:Protein,xsd:string,locus supplementary data of protein
+logo,dbo:logo,,xsd:string,logo
+long distance piste kilometre (μ),dbo:longDistancePisteKilometre,dbo:Place,xsd:double,long distance piste kilometre of place
+long distance piste number,dbo:longDistancePisteNumber,dbo:Place,xsd:nonNegativeInteger,long distance piste number of place
+longName,dbo:longName,,rdf:langString,longname
+longtype,dbo:longtype,dbo:Album,xsd:string,longtype of album
+lower age,dbo:lowerAge,dbo:School,xsd:nonNegativeInteger,lower age of school
+lower earth orbit payload (g),dbo:lowerEarthOrbitPayload,dbo:Rocket,xsd:double,lower earth orbit payload of rocket
+lowest,dbo:lowest,dbo:Place,xsd:string,lowest of place
+lunar EVA time (s),dbo:lunarEvaTime,dbo:SpaceMission,xsd:double,lunar eva time of space mission
+lunar landing site,dbo:lunarLandingSite,dbo:SpaceMission,xsd:string,lunar landing site of space mission
+lunar orbit time (s),dbo:lunarOrbitTime,dbo:SpaceMission,xsd:double,lunar orbit time of space mission
+lunar surface time (s),dbo:lunarSurfaceTime,dbo:SpaceMission,xsd:double,lunar surface time of space mission
+maiden flight,dbo:maidenFlight,dbo:Rocket,xsd:date,maiden flight of rocket
+maiden voyage,dbo:maidenVoyage,dbo:Ship,xsd:date,maiden voyage of ship
+main building,dbo:mainBuilding,dbo:Shrine,xsd:string,main building of shrine
+main islands,dbo:mainIslands,dbo:Island,xsd:string,main islands of island
+mainspan (μ),dbo:mainspan,dbo:Bridge,xsd:double,mainspan of bridge
+majority floor leader,dbo:majorityFloorLeader,,xsd:integer,majority floor leader
+majority leader,dbo:majorityLeader,,xsd:integer,majority leader
+management elevation (μ),dbo:managementElevation,,xsd:double,management elevation
+manager title,dbo:managerTitle,dbo:SoccerClub,xsd:string,manager title of soccer club
+manager years,dbo:managerYears,dbo:SoccerPlayer,xsd:date,manager years of soccer player
+manager years end year,dbo:managerYearsEndYear,,xsd:gYear,manager years end year
+manager years start year,dbo:managerYearsStartYear,,xsd:gYear,manager years start year
+political mandate,dbo:mandate,,xsd:string,political mandate
+map caption,dbo:mapCaption,dbo:Place,xsd:string,map caption of place
+map description,dbo:mapDescription,dbo:Place,xsd:string,map description of place
+market capitalisation ($),dbo:marketCapitalisation,dbo:Company,xsd:double,market capitalisation of company
+mascot,dbo:mascot,,xsd:string,mascot
+mass (g),dbo:mass,,xsd:double,mass
+match point,dbo:matchPoint,dbo:Person,xsd:string,match point of person
+max,dbo:max,,xsd:nonNegativeInteger,max
+maximum absolute magnitude,dbo:maxAbsoluteMagnitude,dbo:CelestialBody,xsd:double,maximum absolute magnitude of celestial body
+maximum apparent magnitude,dbo:maxApparentMagnitude,dbo:CelestialBody,xsd:double,maximum apparent magnitude of celestial body
+maximum preparation time (s),dbo:maxTime,dbo:Food,xsd:double,maximum preparation time of food
+maximum area,dbo:maximumArea,dbo:Place,xsd:string,maximum area of place
+maximum area quote,dbo:maximumAreaQuote,dbo:Place,xsd:string,maximum area quote of place
+maximum boat beam (μ),dbo:maximumBoatBeam,dbo:Canal,xsd:double,maximum boat beam of canal
+maximum boat length (μ),dbo:maximumBoatLength,dbo:Canal,xsd:double,maximum boat length of canal
+maximum depth (μ),dbo:maximumDepth,dbo:Place,xsd:double,maximum depth of place
+maximum depth quote,dbo:maximumDepthQuote,dbo:Place,xsd:string,maximum depth quote of place
+maximum discharge (m³/s),dbo:maximumDischarge,,xsd:double,maximum discharge
+maximum elevation (μ),dbo:maximumElevation,dbo:Place,xsd:double,maximum elevation of place
+maximum inclination,dbo:maximumInclination,dbo:LaunchPad,xsd:float,maximum inclination of launch pad
+maximum temperature (K),dbo:maximumTemperature,dbo:Planet,xsd:double,maximum temperature of planet
+mayor article,dbo:mayorArticle,dbo:Place,xsd:string,mayor article of place
+mayor councillor,dbo:mayorCouncillor,,xsd:string,mayor councillor
+mayor function of a switzerland settlement,dbo:mayorFunction,dbo:SwitzerlandSettlement,xsd:string,mayor function of a switzerland settlement of switzerland settlement
+mayorMandate,dbo:mayorMandate,dbo:Mayor,xsd:string,mayormandate of mayor
+MBA Id,dbo:mbaId,,xsd:string,mba id
+mean radius (μ),dbo:meanRadius,dbo:Planet,xsd:double,mean radius of planet
+mean temperature (K),dbo:meanTemperature,dbo:Planet,xsd:double,mean temperature of planet
+meaning,dbo:meaning,,xsd:string,meaning
+measurements,dbo:measurements,dbo:Person,xsd:string,measurements of person
+MedlinePlus,dbo:medlinePlus,,xsd:string,medlineplus
+melting point (K),dbo:meltingPoint,,xsd:double,melting point
+member,dbo:member,dbo:Person,xsd:string,member of person
+membership,dbo:membership,dbo:Organisation,rdf:langString,membership of organisation
+date membership established,dbo:membershipAsOf,"dbo:Organisation,_Parish",xsd:date,"date membership established of organisation,_ parish"
+merger date,dbo:mergerDate,dbo:Place,xsd:date,merger date of place
+MeSH ID,dbo:meshId,dbo:Disease,xsd:string,mesh id of disease
+MeSH name,dbo:meshName,dbo:AnatomicalStructure,rdf:langString,mesh name of anatomical structure
+MeSH number,dbo:meshNumber,dbo:AnatomicalStructure,xsd:string,mesh number of anatomical structure
+Messier name,dbo:messierName,dbo:CelestialBody,xsd:string,messier name of celestial body
+mgiid,dbo:mgiid,dbo:Biomolecule,xsd:string,mgiid of biomolecule
+military command,dbo:militaryCommand,dbo:MilitaryPerson,xsd:string,military command of military person
+military function,dbo:militaryFunction,dbo:MilitaryPerson,xsd:string,military function of military person
+military government,dbo:militaryGovernment,,xsd:string,military government
+military unit size,dbo:militaryUnitSize,,xsd:string,military unit size
+mill span (μ),dbo:millSpan,dbo:Mill,xsd:double,mill span of mill
+mill code BE,dbo:millsCodeBE,dbo:Mill,xsd:string,mill code be of mill
+mill code NL,dbo:millsCodeDutch,dbo:Mill,xsd:string,mill code nl of mill
+mill code NL,dbo:millsCodeNL,dbo:Mill,xsd:string,mill code nl of mill
+mill dissapeared code NL,dbo:millsCodeNLVerdwenen,dbo:Mill,xsd:string,mill dissapeared code nl of mill
+millsCodeNLWindmotoren,dbo:millsCodeNLWindmotoren,dbo:Mill,xsd:string,millscodenlwindmotoren of mill
+min,dbo:min,,xsd:nonNegativeInteger,min
+minimum preparation time (s),dbo:minTime,dbo:Food,xsd:double,minimum preparation time of food
+minimum area,dbo:minimumArea,dbo:Place,xsd:string,minimum area of place
+minimum area quote,dbo:minimumAreaQuote,dbo:Place,xsd:string,minimum area quote of place
+minimum discharge (m³/s),dbo:minimumDischarge,,xsd:double,minimum discharge
+minimum elevation (μ),dbo:minimumElevation,dbo:Place,xsd:double,minimum elevation of place
+minimum inclination,dbo:minimumInclination,dbo:LaunchPad,xsd:float,minimum inclination of launch pad
+minimum temperature (K),dbo:minimumTemperature,dbo:Planet,xsd:double,minimum temperature of planet
+minority floor leader,dbo:minorityFloorLeader,,xsd:integer,minority floor leader
+minority leader,dbo:minorityLeader,,xsd:integer,minority leader
+mir dockings,dbo:mirDockings,dbo:SpaceShuttle,xsd:nonNegativeInteger,mir dockings of space shuttle
+mission duration (s),dbo:missionDuration,dbo:SpaceMission,xsd:double,mission duration of space mission
+missions,dbo:missions,dbo:SpaceShuttle,xsd:nonNegativeInteger,missions of space shuttle
+model,dbo:model,dbo:Sales,xsd:string,model of sales
+model end date,dbo:modelEndDate,dbo:MeanOfTransportation,xsd:date,model end date of mean of transportation
+model end year,dbo:modelEndYear,dbo:MeanOfTransportation,xsd:gYear,model end year of mean of transportation
+type series,dbo:modelLineVehicle,dbo:MeanOfTransportation,xsd:string,type series of mean of transportation
+model start date,dbo:modelStartDate,dbo:MeanOfTransportation,xsd:date,model start date of mean of transportation
+model start year,dbo:modelStartYear,dbo:MeanOfTransportation,xsd:gYear,model start year of mean of transportation
+Moderna,dbo:moderna,,xsd:string,moderna
+ModernaCumulativeDoses,dbo:modernaCumul,,xsd:integer,modernacumulativedoses
+molar mass,dbo:molarMass,dbo:ChemicalSubstance,xsd:double,molar mass of chemical substance
+molecular weight,dbo:molecularWeight,dbo:ChemicalSubstance,xsd:nonNegativeInteger,molecular weight of chemical substance
+month,dbo:month,,xsd:string,month
+mood,dbo:mood,dbo:Person,xsd:string,mood of person
+motive,dbo:motive,dbo:Criminal,xsd:string,motive of criminal
+motto,dbo:motto,,xsd:string,motto
+mount,dbo:mount,dbo:Person,xsd:string,mount of person
+mouth elevation (μ),dbo:mouthElevation,,xsd:double,mouth elevation
+mukthar of a lebanon settlement,dbo:mukhtar,dbo:LebanonSettlement,xsd:string,mukthar of a lebanon settlement of lebanon settlement
+municipality code,dbo:municipalityCode,dbo:Place,xsd:string,municipality code of place
+a municipality's new name,dbo:municipalityRenamedTo,dbo:Municipality,xsd:string,a municipality's new name of municipality
+type of municipality,dbo:municipalityType,dbo:Municipality,xsd:string,type of municipality of municipality
+MusicBrainz artist id,dbo:musicBrainzArtistId,,xsd:string,musicbrainz artist id
+musicFormat,dbo:musicFormat,dbo:Album,xsd:string,musicformat of album
+musical key,dbo:musicalKey,dbo:MusicalWork,xsd:string,musical key of musical work
+mute character in play,dbo:muteCharacterInPlay,dbo:Play,xsd:string,mute character in play of play
+mvp,dbo:mvp,dbo:Athlete,xsd:string,mvp of athlete
+name,dbo:name,,rdf:langString,name
+so named since,dbo:nameAsOf,,xsd:gYear,so named since
+name day,dbo:nameDay,dbo:GivenName,xsd:date,name day of given name
+name in Yue Chinese,dbo:nameInCantoneseChinese,,rdf:langString,name in yue chinese
+name in Hangul-written Korean,dbo:nameInHangulKorean,,rdf:langString,name in hangul-written korean
+name in Hanja-written (traditional) Korean,dbo:nameInHanjaKorean,,rdf:langString,name in hanja-written korean
+name in Japanese,dbo:nameInJapanese,,rdf:langString,name in japanese
+name in Mindongyu Chinese,dbo:nameInMindongyuChinese,,rdf:langString,name in mindongyu chinese
+name in Minnanyu Chinese,dbo:nameInMinnanyuChinese,,rdf:langString,name in minnanyu chinese
+name in Pinyin Chinese,dbo:nameInPinyinChinese,,rdf:langString,name in pinyin chinese
+name in Simplified Chinese,dbo:nameInSimplifiedChinese,,rdf:langString,name in simplified chinese
+name in Traditional Chinese,dbo:nameInTraditionalChinese,,rdf:langString,name in traditional chinese
+name in the Wade-Giles transscription of Chinese,dbo:nameInWadeGilesChinese,,rdf:langString,name in the wade-giles transscription of chinese
+names,dbo:names,dbo:Openswarm,rdf:langString,names of openswarm
+nation,dbo:nation,dbo:PopulatedPlace,xsd:string,nation of populated place
+national championship,dbo:nationalChampionship,dbo:Athlete,xsd:string,national championship of athlete
+national ranking,dbo:nationalRanking,dbo:EducationalInstitution,xsd:positiveInteger,national ranking of educational institution
+national team year,dbo:nationalTeamYear,dbo:Person,xsd:string,national team year of person
+National Topographic System map number,dbo:nationalTopographicSystemMapNumber,dbo:Place,xsd:string,national topographic system map number of place
+national tournament bronze,dbo:nationalTournamentBronze,dbo:Person,xsd:nonNegativeInteger,national tournament bronze of person
+national tournament gold,dbo:nationalTournamentGold,dbo:Person,xsd:nonNegativeInteger,national tournament gold of person
+national tournament silver,dbo:nationalTournamentSilver,dbo:Person,xsd:nonNegativeInteger,national tournament silver of person
+national years,dbo:nationalYears,dbo:SoccerPlayer,xsd:gYear,national years of soccer player
+Number of revision per month,dbo:nbRevPerMonth,prov:Entity,xsd:anyURI,number of revision per month of entity
+Number of revision per year,dbo:nbRevPerYear,prov:Entity,xsd:anyURI,number of revision per year of entity
+Number of unique contributors,dbo:nbUniqueContrib,prov:Entity,xsd:integer,number of unique contributors of entity
+ncaa season,dbo:ncaaSeason,dbo:Athlete,xsd:string,ncaa season of athlete
+ncbhof,dbo:ncbhof,dbo:Athlete,xsd:string,ncbhof of athlete
+NCI,dbo:nciId,dbo:Disease,xsd:string,nci of disease
+NDL id,dbo:ndlId,,xsd:string,ndl id
+neighbour constellations,dbo:neighbourConstellations,dbo:Constellation,xsd:string,neighbour constellations of constellation
+neighbour region,dbo:neighbourRegion,dbo:Place,xsd:string,neighbour region of place
+neighbourhood of a hungarian settlement,dbo:neighbourhood,dbo:HungarySettlement,xsd:string,neighbourhood of a hungarian settlement of hungary settlement
+net income ($),dbo:netIncome,dbo:Company,xsd:double,net income of company
+networth ($),dbo:networth,dbo:Person,xsd:double,networth of person
+number of the next track,dbo:nextTrackNumber,dbo:Work,xsd:nonNegativeInteger,number of the next track of work
+nfl code,dbo:nflCode,dbo:Athlete,xsd:string,nfl code of athlete
+nfl season,dbo:nflSeason,dbo:Athlete,xsd:string,nfl season of athlete
+NGC name,dbo:ngcName,dbo:CelestialBody,xsd:string,ngc name of celestial body
+NIS code,dbo:nisCode,dbo:PopulatedPlace,xsd:string,nis code of populated place
+NLA Id,dbo:nlaId,,xsd:string,nla id
+NNDB id,dbo:nndbId,dbo:Person,xsd:string,nndb id of person
+no contest,dbo:noContest,dbo:Boxer,xsd:nonNegativeInteger,no contest of boxer
+non professional career,dbo:nonProfessionalCareer,dbo:Person,xsd:string,non professional career of person
+NORD,dbo:nord,dbo:Disease,xsd:string,nord of disease
+notable features,dbo:notableFeatures,dbo:Galaxy,xsd:string,notable features of galaxy
+note,dbo:note,dbo:AutomobileEngine,xsd:string,note of automobile engine
+note on place of burial,dbo:noteOnPlaceOfBurial,dbo:MilitaryPerson,xsd:string,note on place of burial of military person
+note on resting place,dbo:noteOnRestingPlace,dbo:Person,xsd:string,note on resting place of person
+notes,dbo:notes,,xsd:string,notes
+notify date,dbo:notifyDate,dbo:SiteOfSpecialScientificInterest,xsd:date,notify date of site of special scientific interest
+NRHP Reference Number,dbo:nrhpReferenceNumber,dbo:HistoricPlace,xsd:string,nrhp reference number of historic place
+NSSDC ID,dbo:nssdcId,dbo:SpaceStation,xsd:string,nssdc id of space station
+number,dbo:number,,xsd:nonNegativeInteger,number
+number built,dbo:numberBuilt,dbo:Aircraft,xsd:nonNegativeInteger,number built of aircraft
+number of academic staff,dbo:numberOfAcademicStaff,dbo:EducationalInstitution,xsd:nonNegativeInteger,number of academic staff of educational institution
+number of albums,dbo:numberOfAlbums,dbo:MusicalArtist,xsd:nonNegativeInteger,number of albums of musical artist
+number of arrondissement,dbo:numberOfArrondissement,dbo:Department,xsd:nonNegativeInteger,number of arrondissement of department
+number of bombs,dbo:numberOfBombs,dbo:MilitaryAircraft,xsd:nonNegativeInteger,number of bombs of military aircraft
+number of bronze medals won,dbo:numberOfBronzeMedalsWon,dbo:SportCompetitionResult,xsd:nonNegativeInteger,number of bronze medals won of sport competition result
+number of canton,dbo:numberOfCanton,dbo:Department,xsd:nonNegativeInteger,number of canton of department
+Number Of Cantons,dbo:numberOfCantons,dbo:PopulatedPlace,xsd:nonNegativeInteger,number of cantons of populated place
+Number Of Capital Deputies,dbo:numberOfCapitalDeputies,dbo:PopulatedPlace,xsd:nonNegativeInteger,number of capital deputies of populated place
+number of contries inside en continent,dbo:numberOfCity,dbo:Continent,xsd:nonNegativeInteger,number of contries inside en continent of continent
+numberOfClasses,dbo:numberOfClasses,,xsd:nonNegativeInteger,numberofclasses
+numberOfClassesWithResource,dbo:numberOfClassesWithResource,,xsd:nonNegativeInteger,numberofclasseswithresource
+number of clubs,dbo:numberOfClubs,dbo:Activity,xsd:nonNegativeInteger,number of clubs of activity
+number of items in collection,dbo:numberOfCollectionItems,dbo:Library,xsd:integer,number of items in collection of library
+number of competitors,dbo:numberOfCompetitors,dbo:OlympicResult,xsd:nonNegativeInteger,number of competitors of olympic result
+number of counties,dbo:numberOfCounties,dbo:PopulatedPlace,xsd:nonNegativeInteger,number of counties of populated place
+number of countries,dbo:numberOfCountries,dbo:AdministrativeRegion,xsd:positiveInteger,number of countries of administrative region
+number of crew,dbo:numberOfCrew,dbo:MeanOfTransportation,xsd:nonNegativeInteger,number of crew of mean of transportation
+number of deaths,dbo:numberOfDeaths,dbo:ConcentrationCamp,xsd:string,number of deaths of concentration camp
+number of dependency,dbo:numberOfDependency,dbo:Continent,xsd:nonNegativeInteger,number of dependency of continent
+numberOfDisambiguates,dbo:numberOfDisambiguates,,xsd:nonNegativeInteger,numberofdisambiguates
+number of district,dbo:numberOfDistrict,dbo:Department,xsd:nonNegativeInteger,number of district of department
+number of districts,dbo:numberOfDistricts,dbo:Regency,xsd:nonNegativeInteger,number of districts of regency
+number of doctoral students,dbo:numberOfDoctoralStudents,dbo:University,xsd:nonNegativeInteger,number of doctoral students of university
+number of doors,dbo:numberOfDoors,dbo:Automobile,xsd:positiveInteger,number of doors of automobile
+number of employees,dbo:numberOfEmployees,dbo:Organisation,xsd:nonNegativeInteger,number of employees of organisation
+number of entrances,dbo:numberOfEntrances,dbo:Cave,xsd:nonNegativeInteger,number of entrances of cave
+number of episodes,dbo:numberOfEpisodes,dbo:TelevisionShow,xsd:nonNegativeInteger,number of episodes of television show
+number of étoiles Michelin,dbo:numberOfEtoilesMichelin,dbo:Restaurant,xsd:nonNegativeInteger,number of étoiles michelin of restaurant
+Number Of Federal Deputies,dbo:numberOfFederalDeputies,dbo:PopulatedPlace,xsd:nonNegativeInteger,number of federal deputies of populated place
+number of films,dbo:numberOfFilms,dbo:AdultActor,xsd:nonNegativeInteger,number of films of adult actor
+number of goals scored,dbo:numberOfGoals,dbo:CareerStation,xsd:integer,number of goals scored of career station
+number of gold medals won,dbo:numberOfGoldMedalsWon,dbo:SportCompetitionResult,xsd:nonNegativeInteger,number of gold medals won of sport competition result
+number of graduate students,dbo:numberOfGraduateStudents,dbo:EducationalInstitution,xsd:nonNegativeInteger,number of graduate students of educational institution
+number of graves,dbo:numberOfGraves,dbo:Cemetery,xsd:string,number of graves of cemetery
+number of holes,dbo:numberOfHoles,dbo:GolfCourse,xsd:integer,number of holes of golf course
+number of houses present),dbo:numberOfHouses,dbo:ProtectedArea,xsd:string,number of houses present) of protected area
+number of all indegrees in dbpedia (same ourdegrees are counting repeatedly),dbo:numberOfIndegree,,xsd:nonNegativeInteger,number of all indegrees in dbpedia
+number of intercommunality,dbo:numberOfIntercommunality,dbo:Department,xsd:nonNegativeInteger,number of intercommunality of department
+number of islands,dbo:numberOfIsland,dbo:Place,xsd:string,number of islands of place
+number of islands,dbo:numberOfIslands,dbo:Island,xsd:nonNegativeInteger,number of islands of island
+number of lanes,dbo:numberOfLanes,dbo:RouteOfTransportation,xsd:nonNegativeInteger,number of lanes of route of transportation
+number of laps,dbo:numberOfLaps,dbo:FormulaOneRacing,xsd:nonNegativeInteger,number of laps of formula one racing
+number of launches,dbo:numberOfLaunches,dbo:MeanOfTransportation,xsd:nonNegativeInteger,number of launches of mean of transportation
+number of lawyers,dbo:numberOfLawyers,dbo:LawFirm,xsd:nonNegativeInteger,number of lawyers of law firm
+number of lifts,dbo:numberOfLifts,dbo:SkiArea,xsd:nonNegativeInteger,number of lifts of ski area
+number of lines,dbo:numberOfLines,dbo:PublicTransitSystem,xsd:nonNegativeInteger,number of lines of public transit system
+number of live albums,dbo:numberOfLiveAlbums,dbo:MusicalArtist,xsd:nonNegativeInteger,number of live albums of musical artist
+number of locations,dbo:numberOfLocations,dbo:Organisation,xsd:nonNegativeInteger,number of locations of organisation
+number of matches or caps,dbo:numberOfMatches,dbo:CareerStation,xsd:integer,number of matches or caps of career station
+number of members,dbo:numberOfMembers,dbo:Legislature,xsd:nonNegativeInteger,number of members of legislature
+number of members as of,dbo:numberOfMembersAsOf,dbo:PoliticalParty,xsd:date,number of members as of of political party
+number of ministries,dbo:numberOfMinistries,dbo:Country,xsd:nonNegativeInteger,number of ministries of country
+Number Of Municipalities,dbo:numberOfMunicipalities,dbo:PopulatedPlace,xsd:nonNegativeInteger,number of municipalities of populated place
+number of MuscialArtist class (entities) in DBpedia,dbo:numberOfMusicalArtistEntities,dbo:Country,xsd:nonNegativeInteger,number of muscialartist class in dbpedia of country
+number of all MuscialArtist playing the style,dbo:numberOfMusicalArtistStyle,dbo:MusicGenre,xsd:nonNegativeInteger,number of all muscialartist playing the style of music genre
+number of neighbourhood,dbo:numberOfNeighbourhood,dbo:GermanSettlement,xsd:nonNegativeInteger,number of neighbourhood of german settlement
+number of newly introduced sports,dbo:numberOfNewlyIntroducedSports,dbo:Olympics,xsd:nonNegativeInteger,number of newly introduced sports of olympics
+number of offices,dbo:numberOfOffices,dbo:LawFirm,xsd:nonNegativeInteger,number of offices of law firm
+number of officials,dbo:numberOfOfficials,dbo:OlympicResult,xsd:nonNegativeInteger,number of officials of olympic result
+number of orbits,dbo:numberOfOrbits,dbo:SpaceMission,xsd:nonNegativeInteger,number of orbits of space mission
+numberOfOutdegree,dbo:numberOfOutdegree,,xsd:nonNegativeInteger,numberofoutdegree
+number of pads,dbo:numberOfPads,dbo:LaunchPad,xsd:nonNegativeInteger,number of pads of launch pad
+number of pages,dbo:numberOfPages,dbo:WrittenWork,xsd:positiveInteger,number of pages of written work
+number of parking spaces,dbo:numberOfParkingSpaces,dbo:Hotel,xsd:nonNegativeInteger,number of parking spaces of hotel
+number of participating athletes,dbo:numberOfParticipatingAthletes,dbo:Olympics,xsd:nonNegativeInteger,number of participating athletes of olympics
+number of participating female athletes,dbo:numberOfParticipatingFemaleAthletes,dbo:Olympics,xsd:nonNegativeInteger,number of participating female athletes of olympics
+number of participating male athletes,dbo:numberOfParticipatingMaleAthletes,dbo:Olympics,xsd:nonNegativeInteger,number of participating male athletes of olympics
+number of participating nations,dbo:numberOfParticipatingNations,dbo:Olympics,xsd:nonNegativeInteger,number of participating nations of olympics
+number of passengers,dbo:numberOfPassengers,dbo:Ship,xsd:nonNegativeInteger,number of passengers of ship
+number of people attending,dbo:numberOfPeopleAttending,dbo:Event,xsd:nonNegativeInteger,number of people attending of event
+number of licensed,dbo:numberOfPeopleLicensed,dbo:Activity,xsd:nonNegativeInteger,number of licensed of activity
+number of entities of Person class born in the place,dbo:numberOfPersonBornInPlace,dbo:Place,xsd:nonNegativeInteger,number of entities of person class born in the place of place
+number of Person class (entities) in DBpedia,dbo:numberOfPersonEntities,dbo:Country,xsd:nonNegativeInteger,number of person class in dbpedia of country
+number of entities of Person class who graduated from the university,dbo:numberOfPersonFromUniversity,dbo:University,xsd:nonNegativeInteger,number of entities of person class who graduated from the university of university
+number of person in one occupation,dbo:numberOfPersonInOccupation,dbo:PersonFunction,xsd:nonNegativeInteger,number of person in one occupation of person function
+number of piers in water,dbo:numberOfPiersInWater,dbo:Bridge,xsd:nonNegativeInteger,number of piers in water of bridge
+number of pixels (millions),dbo:numberOfPixels,,xsd:nonNegativeInteger,number of pixels
+number of platform levels,dbo:numberOfPlatformLevels,dbo:Station,xsd:integer,number of platform levels of station
+number of players,dbo:numberOfPlayers,dbo:Activity,xsd:nonNegativeInteger,number of players of activity
+number of postgraduate students,dbo:numberOfPostgraduateStudents,dbo:University,xsd:nonNegativeInteger,number of postgraduate students of university
+numberOfPredicates,dbo:numberOfPredicates,,xsd:nonNegativeInteger,numberofpredicates
+number of professionals,dbo:numberOfProfessionals,dbo:Activity,xsd:nonNegativeInteger,number of professionals of activity
+numberOfProperties,dbo:numberOfProperties,,xsd:nonNegativeInteger,numberofproperties
+numberOfPropertiesUsed,dbo:numberOfPropertiesUsed,,xsd:nonNegativeInteger,numberofpropertiesused
+number of reactors,dbo:numberOfReactors,dbo:NuclearPowerStation,xsd:nonNegativeInteger,number of reactors of nuclear power station
+numberOfRedirectedResource,dbo:numberOfRedirectedResource,,xsd:nonNegativeInteger,numberofredirectedresource
+numberOfResource,dbo:numberOfResource,,xsd:nonNegativeInteger,numberofresource
+number of all resource / entities of a class,dbo:numberOfResourceOfClass,,xsd:nonNegativeInteger,number of all resource / entities of a class
+number of resource / entities for concrete type of subject,dbo:numberOfResourceOfType,,xsd:nonNegativeInteger,number of resource / entities for concrete type of subject
+nmberOfResourceWithType,dbo:numberOfResourceWithType,,xsd:nonNegativeInteger,nmberofresourcewithtype
+number of restaurants,dbo:numberOfRestaurants,dbo:Hotel,xsd:nonNegativeInteger,number of restaurants of hotel
+number of rockets,dbo:numberOfRockets,dbo:MilitaryAircraft,xsd:nonNegativeInteger,number of rockets of military aircraft
+number of rooms,dbo:numberOfRooms,dbo:Building,xsd:nonNegativeInteger,number of rooms of building
+number of run,dbo:numberOfRun,dbo:Person,xsd:nonNegativeInteger,number of run of person
+number of seasons,dbo:numberOfSeasons,dbo:TelevisionShow,xsd:nonNegativeInteger,number of seasons of television show
+number of seats,dbo:numberOfSeats,dbo:MeanOfTransportation,xsd:nonNegativeInteger,number of seats of mean of transportation
+number of seats in parliament,dbo:numberOfSeatsInParliament,dbo:PoliticalParty,xsd:nonNegativeInteger,number of seats in parliament of political party
+number of settlement,dbo:numberOfSettlement,dbo:Department,xsd:nonNegativeInteger,number of settlement of department
+number of entities of Settlement class in country,dbo:numberOfSettlementsInCountry,dbo:Country,xsd:nonNegativeInteger,number of entities of settlement class in country of country
+number of silver medals won,dbo:numberOfSilverMedalsWon,dbo:SportCompetitionResult,xsd:nonNegativeInteger,number of silver medals won of sport competition result
+number of SoccerPlayers in Country Repre,dbo:numberOfSoccerPlayerInCountryRepre,dbo:SoccerClub,xsd:nonNegativeInteger,number of soccerplayers in country repre of soccer club
+number of SoccerPlayers born in Place,dbo:numberOfSoccerPlayersBornInPlace,dbo:Place,xsd:nonNegativeInteger,number of soccerplayers born in place of place
+number of SoccerPlayers in entity of SoccerClub,dbo:numberOfSoccerPlayersInTeam,dbo:SoccerClub,xsd:nonNegativeInteger,number of soccerplayers in entity of soccerclub of soccer club
+number of spans,dbo:numberOfSpans,dbo:Bridge,xsd:nonNegativeInteger,number of spans of bridge
+number of speakers,dbo:numberOfSpeakers,dbo:Language,xsd:nonNegativeInteger,number of speakers of language
+number of sports,dbo:numberOfSports,,xsd:nonNegativeInteger,number of sports
+number of sports events,dbo:numberOfSportsEvents,,xsd:nonNegativeInteger,number of sports events
+number of staff,dbo:numberOfStaff,dbo:Organisation,xsd:nonNegativeInteger,number of staff of organisation
+number of stars,dbo:numberOfStars,dbo:Constellation,xsd:nonNegativeInteger,number of stars of constellation
+Number Of State Deputies,dbo:numberOfStateDeputies,dbo:PopulatedPlace,xsd:nonNegativeInteger,number of state deputies of populated place
+number of stations,dbo:numberOfStations,dbo:RouteOfTransportation,xsd:nonNegativeInteger,number of stations of route of transportation
+number of sores,dbo:numberOfStores,dbo:ShoppingMall,xsd:nonNegativeInteger,number of sores of shopping mall
+number of students,dbo:numberOfStudents,dbo:EducationalInstitution,xsd:nonNegativeInteger,number of students of educational institution
+number of studio albums,dbo:numberOfStudioAlbums,dbo:MusicalArtist,xsd:nonNegativeInteger,number of studio albums of musical artist
+number of suites,dbo:numberOfSuites,dbo:Hotel,xsd:nonNegativeInteger,number of suites of hotel
+number of teams,dbo:numberOfTeams,dbo:SportsLeague,xsd:nonNegativeInteger,number of teams of sports league
+number of tracks,dbo:numberOfTracks,dbo:Infrastructure,xsd:nonNegativeInteger,number of tracks of infrastructure
+number of trails,dbo:numberOfTrails,dbo:SkiArea,xsd:nonNegativeInteger,number of trails of ski area
+numberOfTriples,dbo:numberOfTriples,,xsd:nonNegativeInteger,numberoftriples
+number of turns,dbo:numberOfTurns,dbo:RaceTrack,xsd:nonNegativeInteger,number of turns of race track
+number of undergraduate students,dbo:numberOfUndergraduateStudents,dbo:EducationalInstitution,xsd:nonNegativeInteger,number of undergraduate students of educational institution
+numberOfUniqeResources,dbo:numberOfUniqeResources,,xsd:nonNegativeInteger,numberofuniqeresources
+number of use of a property,dbo:numberOfUseOfProperty,,xsd:nonNegativeInteger,number of use of a property
+number of vehicles,dbo:numberOfVehicles,dbo:PublicTransitSystem,xsd:nonNegativeInteger,number of vehicles of public transit system
+number of villages,dbo:numberOfVillages,dbo:District,xsd:nonNegativeInteger,number of villages of district
+number of vineyards,dbo:numberOfVineyards,dbo:WineRegion,xsd:nonNegativeInteger,number of vineyards of wine region
+number of visitors,dbo:numberOfVisitors,,xsd:nonNegativeInteger,number of visitors
+number of visitors as of,dbo:numberOfVisitorsAsOf,dbo:HistoricPlace,xsd:gYear,number of visitors as of of historic place
+number of volumes,dbo:numberOfVolumes,dbo:WrittenWork,xsd:nonNegativeInteger,number of volumes of written work
+number of volunteers,dbo:numberOfVolunteers,dbo:Organisation,xsd:nonNegativeInteger,number of volunteers of organisation
+number of wineries,dbo:numberOfWineries,dbo:WineRegion,xsd:nonNegativeInteger,number of wineries of wine region
+number sold,dbo:numberSold,dbo:Sales,xsd:nonNegativeInteger,number sold of sales
+NUTS code,dbo:nutsCode,dbo:Place,xsd:string,nuts code of place
+observatory,dbo:observatory,dbo:Island,xsd:string,observatory of island
+OCLC,dbo:oclc,dbo:WrittenWork,xsd:string,oclc of written work
+Odor,dbo:odor,,xsd:string,odor
+offered classes,dbo:offeredClasses,dbo:EducationalInstitution,xsd:string,offered classes of educational institution
+(political) office,dbo:office,,xsd:string, office
+official name,dbo:officialName,dbo:Settlement,rdf:langString,official name of settlement
+official school colour,dbo:officialSchoolColour,dbo:EducationalInstitution,xsd:string,official school colour of educational institution
+ofs code of a settlement,dbo:ofsCode,dbo:Settlement,xsd:string,ofs code of a settlement of settlement
+okato code,dbo:okatoCode,dbo:PopulatedPlace,xsd:string,okato code of populated place
+old name,dbo:oldName,dbo:PopulatedPlace,xsd:string,old name of populated place
+oldcode,dbo:oldcode,dbo:OlympicResult,xsd:string,oldcode of olympic result
+olympic games bronze,dbo:olympicGamesBronze,dbo:Person,xsd:nonNegativeInteger,olympic games bronze of person
+olympic games gold,dbo:olympicGamesGold,dbo:Person,xsd:nonNegativeInteger,olympic games gold of person
+olympic games silver,dbo:olympicGamesSilver,dbo:Person,xsd:nonNegativeInteger,olympic games silver of person
+olympic games wins,dbo:olympicGamesWins,dbo:Person,xsd:string,olympic games wins of person
+OMIM id,dbo:omim,dbo:Biomolecule,xsd:integer,omim id of biomolecule
+on chromosome,dbo:onChromosome,dbo:GeneLocation,xsd:integer,on chromosome of gene location
+ONS ID (Office national des statistiques) Algeria,dbo:ons,dbo:Settlement,xsd:nonNegativeInteger,ons id algeria of settlement
+open access content,dbo:openAccessContent,dbo:PeriodicalLiterature,xsd:string,open access content of periodical literature
+opening date,dbo:openingDate,,xsd:date,opening date
+opening year,dbo:openingYear,,xsd:gYear,opening year
+operating income ($),dbo:operatingIncome,dbo:Company,xsd:double,operating income of company
+orbital eccentricity,dbo:orbitalEccentricity,dbo:CelestialBody,xsd:float,orbital eccentricity of celestial body
+orbital flights,dbo:orbitalFlights,dbo:YearInSpaceflight,xsd:nonNegativeInteger,orbital flights of year in spaceflight
+orbital inclination,dbo:orbitalInclination,dbo:SpaceMission,xsd:float,orbital inclination of space mission
+orbital period (s),dbo:orbitalPeriod,dbo:Planet,xsd:double,orbital period of planet
+orbits,dbo:orbits,,xsd:integer,orbits
+ORCID Id,dbo:orcidId,,xsd:string,orcid id
+order date,dbo:orderDate,dbo:Ship,xsd:date,order date of ship
+order in office,dbo:orderInOffice,,xsd:string,order in office
+Ordination,dbo:ordination,dbo:Priest,xsd:date,ordination of priest
+orientation,dbo:orientation,dbo:Person,xsd:string,orientation of person
+original danse competititon,dbo:originalDanseCompetition,dbo:Person,xsd:string,original danse competititon of person
+original danse score,dbo:originalDanseScore,dbo:Person,xsd:string,original danse score of person
+original maximum boat beam (μ),dbo:originalMaximumBoatBeam,dbo:Canal,xsd:double,original maximum boat beam of canal
+original maximum boat length (μ),dbo:originalMaximumBoatLength,dbo:Canal,xsd:double,original maximum boat length of canal
+original name,dbo:originalName,,rdf:langString,original name
+titre original non latin,dbo:originalNotLatinTitle,dbo:Work,rdf:langString,titre original non latin of work
+original title,dbo:originalTitle,dbo:Work,rdf:langString,original title of work
+originally used for,dbo:originallyUsedFor,,xsd:string,originally used for
+ORPHA,dbo:orpha,dbo:Disease,xsd:string,orpha of disease
+other,dbo:other,dbo:University,xsd:integer,other of university
+other activity,dbo:otherActivity,dbo:Person,xsd:string,other activity of person
+other channel,dbo:otherChannel,dbo:Broadcaster,xsd:string,other channel of broadcaster
+other information of a settlement,dbo:otherInformation,dbo:Settlement,xsd:string,other information of a settlement of settlement
+other language of a settlement,dbo:otherLanguage,dbo:Settlement,xsd:string,other language of a settlement of settlement
+other name,dbo:otherName,dbo:PopulatedPlace,rdf:langString,other name of populated place
+other serving lines,dbo:otherServingLines,dbo:Station,xsd:string,other serving lines of station
+other wins,dbo:otherWins,dbo:SnookerPlayer,xsd:nonNegativeInteger,other wins of snooker player
+output,dbo:output,dbo:Place,xsd:float,output of place
+output history,dbo:outputHistory,dbo:MusicalWork,xsd:string,output history of musical work
+outskirts,dbo:outskirts,dbo:PopulatedPlace,xsd:string,outskirts of populated place
+overall record,dbo:overallRecord,dbo:CollegeCoach,xsd:string,overall record of college coach
+oversight,dbo:oversight,dbo:School,xsd:string,oversight of school
+Deaths,dbo:pandemicDeaths,dbo:Outbreak,xsd:integer,deaths of outbreak
+parking information,dbo:parkingInformation,dbo:Station,xsd:string,parking information of station
+number of parking lots for cars,dbo:parkingLotsCars,dbo:RestArea,xsd:nonNegativeInteger,number of parking lots for cars of rest area
+number of parking lots for trucks,dbo:parkingLotsTrucks,dbo:RestArea,xsd:nonNegativeInteger,number of parking lots for trucks of rest area
+parliament type,dbo:parliamentType,dbo:Place,xsd:string,parliament type of place
+parliamentary group,dbo:parliamentaryGroup,dbo:Person,xsd:string,parliamentary group of person
+partial failed launches,dbo:partialFailedLaunches,,xsd:nonNegativeInteger,partial failed launches
+participant,dbo:participant,dbo:Event,xsd:string,participant of event
+particular sign,dbo:particularSign,dbo:Person,xsd:string,particular sign of person
+Partition coefficient,dbo:partitionCoefficient,dbo:ChemicalSubstance,xsd:float,partition coefficient of chemical substance
+party number,dbo:partyNumber,,xsd:integer,party number
+passengers per day,dbo:passengersPerDay,dbo:Infrastructure,xsd:nonNegativeInteger,passengers per day of infrastructure
+passengers per year,dbo:passengersPerYear,dbo:Infrastructure,xsd:nonNegativeInteger,passengers per year of infrastructure
+passengers used system,dbo:passengersUsedSystem,dbo:Station,xsd:string,passengers used system of station
+pcc secretary,dbo:pccSecretary,,xsd:string,pcc secretary
+PDB ID,dbo:pdb,dbo:Protein,xsd:string,pdb id of protein
+Penalties Team A,dbo:penaltiesTeamA,dbo:PenaltyShootOut,xsd:string,penalties team a of penalty shoot out
+Penalties Team B,dbo:penaltiesTeamB,dbo:PenaltyShootOut,xsd:string,penalties team b of penalty shoot out
+penalty score,dbo:penaltyScore,dbo:PenaltyShootOut,xsd:integer,penalty score of penalty shoot out
+Deaths,dbo:pendamicDeaths,dbo:Outbreak,xsd:integer,deaths of outbreak
+penis length,dbo:penisLength,dbo:Person,xsd:string,penis length of person
+peopleName,dbo:peopleName,dbo:PopulatedPlace,rdf:langString,peoplename of populated place
+per capita income ($),dbo:perCapitaIncome,dbo:PopulatedPlace,xsd:double,per capita income of populated place
+per capita income as of,dbo:perCapitaIncomeAsOf,dbo:PopulatedPlace,xsd:date,per capita income as of of populated place
+per capital income rank,dbo:perCapitaIncomeRank,dbo:PopulatedPlace,xsd:string,per capital income rank of populated place
+percentage of alcohol,dbo:percentageAlcohol,dbo:Beverage,xsd:nonNegativeInteger,percentage of alcohol of beverage
+percentage of fat,dbo:percentageFat,dbo:Food,xsd:nonNegativeInteger,percentage of fat of food
+"percentage of a place's male population that is literate, degree of analphabetism",dbo:percentageLiteracyMen,dbo:PopulatedPlace,xsd:float,"percentage of a place's male population that is literate, degree of analphabetism of populated place"
+"percentage of a place's female population that is literate, degree of analphabetism",dbo:percentageLiteracyWomen,dbo:PopulatedPlace,xsd:float,"percentage of a place's female population that is literate, degree of analphabetism of populated place"
+"percentage of a place's population that is literate, degree of analphabetism",dbo:percentageLiterate,dbo:PopulatedPlace,xsd:float,"percentage of a place's population that is literate, degree of analphabetism of populated place"
+percentage of area water,dbo:percentageOfAreaWater,,xsd:float,percentage of area water
+periapsis (μ),dbo:periapsis,dbo:CelestialBody,xsd:double,periapsis of celestial body
+perifocus,dbo:perifocus,dbo:CelestialBody,xsd:string,perifocus of celestial body
+perimeter (μ),dbo:perimeter,dbo:Place,xsd:double,perimeter of place
+personName,dbo:personName,dbo:PersonFunction,xsd:string,personname of person function
+PersonsFirstDosesCumul,dbo:personsFirstDosesCumul,,xsd:integer,personsfirstdosescumul
+PersonsFullDosesCumul,dbo:personsFullDosesCumul,,xsd:integer,personsfulldosescumul
+Pfizer,dbo:pfizer,,xsd:string,pfizer
+PfizerCumulativeDoses,dbo:pfizerCumul,,xsd:integer,pfizercumulativedoses
+phone prefix,dbo:phonePrefix,dbo:PopulatedPlace,xsd:nonNegativeInteger,phone prefix of populated place
+phone prefix label of a settlement,dbo:phonePrefixLabel,dbo:Settlement,rdf:langString,phone prefix label of a settlement of settlement
+pictures Commons category,dbo:picturesCommonsCategory,,xsd:string,pictures commons category
+piercing,dbo:piercing,dbo:Person,xsd:string,piercing of person
+piscicultural population,dbo:pisciculturalPopulation,dbo:Place,xsd:string,piscicultural population of place
+piston stroke (μ),dbo:pistonStroke,dbo:AutomobileEngine,xsd:double,piston stroke of automobile engine
+player status,dbo:playerStatus,dbo:Person,xsd:string,player status of person
+playing time (s),dbo:playingTime,,xsd:double,playing time
+plays,dbo:plays,dbo:TennisPlayer,xsd:string,plays of tennis player
+pluviometry,dbo:pluviometry,dbo:PopulatedPlace,xsd:string,pluviometry of populated place
+podium,dbo:podium,dbo:Person,xsd:nonNegativeInteger,podium of person
+podiums,dbo:podiums,dbo:FormulaOneRacer,xsd:nonNegativeInteger,podiums of formula one racer
+pole,dbo:pole,,xsd:string,pole
+pole position,dbo:polePosition,dbo:Person,xsd:nonNegativeInteger,pole position of person
+poles,dbo:poles,dbo:FormulaOneRacer,xsd:nonNegativeInteger,poles of formula one racer
+police name,dbo:policeName,dbo:PopulatedPlace,xsd:string,police name of populated place
+political function,dbo:politicalFunction,dbo:Person,xsd:string,political function of person
+political seats,dbo:politicalSeats,dbo:Settlement,xsd:nonNegativeInteger,political seats of settlement
+Number of votes given to candidate,dbo:popularVote,dbo:Election,xsd:nonNegativeInteger,number of votes given to candidate of election
+population as of,dbo:populationAsOf,dbo:PopulatedPlace,xsd:date,population as of of populated place
+population density (/sqkm),dbo:populationDensity,dbo:PopulatedPlace,xsd:double,population density of populated place
+population metro,dbo:populationMetro,dbo:PopulatedPlace,xsd:nonNegativeInteger,population metro of populated place
+population metro density (/sqkm),dbo:populationMetroDensity,dbo:PopulatedPlace,xsd:double,population metro density of populated place
+population percentage under 12 years,dbo:populationPctChildren,dbo:PopulatedPlace,xsd:nonNegativeInteger,population percentage under 12 years of populated place
+population percentage male,dbo:populationPctMen,dbo:PopulatedPlace,xsd:nonNegativeInteger,population percentage male of populated place
+population percentage female,dbo:populationPctWomen,dbo:PopulatedPlace,xsd:nonNegativeInteger,population percentage female of populated place
+population rural,dbo:populationRural,dbo:PopulatedPlace,xsd:nonNegativeInteger,population rural of populated place
+population density rural (/sqkm),dbo:populationRuralDensity,dbo:PopulatedPlace,xsd:double,population density rural of populated place
+population total,dbo:populationTotal,,xsd:nonNegativeInteger,population total
+total population ranking,dbo:populationTotalRanking,dbo:PopulatedPlace,xsd:positiveInteger,total population ranking of populated place
+population urban,dbo:populationUrban,dbo:PopulatedPlace,xsd:nonNegativeInteger,population urban of populated place
+population urban density (/sqkm),dbo:populationUrbanDensity,dbo:PopulatedPlace,xsd:double,population urban density of populated place
+portfolio,dbo:portfolio,,xsd:string,portfolio
+postal code,dbo:postalCode,,xsd:string,postal code
+power,dbo:power,dbo:FictionalCharacter,xsd:string,power of fictional character
+power output (W),dbo:powerOutput,dbo:Engine,xsd:double,power output of engine
+mandate of a prefect of a romanian settlement,dbo:prefectMandate,dbo:RomaniaSettlement,xsd:string,mandate of a prefect of a romanian settlement of romania settlement
+prefix,dbo:prefix,,xsd:string,prefix
+premiere date,dbo:premiereDate,dbo:Play,xsd:date,premiere date of play
+premiere year,dbo:premiereYear,dbo:Play,xsd:gYear,premiere year of play
+a municipality's present name,dbo:presentName,dbo:FormerMunicipality,xsd:string,a municipality's present name of former municipality
+mandate of the president of the general council,dbo:presidentGeneralCouncilMandate,dbo:Place,xsd:string,mandate of the president of the general council of place
+mandate of the president council of the regional council,dbo:presidentRegionalCouncilMandate,dbo:Place,xsd:string,mandate of the president council of the regional council of place
+previous name,dbo:previousName,dbo:PopulatedPlace,xsd:string,previous name of populated place
+previous population total,dbo:previousPopulationTotal,dbo:PopulatedPlace,xsd:nonNegativeInteger,previous population total of populated place
+number of the previous track,dbo:previousTrackNumber,dbo:Work,xsd:nonNegativeInteger,number of the previous track of work
+price ($),dbo:price,,xsd:double,price
+Primite,dbo:primate,dbo:ChristianDoctrine,xsd:string,primite of christian doctrine
+pro bowl pick,dbo:probowlPick,dbo:Athlete,xsd:string,pro bowl pick of athlete
+procedure,dbo:procedure,dbo:Case,xsd:string,procedure of case
+product shape,dbo:productShape,dbo:Food,xsd:string,product shape of food
+production,dbo:production,dbo:Company,xsd:nonNegativeInteger,production of company
+production end date,dbo:productionEndDate,,xsd:date,production end date
+production end year,dbo:productionEndYear,,xsd:gYear,production end year
+production start date,dbo:productionStartDate,,xsd:date,production start date
+production start year,dbo:productionStartYear,,xsd:gYear,production start year
+production years,dbo:productionYears,dbo:Aircraft,xsd:date,production years of aircraft
+program cost ($),dbo:programCost,dbo:Aircraft,xsd:double,program cost of aircraft
+project budget funding ($),dbo:projectBudgetFunding,dbo:ResearchProject,xsd:double,project budget funding of research project
+project budget total ($),dbo:projectBudgetTotal,dbo:ResearchProject,xsd:double,project budget total of research project
+project end date,dbo:projectEndDate,dbo:Project,xsd:date,project end date of project
+project keyword,dbo:projectKeyword,dbo:Project,xsd:string,project keyword of project
+project reference ID,dbo:projectReferenceID,dbo:ResearchProject,xsd:string,project reference id of research project
+project start date,dbo:projectStartDate,dbo:Project,xsd:date,project start date of project
+project type,dbo:projectType,dbo:ResearchProject,xsd:string,project type of research project
+prominence (μ),dbo:prominence,,xsd:double,prominence
+pronunciation,dbo:pronunciation,,xsd:string,pronunciation
+monument protection status,dbo:protectionStatus,dbo:Place,xsd:string,monument protection status of place
+protein (g),dbo:protein,dbo:Food,xsd:double,protein of food
+protestant percentage,dbo:protestantPercentage,dbo:PopulatedPlace,xsd:string,protestant percentage of populated place
+prove code,dbo:provCode,dbo:Settlement,xsd:string,prove code of settlement
+iso code of a province,dbo:provinceIsoCode,dbo:PopulatedPlace,xsd:string,iso code of a province of populated place
+pseudonym,dbo:pseudonym,dbo:Person,rdf:langString,pseudonym of person
+PubChem,dbo:pubchem,dbo:ChemicalSubstance,xsd:string,pubchem of chemical substance
+publication,dbo:publication,dbo:Person,xsd:string,publication of person
+publication date,dbo:publicationDate,,xsd:date,publication date
+publicly accessible,dbo:publiclyAccessible,,xsd:string,publicly accessible
+purchasing power parity,dbo:purchasingPowerParity,dbo:PopulatedPlace,xsd:string,purchasing power parity of populated place
+purchasing power parity rank,dbo:purchasingPowerParityRank,dbo:PopulatedPlace,xsd:string,purchasing power parity rank of populated place
+purchasing power parity year,dbo:purchasingPowerParityYear,dbo:PopulatedPlace,xsd:string,purchasing power parity year of populated place
+purpose,dbo:purpose,,xsd:string,purpose
+qatar classic,dbo:qatarClassic,dbo:Athlete,xsd:string,qatar classic of athlete
+quebecer title,dbo:quebecerTitle,dbo:Film,xsd:string,quebecer title of film
+quotation,dbo:quotation,,xsd:string,quotation
+quote,dbo:quote,dbo:Place,xsd:string,quote of place
+ra,dbo:ra,dbo:Openswarm,xsd:string,ra of openswarm
+race length (μ),dbo:raceLength,dbo:FormulaOneRacing,xsd:double,race length of formula one racing
+races,dbo:races,dbo:FormulaOneRacer,xsd:nonNegativeInteger,races of formula one racer
+racket catching,dbo:racketCatching,dbo:TennisPlayer,xsd:string,racket catching of tennis player
+radio station,dbo:radioStation,dbo:RadioStation,xsd:string,radio station of radio station
+Radius_ly,dbo:radius_ly,dbo:Globularswarm,xsd:integer,radius_ly of globularswarm
+rail gauge (μ),dbo:railGauge,dbo:RouteOfTransportation,xsd:double,rail gauge of route of transportation
+railway platforms,dbo:railwayPlatforms,dbo:Station,xsd:string,railway platforms of station
+range,dbo:range,dbo:MeanOfTransportation,xsd:positiveInteger,range of mean of transportation
+rank,dbo:rank,,xsd:string,rank
+rank of an agreement,dbo:rankAgreement,dbo:Place,xsd:nonNegativeInteger,rank of an agreement of place
+rank of an area,dbo:rankArea,dbo:PopulatedPlace,xsd:nonNegativeInteger,rank of an area of populated place
+rank in final medal count,dbo:rankInFinalMedalCount,dbo:OlympicResult,xsd:positiveInteger,rank in final medal count of olympic result
+rank of a population,dbo:rankPopulation,dbo:PopulatedPlace,xsd:nonNegativeInteger,rank of a population of populated place
+ranking,dbo:ranking,dbo:Organisation,xsd:positiveInteger,ranking of organisation
+ranking wins,dbo:rankingWins,dbo:SnookerPlayer,xsd:nonNegativeInteger,ranking wins of snooker player
+doubles rankings,dbo:rankingsDoubles,dbo:TennisPlayer,xsd:nonNegativeInteger,doubles rankings of tennis player
+single rankings,dbo:rankingsSingles,dbo:TennisPlayer,xsd:nonNegativeInteger,single rankings of tennis player
+rating,dbo:rating,,xsd:float,rating
+ratio,dbo:ratio,dbo:School,xsd:string,ratio of school
+rebuild date,dbo:rebuildDate,,xsd:date,rebuild date
+rebuilding date,dbo:rebuildingDate,dbo:ArchitecturalStructure,xsd:date,rebuilding date of architectural structure
+rebuilding year,dbo:rebuildingYear,dbo:ArchitecturalStructure,xsd:gYear,rebuilding year of architectural structure
+recommissioning date,dbo:recommissioningDate,dbo:Ship,xsd:date,recommissioning date of ship
+record date,dbo:recordDate,dbo:MusicalWork,xsd:date,record date of musical work
+Recovery Cases,dbo:recoveryCases,dbo:Outbreak,xsd:integer,recovery cases of outbreak
+red list ID NL,dbo:redListIdNL,dbo:Species,xsd:integer,red list id nl of species
+red long distance piste number,dbo:redLongDistancePisteNumber,dbo:Place,xsd:nonNegativeInteger,red long distance piste number of place
+red ski piste number,dbo:redSkiPisteNumber,dbo:Place,xsd:nonNegativeInteger,red ski piste number of place
+redline (kmh),dbo:redline,dbo:AutomobileEngine,xsd:double,redline of automobile engine
+reference,dbo:reference,dbo:Reference,xsd:string,reference of reference
+reference for general data,dbo:refgen,dbo:Place,xsd:string,reference for general data of place
+reference for geographic data,dbo:refgeo,dbo:Place,xsd:string,reference for geographic data of place
+reference for politic data,dbo:refpol,dbo:Place,xsd:string,reference for politic data of place
+RefSeq,dbo:refseq,dbo:Protein,xsd:string,refseq of protein
+refseq protein,dbo:refseqprotein,dbo:Biomolecule,xsd:string,refseq protein of biomolecule
+regime,dbo:regime,dbo:Spacecraft,xsd:string,regime of spacecraft
+region type,dbo:regionType,dbo:Place,xsd:string,region type of place
+regional prefecture,dbo:regionalPrefecture,dbo:Place,xsd:string,regional prefecture of place
+registration,dbo:registration,dbo:Company,xsd:string,registration of company
+registry,dbo:registry,,xsd:string,registry
+registry number,dbo:registryNumber,dbo:Document,xsd:string,registry number of document
+reign,dbo:reign,dbo:Person,xsd:string,reign of person
+reign name,dbo:reignName,dbo:Person,xsd:string,reign name of person
+atomic weight,dbo:relativeAtomicMass,dbo:ChemicalElement,xsd:nonNegativeInteger,atomic weight of chemical element
+release date,dbo:releaseDate,,xsd:date,release date
+relics,dbo:relics,dbo:ReligiousBuilding,xsd:string,relics of religious building
+relief,dbo:relief,dbo:Place,xsd:string,relief of place
+reopened,dbo:reopened,,xsd:date,reopened
+reopening date,dbo:reopeningDate,dbo:ArchitecturalStructure,xsd:date,reopening date of architectural structure
+reopening year,dbo:reopeningYear,dbo:ArchitecturalStructure,xsd:gYear,reopening year of architectural structure
+reporting mark,dbo:reportingMark,dbo:PublicTransitSystem,xsd:string,reporting mark of public transit system
+number of representatives,dbo:representative,dbo:Place,xsd:nonNegativeInteger,number of representatives of place
+requirement,dbo:requirement,,xsd:string,requirement
+reservations,dbo:reservations,dbo:Restaurant,xsd:boolean,reservations of restaurant
+resting date,dbo:restingDate,dbo:Person,xsd:date,resting date of person
+restore date,dbo:restoreDate,,xsd:date,restore date
+restriction,dbo:restriction,,xsd:string,restriction
+result,dbo:result,dbo:MilitaryConflict,xsd:string,result of military conflict
+relation time,dbo:retentionTime,dbo:Place,xsd:string,relation time of place
+retired,dbo:retired,,xsd:date,retired
+retirement date,dbo:retirementDate,dbo:Person,xsd:date,retirement date of person
+revenue ($),dbo:revenue,dbo:Organisation,xsd:double,revenue of organisation
+year of reported revenue,dbo:revenueYear,dbo:Organization,xsd:gYear,year of reported revenue of organization
+review,dbo:review,dbo:Album,xsd:anyURI,review of album
+bluecoordinate in the RGB space,dbo:rgbCoordinateBlue,dbo:Colour,xsd:nonNegativeInteger,bluecoordinate in the rgb space of colour
+green coordinate in the RGB space,dbo:rgbCoordinateGreen,dbo:Colour,xsd:nonNegativeInteger,green coordinate in the rgb space of colour
+red coordinate in the RGB space,dbo:rgbCoordinateRed,dbo:Colour,xsd:nonNegativeInteger,red coordinate in the rgb space of colour
+RID Id,dbo:ridId,,xsd:string,rid id
+right ascension,dbo:rightAscension,dbo:CelestialBody,xsd:nonNegativeInteger,right ascension of celestial body
+RKDartists id,dbo:rkdArtistsId,,xsd:string,rkdartists id
+number of rocket stages,dbo:rocketStages,dbo:Rocket,xsd:nonNegativeInteger,number of rocket stages of rocket
+roland garros double,dbo:rolandGarrosDouble,dbo:TennisPlayer,xsd:string,roland garros double of tennis player
+roland garros mixed,dbo:rolandGarrosMixed,dbo:TennisPlayer,xsd:string,roland garros mixed of tennis player
+roland garros single,dbo:rolandGarrosSingle,dbo:TennisPlayer,xsd:string,roland garros single of tennis player
+role,dbo:role,,xsd:string,role
+roof height,dbo:roofHeight,dbo:Skyscraper,xsd:nonNegativeInteger,roof height of skyscraper
+rotation period (s),dbo:rotationPeriod,dbo:Planet,xsd:double,rotation period of planet
+route,dbo:route,dbo:Place,xsd:string,route of place
+route direction,dbo:routeDirection,dbo:RouteOfTransportation,xsd:string,route direction of route of transportation
+road end direction,dbo:routeEndDirection,dbo:RouteOfTransportation,xsd:string,road end direction of route of transportation
+route number,dbo:routeNumber,dbo:RouteOfTransportation,xsd:string,route number of route of transportation
+road start direction,dbo:routeStartDirection,dbo:RouteOfTransportation,xsd:string,road start direction of route of transportation
+route type abbreviation,dbo:routeTypeAbbreviation,dbo:RouteOfTransportation,xsd:string,route type abbreviation of route of transportation
+ruling,dbo:ruling,dbo:LegalCase,xsd:string,ruling of legal case
+runtime (s),dbo:runtime,dbo:Work,xsd:double,runtime of work
+designation of runway,dbo:runwayDesignation,dbo:Airport,xsd:string,designation of runway of airport
+length of runway (μ),dbo:runwayLength,dbo:Airport,xsd:double,length of runway of airport
+surface of runway,dbo:runwaySurface,dbo:Airport,xsd:string,surface of runway of airport
+width of runway (μ),dbo:runwayWidth,dbo:Airport,xsd:double,width of runway of airport
+salary ($),dbo:salary,dbo:Person,xsd:double,salary of person
+same name,dbo:sameName,dbo:Settlement,rdf:langString,same name of settlement
+SATCAT,dbo:satcat,dbo:SpaceMission,xsd:string,satcat of space mission
+satellite,dbo:satellite,dbo:Planet,xsd:string,satellite of planet
+satellites deployed,dbo:satellitesDeployed,dbo:SpaceShuttle,xsd:nonNegativeInteger,satellites deployed of space shuttle
+scale,dbo:scale,dbo:Place,xsd:string,scale of place
+scale factor,dbo:scaleFactor,,xsd:float,scale factor
+scene,dbo:scene,dbo:Person,xsd:string,scene of person
+school code,dbo:schoolCode,dbo:School,xsd:string,school code of school
+school number,dbo:schoolNumber,dbo:School,xsd:string,school number of school
+scientific name,dbo:scientificName,dbo:Species,xsd:string,scientific name of species
+score,dbo:score,,xsd:double,score
+season manager,dbo:seasonManager,dbo:Person,xsd:string,season manager of person
+season number,dbo:seasonNumber,dbo:TelevisionEpisode,xsd:nonNegativeInteger,season number of television episode
+number of seats in the land parlement,dbo:seatNumber,dbo:AdministrativeRegion,xsd:nonNegativeInteger,number of seats in the land parlement of administrative region
+seating capacity,dbo:seatingCapacity,dbo:Building,xsd:nonNegativeInteger,seating capacity of building
+second,dbo:second,dbo:Person,xsd:nonNegativeInteger,second of person
+second place,dbo:secondPlace,,xsd:string,second place
+security,dbo:security,dbo:Building,xsd:string,security of building
+selection point,dbo:selectionPoint,dbo:Athlete,xsd:nonNegativeInteger,selection point of athlete
+selection year,dbo:selectionYear,dbo:Athlete,xsd:string,selection year of athlete
+SELIBR Id,dbo:selibrId,,xsd:string,selibr id
+senior,dbo:senior,dbo:PopulatedPlace,xsd:string,senior of populated place
+seniority,dbo:seniority,,xsd:string,seniority
+seniunija,dbo:seniunija,dbo:PopulatedPlace,xsd:string,seniunija of populated place
+sentence,dbo:sentence,dbo:Person,xsd:string,sentence of person
+service end date,dbo:serviceEndDate,dbo:MilitaryPerson,xsd:date,service end date of military person
+service end year,dbo:serviceEndYear,dbo:MilitaryPerson,xsd:gYear,service end year of military person
+service module,dbo:serviceModule,dbo:SpaceMission,xsd:string,service module of space mission
+service number,dbo:serviceNumber,dbo:MilitaryPerson,xsd:string,service number of military person
+service start date,dbo:serviceStartDate,dbo:MilitaryPerson,xsd:date,service start date of military person
+service start year,dbo:serviceStartYear,dbo:MilitaryPerson,xsd:gYear,service start year of military person
+serving size (g),dbo:servingSize,dbo:Food,xsd:double,serving size of food
+serving temperature,dbo:servingTemperature,dbo:Food,xsd:string,serving temperature of food
+session number,dbo:sessionNumber,,xsd:integer,session number
+setting of play,dbo:settingOfPlay,dbo:Play,xsd:string,setting of play of play
+setup time (s),dbo:setupTime,,xsd:double,setup time
+Severe Cases,dbo:severeCases,dbo:Outbreak,xsd:integer,severe cases of outbreak
+sex,dbo:sex,dbo:Person,xsd:string,sex of person
+share date,dbo:shareDate,dbo:Broadcaster,xsd:gYearMonth,share date of broadcaster
+share of audience,dbo:shareOfAudience,dbo:Broadcaster,xsd:float,share of audience of broadcaster
+share source,dbo:shareSource,dbo:Broadcaster,xsd:string,share source of broadcaster
+sharing out population,dbo:sharingOutPopulation,dbo:PopulatedPlace,xsd:nonNegativeInteger,sharing out population of populated place
+sharing out year,dbo:sharingOutPopulationYear,dbo:PopulatedPlace,xsd:string,sharing out year of populated place
+ship beam (μ),dbo:shipBeam,dbo:Ship,xsd:double,ship beam of ship
+displacement (g),dbo:shipDisplacement,dbo:Ship,xsd:double,displacement of ship
+ship draft (μ),dbo:shipDraft,dbo:Ship,xsd:double,ship draft of ship
+ship launched,dbo:shipLaunch,dbo:Ship,xsd:date,ship launched of ship
+shoe number,dbo:shoeNumber,dbo:Person,xsd:positiveInteger,shoe number of person
+shoe size,dbo:shoeSize,dbo:Person,xsd:string,shoe size of person
+shoot,dbo:shoot,dbo:Person,xsd:string,shoot of person
+shoots,dbo:shoots,dbo:IceHockeyPlayer,xsd:string,shoots of ice hockey player
+shore length (μ),dbo:shoreLength,dbo:BodyOfWater,xsd:double,shore length of body of water
+short prog competition,dbo:shortProgCompetition,dbo:Person,xsd:string,short prog competition of person
+short prog score,dbo:shortProgScore,dbo:Person,xsd:string,short prog score of person
+sign name of a hungarian settlement,dbo:signName,dbo:HungarySettlement,rdf:langString,sign name of a hungarian settlement of hungary settlement
+signature,dbo:signature,dbo:Person,xsd:string,signature of person
+silver medal double,dbo:silverMedalDouble,dbo:TennisPlayer,xsd:string,silver medal double of tennis player
+silver medal mixed,dbo:silverMedalMixed,dbo:TennisPlayer,xsd:string,silver medal mixed of tennis player
+silver medal single,dbo:silverMedalSingle,dbo:TennisPlayer,xsd:string,silver medal single of tennis player
+siren number,dbo:siren,,xsd:nonNegativeInteger,siren number
+sixth form students,dbo:sixthFormStudents,dbo:School,xsd:string,sixth form students of school
+size blazon,dbo:sizeBlazon,,xsd:string,size blazon
+size logo,dbo:sizeLogo,,xsd:nonNegativeInteger,size logo
+size map,dbo:sizeMap,,xsd:string,size map
+size thumbnail,dbo:sizeThumbnail,,xsd:string,size thumbnail
+size_v,dbo:size_v,dbo:Openswarm,xsd:integer,size_v of openswarm
+ski lift,dbo:skiLift,dbo:Place,xsd:nonNegativeInteger,ski lift of place
+ski piste kilometre (μ),dbo:skiPisteKilometre,dbo:Place,xsd:double,ski piste kilometre of place
+ski piste number,dbo:skiPisteNumber,dbo:Place,xsd:nonNegativeInteger,ski piste number of place
+ski tow,dbo:skiTow,dbo:Place,xsd:nonNegativeInteger,ski tow of place
+skin color,dbo:skinColor,dbo:Person,xsd:string,skin color of person
+slogan,dbo:slogan,,rdf:langString,slogan
+SMILES,dbo:smiles,dbo:ChemicalCompound,xsd:string,smiles of chemical compound
+snow park number,dbo:snowParkNumber,dbo:Place,xsd:nonNegativeInteger,snow park number of place
+solubility,dbo:solubility,dbo:ChemicalSubstance,xsd:integer,solubility of chemical substance
+source confluence elevation (μ),dbo:sourceConfluenceElevation,,xsd:double,source confluence elevation
+source elevation (μ),dbo:sourceElevation,,xsd:double,source elevation
+sourceText,dbo:sourceText,,rdf:langString,sourcetext
+space,dbo:space,dbo:Building,xsd:nonNegativeInteger,space of building
+spacewalk begin,dbo:spacewalkBegin,dbo:SpaceMission,xsd:date,spacewalk begin of space mission
+spacewalk end,dbo:spacewalkEnd,dbo:SpaceMission,xsd:date,spacewalk end of space mission
+speaker,dbo:speaker,,xsd:integer,speaker
+special trial,dbo:specialTrial,dbo:Person,xsd:nonNegativeInteger,special trial of person
+speciality,dbo:speciality,dbo:Person,xsd:string,speciality of person
+speed limit (kmh),dbo:speedLimit,dbo:RouteOfTransportation,xsd:double,speed limit of route of transportation
+spike,dbo:spike,dbo:VolleyballPlayer,xsd:string,spike of volleyball player
+sports function,dbo:sportsFunction,dbo:Person,xsd:string,sports function of person
+spouse name,dbo:spouseName,dbo:Person,xsd:string,spouse name of person
+squad number,dbo:squadNumber,dbo:SportsTeamMember,xsd:nonNegativeInteger,squad number of sports team member
+staff,dbo:staff,dbo:Organisation,xsd:nonNegativeInteger,staff of organisation
+star rating,dbo:starRating,dbo:Hotel,xsd:float,star rating of hotel
+start,dbo:start,dbo:TimePeriod,xsd:date,start of time period
+start career,dbo:startCareer,dbo:Person,xsd:string,start career of person
+start date,dbo:startDate,dbo:Event,xsd:date,start date of event
+start date and time,dbo:startDateTime,dbo:Event,xsd:dateTime,start date and time of event
+start occupation,dbo:startOccupation,,xsd:string,start occupation
+start xct,dbo:startWct,dbo:Person,xsd:string,start xct of person
+start wqs,dbo:startWqs,dbo:Person,xsd:string,start wqs of person
+start year,dbo:startYear,,xsd:gYear,start year
+start year of insertion,dbo:startYearOfInsertion,dbo:AutomobileEngine,xsd:gYear,start year of insertion of automobile engine
+start year of sales,dbo:startYearOfSales,dbo:Sales,xsd:gYear,start year of sales of sales
+stat name,dbo:statName,,xsd:string,stat name
+stat value,dbo:statValue,,xsd:double,stat value
+state of origin point,dbo:stateOfOriginPoint,dbo:Athlete,xsd:nonNegativeInteger,state of origin point of athlete
+state of origin year,dbo:stateOfOriginYear,dbo:Athlete,xsd:string,state of origin year of athlete
+station EVA duration (s),dbo:stationEvaDuration,dbo:SpaceMission,xsd:double,station eva duration of space mission
+station structure,dbo:stationStructure,dbo:Station,xsd:string,station structure of station
+station visit duration (s),dbo:stationVisitDuration,dbo:SpaceMission,xsd:double,station visit duration of space mission
+statistic value,dbo:statisticValue,dbo:BaseballPlayer,xsd:float,statistic value of baseball player
+statistic year,dbo:statisticYear,dbo:BaseballPlayer,xsd:date,statistic year of baseball player
+status,dbo:status,,xsd:string,status
+status manager,dbo:statusManager,dbo:Person,xsd:string,status manager of person
+status year,dbo:statusYear,dbo:Place,xsd:string,status year of place
+Registered at Stock Exchange,dbo:stockExchange,dbo:Company,xsd:string,registered at stock exchange of company
+strength,dbo:strength,dbo:MilitaryConflict,xsd:string,strength of military conflict
+type of municipality,dbo:subMunicipalityType,dbo:SubMunicipality,xsd:string,type of municipality of sub municipality
+subprefecture,dbo:subPrefecture,dbo:Place,xsd:string,subprefecture of place
+subdivision link,dbo:subdivisionLink,dbo:Place,xsd:string,subdivision link of place
+subdivisions,dbo:subdivisions,,xsd:nonNegativeInteger,subdivisions
+subject of play,dbo:subjectOfPlay,dbo:Play,xsd:string,subject of play of play
+subject term,dbo:subjectTerm,dbo:Work,xsd:string,subject term of work
+sublimation point (K),dbo:sublimationPoint,,xsd:double,sublimation point
+suborbital flights,dbo:suborbitalFlights,dbo:YearInSpaceflight,xsd:nonNegativeInteger,suborbital flights of year in spaceflight
+subsystem,dbo:subsystem,dbo:Place,xsd:string,subsystem of place
+subsystem link,dbo:subsystemLink,dbo:Place,xsd:string,subsystem link of place
+subtitle,dbo:subtitle,,xsd:string,subtitle
+successful launches,dbo:successfulLaunches,,xsd:nonNegativeInteger,successful launches
+SUDOC id,dbo:sudocId,,xsd:string,sudoc id
+summer temperature (K),dbo:summerTemperature,dbo:Settlement,xsd:double,summer temperature of settlement
+superbowl win,dbo:superbowlWin,dbo:Athlete,xsd:string,superbowl win of athlete
+supplemental draft round,dbo:supplementalDraftRound,dbo:Athlete,xsd:string,supplemental draft round of athlete
+supplemental draft year,dbo:supplementalDraftYear,dbo:GridironFootballPlayer,xsd:gYear,supplemental draft year of gridiron football player
+suppredded date,dbo:suppreddedDate,dbo:Saint,xsd:date,suppredded date of saint
+surface area (m2),dbo:surfaceArea,dbo:Planet,xsd:double,surface area of planet
+position in which a surface occurs in a text,dbo:surfaceFormOccurrenceOffset,,xsd:string,position in which a surface occurs in a text
+surface gravity (g),dbo:surfaceGravity,dbo:Planet,xsd:double,surface gravity of planet
+type of surface,dbo:surfaceType,,xsd:string,type of surface
+Suspected Cases,dbo:suspectedCases,dbo:Outbreak,xsd:integer,suspected cases of outbreak
+Swimming style,dbo:swimmingStyle,dbo:Swimmer,xsd:string,swimming style of swimmer
+Symbol,dbo:symbol,dbo:Biomolecule,xsd:string,symbol of biomolecule
+synonym,dbo:synonym,,xsd:string,synonym
+minimum system requirements,dbo:systemRequirements,,xsd:string,minimum system requirements
+tag,dbo:tag,,xsd:date,tag
+taste or flavour,dbo:taste,dbo:Food,xsd:string,taste or flavour of food
+tattoo,dbo:tattoo,dbo:Person,xsd:string,tattoo of person
+team name,dbo:teamName,dbo:School,rdf:langString,team name of school
+team point,dbo:teamPoint,dbo:Athlete,xsd:nonNegativeInteger,team point of athlete
+team size,dbo:teamSize,,xsd:nonNegativeInteger,team size
+team title,dbo:teamTitle,dbo:Athlete,xsd:string,team title of athlete
+technique,dbo:technique,dbo:Painting,xsd:string,technique of painting
+Temporary Placement in the Music Charts,dbo:tempPlace,dbo:ChartsPlacements,xsd:string,temporary placement in the music charts of charts placements
+temperature (K),dbo:temperature,,xsd:double,temperature
+template name,dbo:templateName,dbo:WikimediaTemplate,xsd:string,template name of wikimedia template
+temple,dbo:temple,dbo:Person,xsd:string,temple of person
+temple year,dbo:templeYear,dbo:Person,xsd:string,temple year of person
+type of tennis surface,dbo:tennisSurfaceType,,xsd:string,type of tennis surface
+term of office,dbo:termOfOffice,dbo:PopulatedPlace,xsd:string,term of office of populated place
+tessitura,dbo:tessitura,dbo:Person,xsd:string,tessitura of person
+testaverage,dbo:testaverage,dbo:School,xsd:float,testaverage of school
+Theology,dbo:theology,dbo:ChristianDoctrine,xsd:string,theology of christian doctrine
+third,dbo:third,dbo:Person,xsd:nonNegativeInteger,third of person
+third place,dbo:thirdPlace,,xsd:string,third place
+throwing side,dbo:throwingSide,dbo:BaseballPlayer,xsd:string,throwing side of baseball player
+thumbnail caption,dbo:thumbnailCaption,,xsd:string,thumbnail caption
+tie,dbo:tie,dbo:Boxer,xsd:nonNegativeInteger,tie of boxer
+time,dbo:time,,xsd:string,time
+total time person has spent in space (s),dbo:timeInSpace,,xsd:double,total time person has spent in space
+timeshift channel,dbo:timeshiftChannel,dbo:TelevisionStation,xsd:string,timeshift channel of television station
+title,dbo:title,,rdf:langString,title
+title date,dbo:titleDate,dbo:Person,xsd:date,title date of person
+title double,dbo:titleDouble,dbo:TennisPlayer,xsd:string,title double of tennis player
+title language,dbo:titleLanguage,dbo:Film,xsd:string,title language of film
+title single,dbo:titleSingle,dbo:TennisPlayer,xsd:string,title single of tennis player
+toll ($),dbo:toll,dbo:RouteOfTransportation,xsd:double,toll of route of transportation
+top floor height,dbo:topFloorHeight,dbo:Skyscraper,xsd:nonNegativeInteger,top floor height of skyscraper
+top speed (kmh),dbo:topSpeed,,xsd:double,top speed
+topic,dbo:topic,dbo:PopulatedPlace,xsd:string,topic of populated place
+torque output (Nm),dbo:torqueOutput,dbo:AutomobileEngine,xsd:double,torque output of automobile engine
+total cargo (g),dbo:totalCargo,dbo:Spacecraft,xsd:double,total cargo of spacecraft
+total discs,dbo:totalDiscs,dbo:Album,xsd:integer,total discs of album
+Total Pandemic Cases,dbo:totalIliCases,dbo:Outbreak,xsd:integer,total pandemic cases of outbreak
+total launches,dbo:totalLaunches,,xsd:nonNegativeInteger,total launches
+total mass (g),dbo:totalMass,dbo:Spacecraft,xsd:double,total mass of spacecraft
+total population,dbo:totalPopulation,dbo:EthnicGroup,xsd:nonNegativeInteger,total population of ethnic group
+total tracks,dbo:totalTracks,dbo:Album,xsd:integer,total tracks of album
+total travellers,dbo:totalTravellers,dbo:YearInSpaceflight,xsd:nonNegativeInteger,total travellers of year in spaceflight
+tournament of champions,dbo:tournamentOfChampions,dbo:Athlete,xsd:string,tournament of champions of athlete
+tournament record,dbo:tournamentRecord,dbo:CollegeCoach,xsd:string,tournament record of college coach
+tower height,dbo:towerHeight,dbo:Building,xsd:positiveInteger,tower height of building
+track length (μ),dbo:trackLength,dbo:RouteOfTransportation,xsd:double,track length of route of transportation
+track number,dbo:trackNumber,dbo:Song,xsd:positiveInteger,track number of song
+track width (μ),dbo:trackWidth,dbo:RouteOfTransportation,xsd:double,track width of route of transportation
+trading name,dbo:tradingName,dbo:Company,xsd:string,trading name of company
+trainer years,dbo:trainerYears,dbo:SoccerPlayer,xsd:gYear,trainer years of soccer player
+translated motto,dbo:translatedMotto,,xsd:string,translated motto
+transmission,dbo:transmission,dbo:Automobile,xsd:string,transmission of automobile
+tuition ($),dbo:tuition,dbo:School,xsd:double,tuition of school
+tv.com id,dbo:tvComId,dbo:TelevisionShow,xsd:integer,tv.com id of television show
+type coordinate,dbo:typeCoordinate,dbo:Place,xsd:string,type coordinate of place
+type of grain (wheat etc.),dbo:typeOfGrain,dbo:Food,xsd:string,type of grain of food
+type of storage,dbo:typeOfStorage,dbo:Food,xsd:string,type of storage of food
+type of yeast,dbo:typeOfYeast,dbo:Food,xsd:string,type of yeast of food
+UCI code,dbo:uciCode,dbo:CyclingTeam,xsd:string,uci code of cycling team
+ULAN id,dbo:ulanId,,xsd:string,ulan id
+umbrella title,dbo:umbrellaTitle,dbo:MultiVolumePublication,rdf:langString,umbrella title of multi volume publication
+UN number,dbo:unNumber,dbo:ChemicalSubstance,xsd:string,un number of chemical substance
+undrafted year,dbo:undraftedYear,dbo:GridironFootballPlayer,xsd:gYear,undrafted year of gridiron football player
+unicode,dbo:unicode,dbo:Letter,xsd:string,unicode of letter
+UniProt,dbo:uniprot,dbo:Biomolecule,xsd:string,uniprot of biomolecule
+unit cost ($),dbo:unitCost,dbo:Aircraft,xsd:double,unit cost of aircraft
+United States National Bridge ID,dbo:unitedStatesNationalBridgeId,dbo:Bridge,xsd:string,united states national bridge id of bridge
+unknown outcomes,dbo:unknownOutcomes,dbo:Rocket,xsd:nonNegativeInteger,unknown outcomes of rocket
+UN/LOCODE,dbo:unloCode,dbo:Place,xsd:string,un/locode of place
+updated,dbo:updated,,xsd:date,updated
+upper age,dbo:upperAge,dbo:School,xsd:nonNegativeInteger,upper age of school
+urban area,dbo:urbanArea,dbo:Settlement,xsd:string,urban area of settlement
+us open double,dbo:usOpenDouble,dbo:TennisPlayer,xsd:string,us open double of tennis player
+us open mixed,dbo:usOpenMixed,dbo:TennisPlayer,xsd:string,us open mixed of tennis player
+us open single,dbo:usOpenSingle,dbo:TennisPlayer,xsd:string,us open single of tennis player
+US sales,dbo:usSales,dbo:Sales,xsd:nonNegativeInteger,us sales of sales
+approved rating of the Entertainment Software Self-Regulation Body in Germany,dbo:usk,,xsd:integer,approved rating of the entertainment software self-regulation body in germany
+UTC offset,dbo:utcOffset,dbo:Place,xsd:string,utc offset of place
+V_hb,dbo:v_hb,dbo:Globularswarm,xsd:integer,v_hb of globularswarm
+Vaccine,dbo:vaccine,,xsd:string,vaccine
+value,dbo:value,,xsd:nonNegativeInteger,value
+valvetrain,dbo:valvetrain,dbo:AutomobileEngine,dbd:valvetrain,valvetrain of automobile engine in valvetrain
+vapor pressure (hPa),dbo:vaporPressure,dbo:ChemicalSubstance,dbd:hectopascal,vapor pressure of chemical substance in hectopascal
+vehicle code,dbo:vehicleCode,dbo:Place,xsd:string,vehicle code of place
+vehicles per day,dbo:vehiclesPerDay,dbo:RouteOfTransportation,xsd:nonNegativeInteger,vehicles per day of route of transportation
+VIAF Id,dbo:viafId,,xsd:string,viaf id
+victims (string),dbo:victims,,xsd:string,victims
+victory,dbo:victory,dbo:Person,xsd:nonNegativeInteger,victory of person
+victory as manager,dbo:victoryAsMgr,dbo:Person,xsd:nonNegativeInteger,victory as manager of person
+victory percentage as manager,dbo:victoryPercentageAsMgr,dbo:Person,xsd:double,victory percentage as manager of person
+virtual channel,dbo:virtualChannel,dbo:Broadcaster,xsd:string,virtual channel of broadcaster
+visitors per day,dbo:visitorsPerDay,dbo:ArchitecturalStructure,xsd:nonNegativeInteger,visitors per day of architectural structure
+visitors per year,dbo:visitorsPerYear,dbo:ArchitecturalStructure,xsd:nonNegativeInteger,visitors per year of architectural structure
+visitor percentage change,dbo:visitorsPercentageChange,dbo:ArchitecturalStructure,xsd:double,visitor percentage change of architectural structure
+visitors total,dbo:visitorsTotal,dbo:ArchitecturalStructure,xsd:nonNegativeInteger,visitors total of architectural structure
+volcanic activity,dbo:volcanicActivity,dbo:Island,xsd:string,volcanic activity of island
+volcanic type,dbo:volcanicType,dbo:Island,xsd:string,volcanic type of island
+volcano id,dbo:volcanoId,dbo:Island,xsd:string,volcano id of island
+voltage of electrification (V),dbo:voltageOfElectrification,dbo:RouteOfTransportation,xsd:double,voltage of electrification of route of transportation
+volume (μ³),dbo:volume,,xsd:double,volume
+volume quote,dbo:volumeQuote,dbo:Place,xsd:string,volume quote of place
+von Klitzing electromagnetic constant (RK),dbo:vonKlitzingConstant,dbo:CelestialBody,xsd:double,von klitzing electromagnetic constant of celestial body
+Votes against the resolution,dbo:votesAgainst,dbo:StatedResolution,xsd:nonNegativeInteger,votes against the resolution of stated resolution
+Number of votes in favour of the resolution,dbo:votesFor,dbo:StatedResolution,xsd:nonNegativeInteger,number of votes in favour of the resolution of stated resolution
+waist size (μ),dbo:waistSize,dbo:Person,xsd:double,waist size of person
+wars,dbo:war,dbo:MilitaryPerson,xsd:string,wars of military person
+ward of a liechtenstein settlement,dbo:ward,dbo:LiechtensteinSettlement,xsd:string,ward of a liechtenstein settlement of liechtenstein settlement
+water,dbo:water,dbo:Place,xsd:string,water of place
+area of water (m2),dbo:waterArea,dbo:Place,xsd:double,area of water of place
+water percentage of a place,dbo:waterPercentage,dbo:Place,xsd:float,water percentage of a place of place
+watercourse,dbo:watercourse,dbo:PopulatedPlace,xsd:string,watercourse of populated place
+watershed (m2),dbo:watershed,dbo:Stream,xsd:double,watershed of stream
+wavelength (μ),dbo:wavelength,dbo:Colour,xsd:double,wavelength of colour
+label of a website,dbo:websiteLabel,,rdf:langString,label of a website
+Parents Wedding Date,dbo:weddingParentsDate,dbo:Person,xsd:date,parents wedding date of person
+weight (g),dbo:weight,,xsd:double,weight
+wha draft,dbo:whaDraft,dbo:IceHockeyPlayer,xsd:string,wha draft of ice hockey player
+wha draft year,dbo:whaDraftYear,dbo:IceHockeyPlayer,xsd:date,wha draft year of ice hockey player
+wheelbase (μ),dbo:wheelbase,dbo:Automobile,xsd:double,wheelbase of automobile
+width (μ),dbo:width,,xsd:double,width
+width quote,dbo:widthQuote,dbo:Place,xsd:string,width quote of place
+Character size of wiki page,dbo:wikiPageCharacterSize,,xsd:nonNegativeInteger,character size of wiki page
+extraction datetime,dbo:wikiPageExtracted,,xsd:dateTime,extraction datetime
+Wikipage page ID,dbo:wikiPageID,,xsd:integer,wikipage page id
+Wiki page in degree,dbo:wikiPageInDegree,,xsd:nonNegativeInteger,wiki page in degree
+page length (characters) of wiki page,dbo:wikiPageLength,,xsd:nonNegativeInteger,page length of wiki page
+Delta size of a revision with last one,dbo:wikiPageLengthDelta,Prov:Revision,xsd:integer,delta size of a revision with last one of revision
+Wikipage modification datetime,dbo:wikiPageModified,,xsd:dateTime,wikipage modification datetime
+Wiki page out degree,dbo:wikiPageOutDegree,,xsd:nonNegativeInteger,wiki page out degree
+Wikipage revision ID,dbo:wikiPageRevisionID,,xsd:integer,wikipage revision id
+wimbledon double,dbo:wimbledonDouble,dbo:TennisPlayer,xsd:string,wimbledon double of tennis player
+wimbledon mixed,dbo:wimbledonMixed,dbo:TennisPlayer,xsd:string,wimbledon mixed of tennis player
+wimbledon single,dbo:wimbledonSingle,dbo:TennisPlayer,xsd:string,wimbledon single of tennis player
+wine year,dbo:wineYear,dbo:WineRegion,xsd:date,wine year of wine region
+wing area (m2),dbo:wingArea,dbo:Aircraft,xsd:double,wing area of aircraft
+wingspan (μ),dbo:wingspan,dbo:Aircraft,xsd:double,wingspan of aircraft
+wins,dbo:wins,,xsd:nonNegativeInteger,wins
+winter temperature (K),dbo:winterTemperature,dbo:Settlement,xsd:double,winter temperature of settlement
+word before the country,dbo:wordBefore,dbo:Country,xsd:string,word before the country of country
+work,dbo:work,dbo:FictionalCharacter,xsd:string,work of fictional character
+work area (m2),dbo:workArea,dbo:Building,xsd:double,work area of building
+year of world champion title,dbo:worldChampionTitleYear,dbo:Athlete,xsd:string,year of world champion title of athlete
+world open,dbo:worldOpen,dbo:Athlete,xsd:string,world open of athlete
+world team cup,dbo:worldTeamCup,dbo:Athlete,xsd:string,world team cup of athlete
+world tournament bronze,dbo:worldTournamentBronze,dbo:Person,xsd:nonNegativeInteger,world tournament bronze of person
+world tournament gold,dbo:worldTournamentGold,dbo:Person,xsd:nonNegativeInteger,world tournament gold of person
+world tournament silver,dbo:worldTournamentSilver,dbo:Person,xsd:nonNegativeInteger,world tournament silver of person
+worst defeat,dbo:worstDefeat,dbo:SoccerClub,xsd:string,worst defeat of soccer club
+wpt final table,dbo:wptFinalTable,dbo:PokerPlayer,xsd:nonNegativeInteger,wpt final table of poker player
+wpt itm,dbo:wptItm,dbo:PokerPlayer,xsd:nonNegativeInteger,wpt itm of poker player
+wpt title,dbo:wptTitle,dbo:PokerPlayer,xsd:string,wpt title of poker player
+wsop itm,dbo:wsopItm,dbo:PokerPlayer,xsd:nonNegativeInteger,wsop itm of poker player
+wsop win year,dbo:wsopWinYear,dbo:PokerPlayer,xsd:gYear,wsop win year of poker player
+wsop wristband,dbo:wsopWristband,dbo:PokerPlayer,xsd:nonNegativeInteger,wsop wristband of poker player
+year,dbo:year,,xsd:gYear,year
+year of elevation into the nobility,dbo:yearElevationIntoNobility,dbo:NobleFamily,xsd:string,year of elevation into the nobility of noble family
+year of construction,dbo:yearOfConstruction,dbo:Place,xsd:gYear,year of construction of place
+year of electrification,dbo:yearOfElectrification,dbo:Station,xsd:gYear,year of electrification of station
+years,dbo:years,dbo:SoccerPlayer,xsd:gYear,years of soccer player
+youth years,dbo:youthYears,dbo:SoccerPlayer,xsd:gYear,youth years of soccer player
+zdb,dbo:zdb,dbo:PeriodicalLiterature,xsd:string,zdb of periodical literature
+zip code,dbo:zipCode,dbo:PopulatedPlace,xsd:string,zip code of populated place

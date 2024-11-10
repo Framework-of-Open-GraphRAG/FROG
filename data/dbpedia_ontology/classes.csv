@@ -1,0 +1,777 @@
+classLabel,short
+academic  person,dbo:Academic
+academic conference,dbo:AcademicConference
+academic journal,dbo:AcademicJournal
+academic subject,dbo:AcademicSubject
+activity,dbo:Activity
+actor,dbo:Actor
+administrative region,dbo:AdministrativeRegion
+adult pornographic actor,dbo:AdultActor
+agent,dbo:Agent
+agglomeration,dbo:Agglomeration
+airline,dbo:Airline
+airport,dbo:Airport
+album,dbo:Album
+algorithm,dbo:Algorithm
+altitude,dbo:Altitude
+amateur boxer,dbo:AmateurBoxer
+ambassador,dbo:Ambassador
+american football coach,dbo:AmericanFootballCoach
+american football league,dbo:AmericanFootballLeague
+american football player,dbo:AmericanFootballPlayer
+american football  team,dbo:AmericanFootballTeam
+american  leader,dbo:AmericanLeader
+amphibian,dbo:Amphibian
+amusement park attraction,dbo:AmusementParkAttraction
+anatomical structure,dbo:AnatomicalStructure
+animal,dbo:Animal
+animanga character,dbo:AnimangaCharacter
+anime,dbo:Anime
+annotation,dbo:Annotation
+arachnid,dbo:Arachnid
+archaea,dbo:Archaea
+archbishop,dbo:Archbishop
+archeologist,dbo:Archeologist
+archer  player,dbo:ArcherPlayer
+archipelago,dbo:Archipelago
+architect,dbo:Architect
+architectural structure,dbo:ArchitecturalStructure
+archive,dbo:Archive
+area,dbo:Area
+arena,dbo:Arena
+aristocrat,dbo:Aristocrat
+arrondissement,dbo:Arrondissement
+artery,dbo:Artery
+article,dbo:Article
+artificial satellite,dbo:ArtificialSatellite
+artist,dbo:Artist
+artist discography,dbo:ArtistDiscography
+artistic genre,dbo:ArtisticGenre
+artwork,dbo:Artwork
+asteroid,dbo:Asteroid
+astronaut,dbo:Astronaut
+athlete,dbo:Athlete
+athletics,dbo:Athletics
+athletics player,dbo:AthleticsPlayer
+atoll,dbo:Atoll
+attack,dbo:Attack
+australian football league,dbo:AustralianFootballLeague
+australian football  team,dbo:AustralianFootballTeam
+australian rules football player,dbo:AustralianRulesFootballPlayer
+auto racing league,dbo:AutoRacingLeague
+automobile,dbo:Automobile
+automobile engine,dbo:AutomobileEngine
+award,dbo:Award
+back scene,dbo:BackScene
+bacteria,dbo:Bacteria
+badminton player,dbo:BadmintonPlayer
+band,dbo:Band
+bank,dbo:Bank
+baronet,dbo:Baronet
+baseball league,dbo:BaseballLeague
+baseball player,dbo:BaseballPlayer
+baseball season,dbo:BaseballSeason
+baseball team,dbo:BaseballTeam
+basketball league,dbo:BasketballLeague
+basketball player,dbo:BasketballPlayer
+basketball team,dbo:BasketballTeam
+battery,dbo:Battery
+bay,dbo:Bay
+beach,dbo:Beach
+beach volleyball player,dbo:BeachVolleyballPlayer
+beauty queen,dbo:BeautyQueen
+beer,dbo:Beer
+beverage,dbo:Beverage
+biathlete,dbo:Biathlete
+biological database,dbo:BiologicalDatabase
+biologist,dbo:Biologist
+biomolecule,dbo:Biomolecule
+bird,dbo:Bird
+blazon,dbo:Blazon
+blood vessel,dbo:BloodVessel
+board game,dbo:BoardGame
+bobsleigh athlete,dbo:BobsleighAthlete
+body of water,dbo:BodyOfWater
+bodybuilder,dbo:Bodybuilder
+bone,dbo:Bone
+book,dbo:Book
+bowling league,dbo:BowlingLeague
+boxer,dbo:Boxer
+boxing league,dbo:BoxingLeague
+brain,dbo:Brain
+brewery,dbo:Brewery
+bridge,dbo:Bridge
+british royalty,dbo:BritishRoyalty
+broadcast network,dbo:BroadcastNetwork
+broadcaster,dbo:Broadcaster
+brown dwarf,dbo:BrownDwarf
+browser,dbo:Browser
+building,dbo:Building
+bullfighter,dbo:BullFighter
+bus company,dbo:BusCompany
+businessperson,dbo:BusinessPerson
+camera,dbo:Camera
+liga de fútbol canadiense,dbo:CanadianFootballLeague
+canadian football  player,dbo:CanadianFootballPlayer
+canadian football  team,dbo:CanadianFootballTeam
+canal,dbo:Canal
+canoeist,dbo:Canoeist
+canton,dbo:Canton
+cape,dbo:Cape
+capital,dbo:Capital
+capital of region,dbo:CapitalOfRegion
+card game,dbo:CardGame
+cardinal,dbo:Cardinal
+cardinal direction,dbo:CardinalDirection
+career station,dbo:CareerStation
+cartoon,dbo:Cartoon
+case,dbo:Case
+casino,dbo:Casino
+castle,dbo:Castle
+cat,dbo:Cat
+caterer,dbo:Caterer
+cave,dbo:Cave
+celestial body,dbo:CelestialBody
+cemetery,dbo:Cemetery
+chancellor,dbo:Chancellor
+place in the  music  charts,dbo:ChartsPlacements
+cheese,dbo:Cheese
+chef,dbo:Chef
+chemical compound,dbo:ChemicalCompound
+chemical element,dbo:ChemicalElement
+chemical substance,dbo:ChemicalSubstance
+chess player,dbo:ChessPlayer
+chief,dbo:Chief
+christian  bishop,dbo:ChristianBishop
+christian  doctrine,dbo:ChristianDoctrine
+christian  patriarch,dbo:ChristianPatriarch
+church,dbo:Church
+cinema movie theater,dbo:Cinema
+cipher,dbo:Cipher
+city,dbo:City
+city district,dbo:CityDistrict
+classical music artist,dbo:ClassicalMusicArtist
+classical music composition,dbo:ClassicalMusicComposition
+cleric,dbo:Cleric
+clerical administrative region,dbo:ClericalAdministrativeRegion
+clerical order,dbo:ClericalOrder
+club moss,dbo:ClubMoss
+coach,dbo:Coach
+coal pit,dbo:CoalPit
+collection of valuables,dbo:CollectionOfValuables
+college,dbo:College
+college coach,dbo:CollegeCoach
+colour,dbo:Colour
+combination drug,dbo:CombinationDrug
+comedian,dbo:Comedian
+comedy  group,dbo:ComedyGroup
+comic,dbo:Comic
+comic strip,dbo:ComicStrip
+comics character,dbo:ComicsCharacter
+comics creator,dbo:ComicsCreator
+community,dbo:Community
+company,dbo:Company
+competition,dbo:Competition
+concentration camp,dbo:ConcentrationCamp
+congressman,dbo:Congressman
+conifer,dbo:Conifer
+constellation,dbo:Constellation
+contest,dbo:Contest
+continent,dbo:Continent
+controlled designation of origin wine,dbo:ControlledDesignationOfOriginWine
+convention,dbo:Convention
+conveyor system,dbo:ConveyorSystem
+country,dbo:Country
+country estate,dbo:CountrySeat
+c o v i d19 pandemic,dbo:Covid19
+crater,dbo:Crater
+cricket ground,dbo:CricketGround
+cricket league,dbo:CricketLeague
+cricket team,dbo:CricketTeam
+cricketer,dbo:Cricketer
+criminal,dbo:Criminal
+crosscountry skier,dbo:CrossCountrySkier
+crustacean,dbo:Crustacean
+curler,dbo:Curler
+curling league,dbo:CurlingLeague
+currency,dbo:Currency
+cycad,dbo:Cycad
+cycling competition,dbo:CyclingCompetition
+cycling league,dbo:CyclingLeague
+cycling race,dbo:CyclingRace
+cycling team,dbo:CyclingTeam
+cyclist,dbo:Cyclist
+d bpedian,dbo:DBpedian
+d t m racer,dbo:DTMRacer
+dam,dbo:Dam
+dancer,dbo:Dancer
+darts player,dbo:DartsPlayer
+database,dbo:Database
+deanery,dbo:Deanery
+decoration,dbo:Decoration
+deity,dbo:Deity
+demographics,dbo:Demographics
+department,dbo:Department
+depth,dbo:Depth
+deputy,dbo:Deputy
+desert,dbo:Desert
+device,dbo:Device
+digital camera,dbo:DigitalCamera
+dike,dbo:Dike
+diocese,dbo:Diocese
+diploma,dbo:Diploma
+disease,dbo:Disease
+disney character,dbo:DisneyCharacter
+district,dbo:District
+district water board,dbo:DistrictWaterBoard
+document,dbo:Document
+dog,dbo:Dog
+drama,dbo:Drama
+drug,dbo:Drug
+earthquake,dbo:Earthquake
+economist,dbo:Economist
+educational institution,dbo:EducationalInstitution
+egyptologist,dbo:Egyptologist
+election,dbo:Election
+election  diagram,dbo:ElectionDiagram
+electrical substation,dbo:ElectricalSubstation
+embryology,dbo:Embryology
+employer,dbo:Employer
+employers  organisation,dbo:EmployersOrganisation
+engine,dbo:Engine
+engineer,dbo:Engineer
+entomologist,dbo:Entomologist
+enzyme,dbo:Enzyme
+escalator,dbo:Escalator
+ethnic group,dbo:EthnicGroup
+eurovision song contest entry,dbo:EurovisionSongContestEntry
+event,dbo:Event
+factory,dbo:Factory
+family,dbo:Family
+farmer,dbo:Farmer
+fashion,dbo:Fashion
+fashion designer,dbo:FashionDesigner
+fencer,dbo:Fencer
+fern,dbo:Fern
+fictional character,dbo:FictionalCharacter
+field hockey league,dbo:FieldHockeyLeague
+figure skater,dbo:FigureSkater
+file,dbo:File
+file system,dbo:FileSystem
+movie,dbo:Film
+fish,dbo:Fish
+flag,dbo:Flag
+flowering plant,dbo:FloweringPlant
+food,dbo:Food
+football league season,dbo:FootballLeagueSeason
+football match,dbo:FootballMatch
+forest,dbo:Forest
+onetime municipality,dbo:FormerMunicipality
+formula  one racer,dbo:FormulaOneRacer
+formula one racing,dbo:FormulaOneRacing
+formula 1 team,dbo:FormulaOneTeam
+fort,dbo:Fort
+gaelic games player,dbo:GaelicGamesPlayer
+galaxy,dbo:Galaxy
+game,dbo:Game
+garden,dbo:Garden
+gated community,dbo:GatedCommunity
+gene,dbo:Gene
+gene location,dbo:GeneLocation
+genre,dbo:Genre
+geological period,dbo:GeologicalPeriod
+geopolitical organisation,dbo:GeopoliticalOrganisation
+ginkgo,dbo:Ginkgo
+given name,dbo:GivenName
+glacier,dbo:Glacier
+globular  swarm,dbo:Globularswarm
+gnetophytes,dbo:Gnetophytes
+golf course,dbo:GolfCourse
+golf league,dbo:GolfLeague
+golf player,dbo:GolfPlayer
+golf tournament,dbo:GolfTournament
+government agency,dbo:GovernmentAgency
+cabinet of ministers,dbo:GovernmentCabinet
+government  type,dbo:GovernmentType
+governmental administrative region,dbo:GovernmentalAdministrativeRegion
+governor,dbo:Governor
+grand  prix,dbo:GrandPrix
+grape,dbo:Grape
+grave stone or grave monument,dbo:GraveMonument
+green alga,dbo:GreenAlga
+gridiron football player,dbo:GridironFootballPlayer
+gross domestic product,dbo:GrossDomesticProduct
+gross domestic product per capita,dbo:GrossDomesticProductPerCapita
+group,dbo:Group
+guitarist,dbo:Guitarist
+gymnast,dbo:Gymnast
+handball league,dbo:HandballLeague
+handball player,dbo:HandballPlayer
+handball team,dbo:HandballTeam
+high diver,dbo:HighDiver
+historian,dbo:Historian
+historic building,dbo:HistoricBuilding
+historic place,dbo:HistoricPlace
+ancient area of jurisdiction of a person feudal or of a governmental body,dbo:HistoricalAreaOfAuthority
+historical country,dbo:HistoricalCountry
+historical district,dbo:HistoricalDistrict
+historical event,dbo:HistoricalEvent
+historical period,dbo:HistoricalPeriod
+historical province,dbo:HistoricalProvince
+historical region,dbo:HistoricalRegion
+historical settlement,dbo:HistoricalSettlement
+hockey club,dbo:HockeyClub
+hockey team,dbo:HockeyTeam
+holiday,dbo:Holiday
+hollywood cartoon,dbo:HollywoodCartoon
+hormone,dbo:Hormone
+horse,dbo:Horse
+horse race,dbo:HorseRace
+horse rider,dbo:HorseRider
+horse trainer,dbo:HorseTrainer
+hospital,dbo:Hospital
+hot spring,dbo:HotSpring
+hotel,dbo:Hotel
+human gene,dbo:HumanGene
+human gene location,dbo:HumanGeneLocation
+humorist,dbo:Humorist
+ice hockey league,dbo:IceHockeyLeague
+ice hockey player,dbo:IceHockeyPlayer
+identifier,dbo:Identifier
+ideology,dbo:Ideology
+image,dbo:Image
+information appliance,dbo:InformationAppliance
+infrastructure,dbo:Infrastructure
+infrastructure,dbo:Infrastucture
+inline hockey league,dbo:InlineHockeyLeague
+insect,dbo:Insect
+instrument,dbo:Instrument
+instrumentalist,dbo:Instrumentalist
+intercommunality,dbo:Intercommunality
+international football league event,dbo:InternationalFootballLeagueEvent
+international organisation,dbo:InternationalOrganisation
+island,dbo:Island
+jewish leader,dbo:JewishLeader
+jockey horse racer,dbo:Jockey
+journalist,dbo:Journalist
+judge,dbo:Judge
+lacrosse league,dbo:LacrosseLeague
+lacrosse player,dbo:LacrossePlayer
+lake,dbo:Lake
+language,dbo:Language
+latter  day  saint,dbo:LatterDaySaint
+launch pad,dbo:LaunchPad
+law,dbo:Law
+law firm,dbo:LawFirm
+lawyer,dbo:Lawyer
+legal  case,dbo:LegalCase
+legislature,dbo:Legislature
+letter,dbo:Letter
+library,dbo:Library
+lieutenant,dbo:Lieutenant
+life cycle event,dbo:LifeCycleEvent
+ligament,dbo:Ligament
+light novel,dbo:LightNovel
+lighthouse,dbo:Lighthouse
+line of fashion,dbo:LineOfFashion
+linguist,dbo:Linguist
+lipid,dbo:Lipid
+list,dbo:List
+literary genre,dbo:LiteraryGenre
+locality,dbo:Locality
+lock,dbo:Lock
+locomotive,dbo:Locomotive
+lunar crater,dbo:LunarCrater
+lymph,dbo:Lymph
+magazine,dbo:Magazine
+mammal,dbo:Mammal
+man,dbo:Man
+manga,dbo:Manga
+manhua,dbo:Manhua
+manhwa,dbo:Manhwa
+manor,dbo:Manor
+martial artist,dbo:MartialArtist
+mathematical concept,dbo:MathematicalConcept
+mayor,dbo:Mayor
+mean of transportation,dbo:MeanOfTransportation
+media,dbo:Media
+medical specialty,dbo:MedicalSpecialty
+medician,dbo:Medician
+medicine,dbo:Medicine
+meeting,dbo:Meeting
+member of parliament,dbo:MemberOfParliament
+member of a  resistance  movement,dbo:MemberResistanceMovement
+memorial,dbo:Memorial
+subway station,dbo:MetroStation
+microregion,dbo:MicroRegion
+military aircraft,dbo:MilitaryAircraft
+military conflict,dbo:MilitaryConflict
+military person,dbo:MilitaryPerson
+military service,dbo:MilitaryService
+military structure,dbo:MilitaryStructure
+military unit,dbo:MilitaryUnit
+military vehicle,dbo:MilitaryVehicle
+mill,dbo:Mill
+mine,dbo:Mine
+mineral,dbo:Mineral
+minister,dbo:Minister
+mixed martial arts event,dbo:MixedMartialArtsEvent
+mixed martial arts league,dbo:MixedMartialArtsLeague
+mobile phone,dbo:MobilePhone
+model,dbo:Model
+mollusca,dbo:Mollusca
+monarch,dbo:Monarch
+monastery,dbo:Monastery
+monoclonal antibody,dbo:MonoclonalAntibody
+monument,dbo:Monument
+mosque,dbo:Mosque
+moss,dbo:Moss
+motocycle racer,dbo:MotocycleRacer
+motor race,dbo:MotorRace
+motorcycle,dbo:Motorcycle
+motorcycle racing league,dbo:MotorcycleRacingLeague
+motorcycle rider,dbo:MotorcycleRider
+motorsport racer,dbo:MotorsportRacer
+motorsport season,dbo:MotorsportSeason
+mountain,dbo:Mountain
+mountain pass,dbo:MountainPass
+mountain range,dbo:MountainRange
+mouse gene,dbo:MouseGene
+mouse gene location,dbo:MouseGeneLocation
+movie director,dbo:MovieDirector
+movie genre,dbo:MovieGenre
+moving image,dbo:MovingImage
+travellator,dbo:MovingWalkway
+multi volume publication,dbo:MultiVolumePublication
+municipality,dbo:Municipality
+murderer,dbo:Murderer
+muscle,dbo:Muscle
+museum,dbo:Museum
+music composer,dbo:MusicComposer
+music director,dbo:MusicDirector
+music festival,dbo:MusicFestival
+music genre,dbo:MusicGenre
+musical,dbo:Musical
+musical work,dbo:MusicalWork
+mythological figure,dbo:MythologicalFigure
+national collegiate athletic association team season,dbo:NCAATeamSeason
+name,dbo:Name
+naruto character,dbo:NarutoCharacter
+nascar driver,dbo:NascarDriver
+national anthem,dbo:NationalAnthem
+national collegiate athletic association athlete,dbo:NationalCollegiateAthleticAssociationAthlete
+national football league event,dbo:NationalFootballLeagueEvent
+national football league season,dbo:NationalFootballLeagueSeason
+national soccer club,dbo:NationalSoccerClub
+natural place,dbo:NaturalPlace
+natural region,dbo:NaturalRegion
+nebula,dbo:Nebula
+nerve,dbo:Nerve
+netball player,dbo:NetballPlayer
+newspaper,dbo:Newspaper
+nobel  prize,dbo:NobelPrize
+noble,dbo:Noble
+noble family,dbo:NobleFamily
+nonprofit organisation,dbo:Non-ProfitOrganisation
+nordic  combined,dbo:NordicCombined
+novel,dbo:Novel
+nuclear  power plant,dbo:NuclearPowerStation
+ocean,dbo:Ocean
+office holder,dbo:OfficeHolder
+old territory,dbo:OldTerritory
+olympic event,dbo:OlympicEvent
+olympic result,dbo:OlympicResult
+olympics,dbo:Olympics
+onsite mean of transportation,dbo:On-SiteTransportation
+open  swarm,dbo:Openswarm
+opera,dbo:Opera
+organ,dbo:Organ
+organisation,dbo:Organisation
+organisation member,dbo:OrganisationMember
+outbreak,dbo:Outbreak
+overseas department,dbo:OverseasDepartment
+painter,dbo:Painter
+painting,dbo:Painting
+pandemic,dbo:Pandemic
+parish,dbo:Parish
+park,dbo:Park
+parliament,dbo:Parliament
+penalty shootout,dbo:PenaltyShootOut
+periodical literature,dbo:PeriodicalLiterature
+person,dbo:Person
+person function,dbo:PersonFunction
+personal event,dbo:PersonalEvent
+pharaoh,dbo:Pharaoh
+philosopher,dbo:Philosopher
+philosophical concept,dbo:PhilosophicalConcept
+photographer,dbo:Photographer
+pilot,dbo:Pilot
+place,dbo:Place
+planet,dbo:Planet
+plant,dbo:Plant
+play,dbo:Play
+playwright,dbo:PlayWright
+playboy  playmate,dbo:PlayboyPlaymate
+poem,dbo:Poem
+poet,dbo:Poet
+poker player,dbo:PokerPlayer
+police  officer,dbo:PoliceOfficer
+political concept,dbo:PoliticalConcept
+political function,dbo:PoliticalFunction
+political party,dbo:PoliticalParty
+politician,dbo:Politician
+politician spouse,dbo:PoliticianSpouse
+polo league,dbo:PoloLeague
+polysaccharide,dbo:Polysaccharide
+pope,dbo:Pope
+populated place,dbo:PopulatedPlace
+population,dbo:Population
+port,dbo:Port
+power station,dbo:PowerStation
+prefecture,dbo:Prefecture
+prehistorical period,dbo:PrehistoricalPeriod
+presenter,dbo:Presenter
+president,dbo:President
+pretender,dbo:Pretender
+priest,dbo:Priest
+prime minister,dbo:PrimeMinister
+prison,dbo:Prison
+producer,dbo:Producer
+profession,dbo:Profession
+professor,dbo:Professor
+programming language,dbo:ProgrammingLanguage
+project,dbo:Project
+protected area,dbo:ProtectedArea
+protein,dbo:Protein
+protocol,dbo:Protocol
+protohistorical period,dbo:ProtohistoricalPeriod
+province,dbo:Province
+psychologist,dbo:Psychologist
+public service,dbo:PublicService
+public transit system,dbo:PublicTransitSystem
+publisher,dbo:Publisher
+pyramid,dbo:Pyramid
+quote,dbo:Quote
+race,dbo:Race
+race track,dbo:RaceTrack
+racing driver,dbo:RacingDriver
+radiocontrolled racing league,dbo:RadioControlledRacingLeague
+radio host,dbo:RadioHost
+radio program,dbo:RadioProgram
+radio station,dbo:RadioStation
+railway line,dbo:RailwayLine
+train station,dbo:RailwayStation
+railway tunnel,dbo:RailwayTunnel
+rally driver,dbo:RallyDriver
+rebbe,dbo:Rebbe
+rebellion,dbo:Rebellion
+record label,dbo:RecordLabel
+record  office,dbo:RecordOffice
+referee,dbo:Referee
+reference,dbo:Reference
+regency,dbo:Regency
+region,dbo:Region
+reign,dbo:Reign
+relationship,dbo:Relationship
+religious,dbo:Religious
+religious building,dbo:ReligiousBuilding
+religious organisation,dbo:ReligiousOrganisation
+reptile,dbo:Reptile
+research project,dbo:ResearchProject
+rest area,dbo:RestArea
+restaurant,dbo:Restaurant
+resume,dbo:Resume
+river,dbo:River
+road,dbo:Road
+road junction,dbo:RoadJunction
+road tunnel,dbo:RoadTunnel
+robot,dbo:Robot
+rocket,dbo:Rocket
+rocket engine,dbo:RocketEngine
+roller coaster,dbo:RollerCoaster
+roman emperor,dbo:RomanEmperor
+route of transportation,dbo:RouteOfTransportation
+route stop,dbo:RouteStop
+rower,dbo:Rower
+royalty,dbo:Royalty
+rugby club,dbo:RugbyClub
+rugby league,dbo:RugbyLeague
+rugby player,dbo:RugbyPlayer
+sailor,dbo:Sailor
+saint,dbo:Saint
+sales,dbo:Sales
+samba school,dbo:SambaSchool
+satellite,dbo:Satellite
+school,dbo:School
+scientific concept,dbo:ScientificConcept
+scientist,dbo:Scientist
+screenwriter,dbo:ScreenWriter
+sculptor,dbo:Sculptor
+sculpture,dbo:Sculpture
+sea,dbo:Sea
+senator,dbo:Senator
+serial killer,dbo:SerialKiller
+settlement,dbo:Settlement
+ship,dbo:Ship
+shopping mall,dbo:ShoppingMall
+shrine,dbo:Shrine
+singer,dbo:Singer
+single,dbo:Single
+single list,dbo:SingleList
+site of  special  scientific  interest,dbo:SiteOfSpecialScientificInterest
+skater,dbo:Skater
+ski area,dbo:SkiArea
+ski resort,dbo:SkiResort
+ski jumper,dbo:Ski_jumper
+skier,dbo:Skier
+concept,dbo:Skos
+skyscraper,dbo:Skyscraper
+snooker world champion,dbo:SnookerChamp
+snooker player,dbo:SnookerPlayer
+snooker world ranking,dbo:SnookerWorldRanking
+soap character,dbo:SoapCharacter
+soccer club,dbo:SoccerClub
+soccer club season,dbo:SoccerClubSeason
+soccer league,dbo:SoccerLeague
+soccer league season,dbo:SoccerLeagueSeason
+soccer manager,dbo:SoccerManager
+soccer player,dbo:SoccerPlayer
+soccer tournoment,dbo:SoccerTournament
+societal event,dbo:SocietalEvent
+softball league,dbo:SoftballLeague
+software,dbo:Software
+solar eclipse,dbo:SolarEclipse
+song,dbo:Song
+songwriter,dbo:SongWriter
+sound,dbo:Sound
+space mission,dbo:SpaceMission
+space shuttle,dbo:SpaceShuttle
+space station,dbo:SpaceStation
+spacecraft,dbo:Spacecraft
+species,dbo:Species
+speed skater,dbo:SpeedSkater
+speedway league,dbo:SpeedwayLeague
+speedway rider,dbo:SpeedwayRider
+speedway team,dbo:SpeedwayTeam
+sport,dbo:Sport
+results of a sport competition,dbo:SportCompetitionResult
+sport facility,dbo:SportFacility
+sports club,dbo:SportsClub
+sports event,dbo:SportsEvent
+sports league,dbo:SportsLeague
+sports manager,dbo:SportsManager
+sports season,dbo:SportsSeason
+sports team,dbo:SportsTeam
+sports team member,dbo:SportsTeamMember
+sports team season,dbo:SportsTeamSeason
+spreadsheet,dbo:Spreadsheet
+spy,dbo:Spy
+square,dbo:Square
+squash player,dbo:SquashPlayer
+stadium,dbo:Stadium
+standard,dbo:Standard
+star,dbo:Star
+star сluster,dbo:StarCluster
+state,dbo:State
+stated  resolution,dbo:StatedResolution
+station,dbo:Station
+statistic,dbo:Statistic
+still image,dbo:StillImage
+storm surge,dbo:StormSurge
+stream,dbo:Stream
+street,dbo:Street
+borough,dbo:SubMunicipality
+sumo wrestler,dbo:SumoWrestler
+supreme  court of the  united  states case,dbo:SupremeCourtOfTheUnitedStatesCase
+surfer,dbo:Surfer
+surname,dbo:Surname
+swarm,dbo:Swarm
+swimmer,dbo:Swimmer
+synagogue,dbo:Synagogue
+system of law,dbo:SystemOfLaw
+table tennis player,dbo:TableTennisPlayer
+tank,dbo:Tank
+tax,dbo:Tax
+taxonomic group,dbo:Taxon
+team member,dbo:TeamMember
+team sport,dbo:TeamSport
+television director,dbo:TelevisionDirector
+television episode,dbo:TelevisionEpisode
+television host,dbo:TelevisionHost
+television season,dbo:TelevisionSeason
+television show,dbo:TelevisionShow
+television station,dbo:TelevisionStation
+temple,dbo:Temple
+tennis league,dbo:TennisLeague
+tennis player,dbo:TennisPlayer
+tennis tournament,dbo:TennisTournament
+tenure,dbo:Tenure
+term of office,dbo:TermOfOffice
+territory,dbo:Territory
+theatre,dbo:Theatre
+theatre director,dbo:TheatreDirector
+theological concept,dbo:TheologicalConcept
+time period,dbo:TimePeriod
+top level domain,dbo:TopLevelDomain
+topical concept,dbo:TopicalConcept
+tournament,dbo:Tournament
+tower,dbo:Tower
+town,dbo:Town
+track list,dbo:TrackList
+trade union,dbo:TradeUnion
+train,dbo:Train
+train carriage,dbo:TrainCarriage
+streetcar,dbo:Tram
+tram station,dbo:TramStation
+treadmill,dbo:Treadmill
+treaty,dbo:Treaty
+tunnel,dbo:Tunnel
+type,dbo:Type
+underground journal,dbo:UndergroundJournal
+unit of work,dbo:UnitOfWork
+university,dbo:University
+unknown,dbo:Unknown
+vaccination  statistics,dbo:VaccinationStatistics
+vaccine,dbo:Vaccine
+valley,dbo:Valley
+vein,dbo:Vein
+venue,dbo:Venue
+vicar,dbo:Vicar
+vice president,dbo:VicePresident
+vice prime minister,dbo:VicePrimeMinister
+video game,dbo:VideoGame
+videogames league,dbo:VideogamesLeague
+village,dbo:Village
+vodka,dbo:Vodka
+voice actor,dbo:VoiceActor
+volcano,dbo:Volcano
+volleyball coach,dbo:VolleyballCoach
+volleyball league,dbo:VolleyballLeague
+volleyball player,dbo:VolleyballPlayer
+water polo  player,dbo:WaterPoloPlayer
+water ride,dbo:WaterRide
+water tower,dbo:WaterTower
+watermill,dbo:Watermill
+waterway tunnel,dbo:WaterwayTunnel
+weapon,dbo:Weapon
+website,dbo:Website
+wikimedia template,dbo:WikimediaTemplate
+wind motor,dbo:WindMotor
+windmill,dbo:Windmill
+wine,dbo:Wine
+wine region,dbo:WineRegion
+winery,dbo:Winery
+winter sport  player,dbo:WinterSportPlayer
+woman,dbo:Woman
+womens  tennis  association tournament,dbo:WomensTennisAssociationTournament
+work,dbo:Work
+sequence of works,dbo:WorkSequence
+world  heritage  site,dbo:WorldHeritageSite
+wrestler,dbo:Wrestler
+wrestling event,dbo:WrestlingEvent
+writer,dbo:Writer
+written work,dbo:WrittenWork
+year,dbo:Year
+year in spaceflight,dbo:YearInSpaceflight
+youtuber,dbo:Youtuber
+zoo,dbo:Zoo

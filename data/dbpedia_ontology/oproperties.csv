@@ -1,0 +1,1155 @@
+propertyLabel,short,shortDomain,shortRange,description
+academic advisor,dbo:academicAdvisor,dbo:Scientist,dbo:Person,academic advisor
+academic discipline,dbo:academicDiscipline,dbo:AcademicJournal,,"academic discipline, an academic discipline, or field of study, is a branch of knowledge that is taught and researched at the college or university level. disciplines are defined (in part), and recognized by the academic journals in which research is published, and the learned societies and academic departments or faculties to which their practitioners belong."
+Academy Award,dbo:academyAward,dbo:Artist,dbo:Award,academy award
+achievement,dbo:achievement,dbo:Person,,achievement
+ACT score,dbo:actScore,dbo:School,,"act score, most recent average act scores"
+acting headteacher,dbo:actingHeadteacher,dbo:EducationalInstitution,dbo:Person,acting headteacher
+activity,dbo:activity,dbo:Person,,activity
+address in road,dbo:addressInRoad,dbo:Road,,"address in road, a building, organisation or other thing that is located in the road."
+adjacent settlement of a switzerland settlement,dbo:adjacentSettlement,dbo:Settlement,dbo:Settlement,adjacent settlement of a switzerland settlement
+administrative center,dbo:administrativeCenter,dbo:AdministrativeRegion,dbo:Place,administrative center
+administrative collectivity,dbo:administrativeCollectivity,dbo:Settlement,dbo:PopulatedPlace,administrative collectivity
+administrative district,dbo:administrativeDistrict,dbo:Settlement,dbo:PopulatedPlace,administrative district
+head city,dbo:administrativeHeadCity,dbo:PopulatedPlace,dbo:City,"head city, city where stand the administrative power"
+administrator,dbo:administrator,dbo:Organisation,dbo:Person,administrator
+affiliation,dbo:affiliation,,dbo:Organisation,affiliation
+AFI Award,dbo:afiAward,dbo:Artist,dbo:Award,afi award
+agency,dbo:agency,dbo:Person,,agency
+agglomeration,dbo:agglomeration,dbo:PopulatedPlace,dbo:Agglomeration,agglomeration
+agglomeration area,dbo:agglomerationArea,dbo:PopulatedPlace,dbo:Area,agglomeration area
+agglomeration demographics,dbo:agglomerationDemographics,dbo:PopulatedPlace,dbo:Demographics,agglomeration demographics
+agglomeration population,dbo:agglomerationPopulation,dbo:Settlement,dbo:Population,agglomeration population
+aircraft attack,dbo:aircraftAttack,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft attack
+aircraft bomber,dbo:aircraftBomber,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft bomber
+aircraft electronic,dbo:aircraftElectronic,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft electronic
+aircraft fighter,dbo:aircraftFighter,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft fighter
+aircraft helicopter,dbo:aircraftHelicopter,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft helicopter
+aircraft helicopter attack,dbo:aircraftHelicopterAttack,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft helicopter attack
+aircraft helicopter cargo,dbo:aircraftHelicopterCargo,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft helicopter cargo
+aircraft helicopter multirole,dbo:aircraftHelicopterMultirole,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft helicopter multirole
+aircraft helicopter observation,dbo:aircraftHelicopterObservation,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft helicopter observation
+aircraft helicopter transport,dbo:aircraftHelicopterTransport,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft helicopter transport
+aircraft helicopter utility,dbo:aircraftHelicopterUtility,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft helicopter utility
+aircraft interceptor,dbo:aircraftInterceptor,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft interceptor
+aircraft patrol,dbo:aircraftPatrol,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft patrol
+aircraft recon,dbo:aircraftRecon,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft recon
+aircraft transport,dbo:aircraftTransport,dbo:MilitaryUnit,dbo:MeanOfTransportation,aircraft transport
+aircraft user,dbo:aircraftUser,dbo:Aircraft,dbo:Organisation,aircraft user
+album,dbo:album,,dbo:Album,album
+alliance,dbo:alliance,dbo:Airline,,alliance
+alma mater,dbo:almaMater,dbo:Person,dbo:EducationalInstitution,"alma mater, schools that they attended"
+alongside,dbo:alongside,,dbo:Person,alongside
+Alps group,dbo:alpsGroup,dbo:Mountain,dbo:MountainRange,"alps group, the alps group to which the mountain belongs, according to the soiusa classification"
+Alps main part,dbo:alpsMainPart,dbo:Mountain,dbo:MountainRange,"alps main part, the alps main part to which the mountain belongs, according to the soiusa classification"
+Alps major sector,dbo:alpsMajorSector,dbo:Mountain,dbo:MountainRange,"alps major sector, the alps major sector to which the mountain belongs, according to the soiusa classification"
+Alps section,dbo:alpsSection,dbo:Mountain,dbo:MountainRange,"alps section, the alps section to which the mountain belongs, according to the soiusa classification"
+Alps subgroup,dbo:alpsSubgroup,dbo:Mountain,dbo:MountainRange,"alps subgroup, the alps subgroup to which the mountain belongs, according to the soiusa classification"
+Alps subsection,dbo:alpsSubsection,dbo:Mountain,dbo:MountainRange,"alps subsection, the alps subsection to which the mountain belongs, according to the soiusa classification"
+Alps supergroup,dbo:alpsSupergroup,dbo:Mountain,dbo:MountainRange,"alps supergroup, the alps supergroup to which the mountain belongs, according to the soiusa classification"
+altitude,dbo:altitude,dbo:Place,dbo:Altitude,altitude
+alumni,dbo:alumni,dbo:EducationalInstitution,dbo:Person,alumni
+amateur team,dbo:amateurTeam,"dbo:Athlete,_CareerStation",dbo:SportsTeam,amateur team
+American Comedy Award,dbo:americanComedyAward,dbo:Comedian,dbo:Award,american comedy award
+animal,dbo:animal,,dbo:Animal,animal
+animator,dbo:animator,dbo:Cartoon,dbo:Agent,animator
+announcedFrom,dbo:announcedFrom,dbo:Person,dbo:Place,announcedfrom
+anthem,dbo:anthem,,dbo:Work,"anthem, official song (anthem) of a populatedplace, sportsteam, school or other"
+apc president,dbo:apcPresident,,dbo:Person,apc president
+appointer,dbo:appointer,,dbo:Person,appointer
+archipelago,dbo:archipelago,dbo:Island,,archipelago
+architect,dbo:architect,dbo:ArchitecturalStructure,dbo:Architect,architect
+architectual bureau,dbo:architectualBureau,dbo:ArchitecturalStructure,dbo:Company,architectual bureau
+architectural style,dbo:architecturalStyle,dbo:ArchitecturalStructure,,architectural style
+area of search,dbo:areaOfSearch,dbo:SiteOfSpecialScientificInterest,dbo:PopulatedPlace,area of search
+Ariel Award,dbo:arielAward,dbo:Actor,dbo:Award,ariel award
+arrondissement,dbo:arrondissement,dbo:PopulatedPlace,dbo:PopulatedPlace,arrondissement
+patron (art),dbo:artPatron,dbo:Agent,dbo:Artist,"patron (art), an influential, wealthy person who supported an artist, craftsman, a scholar or a noble.
+
+. see also"
+artery,dbo:artery,dbo:AnatomicalStructure,dbo:Artery,artery
+performer,dbo:artist,dbo:MusicalWork,dbo:Agent,"performer, the performer or creator of the musical work."
+Aspect Ratio,dbo:aspectRatio,dbo:Software,,aspect ratio
+assembly,dbo:assembly,dbo:MeanOfTransportation,,assembly
+assistant principal,dbo:assistantPrincipal,dbo:EducationalInstitution,,assistant principal
+associate,dbo:associate,,dbo:Person,associate
+associate editor,dbo:associateEditor,dbo:Newspaper,dbo:Person,associate editor
+associateStar,dbo:associateStar,,dbo:Constellation,associatestar
+associated act,dbo:associatedAct,dbo:Artist,dbo:Artist,associated act
+associated band,dbo:associatedBand,,dbo:Band,associated band
+associated musical artist,dbo:associatedMusicalArtist,,dbo:MusicalArtist,associated musical artist
+associated rocket,dbo:associatedRocket,dbo:LaunchPad,dbo:Rocket,associated rocket
+association of local government,dbo:associationOfLocalGovernment,dbo:Settlement,dbo:PopulatedPlace,association of local government
+astrological sign,dbo:astrologicalSign,dbo:Person,,astrological sign
+athletics,dbo:athletics,dbo:University,,athletics
+athletics discipline,dbo:athleticsDiscipline,dbo:Athlete,dbo:Athletics,athletics discipline
+attorney general,dbo:attorneyGeneral,dbo:LegalCase,dbo:Person,"attorney general, public attorney"
+aunt,dbo:aunt,dbo:Woman,dbo:Person,aunt
+author,dbo:author,dbo:Work,dbo:Person,author
+authority,dbo:authority,,,authority
+automobile platform,dbo:automobilePlatform,dbo:Automobile,dbo:Automobile,automobile platform
+autonomy,dbo:autonomy,,,autonomy
+available smart card,dbo:availableSmartCard,dbo:Station,,"available smart card, smartcard for fare payment system for public transit systems that are or will be available at the station."
+award,dbo:award,,dbo:Award,"award, award won by a person, musical or other work, racehorse, building, etc"
+BAFTA Award,dbo:baftaAward,dbo:Artist,dbo:Award,bafta award
+band member,dbo:bandMember,dbo:Band,dbo:Person,"band member, a member of the band."
+based on,dbo:basedOn,dbo:Work,dbo:Work,based on
+battery,dbo:battery,,dbo:Battery,"battery, points out the battery used with/in a thing."
+battle,dbo:battle,,dbo:MilitaryConflict,battle
+beatified by,dbo:beatifiedBy,dbo:Saint,dbo:Person,beatified by
+beatified place,dbo:beatifiedPlace,dbo:Saint,dbo:PopulatedPlace,beatified place
+biggest city,dbo:biggestCity,dbo:Place,dbo:PopulatedPlace,biggest city
+billed,dbo:billed,dbo:Wrestler,dbo:PopulatedPlace,billed
+binomial,dbo:binomial,dbo:Species,,"binomial, used to name species with a name consisting of two words."
+binomial authority,dbo:binomialAuthority,dbo:Species,,binomial authority
+biome,dbo:biome,,,biome
+bird,dbo:bird,dbo:Place,dbo:Species,"bird, birds are uniformly vertebrate animals, the vast majority of which can fly with their wings."
+birth place,dbo:birthPlace,dbo:Animal,dbo:Place,"birth place, where the person was born"
+birth sign,dbo:birthSign,dbo:Person,,birth sign
+block alloy,dbo:blockAlloy,dbo:AutomobileEngine,,block alloy
+board,dbo:board,dbo:Person,,board
+body discovered,dbo:bodyDiscovered,dbo:Person,dbo:Place,body discovered
+body style,dbo:bodyStyle,dbo:Automobile,,body style
+boiler,dbo:boiler,dbo:Locomotive,,boiler
+boiler pressure,dbo:boilerPressure,dbo:Locomotive,,boiler pressure
+booster,dbo:booster,dbo:SpaceMission,dbo:Rocket,booster
+border,dbo:border,,dbo:Area,border
+borough,dbo:borough,dbo:PopulatedPlace,dbo:PopulatedPlace,borough
+bourgmestre,dbo:bourgmestre,dbo:Settlement,dbo:Person,bourgmestre
+boxing style,dbo:boxerStyle,dbo:Boxer,dbo:Sport,boxing style
+branch from,dbo:branchFrom,dbo:AnatomicalStructure,dbo:AnatomicalStructure,branch from
+branch to,dbo:branchTo,dbo:AnatomicalStructure,dbo:AnatomicalStructure,branch to
+brand,dbo:brand,dbo:WrestlingEvent,dbo:TelevisionShow,brand
+breeder,dbo:breeder,dbo:Animal,dbo:Person,breeder
+British Comedy Awards,dbo:britishComedyAwards,dbo:Comedian,dbo:Award,british comedy awards
+british wins,dbo:britishWins,dbo:Person,http://www.w3.org/2004/02/skos/core#Concept,british wins
+broadcast area,dbo:broadcastArea,dbo:Broadcaster,dbo:PopulatedPlace,broadcast area
+broadcast network,dbo:broadcastNetwork,dbo:Broadcaster,dbo:BroadcastNetwork,"broadcast network, the parent broadcast network to which the broadcaster belongs."
+bronze medalist,dbo:bronzeMedalist,dbo:SportsEvent,dbo:Person,bronze medalist
+brother,dbo:brother,dbo:Man,dbo:Person,brother
+builder,dbo:builder,,,builder
+building,dbo:building,dbo:Island,dbo:Building,building
+buildingType,dbo:buildingType,dbo:Building,,"buildingtype, type is too general. we should be able to distinguish types of music from types of architecture"
+its calculation needs,dbo:calculationNeeds,,,its calculation needs
+campus,dbo:campus,dbo:University,,"campus, campus means any urban complex that offers residential, teaching and research facilities to the students of a university."
+canonized by,dbo:canonizedBy,dbo:Saint,dbo:Person,canonized by
+canonized place,dbo:canonizedPlace,dbo:Saint,dbo:PopulatedPlace,canonized place
+canton,dbo:canton,dbo:Settlement,dbo:Settlement,canton
+capital,dbo:capital,dbo:PopulatedPlace,dbo:City,capital
+capital country,dbo:capitalCountry,dbo:Island,dbo:Country,capital country
+capital district,dbo:capitalDistrict,dbo:Island,dbo:PopulatedPlace,capital district
+capital mountain,dbo:capitalMountain,dbo:Island,dbo:Mountain,capital mountain
+capital place,dbo:capitalPlace,dbo:Island,dbo:PopulatedPlace,capital place
+capital position,dbo:capitalPosition,dbo:Island,http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing,capital position
+capital region,dbo:capitalRegion,dbo:Island,dbo:PopulatedPlace,capital region
+career station,dbo:careerStation,dbo:Person,dbo:CareerStation,"career station, this property links to a step in the career of a person, e.g. a soccer player, holding information on the time span, matches and goals he or she achieved at a club."
+category,dbo:category,,,category
+caterer,dbo:caterer,dbo:Infrastructure,dbo:Caterer,caterer
+caused by,dbo:causedBy,dbo:Event,,caused by
+cemetery,dbo:cemetery,dbo:ReligiousBuilding,dbo:Cemetery,cemetery
+chief executive officer,dbo:ceo,dbo:Organisation,dbo:Person,chief executive officer
+Ceremonial County,dbo:ceremonialCounty,dbo:PopulatedPlace,dbo:PopulatedPlace,ceremonial county
+Cesar Award,dbo:cesarAward,dbo:Artist,dbo:Award,cesar award
+chaîne,dbo:chain,,dbo:Company,"chaîne, the (business) chain this instance is associated with."
+chair label,dbo:chairLabel,,,chair label
+chairman,dbo:chairman,,dbo:Person,chairman
+chairperson,dbo:chairperson,dbo:Organisation,dbo:Person,chairperson
+champion,dbo:champion,dbo:SportsEvent,dbo:Athlete,"champion, winner of a competition"
+champion in double,dbo:championInDouble,dbo:SportsEvent,dbo:Athlete,"champion in double, winner of a competition in the double session (as in tennis)"
+champion in double female,dbo:championInDoubleFemale,dbo:SportsEvent,dbo:Athlete,"champion in double female, winner of a competition in the female double session (as in tennis)"
+champion in double male,dbo:championInDoubleMale,dbo:SportsEvent,dbo:Athlete,"champion in double male, winner of a competition in the male double session (as in tennis)"
+champion in mixed double,dbo:championInMixedDouble,dbo:SportsEvent,dbo:Athlete,"champion in mixed double, winner of a competition in the mixed double session (as in tennis)"
+champion in single,dbo:championInSingle,dbo:SportsEvent,dbo:Athlete,"champion in single, winner of a competition in the single session, to distinguish from the double session (as in tennis)"
+champion in single female,dbo:championInSingleFemale,dbo:SportsEvent,dbo:Athlete,"champion in single female, winner of a competition in the single female session, to distinguish from the double session (as in tennis)"
+champion in single male,dbo:championInSingleMale,dbo:SportsEvent,dbo:Athlete,"champion in single male, winner of a competition in the single male session, to distinguish from the double session (as in tennis)"
+chancellor,dbo:chancellor,,dbo:Person,chancellor
+channel,dbo:channel,,dbo:Broadcaster,channel
+chaplain,dbo:chaplain,dbo:Organisation,dbo:Person,chaplain
+chef,dbo:chef,dbo:Restaurant,dbo:Person,chef
+chief,dbo:chief,,dbo:Chief,chief
+chief editor,dbo:chiefEditor,dbo:Work,dbo:Person,chief editor
+chief place,dbo:chiefPlace,,dbo:PopulatedPlace,chief place
+child,dbo:child,dbo:Person,dbo:Person,child
+child organisation,dbo:childOrganisation,dbo:Organisation,dbo:Organisation,child organisation
+choreographer,dbo:choreographer,dbo:FigureSkater,dbo:Person,choreographer
+cinematography,dbo:cinematography,dbo:Film,dbo:Person,cinematography
+citizenship,dbo:citizenship,dbo:Person,,citizenship
+city,dbo:city,,dbo:City,city
+clade,dbo:clade,dbo:Species,,clade
+class,dbo:class,,,class
+classis,dbo:classis,dbo:Species,,"classis, the living thing class (from the latin ""classis""), according to the biological taxonomy"
+climate,dbo:climate,dbo:Place,,climate
+is close to,dbo:closeTo,dbo:Place,dbo:Place,"is close to, place close to another place"
+closing film,dbo:closingFilm,dbo:FilmFestival,dbo:Film,closing film
+club,dbo:club,dbo:Athlete,dbo:SportsTeam,club
+clubs record goalscorer,dbo:clubsRecordGoalscorer,dbo:SoccerClub,dbo:Person,clubs record goalscorer
+cluster,dbo:cluster,dbo:Galaxy,,cluster
+co executive producer,dbo:coExecutiveProducer,dbo:TelevisionShow,dbo:Person,co executive producer
+co producer,dbo:coProducer,dbo:TelevisionShow,dbo:Person,co producer
+coach,dbo:coach,,dbo:Person,coach
+coach club,dbo:coachClub,dbo:Athlete,dbo:SportsTeam,coach club
+coached team,dbo:coachedTeam,,dbo:SportsTeam,coached team
+coat of arms image,dbo:coatOfArms,,,"coat of arms image, image of the coat of arms (heraldic symbol)"
+coemperor,dbo:coemperor,dbo:Monarch,dbo:Monarch,coemperor
+collaboration,dbo:collaboration,dbo:Person,dbo:Person,collaboration
+colleague,dbo:colleague,dbo:Person,dbo:Person,"colleague, colleague of a person or officeholder (not personfunction nor careerstation). sub-properties include: president, vicepresident, chancellor, vicechancellor, governor, lieutenant. points to a person who may have a general ""position"" (resource) or ""title"" (literal)."
+country,dbo:collectionSize,,,country
+collectivity minority,dbo:collectivityMinority,dbo:Settlement,,collectivity minority
+college,dbo:college,dbo:Person,dbo:EducationalInstitution,college
+colour,dbo:colour,,dbo:Colour,"colour, a colour represented by its entity."
+comic,dbo:comic,dbo:FictionalCharacter,dbo:Comic,comic
+command structure,dbo:commandStructure,dbo:MilitaryUnit,dbo:MilitaryUnit,command structure
+commandant,dbo:commandant,,dbo:Person,commandant
+commander,dbo:commander,,dbo:Person,commander
+committee in legislature,dbo:committeeInLegislature,dbo:Legislature,,"committee in legislature, committee in the legislature (eg.: committee on economic and monetary affairs of the european parliament)."
+commune,dbo:commune,dbo:Settlement,dbo:Settlement,commune
+company,dbo:company,,dbo:Organisation,company
+comparable,dbo:comparable,dbo:Rocket,dbo:Rocket,"comparable, similar, unrelated rockets"
+competition,dbo:competition,dbo:SportCompetitionResult,dbo:Event,competition
+competition title,dbo:competitionTitle,dbo:Person,dbo:SportsEvent,competition title
+compiler,dbo:compiler,dbo:Album,dbo:Person,"compiler, for compilation albums: the person or entity responsible for selecting the album's track listing."
+complexion,dbo:complexion,dbo:Person,,complexion
+component,dbo:component,dbo:Brain,dbo:AnatomicalStructure,component
+composer,dbo:composer,dbo:Work,dbo:Person,composer
+Computing input,dbo:computingInput,dbo:Software,,computing input
+Computing Media,dbo:computingMedia,dbo:Software,,computing media
+computing platform,dbo:computingPlatform,dbo:Software,,"computing platform, some sort of hardware architecture or software framework, that allows this software to run"
+conflict,dbo:conflict,,dbo:MilitaryConflict,conflict
+congressional district,dbo:congressionalDistrict,dbo:AdministrativeRegion,,congressional district
+connects referenced to,dbo:connectsReferencedTo,dbo:Reference,,"connects referenced to, connects a referenced resource to another resource. this property is important to connect non-extracted resources to extracted ones"
+connotation,dbo:connotation,,,"connotation, a meaning of a word or phrase that is suggested or implied, as opposed to a denotation, or literal meaning."
+constellation,dbo:constellation,dbo:CelestialBody,,constellation
+constituency district,dbo:constituencyDistrict,,dbo:PopulatedPlace,constituency district
+construction,dbo:construction,dbo:ArchitecturalStructure,,construction
+construction material,dbo:constructionMaterial,dbo:ArchitecturalStructure,,"construction material, construction material (eg. concrete, steel, iron, stone, brick, wood)."
+contest,dbo:contest,dbo:Person,dbo:Contest,contest
+continent,dbo:continent,dbo:Country,dbo:Continent,"continent, links a country to the continent it belongs"
+continental tournament,dbo:continentalTournament,dbo:Person,dbo:Tournament,continental tournament
+contractor,dbo:contractor,dbo:Skyscraper,dbo:Company,contractor
+conviction penalty,dbo:convictionPenalty,dbo:Criminal,,conviction penalty
+cooling system,dbo:coolingSystem,dbo:AutomobileEngine,,cooling system
+copilote,dbo:copilote,dbo:Person,dbo:Person,copilote
+costume designer,dbo:costumeDesigner,dbo:Film,dbo:Person,"costume designer, the person who is responsible for the film costume design"
+Council area,dbo:councilArea,dbo:PopulatedPlace,dbo:PopulatedPlace,council area
+country,dbo:country,,dbo:Country,"country, the country where the thing is located."
+country origin,dbo:countryOrigin,dbo:Rocket,dbo:Country,country origin
+country with first astronaut,dbo:countryWithFirstAstronaut,dbo:YearInSpaceflight,dbo:Country,country with first astronaut
+country with first satellite,dbo:countryWithFirstSatellite,dbo:YearInSpaceflight,dbo:Country,country with first satellite
+country with first satellite launched,dbo:countryWithFirstSatelliteLaunched,dbo:YearInSpaceflight,dbo:Country,country with first satellite launched
+country with first spaceflight,dbo:countryWithFirstSpaceflight,dbo:YearInSpaceflight,dbo:Country,country with first spaceflight
+county,dbo:county,,dbo:PopulatedPlace,"county, the county where the thing is located."
+county seat,dbo:countySeat,dbo:PopulatedPlace,,county seat
+cousurper,dbo:cousurper,dbo:Person,dbo:Person,cousurper
+cover artist,dbo:coverArtist,dbo:Work,dbo:Person,"cover artist, cover artist"
+CPU,dbo:cpu,,,"cpu, cpu of an informationappliance or videogame (which unfortunately is currently under software)"
+created,dbo:created,dbo:Person,dbo:Work,created
+creative director,dbo:creativeDirector,dbo:TelevisionShow,dbo:Person,creative director
+creator of dish,dbo:creatorOfDish,dbo:Food,dbo:Person,"creator of dish, the person that creates (invents) the food (eg. caesar cardini is the creator of the caesar salad)."
+crest,dbo:crest,,,crest
+crew,dbo:crew,dbo:Spacecraft,dbo:SpaceMission,crew
+crew member,dbo:crewMember,dbo:SpaceMission,dbo:Astronaut,crew member
+crosses,dbo:crosses,dbo:Bridge,dbo:River,crosses
+cultivar,dbo:cultivatedVariety,dbo:Plant,dbo:CultivatedVariety,"cultivar, name of the cultivar (cultivated variety)"
+curator,dbo:curator,dbo:Museum,dbo:Person,curator
+currency,dbo:currency,,dbo:Currency,currency
+current city,dbo:currentCity,,dbo:City,current city
+current league,dbo:currentLeague,dbo:Athlete,dbo:SportsLeague,current league
+current member,dbo:currentMember,dbo:SportsTeam,dbo:Person,current member
+current partner,dbo:currentPartner,dbo:FigureSkater,dbo:Person,current partner
+current production,dbo:currentProduction,dbo:Theatre,,"current production, the current production running in the theatre."
+current team,dbo:currentTeam,dbo:Athlete,dbo:SportsTeam,current team
+current team manager,dbo:currentTeamManager,dbo:Person,dbo:SportsTeam,current team manager
+current team member,dbo:currentTeamMember,dbo:SportsTeam,dbo:TeamMember,"current team member, a current member of an athletic team."
+current world champion,dbo:currentWorldChampion,dbo:Sport,dbo:Agent,current world champion
+custodian,dbo:custodian,dbo:EducationalInstitution,dbo:Person,custodian
+cyclist genre,dbo:cyclistGenre,"dbo:Athlete,_CareerStation",,cyclist genre
+Daily Vaccinations Per Million,dbo:dailyVaccinationsPerMillion,,dbo:VaccinationStatistics,"daily vaccinations per million, vaccinationstatistics: people vaccinated percent."
+Daily Vaccinations Raw,dbo:dailyVaccinationsRaw,,dbo:VaccinationStatistics,"daily vaccinations raw, vaccinationstatistics: daily vaccinations (raw data)."
+daira,dbo:daira,dbo:Settlement,dbo:Place,daira
+dam,dbo:dam,dbo:Animal,dbo:Animal,dam
+damage amount,dbo:damage,dbo:Event,dbo:Currency,damage amount
+damsire,dbo:damsire,dbo:Animal,dbo:Animal,damsire
+daughter,dbo:daughter,dbo:Woman,dbo:Person,daughter
+daylight saving time zone,dbo:daylightSavingTimeZone,dbo:Place,,daylight saving time zone
+de facto language,dbo:deFactoLanguage,,dbo:Language,de facto language
+dean,dbo:dean,dbo:EducationalInstitution,dbo:Person,dean
+deanery,dbo:deanery,"dbo:Diocese,_Parish",dbo:Deanery,"deanery, dioceses and parishes should know which deaneries there are"
+death cause,dbo:deathCause,dbo:Person,,death cause
+death place,dbo:deathPlace,dbo:Animal,dbo:Place,"death place, the place where the person died."
+Deaths,dbo:deaths,,dbo:Disease,"deaths, permanent, irreversible cessation of all biological functions that sustain a living organism"
+debut team,dbo:debutTeam,dbo:Athlete,dbo:SportsTeam,debut team
+debutWork,dbo:debutWork,dbo:Person,dbo:Work,"debutwork, first work of a person (may be notablework or not)"
+decoration,dbo:decoration,dbo:Person,,decoration
+delegate mayor,dbo:delegateMayor,dbo:PopulatedPlace,dbo:Person,delegate mayor
+demographics,dbo:demographics,dbo:PopulatedPlace,dbo:Demographics,demographics
+denomination,dbo:denomination,dbo:Agent,,"denomination, religious denomination of a church, religious school, etc. examples: haredi_judaism, sunni_islam, seventh-day_adventist_church, non-denominational, multi-denominational, non-denominational_christianity"
+department,dbo:department,dbo:PopulatedPlace,dbo:Department,department
+depths,dbo:depths,dbo:Place,dbo:Depth,depths
+deputy,dbo:deputy,,dbo:Person,deputy
+derivative,dbo:derivative,dbo:MusicGenre,dbo:MusicGenre,derivative
+designer company,dbo:designCompany,,dbo:Company,designer company
+designer,dbo:designer,,dbo:Person,designer
+destination,dbo:destination,dbo:PublicTransitSystem,dbo:PopulatedPlace,destination
+detractor,dbo:detractor,dbo:Person,dbo:Person,detractor
+developer,dbo:developer,,dbo:Agent,"developer, developer of a work (artwork, book, software) or building (hotel, skyscraper)"
+DfE,dbo:dfE,dbo:School,,"dfe, department for education (uk) number of a school in england or wales"
+differential diagnosis,dbo:differentialDiagnosis,dbo:Disease,,differential diagnosis
+diocese,dbo:diocese,,dbo:Diocese,"diocese, a religious administrative body above the parish level"
+diploma,dbo:diploma,dbo:Person,dbo:Diploma,diploma
+film director,dbo:director,dbo:Film,dbo:Person,"film director, a film director is a person who directs the making of a film."
+disciple,dbo:disciple,dbo:Artist,dbo:Artist,"disciple, a person who learns from another, especially one who then teaches others.."
+discipline,dbo:discipline,dbo:Agent,,discipline
+discoverer,dbo:discoverer,,dbo:Person,discoverer
+disease,dbo:disease,,dbo:Disease,"disease, points to a disease pertaining to the subject at hand."
+distributing company,dbo:distributingCompany,dbo:RecordLabel,dbo:Company,distributing company
+distributing label,dbo:distributingLabel,dbo:RecordLabel,dbo:RecordLabel,distributing label
+distributor,dbo:distributor,,dbo:Organisation,distributor
+district,dbo:district,dbo:Place,dbo:PopulatedPlace,district
+division,dbo:division,,,division
+doctoral advisor,dbo:doctoralAdvisor,dbo:Scientist,dbo:Person,doctoral advisor
+doctoral student,dbo:doctoralStudent,dbo:Scientist,dbo:Person,doctoral student
+domain,dbo:domain,dbo:Species,,domain
+draft team,dbo:draftTeam,dbo:Athlete,dbo:SportsTeam,draft team
+drains from,dbo:drainsFrom,dbo:AnatomicalStructure,dbo:AnatomicalStructure,drains from
+drains to,dbo:drainsTo,dbo:AnatomicalStructure,dbo:AnatomicalStructure,drains to
+drama,dbo:drama,dbo:FictionalCharacter,dbo:Drama,drama
+drugs.com,dbo:drugs.com,dbo:Drug,,"drugs.com, external link to drug articles in the drugs.com website"
+dubber,dbo:dubber,dbo:Person,dbo:Person,"dubber, the person who dubs another person e.g. an actor or a fictional character in movies"
+dynasty,dbo:dynasty,,,dynasty
+east place,dbo:eastPlace,dbo:Place,dbo:Place,"east place, indicates another place situated east."
+editing,dbo:editing,dbo:Film,dbo:Person,editing
+editor,dbo:editor,,dbo:Agent,editor
+education,dbo:education,dbo:Person,,education
+education place,dbo:educationPlace,dbo:Person,dbo:Place,education place
+education system,dbo:educationSystem,dbo:EducationalInstitution,,education system
+element above,dbo:elementAbove,,dbo:ChemicalSubstance,"element above, element placed above current element in d.i.mendeleev's table"
+Emmy Award,dbo:emmyAward,dbo:Artist,dbo:Award,emmy award
+employer,dbo:employer,dbo:Person,dbo:Organisation,employer
+end point,dbo:endPoint,dbo:Place,dbo:Place,end point
+end reign,dbo:endReign,dbo:Person,http://www.w3.org/2004/02/skos/core#Concept,end reign
+ending theme,dbo:endingTheme,dbo:TelevisionShow,dbo:Work,ending theme
+enemy,dbo:enemy,dbo:FictionalCharacter,dbo:Species,enemy
+engine,dbo:engine,dbo:Automobile,dbo:AutomobileEngine,engine
+engine type,dbo:engineType,dbo:MeanOfTransportation,,engine type
+engineer,dbo:engineer,,dbo:Person,engineer
+enshrined deity,dbo:enshrinedDeity,dbo:Shrine,dbo:Deity,enshrined deity
+entourage,dbo:entourage,dbo:FictionalCharacter,dbo:Species,entourage
+eparchy,dbo:eparchy,dbo:ReligiousBuilding,,"eparchy, compare with bishopric"
+equipment,dbo:equipment,dbo:Activity,,equipment
+era,dbo:era,,,era
+ethnic group,dbo:ethnicGroup,dbo:PopulatedPlace,dbo:EthnicGroup,ethnic group
+ethnicity,dbo:ethnicity,dbo:Person,dbo:EthnicGroup,ethnicity
+european affiliation,dbo:europeanAffiliation,dbo:PoliticalParty,,european affiliation
+european parliament group,dbo:europeanParliamentGroup,dbo:PoliticalParty,,european parliament group
+event,dbo:event,,dbo:Event,event
+executive headteacher,dbo:executiveHeadteacher,dbo:School,dbo:Person,executive headteacher
+executive producer,dbo:executiveProducer,,dbo:Person,executive producer
+existence,dbo:existence,,,existence
+explorer,dbo:explorer,dbo:Galaxy,,explorer
+family,dbo:family,dbo:Species,dbo:Species,family
+family member,dbo:familyMember,dbo:Family,dbo:Person,family member
+fastest driver,dbo:fastestDriver,dbo:GrandPrix,dbo:Person,fastest driver
+fastest driver country,dbo:fastestDriverCountry,dbo:GrandPrix,dbo:Country,fastest driver country
+fastest driver team,dbo:fastestDriverTeam,dbo:GrandPrix,dbo:SportsTeam,fastest driver team
+father,dbo:father,dbo:Man,dbo:Person,father
+features,dbo:features,dbo:ArchitecturalStructure,dbo:Work,features
+featuring,dbo:featuring,dbo:MusicalWork,dbo:Agent,"featuring, name of the second artist, apart the main artist, reserved preferently for singles, promotional singles and songs."
+federal state,dbo:federalState,dbo:Settlement,dbo:PopulatedPlace,federal state
+federation,dbo:federation,dbo:Person,dbo:Organisation,federation
+field,dbo:field,dbo:Artist,,field
+The URL at which this file can be downloaded,dbo:fileURL,dbo:File,dbo:File,the url at which this file can be downloaded
+filling station,dbo:fillingStation,dbo:RestArea,dbo:FillingStation,filling station
+film,dbo:film,dbo:FilmFestival,dbo:Film,film
+Film Fare Award,dbo:filmFareAward,dbo:Artist,dbo:Award,film fare award
+film version,dbo:filmVersion,dbo:WrittenWork,dbo:Film,film version
+person that first ascented a mountain,dbo:firstAscentPerson,dbo:Mountain,dbo:Person,person that first ascented a mountain
+first driver,dbo:firstDriver,dbo:GrandPrix,dbo:Person,first driver
+first driver country,dbo:firstDriverCountry,dbo:GrandPrix,dbo:Country,first driver country
+winning team,dbo:firstDriverTeam,dbo:GrandPrix,dbo:SportsTeam,winning team
+first flight,dbo:firstFlight,dbo:SpaceShuttle,dbo:SpaceMission,first flight
+first launch rocket,dbo:firstLaunchRocket,dbo:LaunchPad,dbo:Rocket,first launch rocket
+firstLeader,dbo:firstLeader,,dbo:Person,firstleader
+first olympic event,dbo:firstOlympicEvent,dbo:Sport,dbo:OlympicEvent,first olympic event
+first owner,dbo:firstOwner,,dbo:Agent,first owner
+firstPopularVote,dbo:firstPopularVote,,dbo:Person,firstpopularvote
+first publisher,dbo:firstPublisher,dbo:WrittenWork,dbo:Agent,first publisher
+first race,dbo:firstRace,dbo:FormulaOneRacer,dbo:GrandPrix,first race
+first win,dbo:firstWin,dbo:FormulaOneRacer,dbo:GrandPrix,first win
+first winner,dbo:firstWinner,dbo:Race,dbo:Person,first winner
+flag bearer,dbo:flagBearer,dbo:OlympicResult,dbo:Person,flag bearer
+flower,dbo:flower,dbo:Place,dbo:Species,flower
+focus,dbo:focus,,,"focus, points out the subject or thing someone or something is focused on."
+followed by,dbo:followedBy,,,followed by
+following event,dbo:followingEvent,dbo:Event,dbo:Event,following event
+follows,dbo:follows,,,follows
+Footedness,dbo:footedness,dbo:Sport,dbo:Person,"footedness, a preference to put one's left or right foot forward in surfing, wakeboarding, skateboarding, wakeskating, snowboarding and mountainboarding. the term is sometimes applied to the foot a footballer uses to kick."
+foresterDistrict,dbo:foresterDistrict,dbo:Place,,foresterdistrict
+format (object),dbo:format,,,"format (object), format of the resource (as object). use dct:format for literal, format for object"
+former band member,dbo:formerBandMember,dbo:Band,dbo:Person,"former band member, a former member of the band."
+former broadcast network,dbo:formerBroadcastNetwork,dbo:Broadcaster,dbo:BroadcastNetwork,"former broadcast network, a former parent broadcast network to which the broadcaster once belonged."
+former choreographer,dbo:formerChoreographer,dbo:FigureSkater,dbo:Person,former choreographer
+former highschool,dbo:formerHighschool,dbo:NationalCollegiateAthleticAssociationAthlete,dbo:EducationalInstitution,former highschool
+former partner,dbo:formerPartner,dbo:FigureSkater,dbo:Person,former partner
+former team,dbo:formerTeam,dbo:Athlete,dbo:SportsTeam,former team
+fossil,dbo:fossil,dbo:Species,dbo:Species,fossil
+foundation place,dbo:foundationPlace,dbo:Organisation,dbo:City,foundation place
+founded by,dbo:foundedBy,,dbo:Agent,"founded by, identifies the founder of the described entity. this can be a person or a organisation for instance."
+founder,dbo:founder,,dbo:Person,"founder, ein gründer oder gründungsmitglied einer organisation, religion oder eines ortes."
+fourth commander,dbo:fourthCommander,dbo:MilitaryUnit,dbo:Person,fourth commander
+frazioni,dbo:frazioni,dbo:Settlement,dbo:PopulatedPlace,frazioni
+friend,dbo:friend,dbo:Person,dbo:Person,friend
+fuel,dbo:fuel,,,fuel
+fuel system,dbo:fuelSystem,dbo:AutomobileEngine,,fuel system
+fuel type,dbo:fuelType,,,fuel type
+funded by,dbo:fundedBy,dbo:ResearchProject,dbo:Organisation,"funded by, a organisation financing the research project."
+gallery item,dbo:galleryItem,dbo:Document,dbo:File,"gallery item, a file contained in a gallery"
+game artist,dbo:gameArtist,dbo:VideoGame,dbo:Person,"game artist, a game artist is an artist who creates art for one or more types of games. game artists are responsible for all of the aspects of game development that call for visual art."
+Game Engine,dbo:gameEngine,dbo:VideoGame,,game engine
+garrison,dbo:garrison,dbo:MilitaryUnit,dbo:PopulatedPlace,garrison
+Gaudí Award,dbo:gaudiAward,dbo:Artist,dbo:Award,"gaudí award, awards of the catalan academy of cinema"
+Gemini Award,dbo:geminiAward,dbo:Actor,dbo:Award,gemini award
+gender,dbo:gender,,,gender
+Gene Location,dbo:geneLocation,dbo:Gene,dbo:GeneLocation,gene location
+general council,dbo:generalCouncil,dbo:Agent,dbo:TermOfOffice,general council
+general manager,dbo:generalManager,dbo:SportsTeam,dbo:Person,general manager
+genre,dbo:genre,,dbo:Genre,"genre, the genre of the thing (music group, film, etc.)"
+genus,dbo:genus,dbo:Species,,"genus, a rank in the classification of organisms, below family and above species; a taxon at that rank"
+geolocDepartment,dbo:geolocDepartment,dbo:Settlement,dbo:PopulatedPlace,geolocdepartment
+gini coefficient category,dbo:giniCoefficientCategory,dbo:PopulatedPlace,,gini coefficient category
+gold medalist,dbo:goldMedalist,dbo:SportsEvent,dbo:Person,gold medalist
+Golden Calf Award,dbo:goldenCalfAward,dbo:Actor,dbo:Award,golden calf award
+Golden Globe Award,dbo:goldenGlobeAward,dbo:Artist,dbo:Award,golden globe award
+Golden Raspberry Award,dbo:goldenRaspberryAward,dbo:Actor,dbo:Award,golden raspberry award
+governing body,dbo:governingBody,dbo:Place,dbo:Organisation,"governing body, body that owns/operates the place."
+government,dbo:government,dbo:Island,,government
+government country,dbo:governmentCountry,dbo:Island,dbo:Country,government country
+government mountain,dbo:governmentMountain,dbo:Island,dbo:Mountain,government mountain
+government place,dbo:governmentPlace,dbo:Island,dbo:PopulatedPlace,government place
+government position,dbo:governmentPosition,dbo:Island,http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing,government position
+government region,dbo:governmentRegion,dbo:Island,dbo:PopulatedPlace,government region
+government type,dbo:governmentType,,dbo:GovernmentType,"government type, broadly, the type of structure of its government"
+governor,dbo:governor,,dbo:Person,governor
+governor general,dbo:governorGeneral,,dbo:Person,governor general
+Goya Award,dbo:goyaAward,dbo:Artist,dbo:Award,goya award
+grades,dbo:grades,dbo:School,,grades
+Grammy Award,dbo:grammyAward,dbo:Artist,dbo:Award,grammy award
+grandsire,dbo:grandsire,dbo:Animal,dbo:Animal,grandsire
+gross domestic product nominal per capita,dbo:grossDomesticProductNominalPerCapita,dbo:PopulatedPlace,dbo:GrossDomesticProductPerCapita,gross domestic product nominal per capita
+gross domestic product purchasing power parity per capita,dbo:grossDomesticProductPurchasingPowerParityPerCapita,dbo:PopulatedPlace,dbo:GrossDomesticProductPerCapita,gross domestic product purchasing power parity per capita
+ground,dbo:ground,dbo:SoccerClub,dbo:Place,ground
+growing grape,dbo:growingGrape,dbo:WineRegion,dbo:Grape,growing grape
+guest,dbo:guest,dbo:TelevisionEpisode,dbo:Person,guest
+gym apparatus,dbo:gymApparatus,dbo:Person,,gym apparatus
+hand,dbo:hand,dbo:Person,,hand
+handedness,dbo:handedness,dbo:Person,,"handedness, an attribute of humans defined by their unequal distribution of fine motor skill between the left and right hands."
+the previous municipality from which this one has been created or enlarged,dbo:hasAbsorbedMunicipality,dbo:Municipality,dbo:FormerMunicipality,the previous municipality from which this one has been created or enlarged
+Indicates an annotation associated with this document,dbo:hasAnnotation,dbo:Document,dbo:Annotation,indicates an annotation associated with this document
+has channel,dbo:hasChannel,,,has channel
+has input,dbo:hasInput,,,has input
+has inside place,dbo:hasInsidePlace,dbo:Place,dbo:Place,"has inside place, indicates another place situated inside."
+has junction with,dbo:hasJunctionWith,dbo:Canal,dbo:Canal,has junction with
+has outside place,dbo:hasOutsidePlace,dbo:Place,dbo:Place,"has outside place, indicates another place situated around outside."
+variant or variation,dbo:hasVariant,,,"variant or variation, variant or variation, for example all variations of a color"
+head,dbo:head,dbo:EducationalInstitution,dbo:Person,head
+head alloy,dbo:headAlloy,dbo:AutomobileEngine,,head alloy
+head chef,dbo:headChef,dbo:Restaurant,dbo:Person,head chef
+family head,dbo:headOfFamily,dbo:Family,dbo:Person,family head
+headquarter,dbo:headquarter,dbo:Organisation,dbo:PopulatedPlace,headquarter
+head teacher,dbo:headteacher,dbo:School,dbo:Person,head teacher
+heir,dbo:heir,dbo:Monarch,dbo:Person,heir
+heritage register,dbo:heritageRegister,dbo:Place,,"heritage register, registered in a heritage register : inventory of cultural properties, natural and man-made, tangible and intangible, movable and immovable, that are deemed to be of sufficient heritage value to be separately identified and recorded."
+highest,dbo:highest,dbo:MountainRange,dbo:Mountain,"highest, the highest mountain of a mountain range."
+highest altitude,dbo:highestAltitude,dbo:Place,dbo:Altitude,highest altitude
+highest mountain,dbo:highestMountain,,dbo:Mountain,highest mountain
+highest place,dbo:highestPlace,,dbo:PopulatedPlace,highest place
+highest point,dbo:highestPoint,dbo:Settlement,dbo:Place,highest point
+highest position,dbo:highestPosition,,http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing,highest position
+highest region,dbo:highestRegion,dbo:Island,dbo:PopulatedPlace,highest region
+highest state,dbo:highestState,dbo:Island,dbo:PopulatedPlace,highest state
+highschool,dbo:highschool,,dbo:School,highschool
+highway system,dbo:highwaySystem,dbo:Road,,"highway system, the highway system that a route is part of"
+home arena,dbo:homeArena,,dbo:Arena,home arena
+home stadium,dbo:homeStadium,,dbo:Stadium,home stadium
+homeport,dbo:homeport,dbo:Ship,dbo:Place,homeport
+home town,dbo:hometown,dbo:Agent,dbo:Settlement,home town
+honours,dbo:honours,,,"honours, honours bestowed upon a person, organization, racehorse, etc"
+horse riding discipline,dbo:horseRidingDiscipline,dbo:Athlete,dbo:Sport,horse riding discipline
+house,dbo:house,dbo:Legislature,dbo:Legislature,house
+hub airport,dbo:hubAirport,dbo:Airline,dbo:Airport,hub airport
+human development index (HDI) category,dbo:humanDevelopmentIndexRankingCategory,dbo:PopulatedPlace,,human development index (hdi) category
+hybrid,dbo:hybrid,dbo:Plant,dbo:Plant,"hybrid, plants from which another plant (or cultivar) has been developed from"
+ideology,dbo:ideology,dbo:Agent,dbo:Ideology,ideology
+IFTA Award,dbo:iftaAward,dbo:Actor,dbo:Award,ifta award
+illustrator,dbo:illustrator,dbo:WrittenWork,dbo:Person,"illustrator, illustrator (where used throughout and a major feature)"
+important station,dbo:importantStation,dbo:PublicTransitSystem,dbo:Station,"important station, destinations, depots, junctions, major stops, hubs..."
+in cemetery,dbo:inCemetery,dbo:GraveMonument,dbo:Cemetery,in cemetery
+industry,dbo:industry,dbo:Company,,industry
+inflow,dbo:inflow,dbo:BodyOfWater,dbo:BodyOfWater,inflow
+influenced,dbo:influenced,,,"influenced, the subject influenced the object. inverseof influencedby. subject and object can be persons or works (eg programminglanguage)"
+influenced by,dbo:influencedBy,,,"influenced by, the subject was influenced by the object. inverseof influenced. subject and object can be persons or works (eg programminglanguage)"
+ingredient,dbo:ingredient,dbo:Food,,"ingredient, main ingredient used to prepare a specific food or beverage. for strings use ingredientname, for objects use ingredient."
+innervates,dbo:innervates,dbo:Nerve,dbo:AnatomicalStructure,innervates
+institution,dbo:institution,,dbo:Organisation,institution
+instrument,dbo:instrument,dbo:Artist,dbo:Instrument,instrument
+intercommunality,dbo:intercommunality,,dbo:PopulatedPlace,intercommunality
+international affiliation,dbo:internationalAffiliation,dbo:PoliticalParty,,international affiliation
+is part of,dbo:isPartOf,,,is part of
+is part of anatomical structure,dbo:isPartOfAnatomicalStructure,dbo:Brain,dbo:AnatomicalStructure,is part of anatomical structure
+is part of military conflict,dbo:isPartOfMilitaryConflict,dbo:MilitaryConflict,dbo:MilitaryConflict,is part of military conflict
+is part of wine region,dbo:isPartOfWineRegion,dbo:WineRegion,dbo:WineRegion,is part of wine region
+is route stop,dbo:isRouteStop,dbo:Place,dbo:RouteStop,"is route stop, indicate a place is a stop on a road."
+island,dbo:island,dbo:BodyOfWater,dbo:Island,island
+jockey,dbo:jockey,dbo:Horse,dbo:Jockey,jockey
+joint community,dbo:jointCommunity,dbo:Settlement,dbo:PopulatedPlace,joint community
+judge,dbo:judge,dbo:LegalCase,dbo:Judge,"judge, leading judge"
+junior season,dbo:juniorSeason,dbo:Agent,,junior season
+junior team,dbo:juniorTeam,dbo:Athlete,dbo:SportsTeam,junior team
+jure language,dbo:jureLanguage,,dbo:Language,jure language
+jurisdiction,dbo:jurisdiction,,,"jurisdiction, jurisdiction is the practical authority granted to a formally constituted legal body or to a political leader to deal with and make pronouncements on legal matters and, by implication, to administer justice within a defined area of responsibility."
+key person,dbo:keyPerson,,dbo:Person,key person
+khl draft team,dbo:khlDraftTeam,dbo:IceHockeyPlayer,dbo:HockeyTeam,khl draft team
+kingdom,dbo:kingdom,dbo:Species,,"kingdom, in biology, kingdom (latin: regnum, pl. regna) is a taxonomic rank, which is either the highest rank or in the more recent three-domain system, the rank below domain."
+known for,dbo:knownFor,,,"known for, work, historic event, etc that the subject is known for. applies to person, organization, concentrationcamp, etc"
+vastest lake,dbo:lake,dbo:Place,dbo:BodyOfWater,vastest lake
+land,dbo:land,dbo:Place,dbo:Place,land
+landeshauptmann,dbo:landeshauptmann,dbo:AdministrativeRegion,dbo:Person,landeshauptmann
+landing vehicle,dbo:landingVehicle,dbo:SpaceMission,dbo:SpaceMission,landing vehicle
+language,dbo:language,,dbo:Language,"language, use dc:language for literal, language for object"
+family,dbo:languageFamily,dbo:Language,,family
+language regulator or academy,dbo:languageRegulator,,dbo:Language,language regulator or academy
+largest city,dbo:largestCity,dbo:PopulatedPlace,dbo:PopulatedPlace,largest city
+largest metro,dbo:largestMetro,dbo:Settlement,dbo:PopulatedPlace,largest metro
+largest settlement,dbo:largestSettlement,dbo:PopulatedPlace,dbo:PopulatedPlace,largest settlement
+last appearance,dbo:lastAppearance,dbo:FictionalCharacter,,last appearance
+last family member,dbo:lastFamilyMember,dbo:Family,dbo:Person,last family member
+last flight,dbo:lastFlight,dbo:SpaceShuttle,dbo:SpaceMission,last flight
+last launch rocket,dbo:lastLaunchRocket,dbo:LaunchPad,dbo:Rocket,last launch rocket
+last race,dbo:lastRace,dbo:FormulaOneRacer,dbo:GrandPrix,last race
+last win,dbo:lastWin,dbo:FormulaOneRacer,dbo:GrandPrix,last win
+launch pad,dbo:launchPad,dbo:SpaceMission,dbo:LaunchPad,launch pad
+launch site,dbo:launchSite,dbo:SpaceMission,dbo:Building,launch site
+launch vehicle,dbo:launchVehicle,dbo:SpaceMission,,launch vehicle
+Laurence Olivier Award,dbo:laurenceOlivierAward,dbo:Actor,dbo:Award,laurence olivier award
+layout,dbo:layout,dbo:Automobile,,layout
+lchf draft team,dbo:lchfDraftTeam,dbo:IceHockeyPlayer,dbo:HockeyTeam,lchf draft team
+lead team,dbo:leadTeam,"dbo:Athlete,_CareerStation",dbo:SportsTeam,lead team
+leader,dbo:leader,,dbo:Person,leader
+leaderFunction,dbo:leaderFunction,dbo:Organisation,dbo:PersonFunction,leaderfunction
+leader name,dbo:leaderName,dbo:PopulatedPlace,dbo:Person,leader name
+leader party,dbo:leaderParty,dbo:PopulatedPlace,,leader party
+league,dbo:league,,dbo:SportsLeague,league
+league manager,dbo:leagueManager,dbo:Person,dbo:SportsLeague,league manager
+left tributary,dbo:leftTributary,dbo:River,dbo:River,left tributary
+legal form,dbo:legalForm,dbo:Organisation,,"legal form, there are many types of business entity defined in the legal systems of various countries. these include corporations, cooperatives, partnerships, sole traders, limited liability company and other specialized types of organization."
+legislature,dbo:legislature,dbo:PopulatedPlace,dbo:Legislature,legislature
+license,dbo:license,dbo:Work,,license
+Lieutenancy area,dbo:lieutenancyArea,dbo:PopulatedPlace,dbo:PopulatedPlace,lieutenancy area
+lieutenant,dbo:lieutenant,,dbo:Person,lieutenant
+linguistics tradition,dbo:linguisticsTradition,dbo:Person,,linguistics tradition
+linked to,dbo:linkedTo,dbo:SkiResort,dbo:Place,linked to
+list item,dbo:listItemOf,,,list item
+literary genre,dbo:literaryGenre,dbo:WrittenWork,,"literary genre, a literary genre is a category of literary composition. genres may be determined by literary technique, tone, content, or even (as in the case of fiction) length."
+livingPlace,dbo:livingPlace,dbo:Person,dbo:Place,livingplace
+local authority,dbo:localAuthority,,,local authority
+thumbnail localization,dbo:localizationThumbnail,dbo:PopulatedPlace,,thumbnail localization
+located in area,dbo:locatedInArea,dbo:Place,dbo:Place,located in area
+location,dbo:location,,dbo:Place,"location, the location of the thing."
+location city,dbo:locationCity,dbo:Organisation,dbo:City,"location city, city the thing is located."
+państwo,dbo:locationCountry,,dbo:Country,"państwo, country the thing is located."
+locomotive,dbo:locomotive,dbo:Train,dbo:Locomotive,locomotive
+lounge,dbo:lounge,dbo:Airline,,lounge
+lowest mountain,dbo:lowestMountain,dbo:Place,dbo:Mountain,lowest mountain
+lowest place,dbo:lowestPlace,dbo:Place,dbo:PopulatedPlace,lowest place
+lowest point,dbo:lowestPoint,dbo:Settlement,dbo:Place,lowest point
+lowest position,dbo:lowestPosition,dbo:Place,http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing,lowest position
+lowest region,dbo:lowestRegion,dbo:Island,dbo:PopulatedPlace,lowest region
+lowest state,dbo:lowestState,dbo:Island,dbo:PopulatedPlace,lowest state
+lunar rover,dbo:lunarRover,dbo:SpaceMission,dbo:MeanOfTransportation,lunar rover
+lymph,dbo:lymph,dbo:AnatomicalStructure,dbo:Lymph,lymph
+lyrics,dbo:lyrics,dbo:MusicalWork,dbo:Person,"lyrics, creator of the text of a musicalwork, eg musical, opera or song"
+magazine,dbo:magazine,dbo:WrittenWork,dbo:Magazine,magazine
+maiden flight rocket,dbo:maidenFlightRocket,dbo:YearInSpaceflight,dbo:Rocket,maiden flight rocket
+main article for Wikipedia category,dbo:mainArticleForCategory,http://www.w3.org/2004/02/skos/core#Concept,,"main article for wikipedia category, a property for linking wikipedia categories to its main articles, derived from top templates of some category pages."
+main artist,dbo:mainArtist,dbo:MusicalWork,dbo:Agent,"main artist, name of the main artist in the group."
+main character,dbo:mainCharacter,dbo:Work,dbo:Person,main character
+main domain,dbo:mainDomain,dbo:Person,,main domain
+main branch,dbo:mainFamilyBranch,dbo:NobleFamily,dbo:Family,main branch
+main interest,dbo:mainInterest,,,main interest
+main island,dbo:mainIsland,dbo:Place,dbo:Place,main island
+main organ,dbo:mainOrgan,dbo:Organisation,,main organ
+maintained by,dbo:maintainedBy,dbo:ArchitecturalStructure,,maintained by
+major island,dbo:majorIsland,dbo:Island,dbo:Island,major island
+major shrine,dbo:majorShrine,dbo:Saint,,major shrine
+makeup artist,dbo:makeupArtist,dbo:Film,dbo:Person,"makeup artist, the person who is responsible for the actors makeup"
+management,dbo:management,,,management
+management country,dbo:managementCountry,dbo:Island,dbo:Country,management country
+management mountain,dbo:managementMountain,,dbo:Mountain,management mountain
+management place,dbo:managementPlace,,dbo:PopulatedPlace,management place
+management position,dbo:managementPosition,,http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing,management position
+management region,dbo:managementRegion,dbo:Island,dbo:PopulatedPlace,management region
+manager,dbo:manager,dbo:SportsTeam,dbo:Person,manager
+manager club,dbo:managerClub,dbo:Athlete,dbo:SportsTeam,manager club
+manager season,dbo:managerSeason,dbo:Agent,,manager season
+managing editor,dbo:managingEditor,dbo:Newspaper,dbo:Person,managing editor
+manufactory,dbo:manufactory,,dbo:Factory,manufactory
+manufacturer,dbo:manufacturer,,dbo:Organisation,manufacturer
+map,dbo:map,dbo:Place,,"map, a map of the place."
+march,dbo:march,dbo:MilitaryUnit,dbo:MusicalWork,march
+massif,dbo:massif,dbo:SkiResort,dbo:Place,massif
+masters wins,dbo:mastersWins,dbo:Person,http://www.w3.org/2004/02/skos/core#Concept,masters wins
+material,dbo:material,,,material
+mayor,dbo:mayor,,dbo:Mayor,mayor
+medalist,dbo:medalist,dbo:SportsEvent,dbo:Person,medalist
+media,dbo:media,dbo:Person,,media
+media item,dbo:mediaItem,,dbo:File,"media item, a media file (such as audio, video or images) associated with the subject"
+media type,dbo:mediaType,dbo:WrittenWork,,"media type, print / on-line (then binding types etc. if relevant)"
+medical cause,dbo:medicalCause,dbo:Disease,,medical cause
+medical diagnosis,dbo:medicalDiagnosis,dbo:Disease,,medical diagnosis
+medical specialty,dbo:medicalSpecialty,dbo:Disease,dbo:MedicalSpecialty,medical specialty
+medication,dbo:medication,dbo:Disease,,medication
+meeting building,dbo:meetingBuilding,dbo:Legislature,dbo:Building,meeting building
+meeting city,dbo:meetingCity,dbo:Legislature,dbo:Settlement,meeting city
+meeting road,dbo:meetingRoad,dbo:RoadJunction,dbo:Road,"meeting road, a road that crosses another road at the junction."
+Member of Parliament,dbo:memberOfParliament,,dbo:Person,member of parliament
+mentor,dbo:mentor,dbo:Artist,dbo:Artist,"mentor, a wise and trusted counselor or teacher"
+merged settlement,dbo:mergedSettlement,dbo:Settlement,dbo:Settlement,merged settlement
+merged with,dbo:mergedWith,dbo:Organisation,dbo:Organisation,merged with
+metropolitan borough,dbo:metropolitanBorough,dbo:PopulatedPlace,dbo:PopulatedPlace,metropolitan borough
+military branch,dbo:militaryBranch,dbo:MilitaryPerson,dbo:MilitaryUnit,"military branch, the service branch (army, navy, etc.) a person is part of."
+military rank,dbo:militaryRank,dbo:MilitaryPerson,,"military rank, the highest rank achieved by a person."
+military service,dbo:militaryService,dbo:Person,dbo:MilitaryService,military service
+military unit,dbo:militaryUnit,dbo:MilitaryPerson,dbo:MilitaryUnit,"military unit, for persons who are not notable as commanding officers, the unit (company, battalion, regiment, etc.) in which they served."
+mill type,dbo:millType,dbo:Mill,,mill type
+minister,dbo:minister,,dbo:Politician,minister
+minority,dbo:minority,dbo:Settlement,dbo:Group,minority
+mission,dbo:mission,,dbo:SpaceMission,mission
+monarch,dbo:monarch,,dbo:Person,monarch
+most down point of a norwegian settlement,dbo:mostDownPoint,dbo:NorwaySettlement,dbo:Place,most down point of a norwegian settlement
+most successful player,dbo:mostSuccessfulPlayer,dbo:SportsEvent,dbo:Athlete,"most successful player, the best player in a certain sport competition. e.g, in a football competition, the player that scored more goals."
+most wins,dbo:mostWins,dbo:Race,,most wins
+mother,dbo:mother,dbo:Woman,dbo:Person,mother
+mountain range,dbo:mountainRange,dbo:Mountain,dbo:MountainRange,mountain range
+mouth country,dbo:mouthCountry,dbo:River,dbo:Country,mouth country
+mouth district,dbo:mouthDistrict,dbo:River,dbo:PopulatedPlace,mouth district
+mouth mountain,dbo:mouthMountain,dbo:River,dbo:Mountain,mouth mountain
+mouth place,dbo:mouthPlace,dbo:River,dbo:PopulatedPlace,mouth place
+mouth position,dbo:mouthPosition,dbo:River,http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing,mouth position
+mouth region,dbo:mouthRegion,dbo:River,dbo:PopulatedPlace,mouth region
+mouth state,dbo:mouthState,dbo:River,dbo:PopulatedPlace,mouth state
+movement,dbo:movement,dbo:Artist,,"movement, artistic movement or school with which artist is associated"
+movie,dbo:movie,dbo:Person,dbo:Film,movie
+municipality,dbo:municipality,,dbo:PopulatedPlace,municipality
+absorbed by,dbo:municipalityAbsorbedBy,dbo:FormerMunicipality,dbo:Municipality,absorbed by
+museum,dbo:museum,dbo:Artwork,dbo:Museum,museum
+museumType,dbo:museumType,dbo:Museum,,"museumtype, this property has been added  because 'buildingtype' is much more about the place, whereas 'museumtype' is about the way the place is being (or:was) used"
+Music Band,dbo:musicBand,dbo:MusicalArtist,dbo:Band,music band
+music by,dbo:musicBy,dbo:Musical,dbo:Person,music by
+music composer,dbo:musicComposer,dbo:Work,dbo:MusicalArtist,music composer
+music fusion genre,dbo:musicFusionGenre,dbo:MusicGenre,dbo:MusicGenre,music fusion genre
+music subgenre,dbo:musicSubgenre,dbo:MusicGenre,dbo:MusicGenre,music subgenre
+musicType,dbo:musicType,dbo:MusicalWork,,"musictype, type is too general. we should be able to distinguish types of music from types of architecture"
+musical artist,dbo:musicalArtist,dbo:Single,dbo:MusicalArtist,musical artist
+musical band,dbo:musicalBand,dbo:Single,dbo:Band,musical band
+musicians,dbo:musicians,dbo:Instrument,dbo:MusicalArtist,musicians
+mythology,dbo:mythology,dbo:MythologicalFigure,,mythology
+NAACP Image Award,dbo:naacpImageAward,dbo:Actor,dbo:Award,naacp image award
+named after,dbo:namedAfter,,,named after
+named by language,dbo:namedByLanguage,dbo:Place,dbo:Place,named by language
+narrator,dbo:narrator,dbo:Work,dbo:Person,narrator
+national affiliation,dbo:nationalAffiliation,dbo:PoliticalParty,,national affiliation
+National Film Award,dbo:nationalFilmAward,dbo:Actor,dbo:Award,national film award
+National Olympic Committee,dbo:nationalOlympicCommittee,dbo:OlympicResult,,national olympic committee
+national selection,dbo:nationalSelection,dbo:Agent,,national selection
+national team,dbo:nationalTeam,dbo:Athlete,dbo:SportsTeam,national team
+National tournament,dbo:nationalTournament,dbo:Person,dbo:Tournament,national tournament
+nationality,dbo:nationality,dbo:Person,dbo:Country,nationality
+ncaa team,dbo:ncaaTeam,dbo:Athlete,dbo:SportsTeam,ncaa team
+nearest city,dbo:nearestCity,dbo:Place,dbo:PopulatedPlace,nearest city
+neighboring municipality,dbo:neighboringMunicipality,dbo:PopulatedPlace,dbo:PopulatedPlace,neighboring municipality
+nerve,dbo:nerve,dbo:AnatomicalStructure,dbo:Nerve,nerve
+network,dbo:network,dbo:Broadcaster,dbo:Broadcaster,network
+newspaper,dbo:newspaper,,dbo:PeriodicalLiterature,newspaper
+next entity,dbo:nextEntity,dbo:Place,dbo:Place,next entity
+next event,dbo:nextEvent,dbo:Event,dbo:Event,next event
+next mission,dbo:nextMission,dbo:SpaceMission,dbo:SpaceMission,next mission
+nfl team,dbo:nflTeam,dbo:Athlete,dbo:SportsTeam,nfl team
+nobel laureates,dbo:nobelLaureates,dbo:School,dbo:Person,nobel laureates
+nominee,dbo:nominee,,dbo:Person,nominee
+non-fiction subject,dbo:nonFictionSubject,dbo:WrittenWork,,"non-fiction subject, the subject of a non-fiction book (e.g.: history, biography, cookbook, climate change, ...)."
+north-east place,dbo:northEastPlace,dbo:Place,dbo:Place,"north-east place, indicates another place situated north-east."
+north place,dbo:northPlace,dbo:Place,dbo:Place,"north place, indicates another place situated north."
+north-west place,dbo:northWestPlace,dbo:Place,dbo:Place,"north-west place, indicates another place situated north-west."
+not soluble in,dbo:notSolubleIn,dbo:ChemicalSubstance,dbo:ChemicalSubstance,not soluble in
+notable commander,dbo:notableCommander,dbo:MilitaryUnit,dbo:Person,notable commander
+notableIdea,dbo:notableIdea,dbo:Person,,notableidea
+notable student,dbo:notableStudent,dbo:Scientist,dbo:Person,notable student
+notable wine,dbo:notableWine,dbo:Grape,,notable wine
+notable work,dbo:notableWork,,dbo:Work,"notable work, notable work created by the subject (eg writer, artist, engineer) or about the subject (eg concentrationcamp)"
+novel,dbo:novel,dbo:FictionalCharacter,dbo:Novel,novel
+NRHP type,dbo:nrhpType,dbo:HistoricPlace,,"nrhp type, type of historic place as defined by the us national park service. for instance national historic landmark, national monument or national battlefield."
+number of classrooms,dbo:numberOfClassrooms,dbo:School,,number of classrooms
+occupation,dbo:occupation,,dbo:PersonFunction,occupation
+officer in charge,dbo:officerInCharge,dbo:University,dbo:Person,officer in charge
+official language,dbo:officialLanguage,dbo:PopulatedPlace,dbo:Language,official language
+official opened by,dbo:officialOpenedBy,dbo:Olympics,dbo:Person,official opened by
+oil system,dbo:oilSystem,dbo:AutomobileEngine,,oil system
+old district,dbo:oldDistrict,dbo:PopulatedPlace,dbo:PopulatedPlace,old district
+old province,dbo:oldProvince,dbo:PopulatedPlace,dbo:PopulatedPlace,old province
+old team coached,dbo:oldTeamCoached,dbo:Athlete,dbo:SportsTeam,old team coached
+Olivier Award,dbo:olivierAward,dbo:Comedian,dbo:Award,olivier award
+olympic games,dbo:olympicGames,dbo:Person,dbo:Tournament,olympic games
+olympic oath sworn by,dbo:olympicOathSwornBy,dbo:Olympics,dbo:Person,olympic oath sworn by
+olympic oath sworn by athlete,dbo:olympicOathSwornByAthlete,dbo:Olympics,dbo:Person,olympic oath sworn by athlete
+olympic oath sworn by judge,dbo:olympicOathSwornByJudge,dbo:Olympics,dbo:Person,olympic oath sworn by judge
+opening film,dbo:openingFilm,dbo:FilmFestival,dbo:Film,opening film
+opening theme,dbo:openingTheme,dbo:TelevisionShow,dbo:Work,opening theme
+operating system,dbo:operatingSystem,dbo:Software,,operating system
+operator,dbo:operator,,,"operator, organisation or city who is the operator of an architecturalstructure, publictransitsystem, concentrationcamp, etc. not to confuse with builder, owner or maintainer.
+domain is unrestricted since organization is agent but city is place. range is unrestricted since anything can be operated."
+opponent,dbo:opponent,dbo:Person,dbo:Person,opponent
+opponents,dbo:opponents,dbo:MilitaryConflict,,"opponents, ""opponent in a military conflict, an organisation, country, or group of countries. """
+order (taxonomy),dbo:order,dbo:Species,,order (taxonomy)
+organ,dbo:organ,dbo:ReligiousBuilding,dbo:Organ,"organ, name and/or description of the organ"
+organ system,dbo:organSystem,dbo:AnatomicalStructure,dbo:AnatomicalStructure,"organ system, the organ system that a anatomical structure belongs to"
+organisation,dbo:organisation,,dbo:Organisation,organisation
+organisation member,dbo:organisationMember,dbo:Organisation,dbo:OrganisationMember,"organisation member, identify the members of an organisation."
+origin,dbo:origin,,dbo:PopulatedPlace,origin
+original end point,dbo:originalEndPoint,dbo:Canal,dbo:Place,original end point
+original language,dbo:originalLanguage,dbo:Work,dbo:Language,"original language, the original language of the work."
+original start point,dbo:originalStartPoint,dbo:Canal,dbo:Place,original start point
+origo,dbo:origo,dbo:Muscle,dbo:AnatomicalStructure,origo
+orogeny,dbo:orogeny,,,orogeny
+Orthologous Gene,dbo:orthologousGene,dbo:Gene,dbo:Gene,orthologous gene
+other appearances,dbo:otherAppearances,dbo:OlympicResult,dbo:OlympicResult,other appearances
+other branch,dbo:otherFamilyBranch,dbo:NobleFamily,dbo:Family,other branch
+secondary/other fuel type,dbo:otherFuelType,dbo:PowerStation,,secondary/other fuel type
+other function,dbo:otherFunction,dbo:Person,,other function
+other media,dbo:otherMedia,dbo:Person,dbo:PeriodicalLiterature,other media
+other occupation,dbo:otherOccupation,dbo:Person,dbo:PersonFunction,other occupation
+other party,dbo:otherParty,dbo:OfficeHolder,dbo:PoliticalParty,other party
+otherSportsExperience,dbo:otherSportsExperience,dbo:Athlete,dbo:Athletics,othersportsexperience
+other works,dbo:otherWorks,dbo:Work,dbo:WorkSequence,"other works, tells about existence of other works."
+outflow,dbo:outflow,dbo:BodyOfWater,dbo:River,outflow
+owner,dbo:owner,,dbo:Agent,"owner, used as if meaning: owned by, has as its owner"
+owning company,dbo:owningCompany,,dbo:Company,owning company
+owning organisation,dbo:owningOrganisation,,dbo:Organisation,owning organisation
+owns,dbo:owns,dbo:Agent,dbo:Thing,"owns, used as if meaning: has property rights over"
+painter,dbo:painter,dbo:Artwork,dbo:Person,painter
+Pandemic,dbo:pandemic,,dbo:Disease,"pandemic, global epidemic of infectious disease"
+parent,dbo:parent,dbo:Person,dbo:Person,parent
+parent company,dbo:parentCompany,,dbo:Company,parent company
+parent mountain peak,dbo:parentMountainPeak,dbo:Mountain,dbo:Mountain,parent mountain peak
+parent organisation,dbo:parentOrganisation,dbo:Organisation,dbo:Organisation,parent organisation
+parentheses,dbo:parentheses,dbo:Species,,parentheses
+parish,dbo:parish,dbo:PopulatedPlace,dbo:PopulatedPlace,parish
+parliament,dbo:parliament,,dbo:Parliament,parliament
+part,dbo:part,,,part
+participates/participated in,dbo:participatingIn,dbo:MemberResistanceMovement,dbo:SocietalEvent,participates/participated in
+partner,dbo:partner,dbo:Person,dbo:Person,partner
+party,dbo:party,,dbo:PoliticalParty,party
+past member,dbo:pastMember,,dbo:Person,past member
+pastor,dbo:pastor,dbo:HistoricBuilding,dbo:Person,pastor
+patent,dbo:patent,dbo:Person,,patent
+patron,dbo:patron,dbo:MilitaryUnit,dbo:Person,patron
+patron saint,dbo:patronSaint,,dbo:Person,patron saint
+Peabody Award,dbo:peabodyAward,dbo:Comedian,dbo:Award,peabody award
+People Fully Vaccinated,dbo:peopleFullyVaccinated,,dbo:VaccinationStatistics,"people fully vaccinated, vaccinationstatistics: number of people fully vaccinated."
+People Vaccinated,dbo:peopleVaccinated,,dbo:VaccinationStatistics,"people vaccinated, vaccinationstatistics: number of people vaccinated."
+People Vaccinated Per Hundred,dbo:peopleVaccinatedPerHundred,,dbo:VaccinationStatistics,"people vaccinated per hundred, vaccinationstatistics: total vaccination percent."
+percentage,dbo:percentage,,,percentage
+performer,dbo:performer,dbo:FictionalCharacter,dbo:Person,performer
+event period,dbo:period,,,event period
+perpetrator,dbo:perpetrator,dbo:Attack,dbo:Agent,perpetrator
+person,dbo:person,dbo:PersonFunction,dbo:Person,person
+person function,dbo:personFunction,dbo:Person,dbo:PersonFunction,person function
+pga wins,dbo:pgaWins,dbo:Person,http://www.w3.org/2004/02/skos/core#Concept,pga wins
+philosophicalSchool,dbo:philosophicalSchool,dbo:Person,,philosophicalschool
+photographer,dbo:photographer,dbo:TelevisionEpisode,dbo:Person,photographer
+phylum,dbo:phylum,dbo:Species,,"phylum, a rank in the classification of organisms, below kingdom and above class; also called a division, especially in describing plants; a taxon at that rank."
+picture,dbo:picture,,,"picture, a picture of something or someone."
+picture description,dbo:pictureDescription,,,picture description
+picture format,dbo:pictureFormat,dbo:Broadcaster,,picture format
+Relates an entity to the populated place in which it is located.,dbo:place,,dbo:PopulatedPlace,relates an entity to the populated place in which it is located.
+place of burial,dbo:placeOfBurial,dbo:Person,dbo:Place,"place of burial, the place where the person has been buried."
+place of worship,dbo:placeOfWorship,dbo:ClericalAdministrativeRegion,dbo:ReligiousBuilding,"place of worship, a religious administrative body needs to know which places of worship it"
+plant,dbo:plant,dbo:Place,dbo:Plant,plant
+play role,dbo:playRole,,,play role
+player in team,dbo:playerInTeam,dbo:SportsTeam,dbo:Person,"player in team, a person playing for a sports team. inverseof team"
+player season,dbo:playerSeason,dbo:Agent,,player season
+pole driver,dbo:poleDriver,dbo:GrandPrix,dbo:Person,pole driver
+pole driver country,dbo:poleDriverCountry,dbo:GrandPrix,dbo:Country,pole driver country
+pole driver team,dbo:poleDriverTeam,dbo:GrandPrix,dbo:SportsTeam,pole driver team
+Polish Film Award,dbo:polishFilmAward,dbo:Artist,dbo:Award,polish film award
+politic government department,dbo:politicGovernmentDepartment,dbo:PopulatedPlace,,politic government department
+political leader,dbo:politicalLeader,dbo:Place,dbo:PersonFunction,political leader
+political majority,dbo:politicalMajority,dbo:Settlement,dbo:PoliticalParty,political majority
+political party in legislature,dbo:politicalPartyInLegislature,dbo:Legislature,dbo:PoliticalParty,"political party in legislature, political party in the legislature (eg.: european people's party in the european parliament)."
+political party of leader,dbo:politicalPartyOfLeader,dbo:Legislature,dbo:PoliticalParty,"political party of leader, the political party of leader."
+politician,dbo:politician,dbo:PoliticalFunction,dbo:Politician,"politician, the politician exercising this function."
+population,dbo:population,dbo:PopulatedPlace,dbo:Population,"population, all the inhabitants of a particular place; ex: 14200"
+population place,dbo:populationPlace,dbo:EthnicGroup,dbo:PopulatedPlace,"population place, a place were members of an ethnic group are living"
+total population reference,dbo:populationTotalReference,dbo:Settlement,,total population reference
+portrayer,dbo:portrayer,dbo:FictionalCharacter,,portrayer
+position,dbo:position,,,position
+power type,dbo:powerType,dbo:MeanOfTransportation,,power type
+precursor,dbo:precursor,dbo:AnatomicalStructure,dbo:Embryology,precursor
+predecessor,dbo:predecessor,,,predecessor
+author of preface,dbo:prefaceBy,dbo:WrittenWork,dbo:Person,author of preface
+prefect,dbo:prefect,dbo:Politician,dbo:Person,prefect
+prefecture,dbo:prefecture,dbo:Department,dbo:PopulatedPlace,prefecture
+premiere place,dbo:premierePlace,dbo:Play,,"premiere place, the theatre and/or city the play was first performed in."
+present municipality,dbo:presentMunicipality,dbo:FormerMunicipality,dbo:Municipality,present municipality
+presenter,dbo:presenter,dbo:TelevisionShow,dbo:Person,presenter
+president,dbo:president,,dbo:Person,president
+president general council,dbo:presidentGeneralCouncil,dbo:TermOfOffice,dbo:Person,president general council
+president regional council,dbo:presidentRegionalCouncil,dbo:TermOfOffice,dbo:Person,president regional council
+previous demographics,dbo:previousDemographics,dbo:PopulatedPlace,dbo:Demographics,previous demographics
+previous editor,dbo:previousEditor,dbo:Magazine,dbo:Person,previous editor
+previous entity,dbo:previousEntity,dbo:Place,dbo:Place,previous entity
+previous event,dbo:previousEvent,dbo:Event,dbo:Event,previous event
+previous infrastructure,dbo:previousInfrastructure,dbo:Infrastructure,dbo:Infrastructure,previous infrastructure
+previous mission,dbo:previousMission,dbo:SpaceMission,dbo:SpaceMission,previous mission
+previous population,dbo:previousPopulation,dbo:PopulatedPlace,dbo:Population,previous population
+previous work,dbo:previousWork,dbo:Work,dbo:Work,previous work
+previous work date,dbo:previousWorkDate,dbo:Work,dbo:year,"previous work date, year when previous work was released"
+primary fuel type,dbo:primaryFuelType,dbo:PowerStation,,primary fuel type
+prime minister,dbo:primeMinister,,dbo:Person,prime minister
+"primogenitor, first forebear",dbo:primogenitor,dbo:Family,dbo:Person,"primogenitor, first forebear"
+principal,dbo:principal,dbo:EducationalInstitution,dbo:Person,"principal, principal of an educational institution (school)"
+principal area,dbo:principalArea,dbo:PopulatedPlace,dbo:PopulatedPlace,principal area
+principal engineer,dbo:principalEngineer,dbo:Canal,dbo:Person,principal engineer
+pro team,dbo:proTeam,"dbo:Athlete,_CareerStation",dbo:SportsTeam,pro team
+produced by,dbo:producedBy,dbo:Film,dbo:Company,produced by
+producer,dbo:producer,dbo:Work,dbo:Agent,"producer, the producer of the creative work."
+produces,dbo:produces,,,produces
+product,dbo:product,dbo:Organisation,,product
+production company,dbo:productionCompany,dbo:Work,dbo:Company,"production company, the company that produced the work e.g. film, musicalwork, software"
+profession,dbo:profession,dbo:Person,,profession
+programming language,dbo:programmingLanguage,dbo:Software,,programming language
+project,dbo:project,dbo:Person,dbo:Project,project
+project coordinator,dbo:projectCoordinator,dbo:ResearchProject,dbo:Organisation,"project coordinator, the coordinating organisation of the project."
+project participant,dbo:projectParticipant,dbo:ResearchProject,dbo:Organisation,"project participant, a participating organisation of the project."
+promotion,dbo:promotion,dbo:WrestlingEvent,,promotion
+prospect league,dbo:prospectLeague,dbo:IceHockeyPlayer,dbo:SportsLeague,prospect league
+prospect team,dbo:prospectTeam,dbo:IceHockeyPlayer,dbo:HockeyTeam,prospect team
+provides,dbo:provides,,,provides
+province,dbo:province,dbo:Place,dbo:Province,province
+province link,dbo:provinceLink,dbo:Place,dbo:Province,province link
+provost,dbo:provost,dbo:University,dbo:Person,provost
+publisher,dbo:publisher,dbo:Work,dbo:Agent,"publisher, publisher of a work. for literal (string) use dc:publisher; for object (url) use publisher"
+race,dbo:race,,dbo:Race,race
+race horse,dbo:raceHorse,,dbo:Horse,race horse
+race result,dbo:raceResult,dbo:Race,dbo:SportCompetitionResult,"race result, result of one racer in a sport competition"
+race track,dbo:raceTrack,dbo:SportsEvent,dbo:RaceTrack,race track
+radio,dbo:radio,dbo:Person,dbo:RadioStation,radio
+railway line using tunnel,dbo:railwayLineUsingTunnel,dbo:RailwayTunnel,,"railway line using tunnel, railway line that is using the tunnel."
+railway rolling stock,dbo:railwayRollingStock,dbo:RouteOfTransportation,,railway rolling stock
+rebuilder,dbo:rebuilder,dbo:MeanOfTransportation,,rebuilder
+recent winner,dbo:recentWinner,dbo:Race,dbo:Person,recent winner
+record label,dbo:recordLabel,,dbo:RecordLabel,record label
+recorded in,dbo:recordedIn,dbo:MusicalWork,dbo:PopulatedPlace,recorded in
+rector,dbo:rector,dbo:EducationalInstitution,dbo:Person,rector
+referent bourgmestre,dbo:reffBourgmestre,dbo:Settlement,dbo:Person,referent bourgmestre
+regency,dbo:regency,dbo:Place,dbo:PopulatedPlace,regency
+regent of,dbo:regentOf,dbo:Monarch,dbo:Monarch,"regent of, subject has served as the regent of another monarch"
+region,dbo:region,,dbo:Place,"region, the regin where the thing is located or is connected to."
+region served,dbo:regionServed,dbo:Organisation,dbo:Place,region served
+regional council,dbo:regionalCouncil,dbo:Agent,dbo:TermOfOffice,regional council
+regional language,dbo:regionalLanguage,dbo:PopulatedPlace,dbo:Language,regional language
+reigning pope,dbo:reigningPope,dbo:Cleric,dbo:Pope,reigning pope
+related,dbo:related,,,related
+related functions,dbo:relatedFunctions,dbo:Person,dbo:List,"related functions, this property is to accommodate the list field that contains a list of related personfunctions a person holds or has held"
+related mean of transportation,dbo:relatedMeanOfTransportation,dbo:MeanOfTransportation,dbo:MeanOfTransportation,related mean of transportation
+related places,dbo:relatedPlaces,dbo:Place,dbo:List,"related places, this property is to accommodate the list field that contains a list of, e.g., monuments in the same town"
+relation,dbo:relation,dbo:Person,dbo:Person,relation
+relative,dbo:relative,dbo:Person,dbo:Person,relative
+release location,dbo:releaseLocation,dbo:Work,dbo:Place,"release location, usually used with releasedate, particularly for films. often there can be several pairs so our modeling is not precise here..."
+religion,dbo:religion,,,religion
+religious head,dbo:religiousHead,,dbo:Person,religious head
+religious head label,dbo:religiousHeadLabel,dbo:School,,religious head label
+religious order,dbo:religiousOrder,dbo:Monastry,dbo:ClericalOrder,religious order
+residence,dbo:residence,dbo:Person,dbo:Place,"residence, place of residence of a person."
+resolution,dbo:resolution,dbo:Software,,"resolution, native resolution"
+hotel,dbo:restaurant,dbo:Hotel,dbo:Building,hotel
+resting place,dbo:restingPlace,dbo:Person,dbo:Place,resting place
+resting place position,dbo:restingPlacePosition,dbo:Person,http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing,resting place position
+retired rocket,dbo:retiredRocket,dbo:YearInSpaceflight,dbo:Rocket,retired rocket
+right child,dbo:rightChild,dbo:Island,dbo:Island,right child
+right tributary,dbo:rightTributary,dbo:River,dbo:River,right tributary
+rival,dbo:rivalSchool,dbo:School,dbo:School,rival
+branch,dbo:riverBranch,dbo:River,dbo:River,branch
+branch of,dbo:riverBranchOf,dbo:River,dbo:River,branch of
+river mouth,dbo:riverMouth,dbo:River,dbo:BodyOfWater,river mouth
+road,dbo:road,dbo:Infrastructure,dbo:Road,road
+rocket,dbo:rocket,dbo:Spacecraft,dbo:Rocket,rocket
+rocket function,dbo:rocketFunction,dbo:Rocket,,"rocket function, purpose of the rocket"
+A Person's role in an event,dbo:roleInEvent,dbo:Agent,dbo:Event,a person's role in an event
+route activity,dbo:routeActivity,dbo:RouteStop,,"route activity, details of the activity for a road."
+route end,dbo:routeEnd,dbo:RouteOfTransportation,dbo:Station,"route end, end of the route. this is where the route ends and, for u.s. roads, is either at the northern terminus or eastern terminus."
+route end location,dbo:routeEndLocation,dbo:RouteOfTransportation,dbo:Place,"route end location, the end location of the route."
+route junction,dbo:routeJunction,dbo:RouteOfTransportation,dbo:Station,"route junction, a junction or cross to another route."
+line,dbo:routeLine,dbo:RouteStop,,"line, line of a stop on a route."
+route next stop,dbo:routeNext,dbo:RouteStop,dbo:RouteStop,"route next stop, next stop on a route."
+route previous stop,dbo:routePrevious,dbo:RouteStop,dbo:RouteStop,"route previous stop, previous stop on a route."
+route start,dbo:routeStart,dbo:RouteOfTransportation,dbo:Station,"route start, start of the route. this is where the route begins and, for u.s. roads, is either at the southern terminus or western terminus."
+route start location,dbo:routeStartLocation,dbo:RouteOfTransportation,dbo:Place,"route start location, the start location of the route."
+royal anthem,dbo:royalAnthem,,,royal anthem
+running mate,dbo:runningMate,,dbo:Person,running mate
+rural municipality,dbo:ruralMunicipality,dbo:Road,dbo:PopulatedPlace,rural municipality
+saint,dbo:saint,dbo:PopulatedPlace,dbo:Saint,saint
+sales,dbo:sales,,dbo:Sales,"sales, this property holds an intermediate node of the type sales."
+SAT score,dbo:satScore,dbo:School,,"sat score, most recent average sat scores"
+school,dbo:school,dbo:Person,dbo:EducationalInstitution,"school, school a person goes or went to"
+school board,dbo:schoolBoard,dbo:School,,school board
+school patron,dbo:schoolPatron,dbo:School,dbo:Agent,school patron
+Screen Actors Guild Award,dbo:screenActorsGuildAward,dbo:Actor,dbo:Award,screen actors guild award
+sea,dbo:sea,dbo:Place,dbo:Sea,sea
+season,dbo:season,dbo:Agent,,season
+second commander,dbo:secondCommander,dbo:MilitaryUnit,dbo:Person,second commander
+second driver,dbo:secondDriver,dbo:GrandPrix,dbo:Person,second driver
+second driver country,dbo:secondDriverCountry,dbo:GrandPrix,dbo:Country,second driver country
+secondLeader,dbo:secondLeader,,dbo:Person,secondleader
+secondPopularVote,dbo:secondPopularVote,,dbo:Person,secondpopularvote
+second team,dbo:secondTeam,dbo:GrandPrix,dbo:SportsTeam,second team
+secretary,dbo:secretaryGeneral,dbo:Organisation,dbo:Person,secretary
+seiyu,dbo:seiyu,dbo:Person,dbo:Person,seiyu
+selection,dbo:selection,dbo:Astronaut,,"selection, when (or in which project) the person was selected to train as an astronaut"
+senator,dbo:senator,,dbo:Person,senator
+series,dbo:series,,,series
+service,dbo:service,dbo:Organisation,,service
+serving railway line,dbo:servingRailwayLine,dbo:Station,,"serving railway line, railway services that serve the station."
+set designer,dbo:setDesigner,dbo:Film,dbo:Person,"set designer, the person who is responsible for the film set design"
+settlement,dbo:settlement,dbo:Place,dbo:PopulatedPlace,settlement
+settlement attached,dbo:settlementAttached,dbo:Settlement,dbo:Place,settlement attached
+sexual orientation,dbo:sexualOrientation,dbo:Person,,sexual orientation
+intercommunality shape,dbo:shape,dbo:Intercommunality,dbo:Community,intercommunality shape
+sheading,dbo:sheading,dbo:PopulatedPlace,dbo:PopulatedPlace,sheading
+crew,dbo:shipCrew,dbo:Ship,dbo:Person,crew
+show,dbo:show,,dbo:TelevisionShow,show
+showJudge,dbo:showJudge,dbo:TelevisionShow,dbo:Person,showjudge
+shuttle,dbo:shuttle,dbo:SpaceMission,dbo:SpaceShuttle,shuttle
+sibling,dbo:sibling,dbo:Person,dbo:Person,sibling
+significant building,dbo:significantBuilding,dbo:Architect,dbo:Building,significant building
+significant design,dbo:significantDesign,dbo:Architect,,significant design
+significant project,dbo:significantProject,dbo:Person,,"significant project, a siginificant artifact constructed by the person."
+SIL code,dbo:silCode,dbo:Language,,sil code
+siler medalist,dbo:silverMedalist,dbo:SportsEvent,dbo:Person,siler medalist
+SIMC code,dbo:simcCode,dbo:PopulatedPlace,,"simc code, should be a datatype property"
+similar,dbo:similar,,,similar
+list of singles,dbo:singleList,dbo:Album,dbo:SingleList,"list of singles, set of singles"
+singleOf,dbo:singleOf,dbo:SingleList,dbo:Work,"singleof, single produced from an album"
+sire,dbo:sire,dbo:Animal,dbo:Animal,sire
+sister,dbo:sister,dbo:Woman,dbo:Person,sister
+sister college,dbo:sisterCollege,dbo:College,dbo:College,sister college
+sister newspaper,dbo:sisterNewspaper,dbo:Newspaper,dbo:Newspaper,sister newspaper
+sister station,dbo:sisterStation,dbo:Broadcaster,dbo:Broadcaster,sister station
+skills,dbo:skills,,,skills
+promoted,dbo:soccerLeaguePromoted,dbo:SoccerLeagueSeason,dbo:SportsTeam,promoted
+relegated teams,dbo:soccerLeagueRelegated,dbo:SoccerLeagueSeason,dbo:SportsTeam,relegated teams
+season,dbo:soccerLeagueSeason,dbo:SoccerLeagueSeason,dbo:SoccerLeagueSeason,season
+league champion,dbo:soccerLeagueWinner,dbo:SoccerLeagueSeason,dbo:SportsTeam,league champion
+closing season,dbo:soccerTournamentClosingSeason,dbo:SoccerTournament,dbo:SoccerTournament,closing season
+last champion,dbo:soccerTournamentLastChampion,dbo:SoccerTournament,dbo:SoccerClub,last champion
+most steady,dbo:soccerTournamentMostSteady,dbo:SoccerTournament,dbo:SoccerClub,most steady
+most successfull,dbo:soccerTournamentMostSuccesfull,dbo:SoccerTournament,dbo:SoccerClub,most successfull
+opening season,dbo:soccerTournamentOpeningSeason,dbo:SoccerTournament,dbo:SoccerTournament,opening season
+this season,dbo:soccerTournamentThisSeason,dbo:SoccerTournament,dbo:SoccerTournament,this season
+top scorer,dbo:soccerTournamentTopScorer,dbo:SoccerTournament,dbo:SoccerPlayer,top scorer
+solicitor general,dbo:solicitorGeneral,dbo:LegalCase,dbo:Person,"solicitor general, high-ranking solicitor"
+solvent,dbo:solvent,dbo:ChemicalSubstance,dbo:ChemicalSubstance,solvent
+solvent with bad solubility,dbo:solventWithBadSolubility,dbo:ChemicalSubstance,dbo:ChemicalSubstance,solvent with bad solubility
+solvent with good solubility,dbo:solventWithGoodSolubility,dbo:ChemicalSubstance,dbo:ChemicalSubstance,solvent with good solubility
+solvent with mediocre solubility,dbo:solventWithMediocreSolubility,dbo:ChemicalSubstance,dbo:ChemicalSubstance,solvent with mediocre solubility
+son,dbo:son,dbo:Man,dbo:Person,son
+sound recording,dbo:soundRecording,,dbo:Sound,"sound recording, sound recording somehow related to the subject"
+source,dbo:source,,,source
+source confluence,dbo:sourceConfluence,dbo:River,,source confluence
+source confluence country,dbo:sourceConfluenceCountry,dbo:River,dbo:Country,source confluence country
+source confluence mountain,dbo:sourceConfluenceMountain,dbo:River,dbo:Mountain,source confluence mountain
+source confluence place,dbo:sourceConfluencePlace,dbo:River,dbo:Place,source confluence place
+source confluence position,dbo:sourceConfluencePosition,dbo:River,http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing,source confluence position
+source confluence region,dbo:sourceConfluenceRegion,dbo:River,dbo:Place,source confluence region
+source confluence state,dbo:sourceConfluenceState,dbo:River,dbo:PopulatedPlace,source confluence state
+source country,dbo:sourceCountry,dbo:Stream,dbo:Country,source country
+source district,dbo:sourceDistrict,,dbo:PopulatedPlace,source district
+source mountain,dbo:sourceMountain,,dbo:Mountain,source mountain
+Source Name,dbo:sourceName,,dbo:VaccinationStatistics,"source name, vaccinationstatistics: source authority name."
+source place,dbo:sourcePlace,,dbo:PopulatedPlace,source place
+source position,dbo:sourcePosition,,http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing,source position
+source region,dbo:sourceRegion,,dbo:PopulatedPlace,source region
+source state,dbo:sourceState,,dbo:PopulatedPlace,source state
+Source Website,dbo:sourceWebsite,,dbo:VaccinationStatistics,"source website, vaccinationstatistics: source website."
+south-east place,dbo:southEastPlace,dbo:Place,dbo:Place,"south-east place, indicates another place situated south-east."
+south place,dbo:southPlace,dbo:Place,dbo:Place,"south place, indicates another place situated south."
+south-west place,dbo:southWestPlace,dbo:Place,dbo:Place,"south-west place, indicates another place situated south-west."
+sovereign country,dbo:sovereignCountry,dbo:Place,dbo:PopulatedPlace,sovereign country
+spacecraft,dbo:spacecraft,dbo:SpaceMission,dbo:Spacecraft,spacecraft
+spacestation,dbo:spacestation,dbo:SpaceMission,dbo:SpaceStation,"spacestation, space station that has been visited during a space mission"
+special effects,dbo:specialEffects,dbo:Film,dbo:Person,"special effects, the person who is responsible for the film special effects"
+specialist,dbo:specialist,,dbo:PersonFunction,specialist
+specialization,dbo:specialization,,,"specialization, points out the subject or thing someone or something is specialized in (for)."
+species,dbo:species,dbo:Species,dbo:Species,species
+split from party,dbo:splitFromParty,dbo:PoliticalParty,dbo:PoliticalParty,split from party
+spoken in,dbo:spokenIn,dbo:Language,dbo:PopulatedPlace,spoken in
+spokesperson,dbo:spokesperson,dbo:PoliticalParty,dbo:Person,spokesperson
+sport,dbo:sport,,dbo:Sport,sport
+sport country,dbo:sportCountry,dbo:Athlete,dbo:Country,"sport country, the country, for which the athlete is participating in championships"
+sport discipline,dbo:sportDiscipline,dbo:Person,dbo:Sport,"sport discipline, the sport discipline the athlete practices, e.g. diving, or that a board member of a sporting club is focussing at"
+sport governing body,dbo:sportGoverningBody,,,sport governing body
+sport specialty,dbo:sportSpecialty,dbo:Athlete,dbo:Sport,"sport specialty, the sport specialty the athlete practices, e.g. 'ring' for a men's artistic gymnastics athlete"
+spouse,dbo:spouse,dbo:Person,dbo:Person,"spouse, the person they are married to"
+spur of,dbo:spurOf,dbo:Road,dbo:Road,spur of
+spur type,dbo:spurType,dbo:Road,,spur type
+Stadium,dbo:stadium,,dbo:Stadium,stadium
+starring,dbo:starring,dbo:Work,dbo:Actor,starring
+start point,dbo:startPoint,dbo:Place,dbo:Place,start point
+start reign,dbo:startReign,dbo:Person,http://www.w3.org/2004/02/skos/core#Concept,start reign
+state,dbo:state,,dbo:PopulatedPlace,state
+state delegate,dbo:stateDelegate,,dbo:Person,state delegate
+state of origin,dbo:stateOfOrigin,dbo:Person,dbo:Country,state of origin
+state of origin team,dbo:stateOfOriginTeam,dbo:Athlete,dbo:SportsTeam,state of origin team
+statistic,dbo:statistic,dbo:Statistic,,statistic
+statistic label,dbo:statisticLabel,dbo:BaseballPlayer,,statistic label
+stellar classification,dbo:stellarClassification,dbo:CelestialBody,http://www.w3.org/2004/02/skos/core#OrderedCollection,stellar classification
+story editor,dbo:storyEditor,dbo:TelevisionShow,dbo:Person,story editor
+structural system,dbo:structuralSystem,dbo:Building,,structural system
+student,dbo:student,dbo:Person,dbo:Person,student
+style,dbo:style,dbo:Artist,,style
+stylistic origin,dbo:stylisticOrigin,dbo:MusicGenre,dbo:MusicGenre,stylistic origin
+sub-classis,dbo:subClassis,dbo:Species,,"sub-classis, a subdivision within a species classis"
+sub-family,dbo:subFamily,dbo:Species,dbo:Taxon,sub-family
+subgenus,dbo:subGenus,dbo:Species,,"subgenus, a rank in the classification of organisms, below genus ; a taxon at that rank"
+subtribus,dbo:subTribus,dbo:Species,dbo:Species,subtribus
+subdivision,dbo:subdivision,,,subdivision
+subdivision name of the island,dbo:subdivisionName,dbo:Island,dbo:Place,subdivision name of the island
+subprefecture,dbo:subprefecture,dbo:Department,dbo:PopulatedPlace,subprefecture
+subregion,dbo:subregion,dbo:Place,dbo:Place,subregion
+subsequent infrastructure,dbo:subsequentInfrastructure,dbo:Infrastructure,dbo:Infrastructure,subsequent infrastructure
+subsequent work,dbo:subsequentWork,dbo:Work,dbo:Work,subsequent work
+subsequent work date,dbo:subsequentWorkDate,dbo:Work,dbo:year,"subsequent work date, year when subsequent work is released"
+subsidiary,dbo:subsidiary,dbo:Company,dbo:Company,subsidiary
+successor,dbo:successor,,,successor
+summer appearances,dbo:summerAppearances,dbo:OlympicResult,dbo:OlympicResult,summer appearances
+super-family,dbo:superFamily,dbo:Species,dbo:Taxon,super-family
+super-order,dbo:superOrder,dbo:Species,,super-order
+supertribus,dbo:superTribus,dbo:Species,dbo:Species,supertribus
+superintendent,dbo:superintendent,dbo:Organisation,dbo:Person,superintendent
+supplies,dbo:supplies,dbo:Artery,dbo:AnatomicalStructure,supplies
+supply,dbo:supply,dbo:Place,dbo:Place,supply
+symptoms,dbo:symptom,dbo:Disease,,symptoms
+system of law,dbo:systemOfLaw,dbo:LegalCase,dbo:SystemOfLaw,"system of law, a referral to the relevant system of law"
+taoiseach,dbo:taoiseach,,dbo:Person,"taoiseach, head of government of ireland"
+target airport,dbo:targetAirport,dbo:Airline,dbo:Airport,target airport
+target space station station,dbo:targetSpaceStation,dbo:Spacecraft,dbo:SpaceStation,target space station station
+has taxon,dbo:taxon,dbo:Species,dbo:Taxon,has taxon
+teaching staff,dbo:teachingStaff,dbo:School,,teaching staff
+team,dbo:team,,dbo:SportsTeam,team
+team coached,dbo:teamCoached,dbo:Athlete,dbo:SportsTeam,team coached
+team manager,dbo:teamManager,dbo:Person,dbo:SportsTeam,team manager
+television series,dbo:televisionSeries,,dbo:TelevisionShow,television series
+tenant,dbo:tenant,dbo:ArchitecturalStructure,dbo:Organisation,tenant
+term period,dbo:termPeriod,,dbo:TimePeriod,term period
+territory,dbo:territory,"dbo:MilitaryConflict,_AdministrativeRegion",dbo:PopulatedPlace,territory
+TERYT code,dbo:terytCode,dbo:PopulatedPlace,,"teryt code, indexing code used by the polish national official register of the territorial division of the country (teryt) to identify various entities"
+third commander,dbo:thirdCommander,dbo:MilitaryUnit,dbo:Person,third commander
+third driver,dbo:thirdDriver,dbo:GrandPrix,dbo:Person,third driver
+third driver country,dbo:thirdDriverCountry,dbo:GrandPrix,dbo:Country,third driver country
+third team,dbo:thirdTeam,dbo:GrandPrix,dbo:SportsTeam,third team
+thumbnail,dbo:thumbnail,,dbo:Image,"thumbnail, reserved for dbpedia."
+time zone,dbo:timeZone,dbo:Place,,time zone
+Tony Award,dbo:tonyAward,dbo:Artist,dbo:Award,tony award
+country top level (tld),dbo:topLevelDomain,dbo:Country,dbo:TopLevelDomain,country top level (tld)
+torch bearer,dbo:torchBearer,dbo:Olympics,dbo:Person,torch bearer
+Total Vaccinations,dbo:totalVaccinations,,dbo:VaccinationStatistics,"total vaccinations, vaccinationstatistics: total vaccinations per date and country."
+Total Vaccinations Per Hundred,dbo:totalVaccinationsPerHundred,,dbo:VaccinationStatistics,"total vaccinations per hundred, vaccinationstatistics: vaccinations per hundred."
+touristic site,dbo:touristicSite,dbo:PopulatedPlace,dbo:Place,touristic site
+TradeMark,dbo:tradeMark,,,trademark
+trainer,dbo:trainer,dbo:Athlete,dbo:Person,trainer
+trainer club,dbo:trainerClub,dbo:SoccerPlayer,dbo:SportsTeam,trainer club
+training,dbo:training,dbo:Artist,dbo:EducationalInstitution,training
+translator,dbo:translator,dbo:Work,dbo:Person,"translator, translator(s), if original not in english"
+treatment,dbo:treatment,dbo:Disease,,treatment
+tree,dbo:tree,dbo:Place,dbo:Species,tree
+tribus,dbo:tribus,dbo:Species,dbo:Species,tribus
+trustee,dbo:trustee,dbo:Organisation,dbo:Person,trustee
+tvShow,dbo:tvShow,dbo:Person,dbo:TelevisionShow,tvshow
+twin country,dbo:twinCountry,dbo:Country,dbo:Country,twin country
+twin city,dbo:twinTown,dbo:Settlement,dbo:Settlement,twin city
+type,dbo:type,,,type
+type of electrification,dbo:typeOfElectrification,dbo:RouteOfTransportation,,"type of electrification, electrification system (e.g. third rail, overhead catenary)."
+unique reference number (URN),dbo:uRN,dbo:School,,"unique reference number (urn), dfe unique reference number of a school in england or wales"
+uncle,dbo:uncle,dbo:Man,dbo:Person,uncle
+unesco,dbo:unesco,dbo:Place,dbo:PopulatedPlace,unesco
+unitary authority,dbo:unitaryAuthority,dbo:PopulatedPlace,dbo:PopulatedPlace,unitary authority
+university,dbo:university,,dbo:EducationalInstitution,"university, university a person goes or went to."
+used in war,dbo:usedInWar,dbo:Weapon,dbo:MilitaryConflict,"used in war, wars that were typical for the usage of a weapon"
+uses,dbo:uses,,,uses
+using country,dbo:usingCountry,dbo:Currency,dbo:Country,using country
+usopen wins,dbo:usopenWins,dbo:Person,http://www.w3.org/2004/02/skos/core#Concept,usopen wins
+usurper,dbo:usurper,dbo:Person,dbo:Person,usurper
+vaccination,dbo:vaccination,dbo:Disease,dbo:Vaccine,vaccination
+variant or variation,dbo:variantOf,,,"variant or variation, variant or variation of something, for example the variant of a car"
+varietals,dbo:varietals,dbo:WineRegion,,varietals
+vehicle,dbo:vehicle,,dbo:Automobile,"vehicle, vehicle that uses a specific automobile platform"
+vehicle types in fleet,dbo:vehiclesInFleet,dbo:PublicTransitSystem,dbo:MeanOfTransportation,"vehicle types in fleet, points out means of transport contained in the companies vehicle fleet."
+vein,dbo:vein,dbo:AnatomicalStructure,dbo:Vein,vein
+venerated in,dbo:veneratedIn,dbo:Saint,dbo:Organisation,venerated in
+version,dbo:version,dbo:MeanOfTransportation,,version
+vice chancellor,dbo:viceChancellor,,dbo:Person,vice chancellor
+vice leader,dbo:viceLeader,dbo:PopulatedPlace,dbo:Person,vice leader
+vice leader party,dbo:viceLeaderParty,dbo:PopulatedPlace,dbo:PoliticalParty,vice leader party
+vice prime minister,dbo:vicePrimeMinister,,dbo:Person,vice prime minister
+vice principal,dbo:vicePrincipal,dbo:School,dbo:Person,vice principal
+vice principal label,dbo:vicePrincipalLabel,dbo:School,,vice principal label
+victim (resource),dbo:victim,,,"victim (resource), specific (eg notable) person, or specific class of people (eg romani) that are victim of a concentrationcamp, criminal, serialkiller, or some other atrocity"
+voice,dbo:voice,,dbo:Person,"voice, voice artist used in a televisionshow, movie, or to sound the voice of a fictionalcharacter"
+voice type,dbo:voiceType,dbo:Artist,,"voice type, voice type of a singer or an actor"
+volumes,dbo:volumes,dbo:MultiVolumePublication,dbo:WrittenWork,volumes
+train carriage,dbo:wagon,dbo:Train,dbo:TrainCarriage,train carriage
+waterway through tunnel,dbo:waterwayThroughTunnel,dbo:WaterwayTunnel,,"waterway through tunnel, waterway that goes through the tunnel."
+weapon,dbo:weapon,"dbo:MilitaryConflict_,_Attack",dbo:Weapon,weapon
+webcast,dbo:webcast,,,"webcast, the url to the webcast of the thing."
+west place,dbo:westPlace,dbo:Place,dbo:Place,"west place, indicates another place situated west."
+wha draft team,dbo:whaDraftTeam,dbo:IceHockeyPlayer,dbo:HockeyTeam,wha draft team
+whole area,dbo:wholeArea,dbo:Place,dbo:Area,whole area
+Wikipage disambiguates,dbo:wikiPageDisambiguates,,,"wikipage disambiguates, reserved for dbpedia."
+Link to the Wikipage edit URL,dbo:wikiPageEditLink,,,"link to the wikipage edit url, reserved for dbpedia."
+Link from a Wikipage to an external page,dbo:wikiPageExternalLink,,,"link from a wikipage to an external page, reserved for dbpedia."
+Link to the Wikipage history URL,dbo:wikiPageHistoryLink,,,"link to the wikipage history url, reserved for dbpedia."
+Link from a Wikipage to a Wikipage in a different language about the same or a related subject.,dbo:wikiPageInterLanguageLink,,,"link from a wikipage to a wikipage in a different language about the same or a related subject., reserved for dbpedia."
+Wikipage redirect,dbo:wikiPageRedirects,,,"wikipage redirect, reserved for dbpedia."
+Link to the Wikipage revision URL,dbo:wikiPageRevisionLink,,,"link to the wikipage revision url, reserved for dbpedia."
+wiki page uses template,dbo:wikiPageUsesTemplate,,dbo:WikimediaTemplate,"wiki page uses template, do not use this property! for internal use only."
+Link from a Wikipage to another Wikipage,dbo:wikiPageWikiLink,,,"link from a wikipage to another wikipage, reserved for dbpedia."
+Text used to link from a Wikipage to another Wikipage,dbo:wikiPageWikiLinkText,,,"text used to link from a wikipage to another wikipage, reserved for dbpedia."
+Wikidata IRI slit,dbo:wikidataSplitIri,,,"wikidata iri slit, is used to denote splitting of a wikidata iri to one or more iris"
+wilaya,dbo:wilaya,dbo:Settlement,dbo:Place,wilaya
+wine produced,dbo:wineProduced,dbo:WineRegion,,wine produced
+wine region,dbo:wineRegion,dbo:Grape,dbo:WineRegion,wine region
+wins at ALPG,dbo:winsAtAlpg,dbo:GolfPlayer,,wins at alpg
+wins at ASIA,dbo:winsAtAsia,dbo:GolfPlayer,,wins at asia
+wins at AUS,dbo:winsAtAus,dbo:GolfPlayer,,wins at aus
+wins at challenges,dbo:winsAtChallenges,dbo:GolfPlayer,,wins at challenges
+wins at championships,dbo:winsAtChampionships,dbo:GolfPlayer,,wins at championships
+wins at JLPGA,dbo:winsAtJLPGA,dbo:GolfPlayer,,wins at jlpga
+wins at japan,dbo:winsAtJapan,dbo:GolfPlayer,,wins at japan
+wins at KLPGA,dbo:winsAtKLPGA,dbo:GolfPlayer,,wins at klpga
+wins at LAGT,dbo:winsAtLAGT,dbo:GolfPlayer,,wins at lagt
+wins at LET,dbo:winsAtLET,dbo:GolfPlayer,,wins at let
+wins at LPGA,dbo:winsAtLPGA,dbo:GolfPlayer,,wins at lpga
+wins at majors,dbo:winsAtMajors,dbo:GolfPlayer,,wins at majors
+wins at NWIDE,dbo:winsAtNWIDE,dbo:GolfPlayer,,wins at nwide
+wins at other tournaments,dbo:winsAtOtherTournaments,dbo:GolfPlayer,,wins at other tournaments
+wins at pga,dbo:winsAtPGA,dbo:GolfPlayer,,wins at pga
+wins at pro tournaments,dbo:winsAtProTournaments,dbo:GolfPlayer,,wins at pro tournaments
+wins at Senior Euro,dbo:winsAtSenEuro,dbo:GolfPlayer,,wins at senior euro
+wins at sun,dbo:winsAtSun,dbo:GolfPlayer,,wins at sun
+wins in Europe,dbo:winsInEurope,dbo:GolfPlayer,,wins in europe
+winter appearances,dbo:winterAppearances,dbo:OlympicResult,dbo:OlympicResult,winter appearances
+WoRMS,dbo:woRMS,dbo:Species,,"worms, world register of marine species"
+world,dbo:world,dbo:Person,http://www.w3.org/2004/02/skos/core#Concept,world
+world tournament,dbo:worldTournament,dbo:Person,dbo:Tournament,world tournament
+auteur,dbo:writer,dbo:Work,dbo:Person,auteur
+youth club,dbo:youthClub,dbo:Athlete,dbo:SportsTeam,youth club
+youth wing,dbo:youthWing,dbo:PoliticalParty,,youth wing
+zodiac sign,dbo:zodiacSign,,,"zodiac sign, zodiac sign. applies to persons, planets, etc"
