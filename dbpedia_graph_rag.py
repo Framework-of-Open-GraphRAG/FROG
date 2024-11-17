@@ -35,7 +35,7 @@ from few_shots import (
 )
 from utils.api import DBPediaAPI
 from utils.verbalization import Verbalization
-from utils.property_retrieval import DBPediaOntologyFaiss
+from utils.property_retrieval import DBPediaPropertyRetrieval
 from utils.helper import separate_camel_case
 
 load_dotenv()
@@ -52,7 +52,7 @@ class DBPediaGraphRAG:
         device: str = DEVICE,
         local: str = True,
         max_new_tokens: int = 1500,
-        db: Optional[DBPediaOntologyFaiss] = None,
+        property_retrieval: Optional[DBPediaPropertyRetrieval] = None,
         generate_sparql_few_shot_messages: Optional[List[dict]] = None,
         always_use_generate_sparql: bool = False,
     ) -> None:
@@ -68,14 +68,14 @@ class DBPediaGraphRAG:
         df_classes = pd.read_csv("./data/dbpedia_ontology/classes.csv")
         df_oproperties = pd.read_csv("./data/dbpedia_ontology/oproperties.csv")
         df_dproperties = pd.read_csv("./data/dbpedia_ontology/dproperties.csv")
-        if db is None:
-            self.db = DBPediaOntologyFaiss(
+        if property_retrieval is None:
+            self.property_retrieval = DBPediaPropertyRetrieval(
                 df_classes,
                 df_oproperties,
                 df_dproperties,
             )
         else:
-            self.db = db
+            self.property_retrieval = property_retrieval
         model_kwargs = {
             "temperature": 0,
             "device": self.device,
@@ -548,7 +548,7 @@ Answer it in the format below.
                 )
             )
 
-        ontology = self.db.get_related_candidates(
+        ontology = self.property_retrieval.get_related_candidates(
             question, property_candidates=related_properties, threshold=0.5
         )
         properties_context = self._parse_property_context_string(ontology)

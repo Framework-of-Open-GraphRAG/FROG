@@ -9,36 +9,11 @@ from nltk.tokenize import RegexpTokenizer
 from nltk import ngrams
 
 
-class DBPediaOntologyFaiss:
+class BasePropertyRetrieval:
     def __init__(
-        self,
-        df_classes: pd.DataFrame,
-        df_oproperties: pd.DataFrame,
-        df_dproperties: pd.DataFrame,
-        embedding_model_name: str = "sentence-transformers/all-mpnet-base-v2",
+        self, embedding_model_name: str = "sentence-transformers/all-mpnet-base-v2"
     ) -> None:
-        # embedding
         self.model_embed = SentenceTransformer(embedding_model_name)
-        self.df_classes = df_classes
-        self.df_oproperties = df_oproperties
-        self.df_dproperties = df_dproperties
-        emb_classes = self.model_embed.encode(self.df_classes["classLabel"].tolist())
-        emb_oproperties = self.model_embed.encode(
-            self.df_oproperties["propertyLabel"].tolist()
-        )
-        emb_dproperties = self.model_embed.encode(
-            self.df_dproperties["propertyLabel"].tolist()
-        )
-
-        # indexing
-        dimension = emb_classes.shape[1]
-        self.index_classes = faiss.IndexFlatL2(dimension)
-        self.index_oproperties = faiss.IndexFlatL2(dimension)
-        self.index_dproperties = faiss.IndexFlatL2(dimension)
-        self.index_classes.add(emb_classes)
-        self.index_oproperties.add(emb_oproperties)
-        self.index_dproperties.add(emb_dproperties)
-
         self.stopwords = set(stopwords.words("english"))
 
     def _search(
@@ -49,15 +24,6 @@ class DBPediaOntologyFaiss:
         df = df.iloc[I[0]].copy()
         df["sim"] = D[0]
         return df
-
-    def search_classes(self, q: str, k: int = 5) -> pd.DataFrame:
-        return self._search(self.index_classes, self.df_classes, q, k)
-
-    def search_oproperties(self, q: str, k: int = 5) -> pd.DataFrame:
-        return self._search(self.index_oproperties, self.df_oproperties, q, k)
-
-    def search_dproperties(self, q: str, k: int = 5) -> pd.DataFrame:
-        return self._search(self.index_dproperties, self.df_dproperties, q, k)
 
     def _preprocess_into_tokens(self, q: str) -> list[str]:
         tok_pattern = r"\w+"
@@ -78,6 +44,44 @@ class DBPediaOntologyFaiss:
             result.extend([" ".join(ng) for ng in n_grams])
         return result
 
+
+class DBPediaPropertyRetrieval(BasePropertyRetrieval):
+    def __init__(
+        self,
+        df_classes: pd.DataFrame,
+        df_oproperties: pd.DataFrame,
+        df_dproperties: pd.DataFrame,
+        embedding_model_name: str = "sentence-transformers/all-mpnet-base-v2",
+    ) -> None:
+        super().__init__(embedding_model_name)
+        self.df_classes = df_classes
+        self.df_oproperties = df_oproperties
+        self.df_dproperties = df_dproperties
+        emb_classes = self.model_embed.encode(self.df_classes["classLabel"].tolist())
+        emb_oproperties = self.model_embed.encode(
+            self.df_oproperties["propertyLabel"].tolist()
+        )
+        emb_dproperties = self.model_embed.encode(
+            self.df_dproperties["propertyLabel"].tolist()
+        )
+
+        dimension = emb_classes.shape[1]
+        self.index_classes = faiss.IndexFlatL2(dimension)
+        self.index_oproperties = faiss.IndexFlatL2(dimension)
+        self.index_dproperties = faiss.IndexFlatL2(dimension)
+        self.index_classes.add(emb_classes)
+        self.index_oproperties.add(emb_oproperties)
+        self.index_dproperties.add(emb_dproperties)
+
+    def search_classes(self, q: str, k: int = 5) -> pd.DataFrame:
+        return self._search(self.index_classes, self.df_classes, q, k)
+
+    def search_oproperties(self, q: str, k: int = 5) -> pd.DataFrame:
+        return self._search(self.index_oproperties, self.df_oproperties, q, k)
+
+    def search_dproperties(self, q: str, k: int = 5) -> pd.DataFrame:
+        return self._search(self.index_dproperties, self.df_dproperties, q, k)
+
     def get_related_candidates(
         self,
         q: str,
@@ -97,6 +101,66 @@ class DBPediaOntologyFaiss:
         def parallel_search(ngram, name, index, df, threshold=threshold):
             df_res = self._search(index, df, ngram, k)
             return name, df_res[df_res["sim"] < threshold]["short"].tolist()
+
+        with ThreadPoolExecutor() as executor:
+            futures = []
+            for ngram in ngrams + property_candidates:
+                for name, (index, df) in resources.items():
+                    futures.append(
+                        executor.submit(parallel_search, ngram, name, index, df)
+                    )
+
+            for future in futures:
+                name, df_res = future.result()
+                if df_res:
+                    result[name].extend(df_res)
+                    result[name] = list(set(result[name]))
+
+        return result
+
+
+class WikidataPropertyRetrieval(BasePropertyRetrieval):
+    def __init__(
+        self,
+        df_properties: pd.DataFrame,
+        embedding_model_name: str = "sentence-transformers/all-mpnet-base-v2",
+    ) -> None:
+        super().__init__(embedding_model_name)
+        self.df_properties = df_properties
+        emb_properties = self.model_embed.encode(
+            self.df_properties["propertyLabel"].tolist()
+        )
+
+        dimension = emb_properties.shape[1]
+        self.index_properties = faiss.IndexFlatL2(dimension)
+        self.index_properties.add(emb_properties)
+
+    def search_properties(self, q: str, k: int = 5) -> pd.DataFrame:
+        return self._search(self.index_properties, self.df_properties, q, k)
+
+    def get_related_candidates(
+        self,
+        q: str,
+        property_candidates: list[str] = [],
+        threshold: int = 0.5,
+        k: int = 5,
+    ) -> dict[str, list[str]]:
+        tokens = self._preprocess_into_tokens(q)
+        ngrams = self._generate_ngrams(tokens)
+        resources = {
+            "properties": (self.index_properties, self.df_properties),
+        }
+        result = {"properties": []}
+
+        def parallel_search(ngram, name, index, df, threshold=threshold):
+            df_res = self._search(index, df, ngram, k)
+            df_res["idWithLabel"] = (
+                df_res["propertyId"] + " - " + df_res["propertyLabel"]
+            )
+            return (
+                name,
+                df_res[df_res["sim"] < threshold]["idWithLabel"].tolist(),
+            )
 
         with ThreadPoolExecutor() as executor:
             futures = []
