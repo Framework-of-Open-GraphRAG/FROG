@@ -72,7 +72,7 @@ def main(
                 log_file.write(
                     f"Question: {question},\nGenerated Factoid Question: {generated_factoid_question},\nTrue Query: {true_query},\n"
                     f"Generated Query: {generated_query if generated_query is not None else 'using verbalization'},\n"
-                    f"Top 10 Ground Truth: {ground_truth[:10]}\nTop 10 Generated Answer: {pred[:10]}\nScore: {score}\n"
+                    f"Top 10 Ground Truth:\n{ground_truth[:10]}\nTop 10 Generated Answer:\n{pred[:10]}\nScore: {score}\n"
                 )
             except Exception as e:
                 log_file.write("ERROR: " + str(e) + "\n")

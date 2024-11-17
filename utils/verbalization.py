@@ -149,23 +149,10 @@ select ?s ?p ?sLabel ?pLabel ?oLabel where {{
 
         property_used = list(list_of_candidates.keys())[similar_index]
         result = []
-        for _, (p, o, _, pLabel, oLabel) in po[po["p"] == property_used].iterrows():
+        for _, (p, o, _, pLabel, _) in po[po["p"] == property_used].iterrows():
             label_p = pLabel if pLabel else separate_camel_case(p.split("/")[-1])
-            if o.startswith("http"):
-                label_o = (
-                    oLabel
-                    if oLabel
-                    else replace_using_dict(o.split("/")[-1], self.MANUAL_MAPPING_DICT)
-                )
-            else:
-                label_o = o
-            result.append({label_p: label_o})
-        for _, (s, p, sLabel, pLabel, _) in sp[sp["p"] == property_used].iterrows():
+            result.append({label_p: o})
+        for _, (s, p, _, pLabel, _) in sp[sp["p"] == property_used].iterrows():
             label_p = pLabel if pLabel else separate_camel_case(p.split("/")[-1])
-            label_s = (
-                sLabel
-                if sLabel
-                else replace_using_dict(s.split("/")[-1], self.MANUAL_MAPPING_DICT)
-            )
-            result.append({property_used: label_s})
+            result.append({label_p: s})
         return result, similar_score
