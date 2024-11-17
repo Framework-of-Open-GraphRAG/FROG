@@ -1,0 +1,2 @@
+from .dbpedia import DBPediaPropertyRetrieval
+from .wikidata import WikidataPropertyRetrieval

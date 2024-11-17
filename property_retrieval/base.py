@@ -42,3 +42,12 @@ class BasePropertyRetrieval:
             n_grams = ngrams(tokens, n)
             result.extend([" ".join(ng) for ng in n_grams])
         return result
+
+    def get_related_candidates(
+        self,
+        q: str,
+        property_candidates: list[str] = [],
+        threshold: int = 0.5,
+        k: int = 5,
+    ) -> dict[str, list[str]]:
+        raise NotImplementedError("This method should be overridden by subclasses")
