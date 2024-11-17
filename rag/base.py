@@ -1,10 +1,9 @@
-import json
-import torch, os
-import pandas as pd
+import torch, os, json
 from IPython.display import HTML, display
 from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
 from xml.sax.saxutils import escape
+from copy import deepcopy
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 from langchain_community.llms.huggingface_pipeline import HuggingFacePipeline
@@ -478,7 +477,9 @@ Based on the query given, extract the entities from it and return the extracted 
             if verbose:
                 if use_cot:
                     thoughts_tmp = escape(str(sparql_query_result.thoughts))
-                    display(HTML(f"""<code style='color: green;'>{thoughts_tmp}</code>"""))
+                    display(
+                        HTML(f"""<code style='color: green;'>{thoughts_tmp}</code>""")
+                    )
                 sparql_tmp = escape(sparql_query_result.sparql).replace("\n", "<br/>")
                 display(HTML(f"""<code style='color: green;'>{sparql_tmp}</code>"""))
             try:
@@ -590,7 +591,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
             if not is_error and similarities >= 0.65 and len(result) > 0:
                 return factoid_question, "", result
 
-        few_shots = self.generate_sparql_few_shot_messages.copy()
+        few_shots = deepcopy(self.generate_sparql_few_shot_messages)
         if not use_cot:
             for fs in few_shots:
                 output = json.loads(fs["output"])

@@ -9,6 +9,7 @@ from few_shots import GENERATE_SPARQL_FEW_SHOTS
 
 warnings.filterwarnings("ignore")
 
+
 def compare_two_dataframes(df1: pd.DataFrame, df2: pd.DataFrame) -> float:
     if len(df1.columns) != len(df2.columns):
         return 0
@@ -35,6 +36,7 @@ def main(
     max_new_tokens: int = 1500,
     test_df_path: str = "data/eval/qald-9-downsampled-test-latest.json",
     always_use_generate_sparql: bool = False,
+    use_cot: bool = True,
     llm_try_threshold: int = 10,
     log_file_path: str = "logs/eval_log.txt",
 ):
@@ -65,13 +67,16 @@ def main(
                 true_query = row["cleaned_dbpedia"]
                 ground_truth = dbpedia_rag.api.execute_sparql_to_df(true_query)
                 generated_factoid_question, generated_query, res = dbpedia_rag.run(
-                    question, verbose=0, try_threshold=llm_try_threshold
+                    question,
+                    use_cot=use_cot,
+                    verbose=0,
+                    try_threshold=llm_try_threshold,
                 )
                 pred = pd.DataFrame(res)
                 score = compare_two_dataframes(ground_truth, pred)
                 log_file.write(
                     f"Question: {question},\nGenerated Factoid Question: {generated_factoid_question},\nTrue Query: {true_query},\n"
-                    f"Generated Query: {generated_query if generated_query is not "" else 'using verbalization'},\n"
+                    f"Generated Query: {generated_query if generated_query != '' else 'using verbalization'},\n"
                     f"Top 10 Ground Truth:\n{ground_truth[:10]}\nTop 10 Generated Answer:\n{pred[:10]}\nScore: {score}\n"
                 )
             except Exception as e:
@@ -92,7 +97,7 @@ def main(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the evaluation script.")
     parser.add_argument(
-        "--model_name", type=str, required=True, help="Name of the model to use."
+        "--model-name", type=str, required=True, help="Name of the model to use."
     )
     parser.add_argument(
         "--local",
@@ -102,26 +107,33 @@ if __name__ == "__main__":
         action=argparse.BooleanOptionalAction,
     )
     parser.add_argument(
-        "--max_new_tokens", type=int, default=1500, help="Maximum number of new tokens."
+        "--max-new-tokens", type=int, default=1500, help="Maximum number of new tokens."
     )
     parser.add_argument(
-        "--test_df_path",
+        "--test-df-path",
         type=str,
         default="data/eval/qald-9-downsampled-test-latest.json",
         help="Path to the test dataframe.",
     )
     parser.add_argument(
-        "--always_use_generate_sparql",
+        "--always-use-generate_sparql",
         type=bool,
         default=False,
         help="Always use generate SPARQL.",
         action=argparse.BooleanOptionalAction,
     )
     parser.add_argument(
-        "--llm_try_threshold", type=int, default=10, help="LLM try threshold."
+        "--use-cot",
+        type=bool,
+        default=True,
+        help="Whether to use Chain of Thought.",
+        action=argparse.BooleanOptionalAction,
     )
     parser.add_argument(
-        "--log_file_path",
+        "--llm-try-threshold", type=int, default=10, help="LLM try threshold."
+    )
+    parser.add_argument(
+        "--log-file-path",
         type=str,
         default="logs/eval_log.txt",
         help="Path to the log file.",
@@ -135,6 +147,7 @@ if __name__ == "__main__":
         max_new_tokens=args.max_new_tokens,
         test_df_path=args.test_df_path,
         always_use_generate_sparql=args.always_use_generate_sparql,
+        use_cot=args.use_cot,
         llm_try_threshold=args.llm_try_threshold,
         log_file_path=args.log_file_path,
     )
