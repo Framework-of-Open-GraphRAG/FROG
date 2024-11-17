@@ -1,3 +1,4 @@
+import json
 import torch, os
 import pandas as pd
 from IPython.display import HTML, display
@@ -25,18 +26,15 @@ from langchain.output_parsers.prompts import NAIVE_FIX_PROMPT
 
 
 from pydantic import BaseModel, Field
-from typing import List, Optional
+from typing import List
 
 from few_shots import (
     EXTRACT_ENTITY_FEW_SHOTS,
-    GENERATE_SPARQL_FEW_SHOTS,
     INTENT_CLASSIFICATION_FEW_SHOTS,
-    GENERATE_RELATED_PROPERTIES_FEW_SHOTS,
 )
-from utils.api import DBPediaAPI
-from utils.verbalization import Verbalization
-from utils.property_retrieval import DBPediaPropertyRetrieval
-from utils.helper import separate_camel_case
+from property_retrieval.base import BasePropertyRetrieval
+from utils.api import BaseAPI
+from utils.helper import contains_multiple_entities, separate_camel_case
 
 load_dotenv()
 
@@ -45,37 +43,23 @@ os.environ["HUGGINGFACEHUB_API_TOKEN"] = HF_TOKEN
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 
-class DBPediaGraphRAG:
+class BaseGraphRAG:
     def __init__(
         self,
         model_name: str = "mistralai/Mistral-7B-Instruct-v0.3",
         device: str = DEVICE,
         local: str = True,
         max_new_tokens: int = 1500,
-        property_retrieval: Optional[DBPediaPropertyRetrieval] = None,
-        generate_sparql_few_shot_messages: Optional[List[dict]] = None,
         always_use_generate_sparql: bool = False,
     ) -> None:
         self.model_name = model_name
         self.device = device
         self.local = local
-        self.api = DBPediaAPI()
-        self.verbalization = Verbalization(model_name="multi-qa-mpnet-base-cos-v1")
-        if generate_sparql_few_shot_messages is None:
-            self.generate_sparql_few_shot_messages = GENERATE_SPARQL_FEW_SHOTS
-        else:
-            self.generate_sparql_few_shot_messages = generate_sparql_few_shot_messages
-        df_classes = pd.read_csv("./data/dbpedia_ontology/classes.csv")
-        df_oproperties = pd.read_csv("./data/dbpedia_ontology/oproperties.csv")
-        df_dproperties = pd.read_csv("./data/dbpedia_ontology/dproperties.csv")
-        if property_retrieval is None:
-            self.property_retrieval = DBPediaPropertyRetrieval(
-                df_classes,
-                df_oproperties,
-                df_dproperties,
-            )
-        else:
-            self.property_retrieval = property_retrieval
+        self.api = BaseAPI  # To be defined in child class
+        self.verbalization = None  # To be defined in child class
+        self.property_retrieval = (
+            BasePropertyRetrieval()
+        )  # To be defined in child class
         model_kwargs = {
             "temperature": 0,
             "device": self.device,
@@ -102,40 +86,14 @@ class DBPediaGraphRAG:
             llm = HuggingFaceEndpoint(
                 repo_id=self.model_name,
                 **model_kwargs,
+                cache=False,
                 huggingfacehub_api_token=HF_TOKEN,
             )
         self.chat_model = ChatHuggingFace(llm=llm)
         self.always_use_generate_sparql = always_use_generate_sparql
 
-    def contains_multiple_entities(self, question: str) -> bool:
-        keywords = [
-            "and",
-            "or",
-            "nor",
-            "as well as",
-            "both",
-            "along with",
-            "together with",
-            "in addition to",
-            "besides",
-            "also",
-        ]
-        question = question.lower()
-        return any(
-            f" {keyword} " in question
-            or question.startswith(f"{keyword} ")
-            or question.endswith(f" {keyword}")
-            for keyword in keywords
-        )
-
     def get_propertty_domain_range(self, property_uri: str) -> dict[str, str]:
-        query = f"""SELECT ?domain ?range
-WHERE {{
-    {property_uri} rdfs:domain ?domain ;
-                   rdfs:range ?range .
-}}
-"""
-        return self.api.execute_sparql_to_df(query).drop_duplicates().to_dict("records")
+        raise NotImplementedError("This method should be overridden by subclasses")
 
     def handle_parsing_error(
         self,
@@ -245,7 +203,7 @@ Based on the query given, transform from it and return the factoid question in t
         )
 
         class Intent(BaseModel):
-            """Identifying information about entities."""
+            """Intent classification result."""
 
             is_global: bool = Field(
                 ...,
@@ -285,54 +243,6 @@ Based on the query given, decide if it is global or local and return the classif
         if intent is None:
             return True
         return intent.is_global
-
-    def get_most_appropriate_resource_uri(
-        self, entity: str, retrieved_resources: list[dict], try_threshold: int = 10
-    ) -> str:
-        class Resource(BaseModel):
-            """Identifying information about entities."""
-
-            uri: str = Field(
-                ...,
-                uri="Resource URI",
-            )
-
-        output_parser = PydanticOutputParser(pydantic_object=Resource)
-        format_instructions = output_parser.get_format_instructions()
-
-        final_prompt = ChatPromptTemplate.from_messages(
-            [
-                (
-                    "system",
-                    """For the entity given, find the most appropriate resource uri from the list of retrieved resources given to be used in DBPedia queries to answer the given question! ONLY return the resource uri from the list of retrieved resources given. DO NOT return anything else and DO NOT hallucinate. DO NOT include any explanations or apologies in your responses.
-Based on the entity given, get the most appropriate resource uri from it and return the uri in the format below.
-{format_instructions}""",
-                ),
-                MessagesPlaceholder("chat_history"),
-                (
-                    "human",
-                    """Retrieved resources:
-{retrieved_resources}
-
-Entity: 
-{input}
-
-Resource URI:""",
-                ),
-            ]
-        )
-        final_prompt = final_prompt.partial(
-            format_instructions=format_instructions,
-            retrieved_resources=retrieved_resources,
-        )
-        llm_chain = final_prompt | self.chat_model | StrOutputParser()
-        messages = []
-        resource, messages = self.handle_parsing_error(
-            llm_chain, output_parser, messages, entity, try_threshold=try_threshold
-        )
-        if resource is None:
-            return None
-        return resource.uri.replace("dbr:", "http://dbpedia.org/resource/")
 
     def extract_entity(self, question: str, try_threshold: int = 10) -> list[str]:
         example_prompt = ChatPromptTemplate.from_messages(
@@ -385,80 +295,64 @@ Based on the query given, extract the entities from it and return the extracted 
         )
         final_prompt = final_prompt.partial(format_instructions=format_instructions)
         llm_chain = final_prompt | self.chat_model | StrOutputParser()
-        messages = []
-        entities, messages = self.handle_parsing_error(
-            llm_chain, output_parser, messages, question, try_threshold=try_threshold
+        entities, _ = self.handle_parsing_error(
+            llm_chain, output_parser, [], question, try_threshold=try_threshold
         )
         if entities is None:
             return []
         return entities.names
 
-    def generate_related_properties(
-        self, question: str, try_threshold: int = 10
-    ) -> list[str]:
-        example_prompt = ChatPromptTemplate.from_messages(
-            [
-                ("human", "{input}"),
-                ("ai", "{output}"),
-            ]
-        )
-
-        few_shot_prompt = FewShotChatMessagePromptTemplate(
-            example_prompt=example_prompt,
-            examples=GENERATE_RELATED_PROPERTIES_FEW_SHOTS,
-        )
-
-        class RelatedProperty(BaseModel):
-            """Identifying information about entities."""
-
-            properties: List[str] = Field(
-                ...,
-                description="List of DBPedia property that is appropriate to answer the given question by user. Max 3.",
-            )
-
-        output_parser = PydanticOutputParser(pydantic_object=RelatedProperty)
+    def get_most_appropriate_resource_uri(
+        self,
+        entity: str,
+        retrieved_resources: list[dict],
+        resource_model,
+        chat_prompt_template: ChatPromptTemplate,
+        try_threshold: int = 10,
+    ) -> str:
+        output_parser = PydanticOutputParser(pydantic_object=resource_model)
         format_instructions = output_parser.get_format_instructions()
-
-        final_prompt = ChatPromptTemplate.from_messages(
-            [
-                (
-                    "system",
-                    """Generate list of DBPedia property that is appropriate to answer the given question by user. DO NOT include any explanations or apologies in your responses. No pre-amble.
-            
-Answer it in the format below. 
-{format_instructions}""",
-                ),
-                few_shot_prompt,
-                MessagesPlaceholder("chat_history"),
-                (
-                    "human",
-                    "{input}",
-                ),
-            ]
+        final_prompt = chat_prompt_template.partial(
+            format_instructions=format_instructions,
+            retrieved_resources=retrieved_resources,
         )
 
-        final_prompt = final_prompt.partial(
+        llm_chain = final_prompt | self.chat_model | StrOutputParser()
+        resource, _ = self.handle_parsing_error(
+            llm_chain, output_parser, [], entity, try_threshold=try_threshold
+        )
+        return resource
+
+    def generate_related_properties(
+        self,
+        question: str,
+        related_property_model,
+        chat_prompt_template: ChatPromptTemplate,
+        try_threshold: int = 10,
+    ) -> list[str]:
+        output_parser = PydanticOutputParser(pydantic_object=related_property_model)
+        format_instructions = output_parser.get_format_instructions()
+        final_prompt = chat_prompt_template.partial(
             format_instructions=format_instructions,
         )
 
         llm_chain = final_prompt | self.chat_model | StrOutputParser()
-        messages = []
-
-        related_property, messages = self.handle_parsing_error(
+        related_property, _ = self.handle_parsing_error(
             llm_chain,
             output_parser,
-            messages,
+            [],
             question,
             try_threshold=try_threshold,
         )
-        if related_property is None:
-            return []
-        return related_property.properties
+        return related_property
 
     def _parse_property_context_string(self, ontology: dict[str, list[str]]) -> str:
         def parallel_search(key, name):
-            domain_range = self.get_propertty_domain_range(name)
-            return key, name, domain_range
+            try:
+                domain_range = self.get_propertty_domain_range(name)
+                return key, name, domain_range
+            except NotImplementedError:
+                return key, name, NotImplemented
 
         with ThreadPoolExecutor() as executor:
             futures = [
@@ -484,39 +378,32 @@ Answer it in the format below.
             for prop in value:
                 name = prop["name"]
                 domain_range = prop["domain_range"]
-                if domain_range:
+                if domain_range == NotImplemented:
+                    properties_context += f"        - {name}\n"
+                elif domain_range:
                     properties_context += f"        - {name}: {domain_range}\n"
                 else:
                     properties_context += f"        - {name}: No domain and range\n"
 
         return properties_context
 
-    def get_dbpedia_results(
+    def generate_sparql(
         self,
         question: str,
         entities: list[str],
+        chat_prompt_template: ChatPromptTemplate,
+        use_cot: bool = True,
         verbose: bool = False,
         try_threshold: int = 10,
     ) -> tuple[str, list[dict[str, str]]]:
-        example_prompt = ChatPromptTemplate.from_messages(
-            [
-                ("human", "{input}"),
-                ("ai", "{output}"),
-            ]
-        )
-
-        few_shot_prompt = FewShotChatMessagePromptTemplate(
-            example_prompt=example_prompt,
-            examples=self.generate_sparql_few_shot_messages,
-        )
-
         class SPARQLQueryResults(BaseModel):
-            """Identifying information about entities."""
+            """Chain of thoughts and SPARQL query to answer the user's question."""
 
-            thoughts: List[str] = Field(
-                ...,
-                description="Thoughts to generate SPARQL query to answer the user's question.",
-            )
+            if use_cot:
+                thoughts: List[str] = Field(
+                    ...,
+                    description="Thoughts to generate SPARQL query to answer the user's question.",
+                )
             sparql: str = Field(
                 ...,
                 description="SPARQL query to answer the user's question.",
@@ -560,43 +447,7 @@ Answer it in the format below.
                 )
             )
 
-        final_prompt = ChatPromptTemplate.from_messages(
-            [
-                (
-                    "system",
-                    """You are a DBPedia SPARQL generator.
-- Based on the context given, generate SPARQL query for DBPedia that would answer the user's question!
-- You will also be provided with the resources with its URI, ontology candidates consisting of classes, object properties, and data properties. You are only able to generate SPARQL query from the given context. Please determine to use the most appropriate one.
-- To generate the SPARQL, you can utilize the information from the given Entity URIs. You do not have to use it, but if it can help you to determine the URI of the entity, you can use it.
-- USE the URI from resources given if you need to query more specific entity. On the other hand, USE classes from ontology if it's more general.
-- Generate the SPARQL with chain of thoughts.
-- DO NOT include any apologies in your responses.
-- ONLY generate the Thoughts and SPARQL query once! DO NOT try to generate the Question!
-- DO NOT use LIMIT, ORDER BY, FILTER in the SPARQL query when not explicitly asked in the question!
-- DO NOT aggregation function like COUNT, AVG, etc in the SPARQL query when not asked in the question!
-- Be sure to generate a SPARQL query that is valid and return all the asked information in the question.
-- Make the query as simple as possible!
-- DO NOT hallucinate the thoughts and query!
-- Always use english ('en') language for labels in all columns as default unless explicitly asked to use another language.
-- Once again, always use english as the label language in all columns if not explicitly asked to use another language.
-Context:
-- Resources retrieved:
-{resources}
-- Ontology candidates retrieved:
-{ontology}
-Based on the query and context given, generate the thoughts and SPARQL query from it and return the thoughts and SPARQL query in the format below.
-{format_instructions}""",
-                ),
-                few_shot_prompt,
-                MessagesPlaceholder("chat_history"),
-                (
-                    "human",
-                    "{input}",
-                ),
-            ]
-        )
-
-        final_prompt = final_prompt.partial(
+        final_prompt = chat_prompt_template.partial(
             resources=resources,
             ontology=properties_context,
             format_instructions=format_instructions,
@@ -625,9 +476,10 @@ Based on the query and context given, generate the thoughts and SPARQL query fro
                 )
                 return None, []
             if verbose:
-                thoughts_tmp = escape(str(sparql_query_result.thoughts))
+                if use_cot:
+                    thoughts_tmp = escape(str(sparql_query_result.thoughts))
+                    display(HTML(f"""<code style='color: green;'>{thoughts_tmp}</code>"""))
                 sparql_tmp = escape(sparql_query_result.sparql).replace("\n", "<br/>")
-                display(HTML(f"""<code style='color: green;'>{thoughts_tmp}</code>"""))
                 display(HTML(f"""<code style='color: green;'>{sparql_tmp}</code>"""))
             try:
                 result, err = self.api.execute_sparql(sparql_query_result.sparql)
@@ -653,6 +505,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
     def run(
         self,
         question: str,
+        use_cot: bool = True,
         verbose: int = 0,
         try_threshold: int = 10,
     ) -> tuple[str, str, list[dict[str, str]]]:
@@ -689,7 +542,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                     )
                 )
 
-        if not intent_is_global and self.contains_multiple_entities(question):
+        if not intent_is_global and contains_multiple_entities(question):
             intent_is_global = True
             if verbose == 1:
                 display(
@@ -698,15 +551,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                     )
                 )
 
-        query = None
-        if intent_is_global:
-            query, result = self.get_dbpedia_results(
-                factoid_question,
-                extracted_entities,
-                verbose=verbose > 0,
-                try_threshold=try_threshold,
-            )
-        else:
+        if not intent_is_global:
             entity = extracted_entities[0]
             retrieved_resources = self.api.get_entities(entity, k=3)[0]
             if verbose == 1:
@@ -742,18 +587,35 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                     display(
                         HTML(f"""<code style='color: red;'>{escape(str(e))}</code>""")
                     )
-            if is_error or similarities < 0.65 or len(result) == 0:
-                query, result = self.get_dbpedia_results(
-                    factoid_question,
-                    extracted_entities,
-                    verbose=verbose > 0,
-                    try_threshold=try_threshold,
-                )
+            if not is_error and similarities >= 0.65 and len(result) > 0:
+                return factoid_question, "", result
+
+        few_shots = self.generate_sparql_few_shot_messages.copy()
+        if not use_cot:
+            for fs in few_shots:
+                output = json.loads(fs["output"])
+                output.pop("thoughts", None)
+                fs["output"] = json.dumps(output, indent=4)
+
+        query, result = self.generate_sparql(
+            factoid_question,
+            extracted_entities,
+            few_shots=few_shots,
+            use_cot=use_cot,
+            verbose=verbose > 0,
+            try_threshold=try_threshold,
+        )
         return factoid_question, query, result
 
-    def chat(self, question: str, verbose: int = 0, try_threshold: int = 10) -> str:
+    def chat(
+        self,
+        question: str,
+        use_cot: bool = True,
+        verbose: int = 0,
+        try_threshold: int = 10,
+    ) -> str:
         factoid_question, _, dbpedia_context = self.run(
-            question, verbose=verbose, try_threshold=try_threshold
+            question, use_cot=use_cot, verbose=verbose, try_threshold=try_threshold
         )
         if verbose == 1:
             display(

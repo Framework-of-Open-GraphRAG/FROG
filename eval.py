@@ -4,7 +4,7 @@ import argparse
 from tqdm import tqdm
 import warnings
 
-from dbpedia_graph_rag import DBPediaGraphRAG
+from rag.dbpedia import DBPediaGraphRAG
 from few_shots import GENERATE_SPARQL_FEW_SHOTS
 
 warnings.filterwarnings("ignore")
@@ -71,7 +71,7 @@ def main(
                 score = compare_two_dataframes(ground_truth, pred)
                 log_file.write(
                     f"Question: {question},\nGenerated Factoid Question: {generated_factoid_question},\nTrue Query: {true_query},\n"
-                    f"Generated Query: {generated_query if generated_query is not None else 'using verbalization'},\n"
+                    f"Generated Query: {generated_query if generated_query is not "" else 'using verbalization'},\n"
                     f"Top 10 Ground Truth:\n{ground_truth[:10]}\nTop 10 Generated Answer:\n{pred[:10]}\nScore: {score}\n"
                 )
             except Exception as e:
