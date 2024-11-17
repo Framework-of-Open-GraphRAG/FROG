@@ -7,6 +7,7 @@ from xml.sax.saxutils import escape
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 from langchain_community.llms.huggingface_pipeline import HuggingFacePipeline
+from langchain_core.output_parsers import StrOutputParser
 from langchain.chains import LLMChain
 from langchain.output_parsers import (
     ResponseSchema,
@@ -20,6 +21,8 @@ from langchain_core.prompts import (
     FewShotChatMessagePromptTemplate,
     MessagesPlaceholder,
 )
+from langchain.output_parsers.prompts import NAIVE_FIX_PROMPT
+
 
 from pydantic import BaseModel, Field
 from typing import List, Optional
@@ -143,30 +146,40 @@ WHERE {{
         chat_history_placeholder: str = "chat_history",
         try_threshold: int = 10,
     ) -> tuple[any, list[str]]:
-        while True:
-            err = None
-            try:
-                response = llm_chain.invoke(
-                    {chat_history_placeholder: messages, "input": question}
-                )
-                messages.append(HumanMessage(content=question))
-                messages.append(response)
+        fix_llm_chain = NAIVE_FIX_PROMPT | self.chat_model | StrOutputParser()
+        completion = llm_chain.invoke(
+            {chat_history_placeholder: messages, "input": question}
+        )
+        messages.append(HumanMessage(content=question))
 
-                response = output_parser.parse(response.content)
-                return response, messages
+        completion_parsed = None
+        while try_threshold > 0:
+            try:
+                completion_parsed = output_parser.parse(completion)
+                break
             except Exception as e:
                 display(
                     HTML(f"""<code style='color: red;'>{(escape(str(e)))}</code>""")
                 )
-                err = e
-
-            if err is not None and try_threshold > 0:
-                # failed
                 try_threshold -= 1
-                question = f"Please fix this error: {err}\nMake sure to still answer based on the format instruction defined in system prompt."
-            else:
-                # success
-                break
+
+                try:
+                    completion = fix_llm_chain.invoke(
+                        {
+                            "instructions": output_parser.get_format_instructions(),
+                            "completion": completion,
+                            "error": repr(e),
+                        }
+                    )
+                except Exception as e:
+                    display(
+                        HTML(f"""<code style='color: red;'>{(escape(str(e)))}</code>""")
+                    )
+                    break
+
+        messages.append(completion)
+        if completion_parsed is not None:
+            return completion_parsed, messages
         return None, messages
 
     def transform_to_factoid_question(
@@ -207,7 +220,9 @@ Based on the query given, transform from it and return the factoid question in t
             format_instructions=format_instructions
         )
 
-        llm_chain = query_reformulation_chat_prompt | self.chat_model
+        llm_chain = (
+            query_reformulation_chat_prompt | self.chat_model | StrOutputParser()
+        )
         messages = []
         response, messages = self.handle_parsing_error(
             llm_chain, output_parser, messages, question, try_threshold=try_threshold
@@ -262,7 +277,7 @@ Based on the query given, decide if it is global or local and return the classif
             format_instructions=format_instructions
         )
 
-        llm_chain = query_intent_chat_prompt | self.chat_model
+        llm_chain = query_intent_chat_prompt | self.chat_model | StrOutputParser()
         messages = []
         intent, messages = self.handle_parsing_error(
             llm_chain, output_parser, messages, question, try_threshold=try_threshold
@@ -310,7 +325,7 @@ Resource URI:""",
             format_instructions=format_instructions,
             retrieved_resources=retrieved_resources,
         )
-        llm_chain = final_prompt | self.chat_model
+        llm_chain = final_prompt | self.chat_model | StrOutputParser()
         messages = []
         resource, messages = self.handle_parsing_error(
             llm_chain, output_parser, messages, entity, try_threshold=try_threshold
@@ -369,7 +384,7 @@ Based on the query given, extract the entities from it and return the extracted 
             ]
         )
         final_prompt = final_prompt.partial(format_instructions=format_instructions)
-        llm_chain = final_prompt | self.chat_model
+        llm_chain = final_prompt | self.chat_model | StrOutputParser()
         messages = []
         entities, messages = self.handle_parsing_error(
             llm_chain, output_parser, messages, question, try_threshold=try_threshold
@@ -426,7 +441,7 @@ Answer it in the format below.
             format_instructions=format_instructions,
         )
 
-        llm_chain = final_prompt | self.chat_model
+        llm_chain = final_prompt | self.chat_model | StrOutputParser()
         messages = []
 
         related_property, messages = self.handle_parsing_error(
@@ -564,13 +579,11 @@ Answer it in the format below.
 - DO NOT hallucinate the thoughts and query!
 - Always use english ('en') language for labels in all columns as default unless explicitly asked to use another language.
 - Once again, always use english as the label language in all columns if not explicitly asked to use another language.
-
 Context:
 - Resources retrieved:
 {resources}
 - Ontology candidates retrieved:
 {ontology}
-
 Based on the query and context given, generate the thoughts and SPARQL query from it and return the thoughts and SPARQL query in the format below.
 {format_instructions}""",
                 ),
@@ -588,7 +601,7 @@ Based on the query and context given, generate the thoughts and SPARQL query fro
             ontology=properties_context,
             format_instructions=format_instructions,
         )
-        llm_chain = final_prompt | self.chat_model
+        llm_chain = final_prompt | self.chat_model | StrOutputParser()
         messages = []
 
         curr_question = question
@@ -630,7 +643,7 @@ Based on the query and context given, generate the thoughts and SPARQL query fro
                         HTML(f"""<code style='color: green;'>Trying again...</code>""")
                     )
 
-                curr_question = f"""The SPARQL query you generated above to answer "{question}" is wrong {f"and it produces this error: {err}" if err is not None else "because it produces empty results"}, please fix the query and generate SPARQL again! You may try to use another property or restucture the query.
+                curr_question = f"""The SPARQL query you generated above to answer '{question}' is wrong {f"and it produces this error: '{err}'" if err is not None else "because it produces empty results"}, please fix the query and generate SPARQL again! You may try to use another property or restucture the query.
 DO NOT include any explanations or apologies in your responses. No pre-amble. Make sure to still answer using chain of thoughts and structure based on the format instruction defined in system prompt."""
             else:
                 # success
@@ -751,30 +764,31 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
 
         final_prompt = ChatPromptTemplate.from_messages(
             [
-                (
-                    "system",
-                    """- You are an assistant for question-answering tasks. 
-- Use the following pieces of retrieved context to answer the question. 
-- If you don't know the answer, just say that you don't know.
-- Try your best to use the given context as the answer!
-- DO NOT hallucinate and only provide answers from the given context.
-- DO NOT make up an answer.
-- If the context does not explicitly say related to the question, just ASSUME that it is the answer of the question.
-- Answer the question in a natural way like you are the one who know the context, DO NOT mention like "according to the context", etc.
-- Answer it using complete sentences!
-- If the question is about retrieving information that is limited to a certain amount, make sure to return all the results from the context that match the limited amount.
-- If the answer is a list of items, then you should answer in bullet points!
-- When no context is provided, just answer "I don't know".""",
-                ),
+                #                 (
+                #                     "system",
+                #                     """- You are an assistant for question-answering tasks.
+                # - Use the following pieces of retrieved context to answer the question.
+                # - If you don't know the answer, just say that you don't know.
+                # - Try your best to use the given context as the answer!
+                # - DO NOT hallucinate and only provide answers from the given context.
+                # - DO NOT make up an answer.
+                # - If the context does not explicitly say related to the question, just ASSUME that it is the answer of the question.
+                # - Answer the question in a natural way like you are the one who know the context, DO NOT mention like "according to the context", etc.
+                # - Answer it using complete sentences!
+                # - If the question is about retrieving information that is limited to a certain amount, make sure to return all the results from the context that match the limited amount.
+                # - If the answer is a list of items, then you should answer in bullet points!
+                # - When no context is provided, just answer "I don't know".""",
+                #                 ),
                 (
                     "human",
-                    """Answer the following question strictly using the context provided below. Assume that if context is provided, it is the correct answer. If the information to answer the question is not available in the context, respond with "I don't know."
-
-Context:
-{dbpedia_context}
-
-Question: {input}
-
+                    #                     """Answer the following question strictly using the context provided below. Assume that if context is provided, it is the correct answer. If the information to answer the question is not available in the context, respond with "I don't know."
+                    # Context:
+                    # {dbpedia_context}
+                    # Question: {input}
+                    # Answer:""",
+                    """You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise.
+Question: {input} 
+Context: {dbpedia_context} 
 Answer:""",
                 ),
             ]
@@ -792,7 +806,7 @@ Answer:""",
             context_str = f'The answer of "{factoid_question}" is {dbpedia_context}'
         final_prompt = final_prompt.partial(dbpedia_context=context_str)
 
-        llm_chain = final_prompt | self.chat_model
+        llm_chain = final_prompt | self.chat_model | StrOutputParser()
 
         response = llm_chain.invoke({"input": factoid_question})
-        return response.content
+        return response
