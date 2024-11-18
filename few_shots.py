@@ -104,7 +104,87 @@ EXTRACT_ENTITY_FEW_SHOTS = [
 ]
 
 
-GENERATE_SPARQL_FEW_SHOTS = [
+INTENT_CLASSIFICATION_FEW_SHOTS = [
+    {
+        "input": "How many species of birds?",
+        "output": {"is_global": True},
+    },
+    {
+        "input": "Who is the current president of Indonesia?",
+        "output": {"is_global": False},
+    },
+    {
+        "input": "What is the tallest building?",
+        "output": {"is_global": True},
+    },
+    {
+        "input": "Give me the list of films directed by Christopher Nolan.",
+        "output": {"is_global": False},
+    },
+]
+
+
+GENERATE_RELATED_PROPERTIES_FEW_SHOTS = [
+    {
+        "input": "How many inhabitants does the largest city in Canada have?",
+        "output": {"properties": ["population", "populationTotal", "governedAs"]},
+    },
+    {
+        "input": "What is the population of Cairo?",
+        "output": {"properties": ["population", "populationTotal", "populationAsOf"]},
+    },
+    {
+        "input": "How high is the Yokohama Marine Tower?",
+        "output": {"properties": ["height", "elevation", "structure"]},
+    },
+    {
+        "input": "Which programming languages were influenced by Perl?",
+        "output": {"properties": ["influencedBy", "influenced", "programmingLanguage"]},
+    },
+    {
+        "input": "Give me all Australian nonprofit organizations.",
+        "output": {"properties": ["foundation", "charity", "organization"]},
+    },
+    {
+        "input": "Which ingredients do I need for carrot cake?",
+        "output": {"properties": ["ingredient", "recipeIngredient", "foodIngredient"]},
+    },
+    {
+        "input": "How tall is Claudia Schiffer?",
+        "output": {"properties": ["height", "elevation"]},
+    },
+    {
+        "input": "In which films did Julia Roberts as well as Richard Gere play?",
+        "output": {"properties": ["starring", "film", "actor"]},
+    },
+    {
+        "input": "Who produced the most films?",
+        "output": {"properties": ["producer", "producedBy", "film"]},
+    },
+    {
+        "input": "Show me all basketball players that are higher than 2 meters.",
+        "output": {"properties": ["height", "athlete", "basketballPlayer"]},
+    },
+    {
+        "input": "How many films did Leonardo DiCaprio star in?",
+        "output": {"properties": ["starring", "film", "actor"]},
+    },
+    {
+        "input": "Give me all companies in the advertising industry.",
+        "output": {"properties": ["company", "industry"]},
+    },
+    {
+        "input": "How many movies did Park Chan-wook direct?",
+        "output": {"properties": ["director"]},
+    },
+    {
+        "input": "Who wrote the Game of Thrones theme?",
+        "output": {"properties": ["composer", "music", "composition"]},
+    },
+]
+
+
+DBPEDIA_GENERATE_SPARQL_FEW_SHOTS = [
     {
         "input": """How many inhabitants does the largest city in Canada have?""",
         "output": {
@@ -288,91 +368,196 @@ GENERATE_SPARQL_FEW_SHOTS = [
 ]
 
 
-INTENT_CLASSIFICATION_FEW_SHOTS = [
+WIKIDATA_GENERATE_SPARQL_FEW_SHOTS = [
     {
-        "input": "How many species of birds?",
-        "output": {"is_global": True},
+        "input": """How many inhabitants does the largest city in Canada have?""",
+        "output": {
+            "thoughts": [
+                "1. The question asks for the population of the largest city in Canada.",
+                "2. To retrieve this information from DBpedia, identify the correct URI for 'Canada' and the relevant properties associated with cities and population.",
+                "3. From the context, 'Canada' has multiple possible URIs, with 'dbr:Canada' being the correct general URI.",
+                "4. The term 'largest city' suggests we should find the entity linked to Canada that represents its largest city, which requires identifying the property that connects 'Canada' to its largest city.",
+                "5. From the list of ontology candidates, 'dbo:largestCity' is the most relevant object property for retrieving the largest city of a place, with both the domain and range indicating populated places.",
+                "6. After obtaining the largest city, we need to retrieve its population. The 'dbo:populationTotal' data property provides the total population for a city and is appropriate for this purpose.",
+                "7. Formulate the query to first find the largest city of Canada using 'dbo:largestCity' and then retrieve its population using 'dbo:populationTotal'.",
+            ],
+            "sparql": "SELECT DISTINCT ?val WHERE { ?uri wdt:P17 wd:Q16 ; wdt:P31/wdt:P279* wd:Q515 ; wdt:P1082 ?val } ORDER BY DESC(?val) LIMIT 1",
+        },
     },
     {
-        "input": "Who is the current president of Indonesia?",
-        "output": {"is_global": False},
+        "input": """What is the population of Cairo?""",
+        "output": {
+            "thoughts": [
+                "1. The question seeks the population of 'Cairo'.",
+                "2. From the context, there are multiple resources labeled 'Cairo', but the correct URI for Cairo, Egypt, is 'dbr:Cairo'.",
+                "3. To find the population of Cairo, identify a relevant data property that retrieves population information.",
+                "4. In the ontology candidates, 'dbo:populationTotal' is a suitable data property to retrieve the total population of a populated place.",
+                "5. Formulate the query to select the population of 'dbr:Cairo' using the 'dbo:populationTotal' property.",
+            ],
+            "sparql": "SELECT DISTINCT ?val WHERE { wd:Q85 wdt:P1082 ?val . }",
+        },
     },
     {
-        "input": "What is the tallest building?",
-        "output": {"is_global": True},
+        "input": """How high is the Yokohama Marine Tower?""",
+        "output": {
+            "thoughts": [
+                "1. The question is asking for the height of 'Yokohama Marine Tower'.",
+                "2. The context provides a single URI for 'Yokohama Marine Tower', specifically 'dbr:Yokohama_Marine_Tower', which can be used directly in the query.",
+                "3. To retrieve the height, identify a data property related to the height or elevation of a structure.",
+                "4. In the ontology, 'dbo:height' is a relevant data property that does not have a specific domain or range but matches the information requested.",
+                "5. Formulate the query to select the height of 'dbr:Yokohama_Marine_Tower' using the 'dbo:height' property.",
+            ],
+            "sparql": "SELECT DISTINCT ?num WHERE { wd:Q1207989 wdt:P2048 ?num . }",
+        },
     },
     {
-        "input": "Give me the list of films directed by Christopher Nolan.",
-        "output": {"is_global": False},
-    },
-]
-
-
-GENERATE_RELATED_PROPERTIES_FEW_SHOTS = [
-    {
-        "input": "How many inhabitants does the largest city in Canada have?",
-        "output": {"properties": ["population", "populationTotal", "governedAs"]},
-    },
-    {
-        "input": "What is the population of Cairo?",
-        "output": {"properties": ["population", "populationTotal", "populationAsOf"]},
+        "input": """Which programming languages were influenced by Perl?""",
+        "output": {
+            "thoughts": [
+                "1. The question seeks to identify programming languages influenced by 'Perl'.",
+                "2. Multiple resources were retrieved, but the resource 'dbr:Perl' is the relevant one here as it specifically refers to the programming language.",
+                "3. The ontology provides 'dbo:influenced' and 'dbo:influencedBy', both of which relate to influence relationships that could identify languages influenced by Perl.",
+                "4. Since the question does not specify a time period or further context, a UNION clause can be used to cover both cases—where Perl influenced other languages and where it is marked as having influenced a language.",
+                "5. The query should retrieve distinct URIs of programming languages influenced by Perl by using both 'dbo:influencedBy' and 'dbo:influenced' properties in a UNION pattern.",
+            ],
+            "sparql": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q9143 ; wdt:P737 wd:Q42478 . }",
+        },
     },
     {
-        "input": "How high is the Yokohama Marine Tower?",
-        "output": {"properties": ["height", "elevation", "structure"]},
+        "input": """Give me all Australian nonprofit organizations.""",
+        "output": {
+            "thoughts": [
+                "1. The question asks for nonprofit organizations located in Australia.",
+                "2. Multiple URIs for 'Australia' were retrieved, but 'dbr:Australia' best represents the country as a whole.",
+                "3. The relevant resources and ontology include 'dbr:Nonprofit_organization' and the class 'dbo:Non-ProfitOrganisation', which indicates nonprofit entities.",
+                "4. The properties 'dbo:locationCountry' and 'dbo:location' are useful, with 'dbo:locationCountry' directly linking organizations to their country and 'dbo:location' providing a location reference that can include countries.",
+                "5. A UNION pattern can cover both cases to ensure all nonprofits in Australia are captured, either by directly using 'dbo:locationCountry' or by using 'dbo:location' with an additional check for country.",
+            ],
+            "sparql": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q163740 . { ?uri wdt:P159|wdt:P17 wd:Q408 . } UNION { ?uri wdt:P159|wdt:P17 ?city . ?city wdt:P159 wd:Q408 } }",
+        },
     },
     {
-        "input": "Which programming languages were influenced by Perl?",
-        "output": {"properties": ["influencedBy", "influenced", "programmingLanguage"]},
+        "input": """Which ingredients do I need for carrot cake?""",
+        "output": {
+            "thoughts": [
+                "1. The question asks for the ingredients needed to make carrot cake.",
+                "2. The retrieved resources show 'dbr:Carrot_cake' as the primary URI for 'Carrot cake'.",
+                "3. The ontology data includes 'dbo:ingredient' as a relevant object property, which can link food items to their ingredients.",
+                "4. Since there is no domain and range for 'dbo:ingredient,' it's likely general enough to use directly in the query.",
+                "5. To answer the question, query all ?uri values linked to 'dbr:Carrot_cake' via 'dbo:ingredient'.",
+            ],
+            "sparql": "SELECT DISTINCT ?uri WHERE { wd:Q656071 wdt:P527 ?uri . }",
+        },
     },
     {
-        "input": "Give me all Australian nonprofit organizations.",
-        "output": {"properties": ["foundation", "charity", "organization"]},
+        "input": """How tall is Claudia Schiffer?""",
+        "output": {
+            "thoughts": [
+                "1. The question is asking for Claudia Schiffer's height.",
+                "2. From the retrieved resources, 'dbr:Claudia_Schiffer' is identified as the URI representing Claudia Schiffer.",
+                "3. The ontology data includes 'dbo:height' as a relevant data property, which is commonly used to indicate a person's height.",
+                "4. Although there is no domain and range for 'dbo:height,' it should still be appropriate to retrieve the height data directly for the given URI.",
+                "5. To answer the question, query the ?height value associated with 'dbr:Claudia_Schiffer' via 'dbo:height'.",
+            ],
+            "sparql": "SELECT DISTINCT ?val WHERE { wd:Q76717 wdt:P2048 ?val . }",
+        },
     },
     {
-        "input": "Which ingredients do I need for carrot cake?",
-        "output": {"properties": ["ingredient", "recipeIngredient", "foodIngredient"]},
+        "input": """In which films did Julia Roberts as well as Richard Gere play?""",
+        "output": {
+            "thoughts": [
+                "1. The question asks for films in which both Julia Roberts and Richard Gere acted together.",
+                "2. From the retrieved resources, 'dbr:Julia_Roberts' and 'dbr:Richard_Gere' are the URIs representing Julia Roberts and Richard Gere, respectively.",
+                "3. The ontology contains 'dbo:starring' as an object property with the domain 'dbo:Work' and the range 'dbo:Actor,' which is suitable for identifying films with specific actors.",
+                "4. Since we're looking for shared appearances, we should query for films (dbo:Film) where both actors are linked through 'dbo:starring'.",
+                "5. Formulate the query to select unique film URIs that have both 'dbr:Julia_Roberts' and 'dbr:Richard_Gere' as values for 'dbo:starring'.",
+            ],
+            "sparql": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q11424 . ?uri wdt:P161 wd:Q48410 . ?uri wdt:P161 wd:Q40523 . }",
+        },
     },
     {
-        "input": "How tall is Claudia Schiffer?",
-        "output": {"properties": ["height", "elevation"]},
+        "input": """Who produced the most films?""",
+        "output": {
+            "thoughts": [
+                "1. The question asks for the entity that has produced the most films, suggesting a need to count the number of films linked to each producer.",
+                "2. From the resources and ontology, the class 'dbo:Film' represents films, and the property 'dbo:producer' links films to their producers.",
+                "3. The query should retrieve entities linked via 'dbo:producer' to instances of 'dbo:Film'.",
+                "4. We need to count the films associated with each producer, order by this count in descending order, and select the top result.",
+                "5. Formulate the query to select distinct producer URIs, counting the films they produced, and order by the count in descending order to find the producer with the most films.",
+            ],
+            "sparql": "SELECT DISTINCT ?uri WHERE { ?film wdt:P31 wd:Q11424 . ?film wdt:P162 ?uri . } GROUP BY ?uri ORDER BY DESC(COUNT(?film)) LIMIT 1",
+        },
     },
     {
-        "input": "In which films did Julia Roberts as well as Richard Gere play?",
-        "output": {"properties": ["starring", "film", "actor"]},
+        "input": """Show me all basketball players that are higher than 2 meters.""",
+        "output": {
+            "thoughts": [
+                "1. The question specifies basketball players who are taller than 2 meters, so we need entities of type dbo:BasketballPlayer with a height greater than 2 meters.",
+                "2. The ontology provides dbo:BasketballPlayer as the appropriate class for basketball players and dbo:height as the property representing height.",
+                "3. The query should use a filter to select only players with heights exceeding 2.0 meters.",
+                "4. Structure the query to retrieve unique URIs for basketball players meeting this height criterion.",
+            ],
+            "sparql": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P106 wd:Q3665646 . ?uri wdt:P2048 ?height .  FILTER(?height > 200)}",
+        },
     },
     {
-        "input": "Who produced the most films?",
-        "output": {"properties": ["producer", "producedBy", "film"]},
+        "input": """How many films did Leonardo DiCaprio star in?""",
+        "output": {
+            "thoughts": [
+                "1. The question requires counting the number of films Leonardo DiCaprio starred in.",
+                "2. We need to retrieve entities of type dbo:Film, where Leonardo DiCaprio is listed as the star.",
+                "3. The dbo:starring property links films to actors, so we can use this property with dbr:Leonardo_DiCaprio as the object.",
+                "4. To get the count, we use COUNT(DISTINCT ?uri) to ensure each film is counted only once, and return the result as ?c.",
+            ],
+            "sparql": "SELECT (COUNT(DISTINCT ?uri) AS ?c) WHERE { ?uri wdt:P31 wd:Q11424 ; wdt:P161 wd:Q38111 . }",
+        },
     },
     {
-        "input": "Show me all basketball players that are higher than 2 meters.",
-        "output": {"properties": ["height", "athlete", "basketballPlayer"]},
+        "input": """Give me all companies in the advertising industry.""",
+        "output": {
+            "thoughts": [
+                "1. The question asks for companies in the advertising industry.",
+                "2. We can identify companies using the dbo:Company class.",
+                "3. The dbo:industry property links a company to its industry, and dbr:Advertising can represent the advertising industry.",
+                "4. To ensure we capture relevant companies even if their industry isn't explicitly 'Advertising,' we add a regex filter to match industries with 'advertising' in the label.",
+                "5. The query structure includes both direct matches with dbr:Advertising and regex matches to ensure broader coverage.",
+            ],
+            "sparql": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q4830453 ; wdt:P452 wd:Q39809 . }",
+        },
     },
     {
-        "input": "How many films did Leonardo DiCaprio star in?",
-        "output": {"properties": ["starring", "film", "actor"]},
+        "input": """How many movies did Park Chan-wook direct?""",
+        "output": {
+            "thoughts": [
+                "1. The question asks for the number of movies directed by Park Chan-wook.",
+                "2. Park Chan-wook is represented by the URI dbr:Park_Chan-wook.",
+                "3. The dbo:director property associates a film with its director.",
+                "4. We need to count the unique films where Park Chan-wook is the director, using the dbo:Film class as the target entity.",
+            ],
+            "sparql": "SELECT (COUNT(DISTINCT ?uri) as ?count) WHERE {  ?uri wdt:P57 wd:Q315484 . }",
+        },
     },
     {
-        "input": "Give me all companies in the advertising industry.",
-        "output": {"properties": ["company", "industry"]},
-    },
-    {
-        "input": "How many movies did Park Chan-wook direct?",
-        "output": {"properties": ["director"]},
-    },
-    {
-        "input": "Who wrote the Game of Thrones theme?",
-        "output": {"properties": ["composer", "music", "composition"]},
+        "input": """Who wrote the Game of Thrones theme?""",
+        "output": {
+            "thoughts": [
+                "1. The question asks for the composer of the Game of Thrones theme.",
+                "2. The resource for Game of Thrones is identified by the URI 'dbr:Game_of_Thrones'.",
+                "3. The relevant property to identify the composer of a theme or soundtrack is 'dbo:composer', which links a work with its creator or composer.",
+                "4. The query should retrieve the URI of the composer associated with the Game of Thrones series.",
+            ],
+            "sparql": "SELECT DISTINCT ?uri WHERE { wd:Q23572 wdt:P86 ?uri . }",
+        },
     },
 ]
 
 
 for fs in [
     EXTRACT_ENTITY_FEW_SHOTS,
-    GENERATE_SPARQL_FEW_SHOTS,
     INTENT_CLASSIFICATION_FEW_SHOTS,
     GENERATE_RELATED_PROPERTIES_FEW_SHOTS,
+    DBPEDIA_GENERATE_SPARQL_FEW_SHOTS,
+    WIKIDATA_GENERATE_SPARQL_FEW_SHOTS,
 ]:
     for f in fs:
         f["output"] = json.dumps(f["output"], indent=4)

@@ -28,7 +28,6 @@ from pydantic import BaseModel, Field
 from typing import List
 
 from few_shots import (
-    EXTRACT_ENTITY_FEW_SHOTS,
     INTENT_CLASSIFICATION_FEW_SHOTS,
 )
 from property_retrieval.base import BasePropertyRetrieval
@@ -54,11 +53,12 @@ class BaseGraphRAG:
         self.model_name = model_name
         self.device = device
         self.local = local
-        self.api = BaseAPI  # To be defined in child class
-        self.verbalization = None  # To be defined in child class
-        self.property_retrieval = (
-            BasePropertyRetrieval()
-        )  # To be defined in child class
+
+        # To be defined in child class
+        self.api = BaseAPI(url="", agent="")
+        self.verbalization = None
+        self.property_retrieval = BasePropertyRetrieval()
+
         model_kwargs = {
             "temperature": 0,
             "device": self.device,
@@ -145,7 +145,7 @@ class BaseGraphRAG:
         response_schemas = [
             ResponseSchema(
                 name="question",
-                description="factoid question transformed from user's question or instruction",
+                description="Factoid question transformed from user's question or instruction",
             ),
         ]
         output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
@@ -243,19 +243,12 @@ Based on the query given, decide if it is global or local and return the classif
             return True
         return intent.is_global
 
-    def extract_entity(self, question: str, try_threshold: int = 10) -> list[str]:
-        example_prompt = ChatPromptTemplate.from_messages(
-            [
-                ("human", "{input}"),
-                ("ai", "{output}"),
-            ]
-        )
-
-        few_shot_prompt = FewShotChatMessagePromptTemplate(
-            example_prompt=example_prompt,
-            examples=EXTRACT_ENTITY_FEW_SHOTS,
-        )
-
+    def extract_entity(
+        self,
+        question: str,
+        chat_prompt_template: ChatPromptTemplate,
+        try_threshold: int = 10,
+    ) -> list[str]:
         class Entities(BaseModel):
             """Identifying information about entities."""
 
@@ -267,32 +260,9 @@ Based on the query given, decide if it is global or local and return the classif
         output_parser = PydanticOutputParser(pydantic_object=Entities)
         format_instructions = output_parser.get_format_instructions()
 
-        final_prompt = ChatPromptTemplate.from_messages(
-            [
-                (
-                    "system",
-                    """- You are an entity extractor.
-- Extract the entities from the given question! DO NOT hallucinate and only provide entities that are present in the question.
-- These entities usage is to find the most appropriate entity URI/ID from dbpedia/wikidata to be used in SPARQL queries.
-- If there is no entity in the question, return empty list.
-- Sort the entities based on the importance of the entity in the question.
-- ONLY return the entities. DO NOT return anything else.
-- DO NOT include adjectives like 'Highest', 'Lowest', 'Biggest', etc in the entity.
-- DO NOT provide any extra information, for instance explanation inside a brackets like '(population)', '(area)', '(place)', '(artist)', etc
-- DO NOT include any explanations or apologies in your responses.
-- Remove all stop words, including conjunctions like 'and' and prepositions like 'in' and 'on' from the extracted entity.
-- Make the entity singular, not plural. For instance, if the entity is foods, then transform it into food.
-- Even if there is only one entity, alwayas return as a list.
-
-Based on the query given, extract the entities from it and return the extracted entities in the format below.
-{format_instructions}""",
-                ),
-                few_shot_prompt,
-                MessagesPlaceholder("chat_history"),
-                ("human", "{input}"),
-            ]
+        final_prompt = chat_prompt_template.partial(
+            format_instructions=format_instructions
         )
-        final_prompt = final_prompt.partial(format_instructions=format_instructions)
         llm_chain = final_prompt | self.chat_model | StrOutputParser()
         entities, _ = self.handle_parsing_error(
             llm_chain, output_parser, [], question, try_threshold=try_threshold
@@ -301,10 +271,11 @@ Based on the query given, extract the entities from it and return the extracted 
             return []
         return entities.names
 
-    def get_most_appropriate_resource_uri(
+    def get_most_appropriate_entity_uri(
         self,
         entity: str,
-        retrieved_resources: list[dict],
+        question: str,
+        retrieved_entities: list[dict],
         resource_model,
         chat_prompt_template: ChatPromptTemplate,
         try_threshold: int = 10,
@@ -313,7 +284,8 @@ Based on the query given, extract the entities from it and return the extracted 
         format_instructions = output_parser.get_format_instructions()
         final_prompt = chat_prompt_template.partial(
             format_instructions=format_instructions,
-            retrieved_resources=retrieved_resources,
+            retrieved_entities=retrieved_entities,
+            question=question,
         )
 
         llm_chain = final_prompt | self.chat_model | StrOutputParser()
@@ -370,7 +342,7 @@ Based on the query given, extract the entities from it and return the extracted 
                 )
 
         properties_context = ""
-        if ontology["classes"]:
+        if ontology.get("classes", None):
             properties_context += f"    - classes: {ontology['classes']}\n"
         for key, value in result.items():
             properties_context += f"    - {key}: \n"
@@ -396,7 +368,7 @@ Based on the query given, extract the entities from it and return the extracted 
         try_threshold: int = 10,
     ) -> tuple[str, list[dict[str, str]]]:
         class SPARQLQueryResults(BaseModel):
-            """Chain of thoughts and SPARQL query to answer the user's question."""
+            """Represents the chain of thoughts and the SPARQL query generated to answer the user's question."""
 
             if use_cot:
                 thoughts: List[str] = Field(
@@ -435,7 +407,7 @@ Based on the query given, extract the entities from it and return the extracted 
             )
 
         ontology = self.property_retrieval.get_related_candidates(
-            question, property_candidates=related_properties, threshold=0.5
+            question, property_candidates=related_properties, threshold=0.6
         )
         properties_context = self._parse_property_context_string(ontology)
         if verbose:
@@ -507,16 +479,20 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
         self,
         question: str,
         use_cot: bool = True,
+        use_transform_factoid: bool = True,
         verbose: int = 0,
         try_threshold: int = 10,
     ) -> tuple[str, str, list[dict[str, str]]]:
-        factoid_question = self.transform_to_factoid_question(question)
-        if verbose == 1:
-            display(
-                HTML(
-                    f"""<code style='color: green;'>Factoid Question: {escape(factoid_question)}</code>"""
+        if use_transform_factoid:
+            factoid_question = self.transform_to_factoid_question(question)
+            if verbose == 1:
+                display(
+                    HTML(
+                        f"""<code style='color: green;'>Factoid Question: {escape(factoid_question)}</code>"""
+                    )
                 )
-            )
+        else:
+            factoid_question = question
 
         extracted_entities = self.extract_entity(factoid_question)
         if verbose == 1:
@@ -561,8 +537,8 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                         f"""<code style='color: green;'>Retrieved Resources: {escape(str(retrieved_resources))}</code>"""
                     )
                 )
-            entity_uri = self.get_most_appropriate_resource_uri(
-                entity, retrieved_resources
+            entity_uri = self.get_most_appropriate_entity_uri(
+                entity, factoid_question, retrieved_resources
             )
             if verbose == 1:
                 display(
@@ -627,29 +603,9 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
 
         final_prompt = ChatPromptTemplate.from_messages(
             [
-                #                 (
-                #                     "system",
-                #                     """- You are an assistant for question-answering tasks.
-                # - Use the following pieces of retrieved context to answer the question.
-                # - If you don't know the answer, just say that you don't know.
-                # - Try your best to use the given context as the answer!
-                # - DO NOT hallucinate and only provide answers from the given context.
-                # - DO NOT make up an answer.
-                # - If the context does not explicitly say related to the question, just ASSUME that it is the answer of the question.
-                # - Answer the question in a natural way like you are the one who know the context, DO NOT mention like "according to the context", etc.
-                # - Answer it using complete sentences!
-                # - If the question is about retrieving information that is limited to a certain amount, make sure to return all the results from the context that match the limited amount.
-                # - If the answer is a list of items, then you should answer in bullet points!
-                # - When no context is provided, just answer "I don't know".""",
-                #                 ),
                 (
                     "human",
-                    #                     """Answer the following question strictly using the context provided below. Assume that if context is provided, it is the correct answer. If the information to answer the question is not available in the context, respond with "I don't know."
-                    # Context:
-                    # {dbpedia_context}
-                    # Question: {input}
-                    # Answer:""",
-                    """You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise.
+                    """You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. Do not say "according to the context" or something like that, just answer directly with full sentence to the question using the context. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise.
 Question: {input} 
 Context: {dbpedia_context} 
 Answer:""",
