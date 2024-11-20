@@ -4,8 +4,11 @@ import argparse
 from tqdm import tqdm
 import warnings
 
-from rag.dbpedia import DBPediaGraphRAG
-from few_shots import GENERATE_SPARQL_FEW_SHOTS
+from rag import WikidataGraphRAG, DBPediaGraphRAG
+from few_shots import (
+    WIKIDATA_GENERATE_SPARQL_FEW_SHOTS,
+    DBPEDIA_GENERATE_SPARQL_FEW_SHOTS,
+)
 
 warnings.filterwarnings("ignore")
 
@@ -31,6 +34,7 @@ def compare_two_dataframes(df1: pd.DataFrame, df2: pd.DataFrame) -> float:
 
 
 def main(
+    knowledge_source: str,
     model_name: str,
     local=True,
     max_new_tokens: int = 1500,
@@ -45,16 +49,29 @@ def main(
     test_df = pd.read_json(test_df_path)
     print("Test dataframe loaded.")
 
-    print("Initializing DBPediaGraphRAG...")
     print(f"Local mode: {local}")
-    dbpedia_rag = DBPediaGraphRAG(
-        model_name=model_name,
-        local=local,
-        max_new_tokens=max_new_tokens,
-        generate_sparql_few_shot_messages=GENERATE_SPARQL_FEW_SHOTS,
-        always_use_generate_sparql=always_use_generate_sparql,
-    )
-    print("DBPediaGraphRAG initialized.")
+    if knowledge_source == "wikidata":
+        print("Initializing WikidataGraphRAG...")
+        rag_engine = WikidataGraphRAG(
+            model_name=model_name,
+            local=local,
+            max_new_tokens=max_new_tokens,
+            generate_sparql_few_shot_messages=WIKIDATA_GENERATE_SPARQL_FEW_SHOTS,
+            always_use_generate_sparql=always_use_generate_sparql,
+        )
+        print("WikidataGraphRAG initialized.")
+    elif knowledge_source == "dbpedia":
+        print("Initializing DBPediaGraphRAG...")
+        rag_engine = DBPediaGraphRAG(
+            model_name=model_name,
+            local=local,
+            max_new_tokens=max_new_tokens,
+            generate_sparql_few_shot_messages=DBPEDIA_GENERATE_SPARQL_FEW_SHOTS,
+            always_use_generate_sparql=always_use_generate_sparql,
+        )
+        print("DBPediaGraphRAG initialized.")
+    else:
+        raise ValueError("Invalid knowledge source.")
 
     os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
     with open(log_file_path, "w") as log_file:
@@ -64,11 +81,12 @@ def main(
             try:
                 log_file.write(f"QUESTION {i+1}\n")
                 question = row["query_name"]
-                true_query = row["cleaned_dbpedia"]
-                ground_truth = dbpedia_rag.api.execute_sparql_to_df(true_query)
-                generated_factoid_question, generated_query, res = dbpedia_rag.run(
+                true_query = row[f"cleaned_{knowledge_source}"]
+                ground_truth = rag_engine.api.execute_sparql_to_df(true_query)
+                generated_factoid_question, generated_query, res = rag_engine.run(
                     question,
                     use_cot=use_cot,
+                    output_uri=True,
                     verbose=0,
                     try_threshold=llm_try_threshold,
                 )
@@ -96,6 +114,13 @@ def main(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the evaluation script.")
+    parser.add_argument(
+        "--knowledge-source",
+        type=str,
+        required=True,
+        help="Knowledge source to use.",
+        choices=["wikidata", "dbpedia"],
+    )
     parser.add_argument(
         "--model-name", type=str, required=True, help="Name of the model to use."
     )
@@ -142,6 +167,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     main(
+        knowledge_source=args.knowledge_source,
         model_name=args.model_name,
         local=args.local,
         max_new_tokens=args.max_new_tokens,
