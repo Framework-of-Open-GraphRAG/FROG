@@ -18,7 +18,7 @@ from few_shots import (
     GENERATE_RELATED_PROPERTIES_FEW_SHOTS,
 )
 from utils.api import WikidataAPI
-from utils.verbalization import Verbalization
+from verbalization import WikidataVerbalization
 from property_retrieval import WikidataPropertyRetrieval
 from .base import BaseGraphRAG
 
@@ -42,7 +42,9 @@ class WikidataGraphRAG(BaseGraphRAG):
             model_name, device, local, max_new_tokens, always_use_generate_sparql
         )
         self.api = WikidataAPI()
-        self.verbalization = Verbalization(model_name="multi-qa-mpnet-base-cos-v1")
+        self.verbalization = WikidataVerbalization(
+            model_name="multi-qa-mpnet-base-cos-v1"
+        )
         if generate_sparql_few_shot_messages is None:
             self.generate_sparql_few_shot_messages = WIKIDATA_GENERATE_SPARQL_FEW_SHOTS
         else:

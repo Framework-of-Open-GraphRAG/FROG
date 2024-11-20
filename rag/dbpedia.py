@@ -18,7 +18,7 @@ from few_shots import (
     GENERATE_RELATED_PROPERTIES_FEW_SHOTS,
 )
 from utils.api import DBPediaAPI
-from utils.verbalization import Verbalization
+from verbalization import DBPediaVerbalization
 from property_retrieval import DBPediaPropertyRetrieval
 from .base import BaseGraphRAG
 
@@ -42,7 +42,9 @@ class DBPediaGraphRAG(BaseGraphRAG):
             model_name, device, local, max_new_tokens, always_use_generate_sparql
         )
         self.api = DBPediaAPI()
-        self.verbalization = Verbalization(model_name="multi-qa-mpnet-base-cos-v1")
+        self.verbalization = DBPediaVerbalization(
+            model_name="multi-qa-mpnet-base-cos-v1"
+        )
         if generate_sparql_few_shot_messages is None:
             self.generate_sparql_few_shot_messages = DBPEDIA_GENERATE_SPARQL_FEW_SHOTS
         else:

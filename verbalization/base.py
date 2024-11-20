@@ -2,11 +2,11 @@ import pandas as pd
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-from utils.api import DBPediaAPI
+from utils.api import BaseAPI
 from utils.helper import replace_using_dict, separate_camel_case
 
 
-class Verbalization:
+class BaseVerbalization:
     SENTENCE_TEMPLATE = "{s}'s {p} is {o}"
     MANUAL_MAPPING_DICT = {"_": " "}
     PO_TEMPLATE = """
@@ -64,7 +64,7 @@ select ?s ?p ?sLabel ?pLabel ?oLabel where {{
 """
 
     def __init__(self, model_name="multi-qa-mpnet-base-cos-v1") -> None:
-        self.api = DBPediaAPI()
+        self.api = BaseAPI(url="", agent="")  # Overwrite in child class
         self.model = SentenceTransformer(model_name)
 
     def get_po(self, entity: str) -> pd.DataFrame:
