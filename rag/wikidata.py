@@ -159,7 +159,7 @@ Entity ID:""",
 
         if parsed_entity is None:
             return None
-        return parsed_entity.id.replace("dbr:", "http://dbpedia.org/resource/")
+        return parsed_entity.id
 
     def generate_related_properties(
         self, question: str, try_threshold: int = 10
@@ -285,12 +285,14 @@ Based on the query and context given, generate the SPARQL query from it and retu
         self,
         question: str,
         use_cot: bool = True,
+        output_uri: bool = False,
         verbose: int = 0,
         try_threshold: int = 10,
     ):
         return super().run(
             question,
             use_cot=use_cot,
+            output_uri=output_uri,
             use_transform_factoid=False,
             verbose=verbose,
             try_threshold=try_threshold,

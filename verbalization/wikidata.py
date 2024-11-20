@@ -6,7 +6,7 @@ class WikidataVerbalization(BaseVerbalization):
     SENTENCE_TEMPLATE = "{s}'s {p} is {o}"
     MANUAL_MAPPING_DICT = {"_": " "}
     PO_TEMPLATE = """
-SELECT distinct ?p ?o ?sLabel ?pLabel ?oLabel
+SELECT distinct ?p ?o ?sLabel ?propLabel ?oLabel
 WHERE {{
   BIND(wd:{entity} AS ?s) .
   
@@ -17,7 +17,7 @@ WHERE {{
 }}
 """
     SP_TEMPLATE = """
-SELECT ?s ?p ?sLabel ?pLabel ?oLabel
+SELECT ?s ?p ?sLabel ?propLabel ?oLabel
 WHERE {{
   BIND(wd:{entity} AS ?o) .
   

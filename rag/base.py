@@ -480,6 +480,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
         question: str,
         use_cot: bool = True,
         use_transform_factoid: bool = True,
+        output_uri=False,
         verbose: int = 0,
         try_threshold: int = 10,
     ) -> tuple[str, str, list[dict[str, str]]]:
@@ -550,7 +551,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
             is_error = False
             try:
                 result, similarities = self.verbalization.run(
-                    factoid_question, entity_uri
+                    factoid_question, entity_uri, output_uri=output_uri
                 )
                 if verbose == 1:
                     display(

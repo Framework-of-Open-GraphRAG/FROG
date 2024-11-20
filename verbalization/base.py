@@ -9,59 +9,8 @@ from utils.helper import replace_using_dict, separate_camel_case
 class BaseVerbalization:
     SENTENCE_TEMPLATE = "{s}'s {p} is {o}"
     MANUAL_MAPPING_DICT = {"_": " "}
-    PO_TEMPLATE = """
-select ?p ?o ?sLabel ?pLabel ?oLabel where {{
-  <{entity}> ?p ?o .
-  FILTER (
-    strstarts(str(?p), "http://dbpedia.org/ontology/")
-    && !contains(str(?p), "wiki")
-    && (strstarts(str(?o), "http://dbpedia.org/") || isLiteral(?o))
-    && ?p != <http://dbpedia.org/ontology/abstract>
-  )
-  FILTER (
-    !isLiteral(?o) || (isLiteral(?o) && (lang(?o) = "en" || lang(?o) = ""))
-  )
-  
-  OPTIONAL {{
-    <{entity}> rdfs:label ?sLabel .
-    FILTER(lang(?sLabel) = "en")
-  }}
-  
-  OPTIONAL {{
-    ?p rdfs:label ?pLabel .
-    FILTER(lang(?pLabel) = "en")
-  }}
-  
-  OPTIONAL {{
-    ?o rdfs:label ?oLabel .
-    FILTER(lang(?oLabel) = "en")
-  }}
-}}
-"""
-    SP_TEMPLATE = """
-select ?s ?p ?sLabel ?pLabel ?oLabel where {{
-  ?s ?p <{entity}> .
-  FILTER (
-    strstarts(str(?p), "http://dbpedia.org/ontology/")
-    && !contains(str(?p), "wiki")
-  )
-  
-  OPTIONAL {{
-    ?s rdfs:label ?sLabel .
-    FILTER(lang(?sLabel) = "en")
-  }}
-  
-  OPTIONAL {{
-    ?p rdfs:label ?pLabel .
-    FILTER(lang(?pLabel) = "en")
-  }}
-  
-  OPTIONAL {{
-    <{entity}> rdfs:label ?oLabel .
-    FILTER(lang(?oLabel) = "en")
-  }}
-}}
-"""
+    PO_TEMPLATE = None
+    SP_TEMPLATE = None
 
     def __init__(self, model_name="multi-qa-mpnet-base-cos-v1") -> None:
         self.api = BaseAPI(url="", agent="")  # Overwrite in child class
@@ -134,7 +83,9 @@ select ?s ?p ?sLabel ?pLabel ?oLabel where {{
 
         return candidates, po, sp
 
-    def run(self, question: str, entity: str) -> tuple[list[dict[str, str]], float]:
+    def run(
+        self, question: str, entity: str, output_uri=False
+    ) -> tuple[list[dict[str, str]], float]:
         question_embed = self.model.encode(question)
 
         list_of_candidates, po, sp = self.get_list_of_candidates(entity)
@@ -149,10 +100,23 @@ select ?s ?p ?sLabel ?pLabel ?oLabel where {{
 
         property_used = list(list_of_candidates.keys())[similar_index]
         result = []
-        for _, (p, o, _, pLabel, _) in po[po["p"] == property_used].iterrows():
+        for _, (p, o, _, pLabel, oLabel) in po[po["p"] == property_used].iterrows():
             label_p = pLabel if pLabel else separate_camel_case(p.split("/")[-1])
-            result.append({label_p: o})
-        for _, (s, p, _, pLabel, _) in sp[sp["p"] == property_used].iterrows():
+            if o.startswith("http"):
+                label_o = (
+                    oLabel
+                    if oLabel
+                    else replace_using_dict(o.split("/")[-1], self.MANUAL_MAPPING_DICT)
+                )
+            else:
+                label_o = o
+            result.append({label_p: o if output_uri else label_o})
+        for _, (s, p, sLabel, pLabel, _) in sp[sp["p"] == property_used].iterrows():
             label_p = pLabel if pLabel else separate_camel_case(p.split("/")[-1])
-            result.append({label_p: s})
+            label_s = (
+                sLabel
+                if sLabel
+                else replace_using_dict(s.split("/")[-1], self.MANUAL_MAPPING_DICT)
+            )
+            result.append({label_p: s if output_uri else label_s})
         return result, similar_score
