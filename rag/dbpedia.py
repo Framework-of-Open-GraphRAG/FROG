@@ -43,7 +43,15 @@ class DBPediaGraphRAG(BaseGraphRAG):
         )
         self.api = DBPediaAPI()
         self.verbalization = DBPediaVerbalization(
-            model_name="multi-qa-mpnet-base-cos-v1"
+            model_name="jinaai/jina-embeddings-v3",
+            query_model_encode_kwargs={
+                "task": "retrieval.query",
+                "prompt_name": "retrieval.query",
+            },
+            passage_model_encode_kwargs={
+                "task": "retrieval.passage",
+                "prompt_name": "retrieval.passage",
+            },
         )
         if generate_sparql_few_shot_messages is None:
             self.generate_sparql_few_shot_messages = DBPEDIA_GENERATE_SPARQL_FEW_SHOTS
@@ -57,6 +65,7 @@ class DBPediaGraphRAG(BaseGraphRAG):
                 df_classes,
                 df_oproperties,
                 df_dproperties,
+                embedding_model_name="jinaai/jina-embeddings-v3"
             )
         else:
             self.property_retrieval = property_retrieval

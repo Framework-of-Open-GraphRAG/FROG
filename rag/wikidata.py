@@ -43,7 +43,15 @@ class WikidataGraphRAG(BaseGraphRAG):
         )
         self.api = WikidataAPI()
         self.verbalization = WikidataVerbalization(
-            model_name="multi-qa-mpnet-base-cos-v1"
+            model_name="jinaai/jina-embeddings-v3",
+            query_model_encode_kwargs={
+                "task": "retrieval.query",
+                "prompt_name": "retrieval.query",
+            },
+            passage_model_encode_kwargs={
+                "task": "retrieval.passage",
+                "prompt_name": "retrieval.passage",
+            },
         )
         if generate_sparql_few_shot_messages is None:
             self.generate_sparql_few_shot_messages = WIKIDATA_GENERATE_SPARQL_FEW_SHOTS
@@ -51,18 +59,11 @@ class WikidataGraphRAG(BaseGraphRAG):
             self.generate_sparql_few_shot_messages = generate_sparql_few_shot_messages
         df_properties = pd.read_csv("./data/wikidata_ontology/properties.csv")
         if property_retrieval is None:
-            self.property_retrieval = WikidataPropertyRetrieval(df_properties)
+            self.property_retrieval = WikidataPropertyRetrieval(
+                df_properties, embedding_model_name="jinaai/jina-embeddings-v3"
+            )
         else:
             self.property_retrieval = property_retrieval
-
-    #     def get_propertty_domain_range(self, property_uri: str) -> dict[str, str]:
-    #         query = f"""SELECT ?domain ?range
-    # WHERE {{
-    #     {property_uri} rdfs:domain ?domain ;
-    #                    rdfs:range ?range .
-    # }}
-    # """
-    #         return self.api.execute_sparql_to_df(query).drop_duplicates().to_dict("records")
 
     def extract_entity(self, question, try_threshold=10):
         example_prompt = ChatPromptTemplate.from_messages(

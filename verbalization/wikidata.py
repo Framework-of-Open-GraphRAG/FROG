@@ -27,6 +27,17 @@ WHERE {{
 }}
 """
 
-    def __init__(self, model_name="multi-qa-mpnet-base-cos-v1") -> None:
-        super().__init__(model_name)
+    def __init__(
+        self,
+        model_name="jinaai/jina-embeddings-v3",
+        model_kwargs={"trust_remote_code": True},
+        query_model_encode_kwargs={},
+        passage_model_encode_kwargs={},
+    ) -> None:
+        super().__init__(
+            model_name,
+            model_kwargs,
+            query_model_encode_kwargs,
+            passage_model_encode_kwargs,
+        )
         self.api = WikidataAPI()

@@ -12,9 +12,18 @@ class BaseVerbalization:
     PO_TEMPLATE = None
     SP_TEMPLATE = None
 
-    def __init__(self, model_name="multi-qa-mpnet-base-cos-v1") -> None:
+    def __init__(
+        self,
+        model_name="jinaai/jina-embeddings-v3",
+        model_kwargs={"trust_remote_code": True},
+        query_model_encode_kwargs={},
+        passage_model_encode_kwargs={},
+    ) -> None:
         self.api = BaseAPI(url="", agent="")  # Overwrite in child class
-        self.model = SentenceTransformer(model_name)
+        self.model_name = model_name
+        self.query_model_encode_kwargs = query_model_encode_kwargs
+        self.passage_model_encode_kwargs = passage_model_encode_kwargs
+        self.model = SentenceTransformer(model_name, **model_kwargs)
 
     def get_po(self, entity: str) -> pd.DataFrame:
         query = self.PO_TEMPLATE.format(entity=entity)
@@ -86,11 +95,10 @@ class BaseVerbalization:
     def run(
         self, question: str, entity: str, output_uri=False
     ) -> tuple[list[dict[str, str]], float]:
-        question_embed = self.model.encode(question)
-
         list_of_candidates, po, sp = self.get_list_of_candidates(entity)
         cands = list(list_of_candidates.values())
-        passages_embed = self.model.encode(cands)
+        question_embed = self.model.encode(question, **self.query_model_encode_kwargs)
+        passages_embed = self.model.encode(cands, **self.passage_model_encode_kwargs)
 
         similarities = (
             self.model.similarity(question_embed, passages_embed).numpy().flatten()
