@@ -1,5 +1,5 @@
-import faiss
 import pandas as pd
+import weaviate.classes as wvc
 from concurrent.futures import ThreadPoolExecutor
 
 from property_retrieval.base import BasePropertyRetrieval
@@ -11,36 +11,44 @@ class DBPediaPropertyRetrieval(BasePropertyRetrieval):
         df_classes: pd.DataFrame,
         df_oproperties: pd.DataFrame,
         df_dproperties: pd.DataFrame,
-        embedding_model_name: str = "sentence-transformers/all-mpnet-base-v2",
+        embedding_model_name: str = "jinaai/jina-embeddings-v3",
     ) -> None:
-        super().__init__(embedding_model_name)
+        super().__init__(
+            db_collection_name="dbpedia_property_db",
+            embedding_model_name=embedding_model_name,
+        )
         self.df_classes = df_classes
         self.df_oproperties = df_oproperties
         self.df_dproperties = df_dproperties
-        emb_classes = self.model_embed.encode(self.df_classes["classLabel"].tolist())
-        emb_oproperties = self.model_embed.encode(
-            self.df_oproperties["propertyLabel"].tolist()
-        )
-        emb_dproperties = self.model_embed.encode(
-            self.df_dproperties["propertyLabel"].tolist()
-        )
-
-        dimension = emb_classes.shape[1]
-        self.index_classes = faiss.IndexFlatL2(dimension)
-        self.index_oproperties = faiss.IndexFlatL2(dimension)
-        self.index_dproperties = faiss.IndexFlatL2(dimension)
-        self.index_classes.add(emb_classes)
-        self.index_oproperties.add(emb_oproperties)
-        self.index_dproperties.add(emb_dproperties)
+        
+        if self.is_collection_empty:
+            emb_classes = self.model_embed.encode(self.df_classes["label"].tolist())
+            emb_oproperties = self.model_embed.encode(self.df_oproperties["label"].tolist())
+            emb_dproperties = self.model_embed.encode(self.df_dproperties["label"].tolist())
+            dbpedia_df_vectors = {
+                "classes": (self.df_classes, emb_classes),
+                "objProperties": (self.df_dproperties, emb_dproperties),
+                "dataProperties": (self.df_oproperties, emb_oproperties),
+            }
+            dbpedia_property_obj = []
+            for key, (df, vector) in dbpedia_df_vectors.items():
+                for i, row in df.iterrows():
+                    dbpedia_property_obj.append(
+                        wvc.data.DataObject(
+                            properties={**row.to_dict(), "type": key},
+                            vector=vector[i].tolist(),
+                        )
+                    )
+            self.collection.data.insert_many(dbpedia_property_obj)
 
     def search_classes(self, q: str, k: int = 5) -> pd.DataFrame:
-        return self._search(self.index_classes, self.df_classes, q, k)
+        return self._search(q, type="classes", k=k)
 
     def search_oproperties(self, q: str, k: int = 5) -> pd.DataFrame:
-        return self._search(self.index_oproperties, self.df_oproperties, q, k)
+        return self._search(q, type="objProperties", k=k)
 
     def search_dproperties(self, q: str, k: int = 5) -> pd.DataFrame:
-        return self._search(self.index_dproperties, self.df_dproperties, q, k)
+        return self._search(q, type="dataProperties", k=k)
 
     def get_related_candidates(
         self,
@@ -51,29 +59,22 @@ class DBPediaPropertyRetrieval(BasePropertyRetrieval):
     ) -> dict[str, list[str]]:
         tokens = self._preprocess_into_tokens(q)
         ngrams = self._generate_ngrams(tokens)
-        resources = {
-            "classes": (self.index_classes, self.df_classes),
-            "objProperties": (self.index_oproperties, self.df_oproperties),
-            "dataProperties": (self.index_dproperties, self.df_dproperties),
-        }
         result = {"classes": [], "objProperties": [], "dataProperties": []}
 
-        def parallel_search(ngram, name, index, df, threshold=threshold):
-            df_res = self._search(index, df, ngram, k)
-            return name, df_res[df_res["sim"] < threshold]["short"].tolist()
+        def parallel_search(ngram, type, threshold=threshold):
+            df_res = self._search(ngram, type=type, k=k)
+            return type, df_res[df_res["score"] < threshold]["short"].tolist()
 
         with ThreadPoolExecutor() as executor:
             futures = []
             for ngram in ngrams + property_candidates:
-                for name, (index, df) in resources.items():
-                    futures.append(
-                        executor.submit(parallel_search, ngram, name, index, df)
-                    )
+                for type in result.keys():
+                    futures.append(executor.submit(parallel_search, ngram, type))
 
             for future in futures:
-                name, df_res = future.result()
+                type, df_res = future.result()
                 if df_res:
-                    result[name].extend(df_res)
-                    result[name] = list(set(result[name]))
+                    result[type].extend(df_res)
+                    result[type] = list(set(result[type]))
 
         return result

@@ -55,9 +55,9 @@ class BaseGraphRAG:
         self.local = local
 
         # To be defined in child class
-        self.api = BaseAPI(url="", agent="")
+        self.api = None
         self.verbalization = None
-        self.property_retrieval = BasePropertyRetrieval()
+        self.property_retrieval = None
 
         model_kwargs = {
             "temperature": 0,

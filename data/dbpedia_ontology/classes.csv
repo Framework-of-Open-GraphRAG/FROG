@@ -1,4 +1,4 @@
-classLabel,short
+label,short
 academic  person,dbo:Academic
 academic conference,dbo:AcademicConference
 academic journal,dbo:AcademicJournal

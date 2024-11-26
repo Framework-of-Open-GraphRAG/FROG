@@ -1,4 +1,4 @@
-propertyLabel,short,shortDomain,shortRange,description
+label,short,shortDomain,shortRange,description
 total time person has spent in space (m),dbo:timeInSpace,dbo:Astronaut,dbd:minute,total time person has spent in space of astronaut in minute
 fuel capacity (l),dbo:fuelCapacity,dbo:Automobile,dbd:litre,fuel capacity of automobile in litre
 wheelbase (mm),dbo:wheelbase,dbo:Automobile,dbd:millimetre,wheelbase of automobile in millimetre

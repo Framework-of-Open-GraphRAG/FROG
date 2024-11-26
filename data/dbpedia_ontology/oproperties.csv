@@ -1,4 +1,4 @@
-propertyLabel,short,shortDomain,shortRange,description
+label,short,shortDomain,shortRange,description
 academic advisor,dbo:academicAdvisor,dbo:Scientist,dbo:Person,academic advisor
 academic discipline,dbo:academicDiscipline,dbo:AcademicJournal,,"academic discipline, an academic discipline, or field of study, is a branch of knowledge that is taught and researched at the college or university level. disciplines are defined (in part), and recognized by the academic journals in which research is published, and the learned societies and academic departments or faculties to which their practitioners belong."
 Academy Award,dbo:academyAward,dbo:Artist,dbo:Award,academy award
