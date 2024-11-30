@@ -19,7 +19,7 @@ class BaseVerbalization:
         query_model_encode_kwargs={},
         passage_model_encode_kwargs={},
     ) -> None:
-        self.api = BaseAPI(url="", agent="")  # Overwrite in child class
+        self.api = None  # Overwrite in child class
         self.model_name = model_name
         self.query_model_encode_kwargs = query_model_encode_kwargs
         self.passage_model_encode_kwargs = passage_model_encode_kwargs

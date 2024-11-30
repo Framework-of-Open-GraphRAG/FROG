@@ -57,8 +57,8 @@ class WikidataGraphRAG(BaseGraphRAG):
             self.generate_sparql_few_shot_messages = WIKIDATA_GENERATE_SPARQL_FEW_SHOTS
         else:
             self.generate_sparql_few_shot_messages = generate_sparql_few_shot_messages
-        df_properties = pd.read_csv("./data/wikidata_ontology/properties.csv")
         if property_retrieval is None:
+            df_properties = pd.read_csv("./data/wikidata_ontology/properties.csv")
             self.property_retrieval = WikidataPropertyRetrieval(
                 df_properties, embedding_model_name="jinaai/jina-embeddings-v3"
             )

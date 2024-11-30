@@ -1,6 +1,5 @@
 import pandas as pd
 import weaviate.classes as wvc
-from concurrent.futures import ThreadPoolExecutor
 
 from property_retrieval.base import BasePropertyRetrieval
 
@@ -20,11 +19,15 @@ class DBPediaPropertyRetrieval(BasePropertyRetrieval):
         self.df_classes = df_classes
         self.df_oproperties = df_oproperties
         self.df_dproperties = df_dproperties
-        
+
         if self.is_collection_empty:
             emb_classes = self.model_embed.encode(self.df_classes["label"].tolist())
-            emb_oproperties = self.model_embed.encode(self.df_oproperties["label"].tolist())
-            emb_dproperties = self.model_embed.encode(self.df_dproperties["label"].tolist())
+            emb_oproperties = self.model_embed.encode(
+                self.df_oproperties["label"].tolist()
+            )
+            emb_dproperties = self.model_embed.encode(
+                self.df_dproperties["label"].tolist()
+            )
             dbpedia_df_vectors = {
                 "classes": (self.df_classes, emb_classes),
                 "objProperties": (self.df_dproperties, emb_dproperties),
@@ -61,18 +64,13 @@ class DBPediaPropertyRetrieval(BasePropertyRetrieval):
         ngrams = self._generate_ngrams(tokens)
         result = {"classes": [], "objProperties": [], "dataProperties": []}
 
-        def parallel_search(ngram, type, threshold=threshold):
+        def search(ngram, type, threshold=threshold):
             df_res = self._search(ngram, type=type, k=k)
-            return type, df_res[df_res["score"] < threshold]["short"].tolist()
+            return type, df_res[df_res["score"] >= threshold]["short"].tolist()
 
-        with ThreadPoolExecutor() as executor:
-            futures = []
-            for ngram in ngrams + property_candidates:
-                for type in result.keys():
-                    futures.append(executor.submit(parallel_search, ngram, type))
-
-            for future in futures:
-                type, df_res = future.result()
+        for ngram in ngrams + property_candidates:
+            for type in result.keys():
+                type, df_res = search(ngram, type)
                 if df_res:
                     result[type].extend(df_res)
                     result[type] = list(set(result[type]))

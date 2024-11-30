@@ -15,7 +15,7 @@ from langchain.output_parsers import (
     PydanticOutputParser,
 )
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
-from langchain_core.messages import HumanMessage
+from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.prompts import (
     ChatPromptTemplate,
     FewShotChatMessagePromptTemplate,
@@ -30,8 +30,6 @@ from typing import List
 from few_shots import (
     INTENT_CLASSIFICATION_FEW_SHOTS,
 )
-from property_retrieval.base import BasePropertyRetrieval
-from utils.api import BaseAPI
 from utils.helper import contains_multiple_entities, separate_camel_case
 
 load_dotenv()
@@ -134,7 +132,7 @@ class BaseGraphRAG:
                     )
                     break
 
-        messages.append(completion)
+        messages.append(AIMessage(content=completion))
         if completion_parsed is not None:
             return completion_parsed, messages
         return None, messages

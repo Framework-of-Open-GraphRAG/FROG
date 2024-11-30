@@ -57,10 +57,10 @@ class DBPediaGraphRAG(BaseGraphRAG):
             self.generate_sparql_few_shot_messages = DBPEDIA_GENERATE_SPARQL_FEW_SHOTS
         else:
             self.generate_sparql_few_shot_messages = generate_sparql_few_shot_messages
-        df_classes = pd.read_csv("./data/dbpedia_ontology/classes.csv")
-        df_oproperties = pd.read_csv("./data/dbpedia_ontology/oproperties.csv")
-        df_dproperties = pd.read_csv("./data/dbpedia_ontology/dproperties.csv")
         if property_retrieval is None:
+            df_classes = pd.read_csv("./data/dbpedia_ontology/classes.csv")
+            df_oproperties = pd.read_csv("./data/dbpedia_ontology/oproperties.csv")
+            df_dproperties = pd.read_csv("./data/dbpedia_ontology/dproperties.csv")
             self.property_retrieval = DBPediaPropertyRetrieval(
                 df_classes,
                 df_oproperties,

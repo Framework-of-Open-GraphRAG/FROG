@@ -1,6 +1,5 @@
 import pandas as pd
 import weaviate.classes as wvc
-from concurrent.futures import ThreadPoolExecutor
 
 
 from property_retrieval.base import BasePropertyRetrieval
@@ -19,8 +18,10 @@ class WikidataPropertyRetrieval(BasePropertyRetrieval):
         self.df_properties = df_properties
 
         if self.is_collection_empty:
-            emb_properties = self.model_embed.encode(self.df_properties["label"].tolist())
-            
+            emb_properties = self.model_embed.encode(
+                self.df_properties["label"].tolist()
+            )
+
             wikidata_property_obj = []
             for i, row in self.df_properties.iterrows():
                 wikidata_property_obj.append(
@@ -45,22 +46,17 @@ class WikidataPropertyRetrieval(BasePropertyRetrieval):
         ngrams = self._generate_ngrams(tokens)
         result = {"properties": []}
 
-        def parallel_search(ngram, type, threshold=threshold):
+        def search(ngram, type, threshold=threshold):
             df_res = self._search(ngram, k=k)
             df_res["idWithLabel"] = df_res["propertyId"] + " - " + df_res["label"]
             return (
                 type,
-                df_res[df_res["score"] < threshold]["idWithLabel"].tolist(),
+                df_res[df_res["score"] >= threshold]["idWithLabel"].tolist(),
             )
 
-        with ThreadPoolExecutor() as executor:
-            futures = []
-            for ngram in ngrams + property_candidates:
-                for type in result.keys():
-                    futures.append(executor.submit(parallel_search, ngram, type))
-
-            for future in futures:
-                type, df_res = future.result()
+        for ngram in ngrams + property_candidates:
+            for type in result.keys():
+                type, df_res = search(ngram, type)
                 if df_res:
                     result[type].extend(df_res)
                     result[type] = list(set(result[type]))
