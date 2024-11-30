@@ -19,7 +19,7 @@ class WikidataPropertyRetrieval(BasePropertyRetrieval):
 
         if self.is_collection_empty:
             emb_properties = self.model_embed.encode(
-                self.df_properties["label"].tolist()
+                self.df_properties["label"].tolist(), show_progress_bar=True
             )
 
             wikidata_property_obj = []

@@ -65,7 +65,7 @@ class DBPediaGraphRAG(BaseGraphRAG):
                 df_classes,
                 df_oproperties,
                 df_dproperties,
-                embedding_model_name="jinaai/jina-embeddings-v3"
+                embedding_model_name="jinaai/jina-embeddings-v3",
             )
         else:
             self.property_retrieval = property_retrieval
@@ -295,3 +295,33 @@ Based on the query and context given, generate the SPARQL query from it and retu
             verbose,
             try_threshold,
         )
+
+    def process_context(
+        self, question: str, context: list[dict[str, str]]
+    ) -> tuple[str, list[dict[str, str]]]:
+        if type(context) == list:
+            if len(context) > 0:
+                if list(context[0].values())[0].startswith("http://dbpedia.org/"):
+                    context_entities = []
+                    for c in context:
+                        context_entities.append(
+                            "<http://dbpedia.org/resource/"
+                            + list(c.values())[0].split("/")[-1]
+                            + ">"
+                        )
+                    get_label_query = f"""SELECT ?label WHERE {{
+  VALUES ?item {{ {" ".join(context_entities)} }}
+  ?item rdfs:label ?label.
+  FILTER (lang(?label) = "en")
+}}"""
+                    context, _ = self.api.execute_sparql(get_label_query)
+                context_str = f'The answer of "{question}" is '
+                for c in context[:50]:
+                    for k, v in c.items():
+                        context_str += k + " = " + v + ", "
+                context_str = context_str[:-2] + "."
+            else:
+                context_str = "I don't know"
+        else:
+            context_str = f'The answer of "{question}" is {context}'
+        return context_str, context

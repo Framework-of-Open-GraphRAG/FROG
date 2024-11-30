@@ -583,6 +583,11 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
         )
         return factoid_question, query, result
 
+    def process_context(
+        self, question: str, context: list[dict[str, str]]
+    ) -> tuple[str, list[dict[str, str]]]:
+        raise NotImplementedError("This method should be overridden by subclasses")
+
     def chat(
         self,
         question: str,
@@ -590,15 +595,9 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
         verbose: int = 0,
         try_threshold: int = 10,
     ) -> str:
-        factoid_question, _, dbpedia_context = self.run(
+        factoid_question, _, context = self.run(
             question, use_cot=use_cot, verbose=verbose, try_threshold=try_threshold
         )
-        if verbose == 1:
-            display(
-                HTML(
-                    f"""<code style='color: green;'>{escape(str(dbpedia_context))}</code>"""
-                )
-            )
 
         final_prompt = ChatPromptTemplate.from_messages(
             [
@@ -606,23 +605,18 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                     "human",
                     """You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. Do not say "according to the context" or something like that, just answer directly with full sentence to the question using the context. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise.
 Question: {input} 
-Context: {dbpedia_context} 
+Context: {context} 
 Answer:""",
                 ),
             ]
         )
-        if type(dbpedia_context) == list:
-            if len(dbpedia_context) > 0:
-                context_str = f'The answer of "{factoid_question}" is '
-                for c in dbpedia_context[:50]:
-                    for k in c.keys():
-                        context_str += k + " = " + c[k] + ", "
-                context_str = context_str[:-2] + "."
-            else:
-                context_str = "I don't know"
-        else:
-            context_str = f'The answer of "{factoid_question}" is {dbpedia_context}'
-        final_prompt = final_prompt.partial(dbpedia_context=context_str)
+        context_str, context = self.process_context(question, context)
+        if verbose == 1:
+            display(
+                HTML(f"""<code style='color: green;'>{escape(str(context))}</code>""")
+            )
+
+        final_prompt = final_prompt.partial(context=context_str)
 
         llm_chain = final_prompt | self.chat_model | StrOutputParser()
 

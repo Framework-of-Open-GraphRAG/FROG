@@ -21,12 +21,14 @@ class DBPediaPropertyRetrieval(BasePropertyRetrieval):
         self.df_dproperties = df_dproperties
 
         if self.is_collection_empty:
-            emb_classes = self.model_embed.encode(self.df_classes["label"].tolist())
+            emb_classes = self.model_embed.encode(
+                self.df_classes["label"].tolist(), show_progress_bar=True
+            )
             emb_oproperties = self.model_embed.encode(
-                self.df_oproperties["label"].tolist()
+                self.df_oproperties["label"].tolist(), show_progress_bar=True
             )
             emb_dproperties = self.model_embed.encode(
-                self.df_dproperties["label"].tolist()
+                self.df_dproperties["label"].tolist(), show_progress_bar=True
             )
             dbpedia_df_vectors = {
                 "classes": (self.df_classes, emb_classes),

@@ -282,6 +282,33 @@ Based on the query and context given, generate the SPARQL query from it and retu
             try_threshold,
         )
 
+    def process_context(
+        self, question: str, context: list[dict[str, str]]
+    ) -> tuple[str, list[dict[str, str]]]:
+        if type(context) == list:
+            if len(context) > 0:
+                if list(context[0].values())[0].startswith("http://www.wikidata.org/"):
+                    context_entities = []
+                    for c in context:
+                        context_entities.append(
+                            "wd:" + list(c.values())[0].split("/")[-1]
+                        )
+                    get_label_query = f"""SELECT ?itemLabel WHERE {{
+  VALUES ?item {{ {" ".join(context_entities)} }}
+  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}
+}}"""
+                    context, _ = self.api.execute_sparql(get_label_query)
+                context_str = f'The answer of "{question}" is '
+                for c in context[:50]:
+                    for k, v in c.items():
+                        context_str += k + " = " + v + ", "
+                context_str = context_str[:-2] + "."
+            else:
+                context_str = "I don't know"
+        else:
+            context_str = f'The answer of "{question}" is {context}'
+        return context_str, context
+
     def run(
         self,
         question: str,
