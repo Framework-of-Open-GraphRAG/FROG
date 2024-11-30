@@ -215,8 +215,8 @@ Based on the query given, transform from it and return the factoid question in t
                 (
                     "system",
                     """Your task is to classify user queries as either global or local.
-- A **global** query asks for general or broad information, often requiring summarization of an entire dataset. For example, "What are the main themes in the dataset?"
-- A **local** query asks for specific information from a particular part of the data. For example, "What is the capital of France?"
+- A **global** query asks for general or broad information or scope, which usually involves the usage of aggregate functions in the query like COUNT. For example, "How many films did Tom Cruise starred in?"
+- A **local** query asks for specific information from a particular entity. For example, "What is the capital of France?"
 Based on the query given, decide if it is global or local and return the classification in the format below.
 {format_instructions}""",
                 ),
