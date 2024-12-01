@@ -82,12 +82,12 @@ def main(
             try:
                 log_file.write(f"QUESTION {i+1}\n")
                 question = row["query_name"]
-                true_query = row[f"cleaned_{knowledge_source}"]
+                true_query = row[f"sparql_query"]
                 ground_truth = rag_engine.api.execute_sparql_to_df(true_query)
                 generated_factoid_question, generated_query, res = rag_engine.run(
                     question,
                     use_cot=use_cot,
-                    output_uri=True,
+                    output_uri=False,
                     verbose=0,
                     try_threshold=llm_try_threshold,
                 )
