@@ -32,14 +32,15 @@ class DBPediaGraphRAG(BaseGraphRAG):
         self,
         model_name: str = "meta-llama/Meta-Llama-3-8B-Instruct",
         device: str = DEVICE,
-        local: str = True,
+        use_local_model: str = True,
         max_new_tokens: int = 1500,
         property_retrieval: Optional[DBPediaPropertyRetrieval] = None,
         generate_sparql_few_shot_messages: Optional[List[dict]] = None,
         always_use_generate_sparql: bool = False,
+        use_local_weaviate_client: bool = True,
     ) -> None:
         super().__init__(
-            model_name, device, local, max_new_tokens, always_use_generate_sparql
+            model_name, device, use_local_model, max_new_tokens, always_use_generate_sparql
         )
         self.api = DBPediaAPI()
         self.verbalization = DBPediaVerbalization(
@@ -66,6 +67,7 @@ class DBPediaGraphRAG(BaseGraphRAG):
                 df_oproperties,
                 df_dproperties,
                 embedding_model_name="jinaai/jina-embeddings-v3",
+                is_local_client=use_local_weaviate_client,
             )
         else:
             self.property_retrieval = property_retrieval

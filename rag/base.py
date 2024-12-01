@@ -44,13 +44,13 @@ class BaseGraphRAG:
         self,
         model_name: str = "mistralai/Mistral-7B-Instruct-v0.3",
         device: str = DEVICE,
-        local: str = True,
+        use_local_model: str = True,
         max_new_tokens: int = 1500,
         always_use_generate_sparql: bool = False,
     ) -> None:
         self.model_name = model_name
         self.device = device
-        self.local = local
+        self.use_local_model = use_local_model
 
         # To be defined in child class
         self.api = None
@@ -63,7 +63,7 @@ class BaseGraphRAG:
             "max_new_tokens": max_new_tokens,
             "return_full_text": False,
         }
-        if self.local:
+        if self.use_local_model:
             self.tokenizer = AutoTokenizer.from_pretrained(
                 self.model_name, token=HF_TOKEN
             )

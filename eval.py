@@ -36,7 +36,8 @@ def compare_two_dataframes(df1: pd.DataFrame, df2: pd.DataFrame) -> float:
 def main(
     knowledge_source: str,
     model_name: str,
-    local=True,
+    use_local_model=True,
+    use_local_weaviate_client=True,
     max_new_tokens: int = 1500,
     test_df_path: str = "data/eval/qald-9-downsampled-test-latest.json",
     always_use_generate_sparql: bool = False,
@@ -49,25 +50,27 @@ def main(
     test_df = pd.read_json(test_df_path)
     print("Test dataframe loaded.")
 
-    print(f"Local mode: {local}")
+    print(f"Local mode: {use_local_model}")
     if knowledge_source == "wikidata":
         print("Initializing WikidataGraphRAG...")
         rag_engine = WikidataGraphRAG(
             model_name=model_name,
-            local=local,
+            use_local_model=use_local_model,
             max_new_tokens=max_new_tokens,
             generate_sparql_few_shot_messages=WIKIDATA_GENERATE_SPARQL_FEW_SHOTS,
             always_use_generate_sparql=always_use_generate_sparql,
+            use_local_weaviate_client=use_local_weaviate_client,
         )
         print("WikidataGraphRAG initialized.")
     elif knowledge_source == "dbpedia":
         print("Initializing DBPediaGraphRAG...")
         rag_engine = DBPediaGraphRAG(
             model_name=model_name,
-            local=local,
+            use_local_model=use_local_model,
             max_new_tokens=max_new_tokens,
             generate_sparql_few_shot_messages=DBPEDIA_GENERATE_SPARQL_FEW_SHOTS,
             always_use_generate_sparql=always_use_generate_sparql,
+            use_local_weaviate_client=use_local_weaviate_client,
         )
         print("DBPediaGraphRAG initialized.")
     else:
@@ -76,8 +79,6 @@ def main(
     os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
     with open(log_file_path, "w") as log_file:
         for i, row in tqdm(test_df.iterrows(), total=len(test_df)):
-            if i == 3:
-                break
             try:
                 log_file.write(f"QUESTION {i+1}\n")
                 question = row["query_name"]
@@ -125,10 +126,17 @@ if __name__ == "__main__":
         "--model-name", type=str, required=True, help="Name of the model to use."
     )
     parser.add_argument(
-        "--local",
+        "--local-model",
         type=bool,
         default=True,
-        help="Whether to run locally.",
+        help="Whether to run model locally.",
+        action=argparse.BooleanOptionalAction,
+    )
+    parser.add_argument(
+        "--local-weaviate-client",
+        type=bool,
+        default=True,
+        help="Whether to use weaviate client locally.",
         action=argparse.BooleanOptionalAction,
     )
     parser.add_argument(
@@ -169,7 +177,8 @@ if __name__ == "__main__":
     main(
         knowledge_source=args.knowledge_source,
         model_name=args.model_name,
-        local=args.local,
+        use_local_model=args.local_model,
+        use_local_weaviate_client=args.local_weaviate_client,
         max_new_tokens=args.max_new_tokens,
         test_df_path=args.test_df_path,
         always_use_generate_sparql=args.always_use_generate_sparql,

@@ -10,10 +10,12 @@ class WikidataPropertyRetrieval(BasePropertyRetrieval):
         self,
         df_properties: pd.DataFrame,
         embedding_model_name: str = "jinaai/jina-embeddings-v3",
+        is_local_client: bool = True,
     ) -> None:
         super().__init__(
             db_collection_name="wikidata_property_db",
             embedding_model_name=embedding_model_name,
+            is_local_client=is_local_client,
         )
         self.df_properties = df_properties
 
@@ -22,15 +24,12 @@ class WikidataPropertyRetrieval(BasePropertyRetrieval):
                 self.df_properties["label"].tolist(), show_progress_bar=True
             )
 
-            wikidata_property_obj = []
-            for i, row in self.df_properties.iterrows():
-                wikidata_property_obj.append(
-                    wvc.data.DataObject(
+            with self.collection.batch.dynamic() as batch:
+                for i, row in df_properties.iterrows():
+                    batch.add_object(
                         properties=row.to_dict(),
                         vector=emb_properties[i].tolist(),
                     )
-                )
-            self.collection.data.insert_many(wikidata_property_obj)
 
     def search_properties(self, q: str, k: int = 5) -> pd.DataFrame:
         return self._search(q, k=k)

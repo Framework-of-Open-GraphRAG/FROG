@@ -11,10 +11,12 @@ class DBPediaPropertyRetrieval(BasePropertyRetrieval):
         df_oproperties: pd.DataFrame,
         df_dproperties: pd.DataFrame,
         embedding_model_name: str = "jinaai/jina-embeddings-v3",
+        is_local_client: bool = True,
     ) -> None:
         super().__init__(
             db_collection_name="dbpedia_property_db",
             embedding_model_name=embedding_model_name,
+            is_local_client=is_local_client,
         )
         self.df_classes = df_classes
         self.df_oproperties = df_oproperties
@@ -35,16 +37,13 @@ class DBPediaPropertyRetrieval(BasePropertyRetrieval):
                 "objProperties": (self.df_dproperties, emb_dproperties),
                 "dataProperties": (self.df_oproperties, emb_oproperties),
             }
-            dbpedia_property_obj = []
-            for key, (df, vector) in dbpedia_df_vectors.items():
-                for i, row in df.iterrows():
-                    dbpedia_property_obj.append(
-                        wvc.data.DataObject(
+            with self.collection.batch.dynamic() as batch:
+                for key, (df, vector) in dbpedia_df_vectors.items():
+                    for i, row in df.iterrows():
+                        batch.add_object(
                             properties={**row.to_dict(), "type": key},
                             vector=vector[i].tolist(),
                         )
-                    )
-            self.collection.data.insert_many(dbpedia_property_obj)
 
     def search_classes(self, q: str, k: int = 5) -> pd.DataFrame:
         return self._search(q, type="classes", k=k)

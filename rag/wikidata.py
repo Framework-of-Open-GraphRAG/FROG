@@ -32,14 +32,15 @@ class WikidataGraphRAG(BaseGraphRAG):
         self,
         model_name: str = "meta-llama/Meta-Llama-3-8B-Instruct",
         device: str = DEVICE,
-        local: str = True,
+        use_local_model: str = True,
         max_new_tokens: int = 1500,
         property_retrieval: Optional[WikidataPropertyRetrieval] = None,
         generate_sparql_few_shot_messages: Optional[List[dict]] = None,
         always_use_generate_sparql: bool = False,
+        use_local_weaviate_client: bool = True,
     ) -> None:
         super().__init__(
-            model_name, device, local, max_new_tokens, always_use_generate_sparql
+            model_name, device, use_local_model, max_new_tokens, always_use_generate_sparql
         )
         self.api = WikidataAPI()
         self.verbalization = WikidataVerbalization(
@@ -60,7 +61,9 @@ class WikidataGraphRAG(BaseGraphRAG):
         if property_retrieval is None:
             df_properties = pd.read_csv("./data/wikidata_ontology/properties.csv")
             self.property_retrieval = WikidataPropertyRetrieval(
-                df_properties, embedding_model_name="jinaai/jina-embeddings-v3"
+                df_properties,
+                embedding_model_name="jinaai/jina-embeddings-v3",
+                is_local_client=use_local_weaviate_client,
             )
         else:
             self.property_retrieval = property_retrieval

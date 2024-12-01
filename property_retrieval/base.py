@@ -1,9 +1,10 @@
-import nltk
+import nltk, os
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 
 import weaviate
 import weaviate.classes as wvc
+from weaviate.classes.init import Auth
 
 nltk.download("stopwords")
 from nltk.corpus import stopwords
@@ -16,11 +17,22 @@ class BasePropertyRetrieval:
         self,
         db_collection_name: str,
         embedding_model_name: str = "jinaai/jina-embeddings-v3",
+        is_local_client: bool = True,
     ) -> None:
         self.model_embed = SentenceTransformer(
             embedding_model_name, trust_remote_code=True
         )
-        self.client = weaviate.connect_to_local(skip_init_checks=True)
+
+        if is_local_client:
+            self.client = weaviate.connect_to_local(skip_init_checks=True)
+        else:
+            weaviate_url = os.environ["WEAVIATE_URL"]
+            weaviate_api_key = os.environ["WEAVIATE_API_KEY"]
+            self.client = weaviate.connect_to_weaviate_cloud(
+                cluster_url=weaviate_url,
+                auth_credentials=Auth.api_key(weaviate_api_key),
+            )
+
         if not self.client.collections.exists(db_collection_name):
             self.collection = self.client.collections.create(
                 name=db_collection_name,
