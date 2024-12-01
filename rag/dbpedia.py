@@ -303,7 +303,7 @@ Based on the query and context given, generate the SPARQL query from it and retu
             if len(context) > 0:
                 if list(context[0].values())[0].startswith("http://dbpedia.org/"):
                     context_entities = []
-                    for c in context:
+                    for c in context[:50]:
                         context_entities.append(
                             "<http://dbpedia.org/resource/"
                             + list(c.values())[0].split("/")[-1]
