@@ -1,4 +1,4 @@
-import torch, os, json
+import torch, os, json, gc
 from IPython.display import HTML, display
 from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
@@ -133,6 +133,8 @@ class BaseGraphRAG:
                     break
 
         messages.append(AIMessage(content=completion))
+        torch.cuda.empty_cache()
+        gc.collect()
         if completion_parsed is not None:
             return completion_parsed, messages
         return None, messages
