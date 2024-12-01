@@ -644,7 +644,7 @@ WIKIDATA_GENERATE_SPARQL_FEW_SHOTS = [
                 "4. Retrieve the country (P17) and count the number of such cities, grouping and ordering by count.",
                 "5. Limit results to 100.",
             ],
-            "sparql": "SELECT ?country (count(*) AS ?count) WHERE { ?city wdt:P31/wdt:P279* wd:Q515. ?city p:P6 ?statement. ?statement ps:P6 ?mayor. ?mayor wdt:P21 wd:Q6581072. FILTER NOT EXISTS { ?statement pq:P582 ?x }. ?city wdt:P17 ?country. } GROUP BY ?country ?countryLabel ORDER BY DESC(?count) LIMIT 100",
+            "sparql": "SELECT ?country (count(*) AS ?count) WHERE { ?city wdt:P31/wdt:P279* wd:Q515. ?city p:P6 ?statement. ?statement ps:P6 ?mayor. ?mayor wdt:P21 wd:Q6581072. FILTER NOT EXISTS { ?statement pq:P582 ?x }. ?city wdt:P17 ?country. } GROUP BY ?country ORDER BY DESC(?count) LIMIT 100",
         },
     },
     {
