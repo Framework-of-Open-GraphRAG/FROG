@@ -87,7 +87,7 @@ def main(
                 generated_factoid_question, generated_query, res = rag_engine.run(
                     question,
                     use_cot=use_cot,
-                    output_uri=False,
+                    output_uri=True,
                     verbose=0,
                     try_threshold=llm_try_threshold,
                 )

@@ -565,7 +565,7 @@ WIKIDATA_GENERATE_SPARQL_FEW_SHOTS = [
                 "3. To find items that are instances of cats, use the property P31 (instance of).",
                 "4. Retrieve item labels in the user's preferred language using the SERVICE wikibase:label for label localization.",
             ],
-            "sparql": "SELECT ?item ?itemLabel WHERE { ?item wdt:P31 wd:Q146. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } }",
+            "sparql": "SELECT ?item WHERE { ?item wdt:P31 wd:Q146. }",
         },
     },
     {
@@ -588,7 +588,7 @@ WIKIDATA_GENERATE_SPARQL_FEW_SHOTS = [
                 "3. Include the P18 property to retrieve associated images for each cat item.",
                 "4. Use SERVICE wikibase:label to retrieve labels in the appropriate language.",
             ],
-            "sparql": "SELECT ?item ?itemLabel ?pic WHERE { ?item wdt:P31 wd:Q146; wdt:P18 ?pic. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } }",
+            "sparql": "SELECT ?item ?pic WHERE { ?item wdt:P31 wd:Q146; wdt:P18 ?pic. }",
         },
     },
     {
@@ -600,11 +600,11 @@ WIKIDATA_GENERATE_SPARQL_FEW_SHOTS = [
                 "3. Check for articles in Romanian Wikipedia using schema:isPartOf with the value '<https://ro.wikipedia.org/>'.",
                 "4. Retrieve article titles, along with labels in English, and limit results to 300.",
             ],
-            "sparql": "SELECT DISTINCT ?item ?itemLabel ?page_titleRO WHERE { ?item wdt:P31 wd:Q532. ?item wdt:P17 wd:Q212. ?article schema:about ?item; schema:isPartOf <https://ro.wikipedia.org/>; schema:name ?page_titleRO. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } LIMIT 300",
+            "sparql": "SELECT DISTINCT ?item ?page_titleRO WHERE { ?item wdt:P31 wd:Q532. ?item wdt:P17 wd:Q212. ?article schema:about ?item; schema:isPartOf <https://ro.wikipedia.org/>; schema:name ?page_titleRO. } LIMIT 300",
         },
     },
     {
-        "input": "Humans who died on August 25, 2001, on the English Wikipedia, ordered by label",
+        "input": "Humans who died on August 25, 2001, on the English Wikipedia",
         "output": {
             "thoughts": [
                 "1. The query requires identifying humans who died on August 25, 2001, with articles on English Wikipedia.",
@@ -612,7 +612,7 @@ WIKIDATA_GENERATE_SPARQL_FEW_SHOTS = [
                 "3. Retrieve English Wikipedia articles using schema:isPartOf and schema:name.",
                 "4. Use SERVICE wikibase:label for labels and descriptions, and order results by label.",
             ],
-            "sparql": "SELECT ?item ?articlename ?itemLabel ?itemDescription ?sl WHERE { VALUES ?dod { '+2001-08-25'^^xsd:dateTime } ?dod ^wdt:P570 ?item. ?item wikibase:sitelinks ?sl. ?item ^schema:about ?article. ?article schema:isPartOf <https://en.wikipedia.org/>; schema:name ?articlename. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. ?item rdfs:label ?itemLabel. ?item schema:description ?itemDescription. } } ORDER BY ASC(?itemLabel)",
+            "sparql": "SELECT ?item ?articlename ?itemDescription ?sl WHERE { VALUES ?dod { '+2001-08-25'^^xsd:dateTime } ?dod ^wdt:P570 ?item. ?item wikibase:sitelinks ?sl. ?item ^schema:about ?article. ?article schema:isPartOf <https://en.wikipedia.org/>; schema:name ?articlename. }",
         },
     },
     {
@@ -624,7 +624,7 @@ WIKIDATA_GENERATE_SPARQL_FEW_SHOTS = [
                 "3. Retrieve instances of humans with recorded mass, sort by mass in descending order, and limit to 10.",
                 "4. Include labels in multiple languages for better understanding.",
             ],
-            "sparql": "SELECT ?item ?itemLabel ?mass WHERE { { SELECT ?item ?mass WHERE { ?item wdt:P31 wd:Q5; p:P2067/psn:P2067/wikibase:quantityAmount ?mass. } ORDER BY DESC(?mass) LIMIT 10 } SERVICE wikibase:label { bd:serviceParam wikibase:language 'en' } } ORDER BY DESC(?mass)",
+            "sparql": "SELECT ?item ?mass WHERE { { SELECT ?item ?mass WHERE { ?item wdt:P31 wd:Q5; p:P2067/psn:P2067/wikibase:quantityAmount ?mass. } ORDER BY DESC(?mass) LIMIT 10 } } ORDER BY DESC(?mass)",
         },
     },
     {
@@ -648,7 +648,7 @@ WIKIDATA_GENERATE_SPARQL_FEW_SHOTS = [
                 "4. Retrieve the country (P17) and count the number of such cities, grouping and ordering by count.",
                 "5. Use labels in 'ru' (preferred) or 'en' for countries and limit results to 100.",
             ],
-            "sparql": "SELECT ?country ?countryLabel (count(*) AS ?count) WHERE { ?city wdt:P31/wdt:P279* wd:Q515. ?city p:P6 ?statement. ?statement ps:P6 ?mayor. ?mayor wdt:P21 wd:Q6581072. FILTER NOT EXISTS { ?statement pq:P582 ?x }. ?city wdt:P17 ?country. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } GROUP BY ?country ?countryLabel ORDER BY DESC(?count) LIMIT 100",
+            "sparql": "SELECT ?country (count(*) AS ?count) WHERE { ?city wdt:P31/wdt:P279* wd:Q515. ?city p:P6 ?statement. ?statement ps:P6 ?mayor. ?mayor wdt:P21 wd:Q6581072. FILTER NOT EXISTS { ?statement pq:P582 ?x }. ?city wdt:P17 ?country. } GROUP BY ?country ?countryLabel ORDER BY DESC(?count) LIMIT 100",
         },
     },
     {
