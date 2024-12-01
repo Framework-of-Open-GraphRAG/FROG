@@ -6,7 +6,7 @@ from xml.sax.saxutils import escape
 from copy import deepcopy
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
-from langchain_community.llms.huggingface_pipeline import HuggingFacePipeline
+from langchain_huggingface.llms import HuggingFacePipeline
 from langchain_core.output_parsers import StrOutputParser
 from langchain.chains import LLMChain
 from langchain.output_parsers import (
