@@ -102,6 +102,7 @@ class WikidataGraphRAG(BaseGraphRAG):
 - DO NOT include any explanations or apologies in your responses.
 - Remove all stop words, including conjunctions like 'and' and prepositions like 'in' and 'on' from the extracted entity.
 - Make the entity singular, not plural. For instance, if the entity is foods, then transform it into food.
+- DO NOT separate Proper Names, e.g. 'Amazon River' should be returned as 'Amazon River'.
 - Even if there is only one entity, alwayas return as a list.
 
 Based on the query given, extract all entities from it and return the extracted entities in the format below.
@@ -240,6 +241,8 @@ Answer it in the format below.
                 ("ai", "{output}"),
             ]
         )
+        for fs in few_shots:
+            fs["input"] = f"Generate a SPARQL query to answer the question: '{fs['input']}'"
         few_shot_prompt = FewShotChatMessagePromptTemplate(
             example_prompt=example_prompt,
             examples=few_shots,
@@ -249,29 +252,22 @@ Answer it in the format below.
             [
                 (
                     "system",
-                    """You are an assistant trained to generate Wikidata SPARQL queries. Use the provided context to generate a valid SPARQL query.
-- Based on the context given, generate SPARQL query for Wikidata that would answer the user's question!
-- You will also be provided with the entities with its IDs, property candidates. You are only able to generate SPARQL query from the given context. Please determine to use the most appropriate one.
-- DO NOT include any apologies in your responses.
-- DO NOT use LIMIT, ORDER BY, FILTER in the SPARQL query when not explicitly asked in the question!
-- Be sure to generate a SPARQL query that is valid and return all the asked information in the question.
-- Make the query as simple as possible!
-- DO NOT hallucinate the query!
+                    """# INSTRUCTIONS
+You are an assistant trained to generate Wikidata SPARQL queries. Use the provided context to generate a valid SPARQL query. Based on the given entities and properties context, please generate a valid SPARQL query to answer the question! Return only the uri or literal only.
 
-Context:
-- Entities retrieved:
-{resources}
-- Property candidates retrieved:
+# CONTEXT
+- Entity: {resources}
+- Ontology candidates: 
 {ontology}
 
-Based on the query and context given, generate the SPARQL query from it and return the SPARQL query in the format below.
+# INSTRUCTION
 {format_instructions}""",
                 ),
                 few_shot_prompt,
                 MessagesPlaceholder("chat_history"),
                 (
                     "human",
-                    "{input}",
+                    "Generate a SPARQL query to answer the question: '{input}'",
                 ),
             ]
         )

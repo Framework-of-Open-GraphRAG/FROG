@@ -392,7 +392,7 @@ Based on the query given, decide if it is global or local and return the classif
         resources = ""
         for entity in entities:
             resources += f"    - All possible resources URIs for {entity} are "
-            resources += str(self.api.get_entities(entity, k=3)[0])
+            resources += str(self.api.get_entities(entity, k=5)[0])
             resources += "\n"
         if verbose:
             resources_tmp = escape(resources).replace("\n", "<br/>")
