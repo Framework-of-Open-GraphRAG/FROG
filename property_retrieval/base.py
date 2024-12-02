@@ -71,7 +71,7 @@ class BasePropertyRetrieval:
         return result
 
     def _generate_ngrams(self, tokens: list[str]) -> list[str]:
-        max_n = len(tokens)
+        max_n = min(len(tokens), 3)
         result = []
         for n in range(1, max_n + 1):
             n_grams = ngrams(tokens, n)
