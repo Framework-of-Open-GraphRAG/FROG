@@ -529,26 +529,27 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
         if self.print_output:            
             print("Entities: ", extracted_entities)
 
-        if self.always_use_generate_sparql:
-            intent_is_global = True
-            if verbose == 1:
-                display(
-                    HTML(
-                        f"""<code style='color: green;'>Intent is always global because always_use_generate_sparql is set to True</code>"""
-                    )
-                )
-            if self.print_output:                
-                print("Intent is always global because always_use_generate_sparql is set to True")
-        else:
-            intent_is_global = self.classify_intent_is_global(question)
-            if verbose == 1:
-                display(
-                    HTML(
-                        f"""<code style='color: green;'>Intent is global: {escape(str(intent_is_global))}</code>"""
-                    )
-                )
-            if self.print_output:
-                print("Intent is global: ", intent_is_global)
+        # if self.always_use_generate_sparql:
+        #     intent_is_global = True
+        #     if verbose == 1:
+        #         display(
+        #             HTML(
+        #                 f"""<code style='color: green;'>Intent is always global because always_use_generate_sparql is set to True</code>"""
+        #             )
+        #         )
+        #     if self.print_output:                
+        #         print("Intent is always global because always_use_generate_sparql is set to True")
+        # else:
+        #     intent_is_global = self.classify_intent_is_global(question)
+        #     if verbose == 1:
+        #         display(
+        #             HTML(
+        #                 f"""<code style='color: green;'>Intent is global: {escape(str(intent_is_global))}</code>"""
+        #             )
+        #         )
+        #     if self.print_output:
+        #         print("Intent is global: ", intent_is_global)
+        intent_is_global = False
 
         if not intent_is_global and contains_multiple_entities(question):
             intent_is_global = True
