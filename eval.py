@@ -3,6 +3,8 @@ import os
 import argparse
 from tqdm import tqdm
 import warnings
+import sys
+import re
 
 from rag import WikidataGraphRAG, DBPediaGraphRAG
 from few_shots import (
@@ -60,6 +62,7 @@ def main(
             generate_sparql_few_shot_messages=WIKIDATA_GENERATE_SPARQL_FEW_SHOTS,
             always_use_generate_sparql=always_use_generate_sparql,
             use_local_weaviate_client=use_local_weaviate_client,
+            print_output=True,
         )
         print("WikidataGraphRAG initialized.")
     elif knowledge_source == "dbpedia":
@@ -71,17 +74,30 @@ def main(
             generate_sparql_few_shot_messages=DBPEDIA_GENERATE_SPARQL_FEW_SHOTS,
             always_use_generate_sparql=always_use_generate_sparql,
             use_local_weaviate_client=use_local_weaviate_client,
+            print_output=True,
         )
         print("DBPediaGraphRAG initialized.")
     else:
         raise ValueError("Invalid knowledge source.")
 
     os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
+    detail_log_dir = log_file_path.split(".")[0]
+    os.makedirs(detail_log_dir, exist_ok=True)
     with open(log_file_path, "w") as log_file:
         for i, row in tqdm(test_df.iterrows(), total=len(test_df)):
+            log_file.write(f"QUESTION {i+1}\n")
+            question = row["query_name"]
+
+            orig_stdout = sys.stdout
+            f = open(
+                os.path.join(
+                    detail_log_dir,
+                    f"{i+1} {re.sub(r'[^a-zA-Z0-9]', '', question)}.txt",
+                ),
+                "w",
+            )
+            sys.stdout = f
             try:
-                log_file.write(f"QUESTION {i+1}\n")
-                question = row["query_name"]
                 true_query = row[f"cleaned_{knowledge_source}"]
                 ground_truth = rag_engine.api.execute_sparql_to_df(true_query)
                 generated_factoid_question, generated_query, res = rag_engine.run(
@@ -101,6 +117,9 @@ def main(
             except Exception as e:
                 log_file.write("ERROR: " + str(e) + "\n")
                 score = 0
+            sys.stdout = orig_stdout
+            f.close()
+
             scores.append(score)
             current_avg_score = sum(scores) / len(scores)
             log_file.write(f"Current Average Score: {current_avg_score}\n")

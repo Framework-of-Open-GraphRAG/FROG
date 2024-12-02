@@ -47,10 +47,12 @@ class BaseGraphRAG:
         use_local_model: str = True,
         max_new_tokens: int = 1500,
         always_use_generate_sparql: bool = False,
+        print_output: bool = False,
     ) -> None:
         self.model_name = model_name
         self.device = device
         self.use_local_model = use_local_model
+        self.print_output = print_output
 
         # To be defined in child class
         self.api = None
@@ -58,7 +60,7 @@ class BaseGraphRAG:
         self.property_retrieval = None
 
         model_kwargs = {
-            "temperature": 0,
+            "do_sample": False,
             "device": self.device,
             "max_new_tokens": max_new_tokens,
             "return_full_text": False,
@@ -116,6 +118,8 @@ class BaseGraphRAG:
                 display(
                     HTML(f"""<code style='color: red;'>{(escape(str(e)))}</code>""")
                 )
+                if self.print_output:
+                    print(f"Error: {e}")
                 try_threshold -= 1
 
                 try:
@@ -130,6 +134,8 @@ class BaseGraphRAG:
                     display(
                         HTML(f"""<code style='color: red;'>{(escape(str(e)))}</code>""")
                     )
+                    if self.print_output:
+                        print(f"Error: {e}")
                     break
 
         messages.append(AIMessage(content=completion))
@@ -395,6 +401,8 @@ Based on the query given, decide if it is global or local and return the classif
                     f"""<code style='color: green;'>Retrieved Resources: <br/>{resources_tmp}</code>"""
                 )
             )
+        if self.print_output:
+            print("Retrieved Resources: ", resources)
 
         related_properties = self.generate_related_properties(question)[:3]
         for i in range(len(related_properties)):
@@ -405,6 +413,8 @@ Based on the query given, decide if it is global or local and return the classif
                     f"""<code style='color: green;'>Generated Related Properties: {escape(str(related_properties))}</code>"""
                 )
             )
+        if self.print_output:
+            print("Generated Related Properties: ", related_properties)
 
         ontology = self.property_retrieval.get_related_candidates(
             question, property_candidates=related_properties, threshold=0.6
@@ -417,6 +427,8 @@ Based on the query given, decide if it is global or local and return the classif
                     f"""<code style='color: green;'>Retrieved Ontology: <br/>{properties_context_tmp}</code>"""
                 )
             )
+        if self.print_output:
+            print("Retrieved Ontology: ", properties_context)
 
         final_prompt = chat_prompt_template.partial(
             resources=resources,
@@ -445,6 +457,8 @@ Based on the query given, decide if it is global or local and return the classif
                         f"""<code style='color: green;'>Sorry, we are not supported with this kind of query yet.</code>"""
                     )
                 )
+                if self.print_output:
+                    print("Sorry, we are not supported with this kind of query yet.")
                 return None, []
             if verbose:
                 if use_cot:
@@ -454,10 +468,16 @@ Based on the query given, decide if it is global or local and return the classif
                     )
                 sparql_tmp = escape(sparql_query_result.sparql).replace("\n", "<br/>")
                 display(HTML(f"""<code style='color: green;'>{sparql_tmp}</code>"""))
+            if self.print_output:
+                if use_cot:
+                    print("Thoughts: ", sparql_query_result.thoughts)
+                print("Generated SPARQL: ", sparql_query_result.sparql)
             try:
                 result, err = self.api.execute_sparql(sparql_query_result.sparql)
             except Exception as e:
                 display(HTML(f"""<code style='color: red;'>{e}</code>"""))
+                if self.print_output:
+                    print("Error: ", e)
                 result, err = [], str(e)
 
             if len(result) == 0 and try_threshold > 0:
@@ -467,7 +487,9 @@ Based on the query given, decide if it is global or local and return the classif
                     display(
                         HTML(f"""<code style='color: green;'>Trying again...</code>""")
                     )
-
+                if self.print_output:
+                    print("Trying again...")
+                
                 curr_question = f"""The SPARQL query you generated above to answer '{question}' is wrong {f"and it produces this error: '{err}'" if err is not None else "because it produces empty results"}, please fix the query and generate SPARQL again! You may try to use another property or restucture the query.
 DO NOT include any explanations or apologies in your responses. No pre-amble. Make sure to still answer using chain of thoughts and structure based on the format instruction defined in system prompt."""
             else:
@@ -492,6 +514,8 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                         f"""<code style='color: green;'>Factoid Question: {escape(factoid_question)}</code>"""
                     )
                 )
+            if self.print_output:
+                print("Factoid Question: ", factoid_question)
         else:
             factoid_question = question
 
@@ -502,6 +526,8 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                     f"""<code style='color: green;'>Entities: {escape(str(extracted_entities))}</code>"""
                 )
             )
+        if self.print_output:            
+            print("Entities: ", extracted_entities)
 
         if self.always_use_generate_sparql:
             intent_is_global = True
@@ -511,6 +537,8 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                         f"""<code style='color: green;'>Intent is always global because always_use_generate_sparql is set to True</code>"""
                     )
                 )
+            if self.print_output:                
+                print("Intent is always global because always_use_generate_sparql is set to True")
         else:
             intent_is_global = self.classify_intent_is_global(question)
             if verbose == 1:
@@ -519,6 +547,8 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                         f"""<code style='color: green;'>Intent is global: {escape(str(intent_is_global))}</code>"""
                     )
                 )
+            if self.print_output:
+                print("Intent is global: ", intent_is_global)
 
         if not intent_is_global and contains_multiple_entities(question):
             intent_is_global = True
@@ -528,6 +558,8 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                         f"""<code style='color: green;'>Use SPARQL generation because the question contains multiple entities.</code>"""
                     )
                 )
+            if self.print_output:   
+                print("Use SPARQL generation because the question contains multiple entities.")
 
         if not intent_is_global:
             entity = extracted_entities[0]
@@ -538,6 +570,8 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                         f"""<code style='color: green;'>Retrieved Resources: {escape(str(retrieved_resources))}</code>"""
                     )
                 )
+            if self.print_output:
+                print("Retrieved Resources: ", retrieved_resources)
             entity_uri = self.get_most_appropriate_entity_uri(
                 entity, factoid_question, retrieved_resources
             )
@@ -547,6 +581,8 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                         f"""<code style='color: green;'>Entity URI: {escape(entity_uri)}</code>"""
                     )
                 )
+            if self.print_output:
+                print("Entity URI: ", entity_uri)
 
             is_error = False
             try:
@@ -559,12 +595,16 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                             f"""<code style='color: green;'>Result: {escape(str(result))}<br/>Similarities: {escape(str(similarities))}</code>"""
                         )
                     )
+                if self.print_output:
+                    print("Result: ", result, "Similarities: ", similarities)
             except Exception as e:
                 is_error = True
                 if verbose == 1:
                     display(
                         HTML(f"""<code style='color: red;'>{escape(str(e))}</code>""")
                     )
+                if self.print_output:
+                    print("Error: ", e)
             if not is_error and similarities >= 0.65 and len(result) > 0:
                 return factoid_question, "", result
 
@@ -617,6 +657,8 @@ Answer:""",
             display(
                 HTML(f"""<code style='color: green;'>{escape(str(context))}</code>""")
             )
+        if self.print_output:
+            print(context)
 
         final_prompt = final_prompt.partial(context=context_str)
 

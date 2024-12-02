@@ -38,9 +38,15 @@ class DBPediaGraphRAG(BaseGraphRAG):
         generate_sparql_few_shot_messages: Optional[List[dict]] = None,
         always_use_generate_sparql: bool = False,
         use_local_weaviate_client: bool = True,
+        print_output: bool = False,
     ) -> None:
         super().__init__(
-            model_name, device, use_local_model, max_new_tokens, always_use_generate_sparql
+            model_name,
+            device,
+            use_local_model,
+            max_new_tokens,
+            always_use_generate_sparql,
+            print_output,
         )
         self.api = DBPediaAPI()
         self.verbalization = DBPediaVerbalization(
