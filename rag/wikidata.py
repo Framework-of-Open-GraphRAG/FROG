@@ -92,7 +92,7 @@ class WikidataGraphRAG(BaseGraphRAG):
                 (
                     "system",
                     """- You are an entity extractor.
-- Extract the entities from the given question! DO NOT hallucinate and only provide entities that are present in the question.
+- Extract entities from the given question! DO NOT hallucinate and only provide entities that are present in the question.
 - These entities usage is to find the most appropriate entity ID from wikidata to be used in SPARQL queries.
 - If there is no entity in the question, return empty list.
 - Sort the entities based on the importance of the entity in the question.
@@ -104,7 +104,7 @@ class WikidataGraphRAG(BaseGraphRAG):
 - Make the entity singular, not plural. For instance, if the entity is foods, then transform it into food.
 - Even if there is only one entity, alwayas return as a list.
 
-Based on the query given, extract the entities from it and return the extracted entities in the format below.
+Based on the query given, extract all entities from it and return the extracted entities in the format below.
 {format_instructions}""",
                 ),
                 few_shot_prompt,
@@ -249,20 +249,14 @@ Answer it in the format below.
             [
                 (
                     "system",
-                    """You are a Wikidata SPARQL generator.
+                    """You are an assistant trained to generate Wikidata SPARQL queries. Use the provided context to generate a valid SPARQL query.
 - Based on the context given, generate SPARQL query for Wikidata that would answer the user's question!
 - You will also be provided with the entities with its IDs, property candidates. You are only able to generate SPARQL query from the given context. Please determine to use the most appropriate one.
-- To generate the SPARQL, you can utilize the information from the given Entity IDs. You do not have to use it, but if it can help you to determine the ID of the entity, you can use it.
-- USE the URI from resources given if you need to query more specific entity. On the other hand, USE classes from ontology if it's more general.
 - DO NOT include any apologies in your responses.
-- ONLY generate the Thoughts and SPARQL query once! DO NOT try to generate the Question!
 - DO NOT use LIMIT, ORDER BY, FILTER in the SPARQL query when not explicitly asked in the question!
-- DO NOT aggregation function like COUNT, AVG, etc in the SPARQL query when not asked in the question!
 - Be sure to generate a SPARQL query that is valid and return all the asked information in the question.
 - Make the query as simple as possible!
-- DO NOT hallucinate the thoughts and query!
-- Always use english ('en') language for labels in all columns as default unless explicitly asked to use another language.
-- Once again, always use english as the label language in all columns if not explicitly asked to use another language.
+- DO NOT hallucinate the query!
 
 Context:
 - Entities retrieved:

@@ -30,10 +30,6 @@ EXTRACT_ENTITY_FEW_SHOTS = [
         "output": {"names": ["Continent", "Indonesia"]},
     },
     {
-        "input": "how fast is it?",
-        "output": {"names": []},
-    },
-    {
         "input": "Largest cities of the world",
         "output": {"names": ["City"]},
     },

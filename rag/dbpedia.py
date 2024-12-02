@@ -262,20 +262,16 @@ Answer it in the format below.
             [
                 (
                     "system",
-                    """You are a DBPedia SPARQL generator.
+                    """You are an assistant trained to generate DBPedia SPARQL queries. Use the provided context to generate a valid SPARQL query.
 - Based on the context given, generate SPARQL query for DBPedia that would answer the user's question!
 - You will also be provided with the resources with its URI, ontology candidates consisting of classes, object properties, and data properties. You are only able to generate SPARQL query from the given context. Please determine to use the most appropriate one.
 - To generate the SPARQL, you can utilize the information from the given Entity URIs. You do not have to use it, but if it can help you to determine the URI of the entity, you can use it.
 - USE the URI from resources given if you need to query more specific entity. On the other hand, USE classes from ontology if it's more general.
 - DO NOT include any apologies in your responses.
-- ONLY generate the Thoughts and SPARQL query once! DO NOT try to generate the Question!
 - DO NOT use LIMIT, ORDER BY, FILTER in the SPARQL query when not explicitly asked in the question!
-- DO NOT aggregation function like COUNT, AVG, etc in the SPARQL query when not asked in the question!
 - Be sure to generate a SPARQL query that is valid and return all the asked information in the question.
 - Make the query as simple as possible!
-- DO NOT hallucinate the thoughts and query!
-- Always use english ('en') language for labels in all columns as default unless explicitly asked to use another language.
-- Once again, always use english as the label language in all columns if not explicitly asked to use another language.
+- DO NOT hallucinate the query!
 
 Context:
 - Resources retrieved:
