@@ -379,21 +379,21 @@ Based on the query given, decide if it is global or local and return the classif
         verbose: bool = False,
         try_threshold: int = 10,
     ) -> tuple[str, list[dict[str, str]]]:
-        # class SPARQLQueryResults(BaseModel):
-        #     """Represents the chain of thoughts and the SPARQL query generated to answer the user's question."""
+        class SPARQLQueryResults(BaseModel):
+            """Represents the chain of thoughts and the SPARQL query generated to answer the user's question."""
 
-        #     if use_cot:
-        #         thoughts: List[str] = Field(
-        #             ...,
-        #             description="Thoughts to generate SPARQL query to answer the user's question.",
-        #         )
-        #     sparql: str = Field(
-        #         ...,
-        #         description="SPARQL query to answer the user's question.",
-        #     )
+            if use_cot:
+                thoughts: List[str] = Field(
+                    ...,
+                    description="Thoughts to generate SPARQL query to answer the user's question.",
+                )
+            sparql: str = Field(
+                ...,
+                description="SPARQL query to answer the user's question.",
+            )
 
-        # output_parser = PydanticOutputParser(pydantic_object=SPARQLQueryResults)
-        # format_instructions = output_parser.get_format_instructions()
+        output_parser = PydanticOutputParser(pydantic_object=SPARQLQueryResults)
+        format_instructions = output_parser.get_format_instructions()
 
         resources = ""
         for entity in entities:
@@ -439,48 +439,48 @@ Based on the query given, decide if it is global or local and return the classif
         final_prompt = chat_prompt_template.partial(
             resources=resources,
             ontology=properties_context,
-            # format_instructions=format_instructions,
+            format_instructions=format_instructions,
         )
         llm_chain = final_prompt | self.chat_model | StrOutputParser()
         messages = []
 
         curr_question = question
         while True:
-            # sparql_query_result, messages = self.handle_parsing_error(
-            #     llm_chain,
-            #     output_parser,
-            #     messages,
-            #     curr_question,
-            #     try_threshold=try_threshold,
-            # )
-            response = llm_chain.invoke(
-                {"chat_history": messages, "input": curr_question}
+            sparql_query_result, messages = self.handle_parsing_error(
+                llm_chain,
+                output_parser,
+                messages,
+                curr_question,
+                try_threshold=try_threshold,
             )
-            messages.append(HumanMessage(content=curr_question))
-            messages.append(AIMessage(content=response))
-            sparql_response = self._extract_query(response)
-            torch.cuda.empty_cache()
-            gc.collect()
+            # response = llm_chain.invoke(
+            #     {"chat_history": messages, "input": curr_question}
+            # )
+            # messages.append(HumanMessage(content=curr_question))
+            # messages.append(AIMessage(content=response))
+            # sparql_response = self._extract_query(response)
+            # torch.cuda.empty_cache()
+            # gc.collect()
             if verbose:
-                # if use_cot:
-                #     thoughts_tmp = escape(str(sparql_query_result.thoughts))
-                #     display(
-                #         HTML(f"""<code style='color: green;'>{thoughts_tmp}</code>""")
-                #     )
-                # sparql_tmp = escape(sparql_query_result.sparql).replace("\n", "<br/>")
-                sparql_tmp = escape(response).replace("\n", "<br/>")
+                if use_cot:
+                    thoughts_tmp = escape(str(sparql_query_result.thoughts))
+                    display(
+                        HTML(f"""<code style='color: green;'>{thoughts_tmp}</code>""")
+                    )
+                sparql_tmp = escape(sparql_query_result.sparql).replace("\n", "<br/>")
+                # sparql_tmp = escape(response).replace("\n", "<br/>")
                 display(HTML(f"""<code style='color: green;'>{sparql_tmp}</code>"""))
             if self.print_output:
-                # if use_cot:
-                #     print("Thoughts: ", sparql_query_result.thoughts)
-                # print("Generated SPARQL: ", sparql_query_result.sparql)
-                print("Generated Response: ", response)
+                if use_cot:
+                    print("Thoughts: ", sparql_query_result.thoughts)
+                print("Generated SPARQL: ", sparql_query_result.sparql)
+                # print("Generated Response: ", response)
             if (
-                sparql_response
-                == ""
-                # sparql_query_result is None
-                # or sparql_query_result.sparql == ""
-                # or sparql_query_result.sparql is None
+                # sparql_response
+                # == ""
+                sparql_query_result is None
+                or sparql_query_result.sparql == ""
+                or sparql_query_result.sparql is None
             ):
                 display(
                     HTML(
@@ -491,7 +491,7 @@ Based on the query given, decide if it is global or local and return the classif
                     print("Sorry, we are not supported with this kind of query yet.")
                 return None, []
             try:
-                result, err = self.api.execute_sparql(sparql_response)
+                result, err = self.api.execute_sparql(sparql_query_result.sparql)
             except Exception as e:
                 display(HTML(f"""<code style='color: red;'>{e}</code>"""))
                 if self.print_output:
@@ -516,7 +516,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
             else:
                 # success
                 break
-        return sparql_response, result
+        return sparql_query_result.sparql, result
 
     def run(
         self,
@@ -633,11 +633,11 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                 return factoid_question, "", result
 
         few_shots = deepcopy(self.generate_sparql_few_shot_messages)
-        # if not use_cot:
-        #     for fs in few_shots:
-        #         output = json.loads(fs["output"])
-        #         output.pop("thoughts", None)
-        #         fs["output"] = json.dumps(output, indent=4)
+        if not use_cot:
+            for fs in few_shots:
+                output = json.loads(fs["output"])
+                output.pop("thoughts", None)
+                fs["output"] = json.dumps(output, indent=4)
 
         query, result = self.generate_sparql(
             factoid_question,

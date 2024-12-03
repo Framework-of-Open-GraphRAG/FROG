@@ -256,7 +256,10 @@ You are an assistant trained to generate Wikidata SPARQL queries. Use the provid
 # CONTEXT
 - Entity: {resources}
 - Ontology candidates: 
-{ontology}""",
+{ontology}
+
+# FORMAT INSTRUCTIONS
+{format_instructions}""",
                 ),
                 few_shot_prompt,
                 MessagesPlaceholder("chat_history"),
