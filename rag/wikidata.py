@@ -238,11 +238,9 @@ Answer it in the format below.
         example_prompt = ChatPromptTemplate.from_messages(
             [
                 ("human", "{input}"),
-                ("ai", "{output}"),
+                ("ai", "Generate a SPARQL query to answer the question: {output}"),
             ]
         )
-        for fs in few_shots:
-            fs["input"] = f"Generate a SPARQL query to answer the question: '{fs['input']}'"
         few_shot_prompt = FewShotChatMessagePromptTemplate(
             example_prompt=example_prompt,
             examples=few_shots,
@@ -253,15 +251,12 @@ Answer it in the format below.
                 (
                     "system",
                     """# INSTRUCTIONS
-You are an assistant trained to generate Wikidata SPARQL queries. Use the provided context to generate a valid SPARQL query. Based on the given entities and properties context, please generate a valid SPARQL query to answer the question! Return only the uri or literal only.
+You are an assistant trained to generate Wikidata SPARQL queries. Use the provided context to generate a valid SPARQL query. Based on the given entities and properties context, please generate a valid SPARQL query to answer the question! Return only the uri or literal only. Always wrap the generated SPARQL query in triple backticks (```).
 
 # CONTEXT
 - Entity: {resources}
 - Ontology candidates: 
-{ontology}
-
-# INSTRUCTION
-{format_instructions}""",
+{ontology}""",
                 ),
                 few_shot_prompt,
                 MessagesPlaceholder("chat_history"),

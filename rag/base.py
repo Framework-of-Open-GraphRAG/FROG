@@ -1,4 +1,4 @@
-import torch, os, json, gc
+import torch, os, json, gc, re
 from IPython.display import HTML, display
 from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
@@ -364,6 +364,12 @@ Based on the query given, decide if it is global or local and return the classif
 
         return properties_context
 
+    def _extract_query(self, text: str) -> str:
+        match = re.search(r"```(.*?)```", text, re.DOTALL)
+        if match:
+            return match.group(1).strip()
+        return ""
+
     def generate_sparql(
         self,
         question: str,
@@ -373,21 +379,21 @@ Based on the query given, decide if it is global or local and return the classif
         verbose: bool = False,
         try_threshold: int = 10,
     ) -> tuple[str, list[dict[str, str]]]:
-        class SPARQLQueryResults(BaseModel):
-            """Represents the chain of thoughts and the SPARQL query generated to answer the user's question."""
+        # class SPARQLQueryResults(BaseModel):
+        #     """Represents the chain of thoughts and the SPARQL query generated to answer the user's question."""
 
-            if use_cot:
-                thoughts: List[str] = Field(
-                    ...,
-                    description="Thoughts to generate SPARQL query to answer the user's question.",
-                )
-            sparql: str = Field(
-                ...,
-                description="SPARQL query to answer the user's question.",
-            )
+        #     if use_cot:
+        #         thoughts: List[str] = Field(
+        #             ...,
+        #             description="Thoughts to generate SPARQL query to answer the user's question.",
+        #         )
+        #     sparql: str = Field(
+        #         ...,
+        #         description="SPARQL query to answer the user's question.",
+        #     )
 
-        output_parser = PydanticOutputParser(pydantic_object=SPARQLQueryResults)
-        format_instructions = output_parser.get_format_instructions()
+        # output_parser = PydanticOutputParser(pydantic_object=SPARQLQueryResults)
+        # format_instructions = output_parser.get_format_instructions()
 
         resources = ""
         for entity in entities:
@@ -433,24 +439,48 @@ Based on the query given, decide if it is global or local and return the classif
         final_prompt = chat_prompt_template.partial(
             resources=resources,
             ontology=properties_context,
-            format_instructions=format_instructions,
+            # format_instructions=format_instructions,
         )
         llm_chain = final_prompt | self.chat_model | StrOutputParser()
         messages = []
 
         curr_question = question
         while True:
-            sparql_query_result, messages = self.handle_parsing_error(
-                llm_chain,
-                output_parser,
-                messages,
-                curr_question,
-                try_threshold=try_threshold,
+            # sparql_query_result, messages = self.handle_parsing_error(
+            #     llm_chain,
+            #     output_parser,
+            #     messages,
+            #     curr_question,
+            #     try_threshold=try_threshold,
+            # )
+            response = llm_chain.invoke(
+                {"chat_history": messages, "input": curr_question}
             )
+            messages.append(HumanMessage(content=curr_question))
+            messages.append(AIMessage(content=response))
+            sparql_response = self._extract_query(response)
+            torch.cuda.empty_cache()
+            gc.collect()
+            if verbose:
+                # if use_cot:
+                #     thoughts_tmp = escape(str(sparql_query_result.thoughts))
+                #     display(
+                #         HTML(f"""<code style='color: green;'>{thoughts_tmp}</code>""")
+                #     )
+                # sparql_tmp = escape(sparql_query_result.sparql).replace("\n", "<br/>")
+                sparql_tmp = escape(response).replace("\n", "<br/>")
+                display(HTML(f"""<code style='color: green;'>{sparql_tmp}</code>"""))
+            if self.print_output:
+                # if use_cot:
+                #     print("Thoughts: ", sparql_query_result.thoughts)
+                # print("Generated SPARQL: ", sparql_query_result.sparql)
+                print("Generated Response: ", response)
             if (
-                sparql_query_result is None
-                or sparql_query_result.sparql == ""
-                or sparql_query_result.sparql is None
+                sparql_response
+                == ""
+                # sparql_query_result is None
+                # or sparql_query_result.sparql == ""
+                # or sparql_query_result.sparql is None
             ):
                 display(
                     HTML(
@@ -460,27 +490,18 @@ Based on the query given, decide if it is global or local and return the classif
                 if self.print_output:
                     print("Sorry, we are not supported with this kind of query yet.")
                 return None, []
-            if verbose:
-                if use_cot:
-                    thoughts_tmp = escape(str(sparql_query_result.thoughts))
-                    display(
-                        HTML(f"""<code style='color: green;'>{thoughts_tmp}</code>""")
-                    )
-                sparql_tmp = escape(sparql_query_result.sparql).replace("\n", "<br/>")
-                display(HTML(f"""<code style='color: green;'>{sparql_tmp}</code>"""))
-            if self.print_output:
-                if use_cot:
-                    print("Thoughts: ", sparql_query_result.thoughts)
-                print("Generated SPARQL: ", sparql_query_result.sparql)
             try:
-                result, err = self.api.execute_sparql(sparql_query_result.sparql)
+                result, err = self.api.execute_sparql(sparql_response)
             except Exception as e:
                 display(HTML(f"""<code style='color: red;'>{e}</code>"""))
                 if self.print_output:
                     print("Error: ", e)
                 result, err = [], str(e)
 
-            if len(result) == 0 and try_threshold > 0:
+            if (
+                len(result) == 0
+                or (len(result) == 1 and list(result[0].values())[0] == "0")
+            ) and try_threshold > 0:
                 # failed
                 try_threshold -= 1
                 if verbose:
@@ -489,13 +510,13 @@ Based on the query given, decide if it is global or local and return the classif
                     )
                 if self.print_output:
                     print("Trying again...")
-                
+
                 curr_question = f"""The SPARQL query you generated above to answer '{question}' is wrong {f"and it produces this error: '{err}'" if err is not None else "because it produces empty results"}, please fix the query and generate SPARQL again! You may try to use another property or restucture the query.
 DO NOT include any explanations or apologies in your responses. No pre-amble. Make sure to still answer using chain of thoughts and structure based on the format instruction defined in system prompt."""
             else:
                 # success
                 break
-        return sparql_query_result.sparql, result
+        return sparql_response, result
 
     def run(
         self,
@@ -526,7 +547,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                     f"""<code style='color: green;'>Entities: {escape(str(extracted_entities))}</code>"""
                 )
             )
-        if self.print_output:            
+        if self.print_output:
             print("Entities: ", extracted_entities)
 
         # if self.always_use_generate_sparql:
@@ -537,7 +558,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
         #                 f"""<code style='color: green;'>Intent is always global because always_use_generate_sparql is set to True</code>"""
         #             )
         #         )
-        #     if self.print_output:                
+        #     if self.print_output:
         #         print("Intent is always global because always_use_generate_sparql is set to True")
         # else:
         #     intent_is_global = self.classify_intent_is_global(question)
@@ -549,7 +570,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
         #         )
         #     if self.print_output:
         #         print("Intent is global: ", intent_is_global)
-        intent_is_global = False
+        intent_is_global = self.always_use_generate_sparql
 
         if not intent_is_global and contains_multiple_entities(question):
             intent_is_global = True
@@ -559,12 +580,14 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                         f"""<code style='color: green;'>Use SPARQL generation because the question contains multiple entities.</code>"""
                     )
                 )
-            if self.print_output:   
-                print("Use SPARQL generation because the question contains multiple entities.")
+            if self.print_output:
+                print(
+                    "Use SPARQL generation because the question contains multiple entities."
+                )
 
         if not intent_is_global:
             entity = extracted_entities[0]
-            retrieved_resources = self.api.get_entities(entity, k=3)[0]
+            retrieved_resources = self.api.get_entities(entity, k=5)[0]
             if verbose == 1:
                 display(
                     HTML(
@@ -610,11 +633,11 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                 return factoid_question, "", result
 
         few_shots = deepcopy(self.generate_sparql_few_shot_messages)
-        if not use_cot:
-            for fs in few_shots:
-                output = json.loads(fs["output"])
-                output.pop("thoughts", None)
-                fs["output"] = json.dumps(output, indent=4)
+        # if not use_cot:
+        #     for fs in few_shots:
+        #         output = json.loads(fs["output"])
+        #         output.pop("thoughts", None)
+        #         fs["output"] = json.dumps(output, indent=4)
 
         query, result = self.generate_sparql(
             factoid_question,
