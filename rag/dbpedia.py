@@ -250,8 +250,8 @@ Answer it in the format below.
     ) -> tuple[str, list[dict[str, str]]]:
         example_prompt = ChatPromptTemplate.from_messages(
             [
-                ("human", "{input}"),
-                ("ai", "Generate a SPARQL query to answer the question: '{output}'"),
+                ("human", "Generate a SPARQL query to answer the question: '{input}'"),
+                ("ai", "{output}"),
             ]
         )
         few_shot_prompt = FewShotChatMessagePromptTemplate(
