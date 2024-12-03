@@ -264,7 +264,7 @@ Answer it in the format below.
                 (
                     "system",
                     """# INSTRUCTIONS
-You are an assistant trained to generate DBPedia SPARQL queries. Use the provided context to generate a valid SPARQL query. Based on the given entities and properties context, please generate a valid SPARQL query to answer the question! Use the URI from resources given if you need to query more specific entity. On the other hand, USE classes from ontology if it's more general. Return only the uri or literal only. Always wrap the generated SPARQL query in triple backticks (```).
+You are an assistant trained to generate DBPedia SPARQL queries. Use the provided context to generate a valid SPARQL query. Based on the given entities and properties context, please generate a valid SPARQL query to answer the question! Use the URI from resources given if you need to query more specific entity. On the other hand, USE classes from ontology if it's more general. Return only the uri or literal only. Always generate following the format instruction.
 
 # CONTEXT
 - Entity: {resources}
