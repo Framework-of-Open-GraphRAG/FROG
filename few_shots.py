@@ -38,6 +38,10 @@ EXTRACT_ENTITY_FEW_SHOTS = [
         "output": {"names": ["Fictional character"]},
     },
     {
+        "input": "Number of actors",
+        "output": {"names": ["Actors"]},
+    },
+    {
         "input": "WWII battle durations",
         "output": {"names": ["WWII", "battle"]},
     },
@@ -364,113 +368,309 @@ DBPEDIA_GENERATE_SPARQL_FEW_SHOTS = [
 ]
 
 
+# WIKIDATA_GENERATE_SPARQL_FEW_SHOTS = [
+#     {
+#         "input": "Cats",
+#         "output": {
+#             "thoughts": [
+#                 "1. The question asks for information about cats, requiring identification of relevant entities and properties in Wikidata.",
+#                 "2. The entity 'cat' corresponds to Q146 in Wikidata.",
+#                 "3. To find items that are instances of cats, use the property P31 (instance of).",
+#                 "4. Retrieve item labels in the user's preferred language using the SERVICE wikibase:label for label localization.",
+#             ],
+#             "sparql": "SELECT ?item ?itemLabel WHERE { ?item wdt:P31 wd:Q146. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } }",
+#         },
+#     },
+#     {
+#         "input": "Picture of Cats",
+#         "output": {
+#             "thoughts": [
+#                 "1. The query is focused on retrieving an image associated with the concept of 'cats' in Wikidata.",
+#                 "2. The entity for 'cats' is Q146, and the property P18 is used to denote images.",
+#                 "3. Retrieve the image linked to Q146 using the P18 property.",
+#             ],
+#             "sparql": "SELECT ?image WHERE { wd:Q146 wdt:P18 ?image. }",
+#         },
+#     },
+#     {
+#         "input": "Cats, with pictures",
+#         "output": {
+#             "thoughts": [
+#                 "1. The question asks for information about cats, including their pictures.",
+#                 "2. Identify items classified as cats using the P31 property with the value Q146.",
+#                 "3. Include the P18 property to retrieve associated images for each cat item.",
+#                 "4. Use SERVICE wikibase:label to retrieve labels in the appropriate language.",
+#             ],
+#             "sparql": "SELECT ?item ?itemLabel ?pic WHERE { ?item wdt:P31 wd:Q146; wdt:P18 ?pic. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } }",
+#         },
+#     },
+#     {
+#         "input": "Titles of articles about Ukrainian villages on Romanian Wikipedia",
+#         "output": {
+#             "thoughts": [
+#                 "1. The goal is to find articles about Ukrainian villages that exist on the Romanian Wikipedia.",
+#                 "2. Villages are represented by Q532, and Ukraine is represented by Q212 in Wikidata.",
+#                 "3. Check for articles in Romanian Wikipedia using schema:isPartOf with the value '<https://ro.wikipedia.org/>'.",
+#                 "4. Retrieve article titles, along with labels in English, and limit results to 300.",
+#             ],
+#             "sparql": "SELECT DISTINCT ?item ?itemLabel ?page_titleRO WHERE { ?item wdt:P31 wd:Q532. ?item wdt:P17 wd:Q212. ?article schema:about ?item; schema:isPartOf <https://ro.wikipedia.org/>; schema:name ?page_titleRO. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } LIMIT 300",
+#         },
+#     },
+#     {
+#         "input": "Humans who died on August 25, 2001, on the English Wikipedia, ordered by label",
+#         "output": {
+#             "thoughts": [
+#                 "1. The query requires identifying humans who died on August 25, 2001, with articles on English Wikipedia.",
+#                 "2. Use the property P570 (date of death) to filter by the specified date.",
+#                 "3. Retrieve English Wikipedia articles using schema:isPartOf and schema:name.",
+#                 "4. Use SERVICE wikibase:label for labels and descriptions, and order results by label.",
+#             ],
+#             "sparql": "SELECT ?item ?articlename ?itemLabel ?itemDescription ?sl WHERE { VALUES ?dod { '+2001-08-25'^^xsd:dateTime } ?dod ^wdt:P570 ?item. ?item wikibase:sitelinks ?sl. ?item ^schema:about ?article. ?article schema:isPartOf <https://en.wikipedia.org/>; schema:name ?articlename. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. ?item rdfs:label ?itemLabel. ?item schema:description ?itemDescription. } } ORDER BY ASC(?itemLabel)",
+#         },
+#     },
+#     {
+#         "input": "The top 10 heaviest humans",
+#         "output": {
+#             "thoughts": [
+#                 "1. The goal is to list the top 10 heaviest humans by recorded mass.",
+#                 "2. Humans are represented by Q5, and their mass is denoted by property P2067.",
+#                 "3. Retrieve instances of humans with recorded mass, sort by mass in descending order, and limit to 10.",
+#                 "4. Include labels in multiple languages for better understanding.",
+#             ],
+#             "sparql": "SELECT ?item ?itemLabel ?mass WHERE { { SELECT ?item ?mass WHERE { ?item wdt:P31 wd:Q5; p:P2067/psn:P2067/wikibase:quantityAmount ?mass. } ORDER BY DESC(?mass) LIMIT 10 } SERVICE wikibase:label { bd:serviceParam wikibase:language 'en' } } ORDER BY DESC(?mass)",
+#         },
+#     },
+#     {
+#         "input": "Number of humans in Wikidata",
+#         "output": {
+#             "thoughts": [
+#                 "1. The question asks for the total number of humans recorded in Wikidata.",
+#                 "2. Humans are represented by Q5, and items classified as humans can be retrieved using the P31 property (instance of).",
+#                 "3. Use COUNT(*) to calculate the total number of items matching this criterion.",
+#             ],
+#             "sparql": "SELECT (COUNT(*) AS ?count) WHERE { ?item wdt:P31 wd:Q5. }",
+#         },
+#     },
+#     {
+#         "input": "List of countries ordered by the number of their cities with a female mayor",
+#         "output": {
+#             "thoughts": [
+#                 "1. The goal is to list countries by the number of cities with female mayors.",
+#                 "2. Identify cities (Q515 or subclasses) and their head of government (P6).",
+#                 "3. Ensure the head of government is female (Q6581072) and filter out entries with an end date (P582).",
+#                 "4. Retrieve the country (P17) and count the number of such cities, grouping and ordering by count.",
+#                 "5. Use labels in 'ru' (preferred) or 'en' for countries and limit results to 100.",
+#             ],
+#             "sparql": "SELECT ?country ?countryLabel (count(*) AS ?count) WHERE { ?city wdt:P31/wdt:P279* wd:Q515. ?city p:P6 ?statement. ?statement ps:P6 ?mayor. ?mayor wdt:P21 wd:Q6581072. FILTER NOT EXISTS { ?statement pq:P582 ?x }. ?city wdt:P17 ?country. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } GROUP BY ?country ?countryLabel ORDER BY DESC(?count) LIMIT 100",
+#         },
+#     },
+#     {
+#         "input": "Average number of children per year",
+#         "output": {
+#             "thoughts": [
+#                 "1. The question asks for the average number of children per year grouped by birth year.",
+#                 "2. Humans are represented by Q5, and the number of children is represented by P1971.",
+#                 "3. Retrieve birth years using P569 and calculate averages for those born after 1900.",
+#                 "4. Group results by year and compute the average number of children using AVG.",
+#             ],
+#             "sparql": "SELECT (str(?year) AS ?year) (AVG(?_number_of_children) AS ?count) WHERE { ?item wdt:P31 wd:Q5. ?item wdt:P1971 ?_number_of_children. ?item wdt:P569 ?_date_of_birth. BIND(year(?_date_of_birth) as ?year). FILTER(?year > 1900) } GROUP BY ?year",
+#         },
+#     },
+# ]
+
 WIKIDATA_GENERATE_SPARQL_FEW_SHOTS = [
     {
         "input": "Cats",
-        "output": {
-            "thoughts": [
-                "1. The question asks for information about cats, requiring identification of relevant entities and properties in Wikidata.",
-                "2. The entity 'cat' corresponds to Q146 in Wikidata.",
-                "3. To find items that are instances of cats, use the property P31 (instance of).",
-                "4. Retrieve item labels in the user's preferred language using the SERVICE wikibase:label for label localization.",
-            ],
-            "sparql": "SELECT ?item ?itemLabel WHERE { ?item wdt:P31 wd:Q146. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } }",
-        },
+        "output": """Thoughts:
+1. The question asks for information about cats, so I need to identify the relevant entities and properties in Wikidata.
+2. First, I need to find items that are classified as cats. In Wikidata, "cat" corresponds to the entity with the identifier Q146.
+3. To retrieve items that are instances of cats, I will use the property P31, which stands for "instance of."
+4. I should also retrieve the labels of these items in a language the user understands. To do this, I'll utilize the SERVICE wikibase:label to get the label in the user's preferred language. If that language is unavailable, I'll default to a multilingual or English label.
+SPARQL Query: ```sparql
+SELECT ?item ?itemLabel
+WHERE
+{
+?item wdt:P31 wd:Q146.
+SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". } # Helps get the label in your language, if not, then default for all languages, then en language
+}
+```""",
     },
     {
         "input": "Picture of Cats",
-        "output": {
-            "thoughts": [
-                "1. The query is focused on retrieving an image associated with the concept of 'cats' in Wikidata.",
-                "2. The entity for 'cats' is Q146, and the property P18 is used to denote images.",
-                "3. Retrieve the image linked to Q146 using the P18 property.",
-            ],
-            "sparql": "SELECT ?image WHERE { wd:Q146 wdt:P18 ?image. }",
-        },
+        "output": """Thoughts:
+1. The query is focused on retrieving an image associated with the concept of "cats" in Wikidata.
+2. In Wikidata, the item representing "cats" is identified by Q146.
+3. The property P18 is used to denote images, so I'll look for the image associated with Q146.
+4. The result will return the image linked to the "cats" item.
+SPARQL Query: ```sparql
+SELECT ?image WHERE {
+  wd:Q146 wdt:P18 ?image. # Get the image (P18) of Cats (Q146)
+}
+```""",
     },
     {
         "input": "Cats, with pictures",
-        "output": {
-            "thoughts": [
-                "1. The question asks for information about cats, including their pictures.",
-                "2. Identify items classified as cats using the P31 property with the value Q146.",
-                "3. Include the P18 property to retrieve associated images for each cat item.",
-                "4. Use SERVICE wikibase:label to retrieve labels in the appropriate language.",
-            ],
-            "sparql": "SELECT ?item ?itemLabel ?pic WHERE { ?item wdt:P31 wd:Q146; wdt:P18 ?pic. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } }",
-        },
+        "output": """Thoughts:
+1. The question now asks for information about cats, specifically including their pictures.
+2. As before, I need to identify items that are classified as cats using the P31 property with the value Q146.
+3. In addition to retrieving the item labels, I need to find the property that holds images associated with these items. In Wikidata, the property P18 is used for images.
+4. I will add P18 to the query to retrieve the image associated with each cat item.
+5. Finally, I'll include the SERVICE wikibase:label to ensure the labels are returned in the appropriate language, defaulting to multilingual or English if necessary.
+SPARQL Query: ```sparql
+SELECT ?item ?itemLabel ?pic WHERE {
+  ?item wdt:P31 wd:Q146;
+    wdt:P18 ?pic.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }
+}
+```""",
     },
     {
         "input": "Titles of articles about Ukrainian villages on Romanian Wikipedia",
-        "output": {
-            "thoughts": [
-                "1. The goal is to find articles about Ukrainian villages that exist on the Romanian Wikipedia.",
-                "2. Villages are represented by Q532, and Ukraine is represented by Q212 in Wikidata.",
-                "3. Check for articles in Romanian Wikipedia using schema:isPartOf with the value '<https://ro.wikipedia.org/>'.",
-                "4. Retrieve article titles, along with labels in English, and limit results to 300.",
-            ],
-            "sparql": "SELECT DISTINCT ?item ?itemLabel ?page_titleRO WHERE { ?item wdt:P31 wd:Q532. ?item wdt:P17 wd:Q212. ?article schema:about ?item; schema:isPartOf <https://ro.wikipedia.org/>; schema:name ?page_titleRO. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } LIMIT 300",
-        },
+        "output": """Thoughts:
+1. The goal is to find articles about villages in Ukraine that exist on the Romanian Wikipedia.
+2. First, I need to identify items classified as villages. In Wikidata, villages are represented by Q532.
+3. I will then filter these villages to those located in Ukraine, represented by the country code Q212.
+4. I need to check if there is a corresponding article for each village on the Romanian Wikipedia. This is done by filtering for schema:isPartOf with the value <https://ro.wikipedia.org/>.
+5. Additionally, I will retrieve the titles of these articles on the Romanian Wikipedia (schema:name as page_titleRO).
+6. To provide context, I'll also include the labels of these villages in English (LabelEN) and Ukrainian (LabelUK).
+7. Finally, I'll limit the query to return up to 300 results.
+SPARQL Query: ```sparql
+SELECT DISTINCT ?item ?LabelEN ?LabelUK ?page_titleRO WHERE {
+  # item: is a - village
+  ?item wdt:P31 wd:Q532 .
+  # item: country - Ukraine
+  ?item wdt:P17 wd:Q212 .
+  # exists article in item that is ro.wiki
+  ?article schema:about ?item ; schema:isPartOf <https://ro.wikipedia.org/> ; schema:name ?page_titleRO .
+  # wd labels
+  ?item rdfs:label ?LabelEN FILTER (lang(?LabelEN) = "en") .
+  ?item rdfs:label ?LabelUK FILTER (lang(?LabelUK) = "uk") .
+}
+LIMIT 300
+```
+""",
     },
     {
         "input": "Humans who died on August 25, 2001, on the English Wikipedia, ordered by label",
-        "output": {
-            "thoughts": [
-                "1. The query requires identifying humans who died on August 25, 2001, with articles on English Wikipedia.",
-                "2. Use the property P570 (date of death) to filter by the specified date.",
-                "3. Retrieve English Wikipedia articles using schema:isPartOf and schema:name.",
-                "4. Use SERVICE wikibase:label for labels and descriptions, and order results by label.",
-            ],
-            "sparql": "SELECT ?item ?articlename ?itemLabel ?itemDescription ?sl WHERE { VALUES ?dod { '+2001-08-25'^^xsd:dateTime } ?dod ^wdt:P570 ?item. ?item wikibase:sitelinks ?sl. ?item ^schema:about ?article. ?article schema:isPartOf <https://en.wikipedia.org/>; schema:name ?articlename. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. ?item rdfs:label ?itemLabel. ?item schema:description ?itemDescription. } } ORDER BY ASC(?itemLabel)",
-        },
+        "output": """Thoughts:
+1. The query requires finding humans who died on a specific date: August 25, 2001.
+2. In Wikidata, the date of death is represented by the property P570. I need to identify items where this property matches the specified date.
+3. The query also focuses on articles available in English Wikipedia. I'll need to retrieve these articles, ensuring they are from the English Wikipedia by filtering with schema:isPartOf.
+4. To sort the results by label, I must consider the proper sorting mechanism. I'll use a regex to clean the labels for sorting purposes, accounting for common prefixes in names (e.g., "von," "de") that might affect alphabetical order.
+5. I also need to retrieve the item label and description in the appropriate language using the SERVICE wikibase:label.
+6. Finally, the results should be ordered by the cleaned label (?sortname) and the original label.
+SPARQL Query: ```sparql
+SELECT ?item ?articlename ?itemLabel ?itemDescription ?sl
+WHERE {
+VALUES ?dod {"+2001-08-25"^^xsd:dateTime}
+    ?dod ^wdt:P570 ?item .
+    ?item wikibase:sitelinks ?sl .
+    ?item ^schema:about ?article .
+    ?article schema:isPartOf <https://en.wikipedia.org/>;
+    schema:name ?articlename .
+SERVICE wikibase:label
+    {
+    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en" .
+    ?item rdfs:label ?itemLabel .
+    ?item schema:description ?itemDescription .
+    }
+BIND(REPLACE(?itemLabel, "^.*(?<! [Vv][ao]n| [Dd][aeiu]| [Dd][e][lns]| [Ll][ae]) (?!([SJ]r\\.?|[XVI]+)$)", "") AS ?sortname)
+} ORDER BY ASC(UCASE(?sortname)) ASC(UCASE(?itemLabel))
+```""",
     },
     {
         "input": "The top 10 heaviest humans",
-        "output": {
-            "thoughts": [
-                "1. The goal is to list the top 10 heaviest humans by recorded mass.",
-                "2. Humans are represented by Q5, and their mass is denoted by property P2067.",
-                "3. Retrieve instances of humans with recorded mass, sort by mass in descending order, and limit to 10.",
-                "4. Include labels in multiple languages for better understanding.",
-            ],
-            "sparql": "SELECT ?item ?itemLabel ?mass WHERE { { SELECT ?item ?mass WHERE { ?item wdt:P31 wd:Q5; p:P2067/psn:P2067/wikibase:quantityAmount ?mass. } ORDER BY DESC(?mass) LIMIT 10 } SERVICE wikibase:label { bd:serviceParam wikibase:language 'en' } } ORDER BY DESC(?mass)",
-        },
+        "output": """Thoughts:
+1. The goal is to identify and list the top 10 heaviest humans based on their recorded weight.
+2. Humans are represented in Wikidata by the entity Q5.
+3. The property P2067 represents the mass of an individual.
+4. To extract the relevant data, I'll search for humans (Q5) who have a recorded mass (P2067).
+5. The query should order these individuals by their mass in descending order to find the heaviest.
+6. I'll limit the results to the top 10 entries.
+7. Additionally, I will include the labels for each individual in multiple languages, prioritizing the user's language settings, and falling back to English, Spanish, French, and German.
+SPARQL Query: ```sparql
+SELECT ?item ?itemLabel ?mass
+WHERE {
+{
+    SELECT ?item ?mass WHERE {
+    ?item wdt:P31 wd:Q5;
+            p:P2067/psn:P2067/wikibase:quantityAmount ?mass.
+    }
+    ORDER BY DESC(?mass)
+    LIMIT 10
+}
+SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en,es,fr,de" }
+}
+ORDER BY DESC(?mass)
+```""",
     },
     {
         "input": "Number of humans in Wikidata",
-        "output": {
-            "thoughts": [
-                "1. The question asks for the total number of humans recorded in Wikidata.",
-                "2. Humans are represented by Q5, and items classified as humans can be retrieved using the P31 property (instance of).",
-                "3. Use COUNT(*) to calculate the total number of items matching this criterion.",
-            ],
-            "sparql": "SELECT (COUNT(*) AS ?count) WHERE { ?item wdt:P31 wd:Q5. }",
-        },
+        "output": """Thoughts:
+1. The question asks for the total number of humans recorded in Wikidata.
+2. To find this, I need to identify items that are classified as humans. In Wikidata, the entity for "human" is represented by Q5.
+3. I'll use the P31 property, which stands for "instance of," to find all items that are instances of humans.
+4. Since the question asks for a count, I'll use the COUNT(*) function to calculate the total number of items that match this criterion.
+SPARQL Query: ```sparql
+SELECT (COUNT(*) AS ?count)
+WHERE {
+?item wdt:P31 wd:Q5 .
+}
+```""",
     },
     {
         "input": "List of countries ordered by the number of their cities with a female mayor",
-        "output": {
-            "thoughts": [
-                "1. The goal is to list countries by the number of cities with female mayors.",
-                "2. Identify cities (Q515 or subclasses) and their head of government (P6).",
-                "3. Ensure the head of government is female (Q6581072) and filter out entries with an end date (P582).",
-                "4. Retrieve the country (P17) and count the number of such cities, grouping and ordering by count.",
-                "5. Use labels in 'ru' (preferred) or 'en' for countries and limit results to 100.",
-            ],
-            "sparql": "SELECT ?country ?countryLabel (count(*) AS ?count) WHERE { ?city wdt:P31/wdt:P279* wd:Q515. ?city p:P6 ?statement. ?statement ps:P6 ?mayor. ?mayor wdt:P21 wd:Q6581072. FILTER NOT EXISTS { ?statement pq:P582 ?x }. ?city wdt:P17 ?country. SERVICE wikibase:label { bd:serviceParam wikibase:language 'en'. } } GROUP BY ?country ?countryLabel ORDER BY DESC(?count) LIMIT 100",
-        },
+        "output": """Thoughts:
+1. The goal is to find countries and list them based on the number of cities within each country that have a female mayor.
+2. First, I need to identify instances of cities. In Wikidata, cities or their subclasses are represented by Q515.
+3. To find cities with female mayors, I'll use the P6 property, which indicates the head of government. I need to ensure that the head of government is female, which is represented by Q6581072 in Wikidata.
+4. I'll also filter out any entries where the mayor's term has ended by checking for the absence of the P582 property (end date).
+5. Next, I'll retrieve the country associated with each city using the P17 property.
+6. The results should be grouped by country and ordered by the count of cities with a female mayor in descending order.
+7. The query will include labels for countries, prioritized by the "ru" (Russian) language, and falling back to "en" (English) if needed.
+8. Finally, I'll limit the results to the top 100 countries.
+SPARQL Query: ```sparql
+SELECT ?country ?countryLabel (count(*) AS ?count)
+WHERE
+{
+    ?city wdt:P31/wdt:P279* wd:Q515 . # find instances of subclasses of city
+    ?city p:P6 ?statement .           # with a P6 (head of goverment) statement
+    ?statement ps:P6 ?mayor .         # ... that has the value ?mayor
+    ?mayor wdt:P21 wd:Q6581072 .      # ... where the ?mayor has P21 (sex or gender) female
+    FILTER NOT EXISTS { ?statement pq:P582 ?x }  # ... but the statement has no P582 (end date) qualifier
+    ?city wdt:P17 ?country .          # Also find the country of the city
+
+    # If available, get the "ru" label of the country, use "en" as fallback:
+    SERVICE wikibase:label {
+        bd:serviceParam wikibase:language "ru,en" .
+    }
+}
+GROUP BY ?country ?countryLabel
+ORDER BY DESC(?count)
+LIMIT 100
+```""",
     },
     {
         "input": "Average number of children per year",
-        "output": {
-            "thoughts": [
-                "1. The question asks for the average number of children per year grouped by birth year.",
-                "2. Humans are represented by Q5, and the number of children is represented by P1971.",
-                "3. Retrieve birth years using P569 and calculate averages for those born after 1900.",
-                "4. Group results by year and compute the average number of children using AVG.",
-            ],
-            "sparql": "SELECT (str(?year) AS ?year) (AVG(?_number_of_children) AS ?count) WHERE { ?item wdt:P31 wd:Q5. ?item wdt:P1971 ?_number_of_children. ?item wdt:P569 ?_date_of_birth. BIND(year(?_date_of_birth) as ?year). FILTER(?year > 1900) } GROUP BY ?year",
-        },
+        "output": """Thoughts:
+1. The question asks for the average number of children that people have, grouped by their birth year.
+2. I'll first identify individuals (humans) in Wikidata, which are represented by Q5.
+3. The property P1971 is used to denote the number of children an individual has. I'll retrieve this information for each person.
+4. I'll also retrieve each person's birth date using the P569 property and extract the year from the birth date.
+5. The results will be filtered to include only those born after 1900 to ensure more recent and relevant data.
+6. The query will then group the data by birth year and calculate the average number of children for each year using the AVG function.
+7. Finally, I'll return the birth year (year) and the average number of children (count).
+SPARQL Query: ```sparql
+SELECT  (str(?year) AS ?year) (AVG( ?_number_of_children ) AS ?count) WHERE {
+  ?item wdt:P31 wd:Q5.
+  ?item wdt:P1971 ?_number_of_children.
+  ?item wdt:P569 ?_date_of_birth.
+  BIND( year(?_date_of_birth) as ?year ).
+  FILTER( ?year > 1900)
+}
+
+GROUP BY ?year
+```""",
     },
 ]
 
@@ -480,7 +680,7 @@ for fs in [
     INTENT_CLASSIFICATION_FEW_SHOTS,
     GENERATE_RELATED_PROPERTIES_FEW_SHOTS,
     DBPEDIA_GENERATE_SPARQL_FEW_SHOTS,
-    WIKIDATA_GENERATE_SPARQL_FEW_SHOTS,
+    # WIKIDATA_GENERATE_SPARQL_FEW_SHOTS,
 ]:
     for f in fs:
         f["output"] = json.dumps(f["output"], indent=4)

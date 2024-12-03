@@ -98,7 +98,7 @@ def main(
             )
             sys.stdout = f
             try:
-                true_query = row[f"cleaned_{knowledge_source}"]
+                true_query = row[f"sparql_query"]
                 ground_truth = rag_engine.api.execute_sparql_to_df(true_query)
                 generated_factoid_question, generated_query, res = rag_engine.run(
                     question,
