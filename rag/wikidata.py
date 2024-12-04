@@ -39,6 +39,7 @@ class WikidataGraphRAG(BaseGraphRAG):
         always_use_generate_sparql: bool = False,
         use_local_weaviate_client: bool = True,
         print_output: bool = False,
+        additional_model_kwargs: dict = {},
     ) -> None:
         super().__init__(
             model_name,
@@ -47,6 +48,7 @@ class WikidataGraphRAG(BaseGraphRAG):
             max_new_tokens,
             always_use_generate_sparql,
             print_output,
+            additional_model_kwargs,
         )
         self.api = WikidataAPI()
         self.verbalization = WikidataVerbalization(

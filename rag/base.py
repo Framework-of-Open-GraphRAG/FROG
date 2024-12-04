@@ -48,6 +48,7 @@ class BaseGraphRAG:
         max_new_tokens: int = 1500,
         always_use_generate_sparql: bool = False,
         print_output: bool = False,
+        additional_model_kwargs: dict = {},
     ) -> None:
         self.model_name = model_name
         self.device = device
@@ -64,6 +65,7 @@ class BaseGraphRAG:
             "device": self.device,
             "max_new_tokens": max_new_tokens,
             "return_full_text": False,
+            **additional_model_kwargs,
         }
         if self.use_local_model:
             self.tokenizer = AutoTokenizer.from_pretrained(
