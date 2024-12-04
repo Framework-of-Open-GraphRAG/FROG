@@ -461,20 +461,6 @@ Based on the query given, decide if it is global or local and return the classif
             # sparql_response = self._extract_query(response)
             # torch.cuda.empty_cache()
             # gc.collect()
-            if verbose:
-                if use_cot:
-                    thoughts_tmp = escape(str(sparql_query_result.thoughts))
-                    display(
-                        HTML(f"""<code style='color: green;'>{thoughts_tmp}</code>""")
-                    )
-                sparql_tmp = escape(sparql_query_result.sparql).replace("\n", "<br/>")
-                # sparql_tmp = escape(response).replace("\n", "<br/>")
-                display(HTML(f"""<code style='color: green;'>{sparql_tmp}</code>"""))
-            if self.print_output:
-                if use_cot:
-                    print("Thoughts: ", sparql_query_result.thoughts)
-                print("Generated SPARQL: ", sparql_query_result.sparql)
-                # print("Generated Response: ", response)
             if (
                 # sparql_response
                 # == ""
@@ -490,6 +476,20 @@ Based on the query given, decide if it is global or local and return the classif
                 if self.print_output:
                     print("Sorry, we are not supported with this kind of query yet.")
                 return None, []
+            if verbose:
+                if use_cot:
+                    thoughts_tmp = escape(str(sparql_query_result.thoughts))
+                    display(
+                        HTML(f"""<code style='color: green;'>{thoughts_tmp}</code>""")
+                    )
+                sparql_tmp = escape(sparql_query_result.sparql).replace("\n", "<br/>")
+                # sparql_tmp = escape(response).replace("\n", "<br/>")
+                display(HTML(f"""<code style='color: green;'>{sparql_tmp}</code>"""))
+            if self.print_output:
+                if use_cot:
+                    print("Thoughts: ", sparql_query_result.thoughts)
+                print("Generated SPARQL: ", sparql_query_result.sparql)
+                # print("Generated Response: ", response)
             try:
                 result, err = self.api.execute_sparql(sparql_query_result.sparql)
             except Exception as e:
@@ -629,7 +629,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                     )
                 if self.print_output:
                     print("Error: ", e)
-            if not is_error and similarities >= 0.65 and len(result) > 0:
+            if not is_error and similarities >= 0.6 and len(result) > 0:
                 return factoid_question, "", result
 
         few_shots = deepcopy(self.generate_sparql_few_shot_messages)
