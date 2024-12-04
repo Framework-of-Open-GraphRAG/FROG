@@ -374,11 +374,11 @@ WIKIDATA_GENERATE_SPARQL_FEW_SHOTS = [
                 "3. From the provided URIs, 'wd:Q16' is the correct identifier for the country 'Canada' in Wikidata.",
                 "4. The term 'largest city' requires identifying Canadian cities and sorting them by population to determine the largest.",
                 "5. Based on the ontology, the 'wdt:P17' property links entities to their respective countries, which helps identify cities in Canada.",
-                "6. The 'wdt:P31/wdt:P279* wd:Q515' construct allows filtering for entities that are instances of or subclasses of 'city' (Q515).",
+                "6. The 'wdt:P31 wd:Q515' construct allows filtering for entities that are instances of or subclasses of 'city' (Q515).",
                 "7. The 'wdt:P1082' property specifies the population of cities, which is necessary to sort and retrieve the largest city by population.",
                 "8. Formulate a SPARQL query to find all cities in Canada, retrieve their populations using 'wdt:P1082', and sort the results in descending order to determine the largest city by population.",
             ],
-            "sparql": "SELECT DISTINCT ?val WHERE { ?uri wdt:P17 wd:Q16 ; wdt:P31/wdt:P279* wd:Q515 ; wdt:P1082 ?val } ORDER BY DESC(?val) LIMIT 1",
+            "sparql": "SELECT DISTINCT ?val WHERE { ?uri wdt:P17 wd:Q16 ; wdt:P31 wd:Q515 ; wdt:P1082 ?val } ORDER BY DESC(?val) LIMIT 1",
         },
     },
     {
@@ -716,11 +716,11 @@ WIKIDATA_GENERATE_SPARQL_FEW_SHOTS = [
 # 3. From the provided URIs, 'wd:Q16' is the correct identifier for the country 'Canada' in Wikidata.
 # 4. The term 'largest city' requires identifying Canadian cities and sorting them by population to determine the largest.
 # 5. Based on the ontology, the 'wdt:P17' property links entities to their respective countries, which helps identify cities in Canada.
-# 6. The 'wdt:P31/wdt:P279* wd:Q515' construct allows filtering for entities that are instances of or subclasses of 'city' (Q515).
+# 6. The 'wdt:P31 wd:Q515' construct allows filtering for entities that are instances of or subclasses of 'city' (Q515).
 # 7. The 'wdt:P1082' property specifies the population of cities, which is necessary to sort and retrieve the largest city by population.
 # 8. Formulate a SPARQL query to find all cities in Canada, retrieve their populations using 'wdt:P1082', and sort the results in descending order to determine the largest city by population.
 # SPARQL:
-# ```SELECT DISTINCT ?val WHERE { ?uri wdt:P17 wd:Q16 ; wdt:P31/wdt:P279* wd:Q515 ; wdt:P1082 ?val } ORDER BY DESC(?val) LIMIT 1```""",
+# ```SELECT DISTINCT ?val WHERE { ?uri wdt:P17 wd:Q16 ; wdt:P31 wd:Q515 ; wdt:P1082 ?val } ORDER BY DESC(?val) LIMIT 1```""",
 #     },
 #     {
 #         "input": """What is the population of Cairo?""",

@@ -96,7 +96,7 @@
     "13": "SELECT DISTINCT ?uri WHERE { dbr:Game_of_Thrones dbo:composer ?uri }"
   },
   "cleaned_wikidata": {
-    "0": "SELECT DISTINCT ?val WHERE { ?uri wdt:P17 wd:Q16 ; wdt:P31/wdt:P279* wd:Q515 ; wdt:P1082 ?val } ORDER BY DESC(?val) LIMIT 1",
+    "0": "SELECT DISTINCT ?val WHERE { ?uri wdt:P17 wd:Q16 ; wdt:P31 wd:Q515 ; wdt:P1082 ?val } ORDER BY DESC(?val) LIMIT 1",
     "1": "SELECT DISTINCT ?val WHERE { wd:Q85 wdt:P1082 ?val . }",
     "2": "SELECT DISTINCT ?num WHERE { wd:Q1207989 wdt:P2048 ?num . }",
     "3": "SELECT DISTINCT ?uri WHERE { ?uri wdt:P31 wd:Q9143 ; wdt:P737 wd:Q42478 . }",
