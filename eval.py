@@ -112,7 +112,14 @@ def main(
             sys.stdout = f
             try:
                 true_query = row[f"{knowledge_source}_query"]
-                ground_truth = rag_engine.api.execute_sparql_to_df(true_query)
+                if rag_engine.api:
+                    ground_truth = rag_engine.api.execute_sparql_to_df(true_query)
+                else:
+                    gt_res = []
+                    for res in rag_engine.graph.query(true_query):
+                        res_dct = [{k: str(v)} for k, v in res.asdict().items()]
+                        gt_res.extend(res_dct)
+                    ground_truth = pd.DataFrame(gt_res)
                 generated_factoid_question, generated_query, res = rag_engine.run(
                     question,
                     use_cot=use_cot,
