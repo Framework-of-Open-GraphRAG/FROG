@@ -1,5 +1,5 @@
 {
-  "question": {
+  "query_name": {
     "0": "What courses have the Digital Library & Distance Learning Laboratory as their research group, are categorized as Study Program Elective Course, and use Group Presentation as their evaluation method?",
     "1": "What course has the evaluation method of Group Project and is a Study Program Elective Course with the course code CSCE604131?",
     "2": "What courses have 'Group Project' and 'Test' as evaluation methods and have the course code 'CSGE603130'?",

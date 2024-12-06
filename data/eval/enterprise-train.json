@@ -1,5 +1,5 @@
 {
-  "question": {
+  "query_name": {
     "0": "What faculty mandatory course that have 'Test' and 'Task' as evaluation method?",
     "1": "What courses have prerequisites that falls under the category of Faculty Mandatory Course?",
     "2": "How many research groups does the 'Computer Science Special Topics' have?",
