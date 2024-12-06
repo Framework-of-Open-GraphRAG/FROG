@@ -292,9 +292,14 @@ You are an assistant trained to generate Wikidata SPARQL queries. Use the provid
                         context_entities.append(
                             "wd:" + list(c.values())[0].split("/")[-1]
                         )
-                    get_label_query = f"""SELECT ?itemLabel WHERE {{
-  VALUES ?item {{ {" ".join(context_entities)} }}
-  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}
+                    get_label_query = f"""SELECT ?{list(context[0].keys())[0]} WHERE {{
+    {{
+        SELECT ?itemLabel WHERE {{
+            VALUES ?item {{ {" ".join(context_entities)} }}
+            SERVICE wikibase:label {{ bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }}
+        }}
+    }}
+    BIND(?itemLabel AS ?{list(context[0].keys())[0]})
 }}"""
                     context, _ = self.api.execute_sparql(get_label_query)
                 context_str = f'The answer of "{question}" is '

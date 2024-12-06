@@ -298,10 +298,10 @@ You are an assistant trained to generate DBPedia SPARQL queries. Use the provide
                             + list(c.values())[0].split("/")[-1]
                             + ">"
                         )
-                    get_label_query = f"""SELECT ?label WHERE {{
+                    get_label_query = f"""SELECT ?{list(c.keys())[0]} WHERE {{
   VALUES ?item {{ {" ".join(context_entities)} }}
-  ?item rdfs:label ?label.
-  FILTER (lang(?label) = "en")
+  ?item rdfs:label ?{list(c.keys())[0]}.
+  FILTER (lang(?{list(c.keys())[0]}) = "en")
 }}"""
                     context, _ = self.api.execute_sparql(get_label_query)
                 context_str = f'The answer of "{question}" is '

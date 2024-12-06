@@ -274,20 +274,20 @@ You are an assistant trained to generate SPARQL queries. Use the provided contex
     ) -> tuple[str, list[dict[str, str]]]:
         if type(context) == list:
             if len(context) > 0:
-                if list(context[0].values())[0].startswith("http://dbpedia.org/"):
+                if list(context[0].values())[0].startswith("http://example.org/"):
                     context_entities = []
                     for c in context[:50]:
                         context_entities.append(
-                            "<http://dbpedia.org/resource/"
-                            + list(c.values())[0].split("/")[-1]
-                            + ">"
+                            "ns1:" + list(c.values())[0].split("/")[-1]
                         )
-                    get_label_query = f"""SELECT ?label WHERE {{
+                    get_label_query = f"""SELECT ?{list(c.keys())[0]} WHERE {{
   VALUES ?item {{ {" ".join(context_entities)} }}
-  ?item rdfs:label ?label.
-  FILTER (lang(?label) = "en")
+  ?item rdfs:label ?{list(c.keys())[0]}.
 }}"""
-                    context, _ = self.api.execute_sparql(get_label_query)
+                    context = []
+                    for res in self.graph.query(get_label_query):
+                        res_dct = [{k: str(v)} for k, v in res.asdict().items()]
+                        context.extend(res_dct)
                 context_str = f'The answer of "{question}" is '
                 for c in context[:50]:
                     for k, v in c.items():
