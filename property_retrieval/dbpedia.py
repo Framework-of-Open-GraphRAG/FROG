@@ -66,8 +66,33 @@ class DBPediaPropertyRetrieval(BasePropertyRetrieval):
         result = {"classes": [], "objProperties": [], "dataProperties": []}
 
         def search(ngram, type, threshold=threshold):
+            def format_result(x):
+                if type == "objProperties" or type == "dataProperties":
+                    record = df_res[df_res["short"] == x][["shortDomain", "shortRange"]]
+                    record.rename(
+                        columns={
+                            "shortDomain": "domain",
+                            "shortRange": "range",
+                        },
+                        inplace=True,
+                    )
+                    record = record.to_dict(orient="records")[0]
+                    if record["domain"] is None or record["domain"] == 'NaN':
+                        del record["domain"]
+                    if record["range"] is None or record["range"] == 'NaN':
+                        del record["range"]
+                    if record:
+                        return f"{x}: {record}"
+                    return "{x}: No domain and range"
+                return x
+
             df_res = self._search(ngram, type=type, k=k)
-            return type, df_res[df_res["score"] >= threshold]["short"].tolist()
+            result = (
+                df_res[df_res["score"] >= threshold]["short"]
+                .apply(format_result)
+                .tolist()
+            )
+            return type, result
 
         for ngram in ngrams + property_candidates:
             for type in result.keys():

@@ -80,15 +80,6 @@ class DBPediaGraphRAG(BaseGraphRAG):
         else:
             self.property_retrieval = property_retrieval
 
-    def get_propertty_domain_range(self, property_uri: str) -> dict[str, str]:
-        query = f"""SELECT ?domain ?range
-WHERE {{
-    {property_uri} rdfs:domain ?domain ;
-                   rdfs:range ?range .
-}}
-"""
-        return self.api.execute_sparql_to_df(query).drop_duplicates().to_dict("records")
-
     def extract_entity(self, question, try_threshold=10):
         example_prompt = ChatPromptTemplate.from_messages(
             [

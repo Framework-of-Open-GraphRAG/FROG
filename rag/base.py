@@ -100,9 +100,6 @@ class BaseGraphRAG:
         self.chat_model = ChatHuggingFace(llm=llm)
         self.always_use_generate_sparql = always_use_generate_sparql
 
-    def get_propertty_domain_range(self, property_uri: str) -> dict[str, str]:
-        raise NotImplementedError("This method should be overridden by subclasses")
-
     def handle_parsing_error(
         self,
         llm_chain: LLMChain,
@@ -333,44 +330,14 @@ Based on the query given, decide if it is global or local and return the classif
         return related_property
 
     def _parse_property_context_string(self, ontology: dict[str, list[str]]) -> str:
-        def parallel_search(key, name):
-            try:
-                domain_range = self.get_propertty_domain_range(name)
-                return key, name, domain_range
-            except NotImplementedError:
-                return key, name, NotImplemented
-
-        with ThreadPoolExecutor() as executor:
-            futures = [
-                executor.submit(parallel_search, key, c)
-                for key, cand in ontology.items()
-                if cand
-                for c in cand
-                if key != "classes"
-            ]
-
-            result = {}
-            for future in futures:
-                key, name, domain_range = future.result()
-                result.setdefault(key, []).append(
-                    {"name": name, "domain_range": domain_range}
-                )
-
         properties_context = ""
-        if ontology.get("classes", None):
-            properties_context += f"    - classes: {ontology['classes']}\n"
-        for key, value in result.items():
-            properties_context += f"    - {key}: \n"
-            for prop in value:
-                name = prop["name"]
-                domain_range = prop["domain_range"]
-                if domain_range == NotImplemented:
-                    properties_context += f"        - {name}\n"
-                elif domain_range:
-                    properties_context += f"        - {name}: {domain_range}\n"
-                else:
-                    properties_context += f"        - {name}: No domain and range\n"
-
+        for key, value in ontology.items():
+            if key == "classes":
+                properties_context += f"    - classes: {value}\n"
+            else:
+                properties_context += f"    - {key}: \n"
+                for prop in value:
+                    properties_context += f"        - {prop}\n"
         return properties_context
 
     def _extract_query(self, text: str) -> str:
