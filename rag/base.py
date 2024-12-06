@@ -31,7 +31,7 @@ from typing import List
 from few_shots import (
     INTENT_CLASSIFICATION_FEW_SHOTS,
 )
-from utils.helper import contains_multiple_entities, separate_camel_case
+from utils.helper import contains_multiple_entities, fix_query_spacing, separate_camel_case
 
 load_dotenv()
 
@@ -477,7 +477,9 @@ Based on the query given, decide if it is global or local and return the classif
                     result, err = self.api.execute_sparql(sparql_query_result.sparql)
                 else:
                     result = []
-                    for res in self.graph.query(sparql_query_result.sparql):
+                    for res in self.graph.query(
+                        fix_query_spacing(sparql_query_result.sparql)
+                    ):
                         res_dct = [{k: str(v)} for k, v in res.asdict().items()]
                         result.extend(res_dct)
                     err = None

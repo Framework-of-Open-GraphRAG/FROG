@@ -32,3 +32,11 @@ def contains_multiple_entities(question) -> bool:
         or question.endswith(f" {keyword}")
         for keyword in keywords
     )
+
+
+def fix_query_spacing(query: str) -> str:
+    # Add a space after 'select' if it's followed immediately by a variable (e.g., ?x, ?y)
+    query = re.sub(r"(select)(\?\w+)", r"\1 \2", query)
+    # Add a space before any variable in a predicate-object pair
+    query = re.sub(r"(\w+:\w+)(\?\w+)", r"\1 \2", query)
+    return query
