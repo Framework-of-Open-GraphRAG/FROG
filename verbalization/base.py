@@ -38,11 +38,12 @@ class BaseVerbalization:
         else:
             response = self.graph.query(query)
             df = pd.DataFrame(response.bindings)
-            df.columns = [str(col) for col in df.columns]
-            cols = ["p", "o", "sLabel", "pLabel", "oLabel"]
-            df = df[cols]
-            for col in cols:
-                df[col] = df[col].apply(lambda x: str(x))
+            if not df.empty:
+                df.columns = [str(col) for col in df.columns]
+                cols = ["p", "o", "sLabel", "pLabel", "oLabel"]
+                df = df[cols]
+                for col in cols:
+                    df[col] = df[col].apply(lambda x: str(x))
         if df.empty:
             return pd.DataFrame(columns=["p", "o", "sLabel", "pLabel", "oLabel"])
         return df
@@ -54,11 +55,12 @@ class BaseVerbalization:
         else:
             response = self.graph.query(query)
             df = pd.DataFrame(response.bindings)
-            df.columns = [str(col) for col in df.columns]
-            cols = ["s", "p", "sLabel", "pLabel", "oLabel"]
-            df = df[cols]
-            for col in cols:
-                df[col] = df[col].apply(lambda x: str(x))
+            if not df.empty:
+                df.columns = [str(col) for col in df.columns]
+                cols = ["s", "p", "sLabel", "pLabel", "oLabel"]
+                df = df[cols]
+                for col in cols:
+                    df[col] = df[col].apply(lambda x: str(x))
         if df.empty:
             return pd.DataFrame(columns=["s", "p", "sLabel", "pLabel", "oLabel"])
         return df
