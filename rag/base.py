@@ -476,10 +476,10 @@ Based on the query given, decide if it is global or local and return the classif
                 if self.api:
                     result, err = self.api.execute_sparql(sparql_query_result.sparql)
                 else:
-                    result = [
-                        res.asdict()
-                        for res in self.graph.query(sparql_query_result.sparql)
-                    ]
+                    result = []
+                    for res in self.graph.query(sparql_query_result.sparql):
+                        res_dct = [{k: str(v)} for k, v in res.asdict().items()]
+                        result.extend(res_dct)
                     err = None
             except Exception as e:
                 display(HTML(f"""<code style='color: red;'>{e}</code>"""))
