@@ -1,0 +1,32 @@
+{
+  "question": {
+    "0": "What faculty mandatory course that have 'Test' and 'Task' as evaluation method?",
+    "1": "What courses have prerequisites that falls under the category of Faculty Mandatory Course?",
+    "2": "How many research groups does the 'Computer Science Special Topics' have?",
+    "3": "What evaluation methods does Software engineering have?",
+    "4": "What evaluation methods does Deep Learning have?",
+    "5": "How many courses have 'Programming projects and demos' as the evaluation method?",
+    "6": "What courses are included in the research group of Reliable Software Engineering?",
+    "7": "What courses have 'Introduction to Artificial Intelligence and Data Science' as a prerequisite course?"
+  },
+  "query": {
+    "0": "select ?x { ?x ns1:has_course_category ns1:faculty_mandatory_course . ?x ns1:has_evaluation_method ns1:test . ?x ns1:has_evaluation_method ns1:task . }",
+    "1": "select ?x { ?x ns1:has_prerequisite_course ?y . ?y ns1:has_course_category ns1:faculty_mandatory_course . }",
+    "2": "select (count(?x) as ?cnt) { ns1:computer_science_special_topics ns1:has_research_group ?x . }",
+    "3": "select ?x { ns1:software_engineering ns1:has_evaluation_method ?x . }",
+    "4": "select ?x { ns1:deep_learning ns1:has_evaluation_method ?x . }",
+    "5": "select (count(?x) as ?cnt) { ?x ns1:has_evaluation_method ns1:programming_projects_and_demos . }",
+    "6": "select ?x { ?x ns1:has_research_group ns1:reliable_software_engineering . }",
+    "7": "select ?x { ?x ns1:has_prerequisite_course ns1:introduction_to_artificial_intelligence_and_data_science . }"
+  },
+  "category": {
+    "0": "io\\courses_test\\complex_1_1_normal.json",
+    "1": "io\\courses_test\\complex_2_1_normal.json",
+    "2": "io\\courses_test\\simple_1_1_count.json",
+    "3": "io\\courses_test\\simple_1_2_normal.json",
+    "4": "io\\courses_test\\simple_1_2_normal.json",
+    "5": "io\\courses_test\\simple_2_1_count.json",
+    "6": "io\\courses_test\\simple_2_2_normal.json",
+    "7": "io\\courses_test\\simple_2_2_normal.json"
+  }
+}
