@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from sentence_transformers import SentenceTransformer
+from rdflib import Graph
 
 from utils.api import BaseAPI
 from utils.helper import replace_using_dict, separate_camel_case
@@ -18,8 +19,13 @@ class BaseVerbalization:
         model_kwargs={"trust_remote_code": True},
         query_model_encode_kwargs={},
         passage_model_encode_kwargs={},
+        turtle_file_path: str = None,
     ) -> None:
         self.api = None  # Overwrite in child class
+        if turtle_file_path:
+            self.graph = Graph().parse(turtle_file_path)
+        else:
+            self.graph = None
         self.model_name = model_name
         self.query_model_encode_kwargs = query_model_encode_kwargs
         self.passage_model_encode_kwargs = passage_model_encode_kwargs
@@ -27,14 +33,32 @@ class BaseVerbalization:
 
     def get_po(self, entity: str) -> pd.DataFrame:
         query = self.PO_TEMPLATE.format(entity=entity)
-        df = self.api.execute_sparql_to_df(query).drop_duplicates()
+        if self.api:
+            df = self.api.execute_sparql_to_df(query).drop_duplicates()
+        else:
+            response = self.graph.query(query)
+            df = pd.DataFrame(response.bindings)
+            df.columns = [str(col) for col in df.columns]
+            cols = ["p", "o", "sLabel", "pLabel", "oLabel"]
+            df = df[cols]
+            for col in cols:
+                df[col] = df[col].apply(lambda x: str(x))
         if df.empty:
             return pd.DataFrame(columns=["p", "o", "sLabel", "pLabel", "oLabel"])
         return df
 
     def get_sp(self, entity: str) -> pd.DataFrame:
         query = self.SP_TEMPLATE.format(entity=entity)
-        df = self.api.execute_sparql_to_df(query).drop_duplicates()
+        if self.api:
+            df = self.api.execute_sparql_to_df(query).drop_duplicates()
+        else:
+            response = self.graph.query(query)
+            df = pd.DataFrame(response.bindings)
+            df.columns = [str(col) for col in df.columns]
+            cols = ["s", "p", "sLabel", "pLabel", "oLabel"]
+            df = df[cols]
+            for col in cols:
+                df[col] = df[col].apply(lambda x: str(x))
         if df.empty:
             return pd.DataFrame(columns=["s", "p", "sLabel", "pLabel", "oLabel"])
         return df
@@ -67,7 +91,7 @@ class BaseVerbalization:
                 else:
                     label_o = o
                 candidates[p] = self.SENTENCE_TEMPLATE.format(
-                    s=label_s, p=label_p, o=label_o
+                    s=str(label_s), p=str(label_p), o=str(label_o)
                 )
 
         curr_p = None
@@ -87,7 +111,7 @@ class BaseVerbalization:
             if label_p != curr_p:
                 curr_p = label_p
                 candidates[p] = self.SENTENCE_TEMPLATE.format(
-                    s=label_s, p=label_p, o=label_o
+                    s=str(label_s), p=str(label_p), o=str(label_o)
                 )
 
         return candidates, po, sp

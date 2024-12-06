@@ -4,6 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
 from xml.sax.saxutils import escape
 from copy import deepcopy
+from rdflib import Graph
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 from langchain_huggingface.llms import HuggingFacePipeline
@@ -49,6 +50,7 @@ class BaseGraphRAG:
         always_use_generate_sparql: bool = False,
         print_output: bool = False,
         additional_model_kwargs: dict = {},
+        turtle_file_path: str = None,
     ) -> None:
         self.model_name = model_name
         self.device = device
@@ -59,6 +61,11 @@ class BaseGraphRAG:
         self.api = None
         self.verbalization = None
         self.property_retrieval = None
+
+        if turtle_file_path:
+            self.graph = Graph().parse(turtle_file_path)
+        else:
+            self.graph = None
 
         model_kwargs = {
             "do_sample": False,
@@ -398,31 +405,37 @@ Based on the query given, decide if it is global or local and return the classif
         format_instructions = output_parser.get_format_instructions()
 
         resources = ""
-        for entity in entities:
-            resources += f"    - All possible resources URIs for {entity} are "
-            resources += str(self.api.get_entities(entity, k=5)[0])
-            resources += "\n"
-        if verbose:
-            resources_tmp = escape(resources).replace("\n", "<br/>")
-            display(
-                HTML(
-                    f"""<code style='color: green;'>Retrieved Resources: <br/>{resources_tmp}</code>"""
+        if self.api:
+            for entity in entities:
+                resources += f"    - All possible resources URIs for {entity} are "
+                resources += str(self.api.get_entities(entity, k=5)[0])
+                resources += "\n"
+            if verbose:
+                resources_tmp = escape(resources).replace("\n", "<br/>")
+                display(
+                    HTML(
+                        f"""<code style='color: green;'>Retrieved Resources: <br/>{resources_tmp}</code>"""
+                    )
                 )
-            )
-        if self.print_output:
-            print("Retrieved Resources: ", resources)
+            if self.print_output:
+                print("Retrieved Resources: ", resources)
 
-        related_properties = self.generate_related_properties(question)[:3]
-        for i in range(len(related_properties)):
-            related_properties[i] = separate_camel_case(related_properties[i]).lower()
-        if verbose:
-            display(
-                HTML(
-                    f"""<code style='color: green;'>Generated Related Properties: {escape(str(related_properties))}</code>"""
+        try:
+            related_properties = self.generate_related_properties(question)[:3]
+            for i in range(len(related_properties)):
+                related_properties[i] = separate_camel_case(
+                    related_properties[i]
+                ).lower()
+            if verbose:
+                display(
+                    HTML(
+                        f"""<code style='color: green;'>Generated Related Properties: {escape(str(related_properties))}</code>"""
+                    )
                 )
-            )
-        if self.print_output:
-            print("Generated Related Properties: ", related_properties)
+            if self.print_output:
+                print("Generated Related Properties: ", related_properties)
+        except NotImplementedError:
+            related_properties = entities
 
         ontology = self.property_retrieval.get_related_candidates(
             question, property_candidates=related_properties, threshold=0.6
@@ -493,7 +506,14 @@ Based on the query given, decide if it is global or local and return the classif
                 print("Generated SPARQL: ", sparql_query_result.sparql)
                 # print("Generated Response: ", response)
             try:
-                result, err = self.api.execute_sparql(sparql_query_result.sparql)
+                if self.api:
+                    result, err = self.api.execute_sparql(sparql_query_result.sparql)
+                else:
+                    result = [
+                        res.asdict()
+                        for res in self.graph.query(sparql_query_result.sparql)
+                    ]
+                    err = None
             except Exception as e:
                 display(HTML(f"""<code style='color: red;'>{e}</code>"""))
                 if self.print_output:
@@ -589,7 +609,12 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
 
         if not intent_is_global:
             entity = extracted_entities[0]
-            retrieved_resources = self.api.get_entities(entity, k=5)[0]
+            if self.api:
+                retrieved_resources = self.api.get_entities(entity, k=5)[0]
+            else:
+                retrieved_resources = self.property_retrieval.search_entities(
+                    entity, k=5
+                )
             if verbose == 1:
                 display(
                     HTML(

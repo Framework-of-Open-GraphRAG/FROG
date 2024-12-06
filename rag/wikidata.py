@@ -13,7 +13,7 @@ from pydantic import BaseModel, Field
 from typing import List, Optional
 
 from few_shots import (
-    EXTRACT_ENTITY_FEW_SHOTS,
+    WIKIDATA_DBPEDIA_EXTRACT_ENTITY_FEW_SHOTS,
     WIKIDATA_GENERATE_SPARQL_FEW_SHOTS,
     GENERATE_RELATED_PROPERTIES_FEW_SHOTS,
 )
@@ -86,7 +86,7 @@ class WikidataGraphRAG(BaseGraphRAG):
 
         few_shot_prompt = FewShotChatMessagePromptTemplate(
             example_prompt=example_prompt,
-            examples=EXTRACT_ENTITY_FEW_SHOTS,
+            examples=WIKIDATA_DBPEDIA_EXTRACT_ENTITY_FEW_SHOTS,
         )
 
         chat_prompt_template = ChatPromptTemplate.from_messages(
