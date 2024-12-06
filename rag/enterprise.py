@@ -255,7 +255,7 @@ You are an assistant trained to generate SPARQL queries. Use the provided contex
                 MessagesPlaceholder("chat_history"),
                 (
                     "human",
-                    "{input}",
+                    "Generate a SPARQL query to answer the question: '{input}'",
                 ),
             ]
         )
