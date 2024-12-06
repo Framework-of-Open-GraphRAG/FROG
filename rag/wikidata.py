@@ -312,6 +312,7 @@ You are an assistant trained to generate Wikidata SPARQL queries. Use the provid
         self,
         question: str,
         use_cot: bool = True,
+        use_transform_factoid: bool = False,
         output_uri: bool = False,
         verbose: int = 0,
         try_threshold: int = 10,
@@ -320,7 +321,7 @@ You are an assistant trained to generate Wikidata SPARQL queries. Use the provid
             question,
             use_cot=use_cot,
             output_uri=output_uri,
-            use_transform_factoid=False,
+            use_transform_factoid=use_transform_factoid,
             verbose=verbose,
             try_threshold=try_threshold,
         )

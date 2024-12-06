@@ -46,6 +46,7 @@ def main(
     use_cot: bool = True,
     llm_try_threshold: int = 10,
     log_file_path: str = "logs/eval_log.txt",
+    use_transform_factoid: bool = False,  # New argument
 ):
     scores = []
     print("Loading test dataframe...")
@@ -106,6 +107,7 @@ def main(
                     output_uri=True,
                     verbose=0,
                     try_threshold=llm_try_threshold,
+                    use_transform_factoid=use_transform_factoid,  # Pass the new argument
                 )
                 pred = pd.DataFrame(res)
                 score = compare_two_dataframes(ground_truth, pred)
@@ -190,6 +192,13 @@ if __name__ == "__main__":
         default="logs/eval_log.txt",
         help="Path to the log file.",
     )
+    parser.add_argument(
+        "--use-transform-factoid",
+        type=bool,
+        default=False,
+        help="Whether to use transform factoid.",
+        action=argparse.BooleanOptionalAction,
+    )
 
     args = parser.parse_args()
 
@@ -204,4 +213,5 @@ if __name__ == "__main__":
         use_cot=args.use_cot,
         llm_try_threshold=args.llm_try_threshold,
         log_file_path=args.log_file_path,
+        use_transform_factoid=args.use_transform_factoid,  # Pass the new argument
     )
