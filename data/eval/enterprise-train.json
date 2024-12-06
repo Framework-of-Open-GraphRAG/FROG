@@ -9,7 +9,7 @@
     "6": "What courses are included in the research group of Reliable Software Engineering?",
     "7": "What courses have 'Introduction to Artificial Intelligence and Data Science' as a prerequisite course?"
   },
-  "query": {
+  "enterprise_query": {
     "0": "select ?x { ?x ns1:has_course_category ns1:faculty_mandatory_course . ?x ns1:has_evaluation_method ns1:test . ?x ns1:has_evaluation_method ns1:task . }",
     "1": "select ?x { ?x ns1:has_prerequisite_course ?y . ?y ns1:has_course_category ns1:faculty_mandatory_course . }",
     "2": "select (count(?x) as ?cnt) { ns1:computer_science_special_topics ns1:has_research_group ?x . }",

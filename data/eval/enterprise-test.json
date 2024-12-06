@@ -38,7 +38,7 @@
     "38": "How many courses with 'Project Assignment' as the evaluation method?",
     "39": "How many courses that have evaluation method 'Task'?"
   },
-  "query": {
+  "enterprise_query": {
     "0": "select ?x { ?x ns1:has_research_group ns1:digital_library_and_distance_learning_laboratory . ?x ns1:has_course_category ns1:study_program_elective_course . ?x ns1:has_evaluation_method ns1:group_presentation . }",
     "1": "select ?x { ?x ns1:has_evaluation_method ns1:group_project . ?x ns1:has_course_category ns1:study_program_elective_course . ?x ns1:has_course_code 'CSCE604131' . }",
     "2": "select ?x { ?x ns1:has_evaluation_method ns1:group_project . ?x ns1:has_evaluation_method ns1:test . ?x ns1:has_course_code 'CSGE603130' . }",

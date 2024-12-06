@@ -6,7 +6,7 @@ import warnings
 import sys
 import re
 
-from rag import WikidataGraphRAG, DBPediaGraphRAG
+from rag import WikidataGraphRAG, DBPediaGraphRAG, EnterpriseGraphRAG
 from few_shots import (
     WIKIDATA_GENERATE_SPARQL_FEW_SHOTS,
     DBPEDIA_GENERATE_SPARQL_FEW_SHOTS,
@@ -78,6 +78,18 @@ def main(
             print_output=True,
         )
         print("DBPediaGraphRAG initialized.")
+    elif knowledge_source == "enterprise":
+        print("Initializing EnterpriseGraphRAG...")
+        rag_engine = EnterpriseGraphRAG(
+            model_name=model_name,
+            use_local_model=use_local_model,
+            max_new_tokens=max_new_tokens,
+            always_use_generate_sparql=always_use_generate_sparql,
+            use_local_weaviate_client=use_local_weaviate_client,
+            print_output=True,
+            turtle_file_path="data/enterprise_turtle/final_result.ttl",
+        )
+        print("EnterpriseGraphRAG initialized.")
     else:
         raise ValueError("Invalid knowledge source.")
 
@@ -99,7 +111,7 @@ def main(
             )
             sys.stdout = f
             try:
-                true_query = row[f"cleaned_{knowledge_source}"]
+                true_query = row[f"{knowledge_source}_query"]
                 ground_truth = rag_engine.api.execute_sparql_to_df(true_query)
                 generated_factoid_question, generated_query, res = rag_engine.run(
                     question,
@@ -141,7 +153,7 @@ if __name__ == "__main__":
         type=str,
         required=True,
         help="Knowledge source to use.",
-        choices=["wikidata", "dbpedia"],
+        choices=["wikidata", "dbpedia", "enterprise"],
     )
     parser.add_argument(
         "--model-name", type=str, required=True, help="Name of the model to use."
