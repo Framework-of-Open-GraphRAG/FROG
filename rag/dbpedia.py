@@ -243,7 +243,7 @@ Answer it in the format below.
     ) -> tuple[str, list[dict[str, str]]]:
         example_prompt = ChatPromptTemplate.from_messages(
             [
-                ("human", "Generate a SPARQL query to answer the question: '{input}'"),
+                ("human", "{input}"),
                 ("ai", "{output}"),
             ]
         )
@@ -271,7 +271,7 @@ You are an assistant trained to generate DBPedia SPARQL queries. Use the provide
                 MessagesPlaceholder("chat_history"),
                 (
                     "human",
-                    "Generate a SPARQL query to answer the question: '{input}'",
+                    "{input}",
                 ),
             ]
         )
