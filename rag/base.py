@@ -576,7 +576,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                     "Use SPARQL generation because the question contains multiple entities."
                 )
 
-        if not intent_is_global:
+        if not intent_is_global and len(extracted_entities) > 0:
             entity = extracted_entities[0]
             if self.api:
                 retrieved_resources = self.api.get_entities(entity, k=5)[0]
