@@ -1,10 +1,10 @@
 import torch, os, json, gc, re
 from IPython.display import HTML, display
-from concurrent.futures import ThreadPoolExecutor
 from dotenv import load_dotenv
 from xml.sax.saxutils import escape
 from copy import deepcopy
 from rdflib import Graph
+from googletrans import Translator
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 from langchain_huggingface.llms import HuggingFacePipeline
@@ -31,7 +31,11 @@ from typing import List
 from few_shots import (
     INTENT_CLASSIFICATION_FEW_SHOTS,
 )
-from utils.helper import contains_multiple_entities, fix_query_spacing, separate_camel_case
+from utils.helper import (
+    contains_multiple_entities,
+    fix_query_spacing,
+    separate_camel_case,
+)
 
 load_dotenv()
 
@@ -62,6 +66,7 @@ class BaseGraphRAG:
         self.verbalization = None
         self.property_retrieval = None
 
+        self.translator = Translator()
         if turtle_file_path:
             self.graph = Graph().parse(turtle_file_path)
         else:
@@ -150,6 +155,9 @@ class BaseGraphRAG:
         if completion_parsed is not None:
             return completion_parsed, messages
         return None, messages
+
+    def translate(self, text: str, dest_lang="en") -> str:
+        return self.translator.translate(text, dest=dest_lang).text
 
     def transform_to_factoid_question(
         self, question: str, try_threshold: int = 10
@@ -503,11 +511,22 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
         self,
         question: str,
         use_cot: bool = True,
-        use_transform_factoid: bool = True,
+        use_transform_factoid: bool = False,
         output_uri=False,
         verbose: int = 0,
         try_threshold: int = 10,
     ) -> tuple[str, str, list[dict[str, str]]]:
+        if self.translator.detect(question).lang != "en":
+            question = self.translate(question, dest_lang="en")
+            if verbose == 1:
+                display(
+                    HTML(
+                        f"""<code style='color: green;'>Translated Question: {escape(question)}</code>"""
+                    )
+                )
+            if self.print_output:
+                print("Translated Question: ", question)
+
         if use_transform_factoid:
             factoid_question = self.transform_to_factoid_question(question)
             if verbose == 1:
@@ -655,4 +674,20 @@ Answer:""",
         llm_chain = final_prompt | self.chat_model | StrOutputParser()
 
         response = llm_chain.invoke({"input": factoid_question})
+
+        lang_detected = self.translator.detect(question).lang
+        if lang_detected != "en":
+            if verbose == 1:
+                display(
+                    HTML(
+                        f"""<code style='color: green;'>Real Response: {escape(response)}</code>"""
+                    )
+                )
+            response = self.translate(response, dest_lang=lang_detected)
+            if verbose == 1:
+                display(
+                    HTML(
+                        f"""<code style='color: green;'>Translated Response: {escape(response)}</code>"""
+                    )
+                )
         return response
