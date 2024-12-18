@@ -3,3 +3,4 @@ __pycache__
 logs/**/*.txt
 tmp*
 .ipynb_checkpoints
+env
