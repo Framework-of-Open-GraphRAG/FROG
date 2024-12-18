@@ -1,5 +1,7 @@
 # FrOG: Framework of Open GraphRAG
 
+![image](https://github.com/user-attachments/assets/d33c13da-0523-482d-b41d-5d5fcafe6f3d)
+
 <details>
 <summary>Abstract</summary>
 
@@ -38,7 +40,7 @@ The rise of large language models (LLMs) has advanced information retrieval, but
 ## Example Usage
 
 ```python
-from rag.graph_rag import WikidataGraphRAG
+from rag import WikidataGraphRAG
 
 dbpedia_rag = WikidataGraphRAG(
     model_name="Qwen/Qwen2.5-7B-Instruct",
