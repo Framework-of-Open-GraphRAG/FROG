@@ -137,7 +137,7 @@ python eval.py \
 To integrate a custom enterprise knowledge graph:
 
 1. Specify the `turtle_file_path` parameter when initializing `EnterpriseGraphRAG`.
-2. Modify the prompt templates in `rag/enterprise.py` to suit your use case.
+2. Modify the prompt templates in `rag/enterprise.py` and `ENTERPRISE_GENERATE_SPARQL_FEW_SHOTS` few shots in `few_shots.py` to suit your use case.
 
 ## Acknowledgments
 
