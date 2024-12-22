@@ -15,7 +15,7 @@ The rise of large language models (LLMs) has advanced information retrieval, but
 2. Install dependencies:
 
    ```bash
-   pip install -r requirements.txt
+   pip install -r requirements.txt --no-dependencies
    ```
 
 3. Set up the Weaviate vector database:
