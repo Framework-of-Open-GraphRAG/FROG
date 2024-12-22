@@ -42,14 +42,14 @@ The rise of large language models (LLMs) has advanced information retrieval, but
 ```python
 from rag import WikidataGraphRAG
 
-dbpedia_rag = WikidataGraphRAG(
+rag_engine = WikidataGraphRAG(
     model_name="Qwen/Qwen2.5-7B-Instruct",
     max_new_tokens=1500,
     use_local_model=True,
     use_local_weaviate_client=True,
 )
 
-response = dbpedia_rag.chat(
+response = rag_engine.chat(
     "How many programming languages are there?",
     verbose=1, use_cot=True, try_threshold=5
 )
