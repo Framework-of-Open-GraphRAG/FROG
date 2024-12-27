@@ -650,13 +650,14 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
             question, use_cot=use_cot, verbose=verbose, try_threshold=try_threshold
         )
 
+        lang_detected = self.translator.detect(question).lang
         final_prompt = ChatPromptTemplate.from_messages(
             [
                 (
                     "human",
-                    """You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. Do not say "according to the context" or something like that, just answer directly with full sentence to the question using the context. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise.
-Question: {input} 
-Context: {context} 
+                    f"""You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. Do not say "according to the context" or something like that, just answer directly with full sentence to the question using the context. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise.{f" Answer in '{lang_detected}' language." if lang_detected != 'en' else ''}
+Question: {{input}} 
+Context: {{context}} 
 Answer:""",
                 ),
             ]
@@ -675,19 +676,4 @@ Answer:""",
 
         response = llm_chain.invoke({"input": factoid_question})
 
-        lang_detected = self.translator.detect(question).lang
-        if lang_detected != "en":
-            if verbose == 1:
-                display(
-                    HTML(
-                        f"""<code style='color: green;'>Real Response: {escape(response)}</code>"""
-                    )
-                )
-            response = self.translate(response, dest_lang=lang_detected)
-            if verbose == 1:
-                display(
-                    HTML(
-                        f"""<code style='color: green;'>Translated Response: {escape(response)}</code>"""
-                    )
-                )
         return response
