@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from xml.sax.saxutils import escape
 from copy import deepcopy
 from rdflib import Graph
+import googletrans
 from googletrans import Translator
 
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
@@ -655,7 +656,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
             [
                 (
                     "human",
-                    f"""You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. Do not say "according to the context" or something like that, just answer directly with full sentence to the question using the context. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise.{f" Answer in '{lang_detected}' language." if lang_detected != 'en' else ''}
+                    f"""You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. Do not say "according to the context" or something like that, just answer directly with full sentence to the question using the context. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise.{f" Answer in {googletrans.LANGUAGES[lang_detected]} language." if lang_detected != 'en' else ''}
 Question: {{input}} 
 Context: {{context}} 
 Answer:""",
