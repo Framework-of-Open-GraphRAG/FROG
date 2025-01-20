@@ -43,11 +43,22 @@ def compare_two_dataframes(df1: pd.DataFrame, df2: pd.DataFrame) -> Dict[str, fl
     # f1 score = 2 x prec x recall / (prec + recall)
     f1 = (2 * precision * recall) / (precision + recall)
 
+    # TP, TN, FP, FN computation (might be useful for computing micro metrics)
+    tp = len(set1 & set2)
+    fp = len(set2) - tp
+    fn = len(set1) - tp
+    total_pairs = len(set1) + len(set2) - tp
+    tn = total_pairs - (tp + fp + fn)
+
     return {
-        "jaccard": jaccard,
-        "precision": precision,
-        "recall": recall,
-        "f1": f1
+        'jaccard': jaccard,
+        'recall': recall,
+        'precision': precision,
+        'f1': f1,
+        'tp': tp,
+        'fp': fp,
+        'fn': fn,
+        'tn': tn
     }
 
 
