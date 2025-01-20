@@ -5,6 +5,7 @@ from tqdm import tqdm
 import warnings
 import sys
 import re
+from typing import Dict
 
 from rag import WikidataGraphRAG, DBPediaGraphRAG, EnterpriseGraphRAG
 from few_shots import (
@@ -15,7 +16,9 @@ from few_shots import (
 warnings.filterwarnings("ignore")
 
 
-def compare_two_dataframes(df1: pd.DataFrame, df2: pd.DataFrame) -> float:
+def compare_two_dataframes(df1: pd.DataFrame, df2: pd.DataFrame) -> Dict[str, float]:
+    # df1: DataFrame for ground truth
+    # df2: DataFrame for predicted
     if len(df1.columns) != len(df2.columns):
         return 0
 
@@ -31,8 +34,21 @@ def compare_two_dataframes(df1: pd.DataFrame, df2: pd.DataFrame) -> float:
         row = sorted(row)
         row = tuple(row)
         set2.add(row)
+    
+    jaccard = len(set1 & set2) / len(set1 | set2)
+    # recall = correct retrieved / all ground truth
+    recall = len(set1 & set2) / len(set1)
+    # precision = correct retrieved / retrieved answers
+    precision = len(set1 & set2) / len(set2)
+    # f1 score = 2 x prec x recall / (prec + recall)
+    f1 = (2 * precision * recall) / (precision + recall)
 
-    return len(set1 & set2) / len(set1 | set2)
+    return {
+        "jaccard": jaccard,
+        "precision": precision,
+        "recall": recall,
+        "f1": f1
+    }
 
 
 def main(
