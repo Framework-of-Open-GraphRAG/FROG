@@ -164,12 +164,26 @@ def main(
                 )
             except Exception as e:
                 log_file.write("ERROR: " + str(e) + "\n")
-                score = 0
+                score = {
+                    'jaccard': 0,
+                    'recall': 0,
+                    'precision': 0,
+                    'f1': 0,
+                    'tp': 0,
+                    'fp': 0,
+                    'fn': 0,
+                    'tn': 0
+                }
             sys.stdout = orig_stdout
             f.close()
 
             scores.append(score)
-            current_avg_score = sum(scores) / len(scores)
+            current_avg_score = {key: 0 for key in score}
+            for metrics in scores:
+                for key in metrics:
+                    current_avg_score[key] += metrics[key]
+            num_items = len(scores)
+            current_avg_score = {key: value / num_items for key, value in current_avg_score.items()}
             log_file.write(f"Current Average Score: {current_avg_score}\n")
             log_file.write(
                 "----------------------------------------------------------------------------------------\n"
