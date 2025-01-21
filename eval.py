@@ -20,7 +20,16 @@ def compare_two_dataframes(df1: pd.DataFrame, df2: pd.DataFrame) -> Dict[str, fl
     # df1: DataFrame for ground truth
     # df2: DataFrame for predicted
     if len(df1.columns) != len(df2.columns):
-        return 0
+        return {
+                    'jaccard': 0,
+                    'recall': 0,
+                    'precision': 0,
+                    'f1': 0,
+                    'tp': 0,
+                    'fp': 0,
+                    'fn': 0,
+                    'tn': 0
+                }
 
     set1, set2 = set(), set()
     for _, row in df1.iterrows():
@@ -35,13 +44,13 @@ def compare_two_dataframes(df1: pd.DataFrame, df2: pd.DataFrame) -> Dict[str, fl
         row = tuple(row)
         set2.add(row)
     
-    jaccard = len(set1 & set2) / len(set1 | set2)
+    jaccard = len(set1 & set2) / len(set1 | set2) if len(set1 | set2) > 0 else 0
     # recall = correct retrieved / all ground truth
-    recall = len(set1 & set2) / len(set1)
+    recall = len(set1 & set2) / len(set1) if len(set1) > 0 else 0
     # precision = correct retrieved / retrieved answers
-    precision = len(set1 & set2) / len(set2)
+    precision = len(set1 & set2) / len(set2) if len(set2) > 0 else 0
     # f1 score = 2 x prec x recall / (prec + recall)
-    f1 = (2 * precision * recall) / (precision + recall)
+    f1 = (2 * precision * recall) / (precision + recall) if (precision + recall) > 0 else 0
 
     # TP, TN, FP, FN computation (might be useful for computing micro metrics)
     tp = len(set1 & set2)
@@ -178,9 +187,18 @@ def main(
             f.close()
 
             scores.append(score)
-            current_avg_score = {key: 0 for key in score}
+            current_avg_score = {
+                    'jaccard': 0,
+                    'recall': 0,
+                    'precision': 0,
+                    'f1': 0,
+                    'tp': 0,
+                    'fp': 0,
+                    'fn': 0,
+                    'tn': 0
+                }
             for metrics in scores:
-                for key in metrics:
+                for key in metrics.keys():
                     current_avg_score[key] += metrics[key]
             num_items = len(scores)
             current_avg_score = {key: value / num_items for key, value in current_avg_score.items()}
