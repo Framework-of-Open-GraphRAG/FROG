@@ -193,6 +193,10 @@ def main(
     print(f"Average Score: {current_avg_score}")
     print("Evaluation done.")
 
+    with open("overall_score.txt", "w") as f:
+        for score in scores:
+            f.write(f"{score}\n")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the evaluation script.")
