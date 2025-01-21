@@ -137,7 +137,7 @@
         "134":"Give me the websites of companies with more than 500000 employees.",
         "135":"What were the names of the three ships by Columbus?"
     },
-    "sparql":{
+    "wikidata_query":{
         "0":"SELECT DISTINCT ?o1 WHERE { <http:\/\/www.wikidata.org\/entity\/Q23337>  <http:\/\/www.wikidata.org\/prop\/direct\/P421>  ?o1 .  }",
         "1":"SELECT DISTINCT ?o1 WHERE { <http:\/\/www.wikidata.org\/entity\/Q1048>  <http:\/\/www.wikidata.org\/prop\/direct\/P157>  ?o1 .  }",
         "2":"PREFIX wdt: <http:\/\/www.wikidata.org\/prop\/direct\/> PREFIX wd: <http:\/\/www.wikidata.org\/entity\/> SELECT ?uri WHERE { ?uri wdt:P31 wd:Q8502 ; wdt:P2044 ?elevation ; wdt:P17 wd:Q183 . } ORDER BY DESC(?elevation) LIMIT 1",
