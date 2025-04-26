@@ -37,6 +37,7 @@ from utils.helper import (
     fix_query_spacing,
     separate_camel_case,
 )
+import time
 
 load_dotenv()
 
@@ -380,6 +381,7 @@ Based on the query given, decide if it is global or local and return the classif
         output_parser = PydanticOutputParser(pydantic_object=SPARQLQueryResults)
         format_instructions = output_parser.get_format_instructions()
 
+        start_time = time.time()
         resources = ""
         if self.api:
             for entity in entities:
@@ -426,6 +428,10 @@ Based on the query given, decide if it is global or local and return the classif
             )
         if self.print_output:
             print("Retrieved Ontology: ", properties_context)
+        end_time = time.time()
+        print(
+            f"Entity and Property retrieval for SPARQL Generation time: {end_time - start_time:.2f} seconds"
+        )
 
         final_prompt = chat_prompt_template.partial(
             resources=resources,
@@ -435,6 +441,7 @@ Based on the query given, decide if it is global or local and return the classif
         llm_chain = final_prompt | self.chat_model | StrOutputParser()
         messages = []
 
+        start_time = time.time()
         curr_question = question
         while True:
             sparql_query_result, messages = self.handle_parsing_error(
@@ -506,6 +513,8 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
             else:
                 # success
                 break
+        end_time = time.time()
+        print(f"SPARQL Generation time: {end_time - start_time:.2f} seconds")
         return sparql_query_result.sparql, result
 
     def run(
@@ -518,6 +527,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
         try_threshold: int = 10,
     ) -> tuple[str, str, list[dict[str, str]]]:
         if self.translator.detect(question).lang != "en":
+            start_time = time.time()
             question = self.translate(question, dest_lang="en")
             if verbose == 1:
                 display(
@@ -527,6 +537,8 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
                 )
             if self.print_output:
                 print("Translated Question: ", question)
+            end_time = time.time()
+            print(f"Translation time: {end_time - start_time:.2f} seconds")
 
         if use_transform_factoid:
             factoid_question = self.transform_to_factoid_question(question)
@@ -541,6 +553,7 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
         else:
             factoid_question = question
 
+        start_time = time.time()
         extracted_entities = self.extract_entity(factoid_question)
         if verbose == 1:
             display(
@@ -553,70 +566,75 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
 
         intent_is_global = self.always_use_generate_sparql
 
-        if not intent_is_global and contains_multiple_entities(question):
-            intent_is_global = True
-            if verbose == 1:
-                display(
-                    HTML(
-                        f"""<code style='color: green;'>Use SPARQL generation because the question contains multiple entities.</code>"""
-                    )
-                )
-            if self.print_output:
-                print(
-                    "Use SPARQL generation because the question contains multiple entities."
-                )
+        # if not intent_is_global and contains_multiple_entities(question):
+        #     intent_is_global = True
+        #     if verbose == 1:
+        #         display(
+        #             HTML(
+        #                 f"""<code style='color: green;'>Use SPARQL generation because the question contains multiple entities.</code>"""
+        #             )
+        #         )
+        #     if self.print_output:
+        #         print(
+        #             "Use SPARQL generation because the question contains multiple entities."
+        #         )
 
-        if not intent_is_global and len(extracted_entities) > 0:
-            entity = extracted_entities[0]
-            if self.api:
-                retrieved_resources = self.api.get_entities(entity, k=5)[0]
-            else:
-                retrieved_resources = self.property_retrieval.search_entities(
-                    entity, k=5
-                )[["short", "label", "score"]].rename({"short": "uri"}, axis=1)
-            if verbose == 1:
-                display(
-                    HTML(
-                        f"""<code style='color: green;'>Retrieved Resources: {escape(str(retrieved_resources))}</code>"""
-                    )
+        # if not intent_is_global and len(extracted_entities) > 0:
+        entity = extracted_entities[0]
+        if self.api:
+            retrieved_resources = self.api.get_entities(entity, k=5)[0]
+        else:
+            retrieved_resources = self.property_retrieval.search_entities(entity, k=5)[
+                ["short", "label", "score"]
+            ].rename({"short": "uri"}, axis=1)
+        if verbose == 1:
+            display(
+                HTML(
+                    f"""<code style='color: green;'>Retrieved Resources: {escape(str(retrieved_resources))}</code>"""
                 )
-            if self.print_output:
-                print("Retrieved Resources: ", retrieved_resources)
-            entity_uri = self.get_most_appropriate_entity_uri(
-                entity, factoid_question, retrieved_resources
+            )
+        if self.print_output:
+            print("Retrieved Resources: ", retrieved_resources)
+        entity_uri = self.get_most_appropriate_entity_uri(
+            entity, factoid_question, retrieved_resources
+        )
+        if verbose == 1:
+            display(
+                HTML(
+                    f"""<code style='color: green;'>Entity URI: {escape(entity_uri)}</code>"""
+                )
+            )
+        if self.print_output:
+            print("Entity URI: ", entity_uri)
+
+        end_time = time.time()
+        print(f"Entiti linking time: {end_time - start_time:.2f} seconds")
+
+        start_time = time.time()
+        is_error = False
+        try:
+            result, similarities = self.verbalization.run(
+                factoid_question, entity_uri, output_uri=output_uri
             )
             if verbose == 1:
                 display(
                     HTML(
-                        f"""<code style='color: green;'>Entity URI: {escape(entity_uri)}</code>"""
+                        f"""<code style='color: green;'>Result: {escape(str(result))}<br/>Similarities: {escape(str(similarities))}</code>"""
                     )
                 )
             if self.print_output:
-                print("Entity URI: ", entity_uri)
+                print("Result: ", result, "Similarities: ", similarities)
+        except Exception as e:
+            is_error = True
+            if verbose == 1:
+                display(HTML(f"""<code style='color: red;'>{escape(str(e))}</code>"""))
+            if self.print_output:
+                print("Error: ", e)
+        end_time = time.time()
+        print(f"Verbalization time: {end_time - start_time:.2f} seconds")
 
-            is_error = False
-            try:
-                result, similarities = self.verbalization.run(
-                    factoid_question, entity_uri, output_uri=output_uri
-                )
-                if verbose == 1:
-                    display(
-                        HTML(
-                            f"""<code style='color: green;'>Result: {escape(str(result))}<br/>Similarities: {escape(str(similarities))}</code>"""
-                        )
-                    )
-                if self.print_output:
-                    print("Result: ", result, "Similarities: ", similarities)
-            except Exception as e:
-                is_error = True
-                if verbose == 1:
-                    display(
-                        HTML(f"""<code style='color: red;'>{escape(str(e))}</code>""")
-                    )
-                if self.print_output:
-                    print("Error: ", e)
-            if not is_error and similarities >= 0.6 and len(result) > 0:
-                return factoid_question, "", result
+        if not is_error and similarities >= 0.6 and len(result) > 0:
+            return factoid_question, "", result
 
         few_shots = deepcopy(self.generate_sparql_few_shot_messages)
         if not use_cot:
@@ -647,10 +665,15 @@ DO NOT include any explanations or apologies in your responses. No pre-amble. Ma
         verbose: int = 0,
         try_threshold: int = 10,
     ) -> str:
+        total_start_time = time.time()
+        start_time = time.time()
         factoid_question, _, context = self.run(
             question, use_cot=use_cot, verbose=verbose, try_threshold=try_threshold
         )
+        end_time = time.time()
+        print(f"Run time: {end_time - start_time:.2f} seconds")
 
+        start_time = time.time()
         lang_detected = self.translator.detect(question).lang
         final_prompt = ChatPromptTemplate.from_messages(
             [
@@ -676,5 +699,8 @@ Answer:""",
         llm_chain = final_prompt | self.chat_model | StrOutputParser()
 
         response = llm_chain.invoke({"input": factoid_question})
-
+        end_time = time.time()
+        print(f"Answer Generation time: {end_time - start_time:.2f} seconds")
+        total_end_time = time.time()
+        print(f"Total time: {total_end_time - total_start_time:.2f} seconds")
         return response
