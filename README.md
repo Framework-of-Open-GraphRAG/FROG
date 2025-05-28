@@ -130,6 +130,10 @@ python eval.py \
     --use-cot
 ```
 
+## Wikidata Integration
+For Wikidata, we utilize Wikidata SPARQL Endpoint to execute SPARQL queries and retrieve relevant data. However, to optimize the vector 
+store indexing process, we maintain an offline copy of the list of properties (originally obtained through SPARQL query execution using the Wikidata SPARQL endpoint).
+
 ## Customization
 
 ### Enterprise Knowledge Graph Integration
