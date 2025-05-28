@@ -132,7 +132,7 @@ python eval.py \
 
 ## Wikidata Integration
 For Wikidata, we utilize Wikidata SPARQL Endpoint to execute SPARQL queries and retrieve relevant data. However, to facilitate the vector 
-store indexing process, we maintain an offline copy of the list of properties (originally obtained through SPARQL query execution using the Wikidata SPARQL endpoint). For the entity linking stage, FrOG uses the (Wikidata API)[https://www.wikidata.org/w/api.php] (specifically its search capabilities) to find KG-specific entities and classes that match entities detected in the user's question. This helps in disambiguating entities and retrieving their URIs.
+store indexing process, we maintain an offline copy of the list of properties (originally obtained through SPARQL query execution using the Wikidata SPARQL endpoint). For the entity linking stage, FrOG uses the [Wikidata API](https://www.wikidata.org/w/api.php) (specifically its search capabilities) to find KG-specific entities and classes that match entities detected in the user's question. This helps in disambiguating entities and retrieving their URIs.
 
 ## Customization
 
